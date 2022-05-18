@@ -1,0 +1,61 @@
+@import "../../styles/foundations.scss";
+
+.container {
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  padding-top: 40px;
+
+  .logo {
+    position: relative;
+
+    height: 52px;
+    width: 52px;
+
+    margin-left: 64px;
+
+    &__touchable {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+
+      cursor: pointer;
+    }
+
+    img {
+      position: relative;
+      height: 100%;
+      width: auto;
+    }
+  }
+}
+
+.menu {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  margin-top: 53px;
+
+  @media (max-width: $landscape800) {
+    display: none;
+  }
+
+  li {
+    cursor: pointer;
+  }
+
+  :not(:last-child) {
+    margin-right: 40px;
+  }
+}

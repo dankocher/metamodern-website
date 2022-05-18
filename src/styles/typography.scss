@@ -1,0 +1,163 @@
+@import "foundations.scss";
+
+//Links fonts
+
+.latoSemibold2024 {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.latoSemibold2230 {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  font-size: autoResize(12px, 22px, $landscape1200) !important;
+  line-height: autoResize(17px, 30px, $landscape1200) !important;
+}
+
+.bebasNeue320 {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 400;
+  font-size: 320px;
+  line-height: 320px;
+
+  font-size: autoResize(182px, 320px, $landscape1200) !important;
+  line-height: autoResize(182px, 320px, $landscape1200) !important;
+
+  @media (max-width: $landscape1133) {
+    font-size: autoResize(
+      148px,
+      182px,
+      $landscape800,
+      $landscape1133
+    ) !important;
+    line-height: autoResize(
+      148px,
+      182px,
+      $landscape800,
+      $landscape1133
+    ) !important;
+  }
+}
+
+.bebasNeue288 {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 400;
+  font-size: 288px;
+  line-height: 288px;
+  font-size: autoResize(164px, 288px, $landscape1200) !important;
+  line-height: autoResize(164px, 288px, $landscape1200) !important;
+
+  @media (max-width: $landscape1133) {
+    font-size: autoResize(
+      132px,
+      164px,
+      $landscape800,
+      $landscape1133
+    ) !important;
+    line-height: autoResize(
+      132px,
+      164px,
+      $landscape800,
+      $landscape1133
+    ) !important;
+  }
+}
+
+.downFont {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 11px;
+
+  font-size: autoResize(9px, 16px, $phoneWidth) !important;
+  line-height: autoResize(11px, 20px, $phoneWidth) !important;
+}
+
+.downFont {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 11px;
+
+  font-size: autoResize(9px, 16px, $phoneWidth) !important;
+  line-height: autoResize(11px, 20px, $phoneWidth) !important;
+}
+
+.smallFont {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 600;
+
+  font-size: 14px;
+  line-height: 15px;
+
+  font-size: autoResize(14px, 26px, $phoneWidth) !important;
+  line-height: autoResize(15px, 28px, $phoneWidth) !important;
+}
+
+//Main page fonts
+
+.mainBigTitle {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 400;
+  font-size: 124px;
+  line-height: 120px;
+  font-size: autoResize(64px, 124px, $phoneWidth) !important;
+  line-height: autoResize(64px, 124px, $phoneWidth) !important;
+}
+
+.mainSubtitleBlack {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  font-size: autoResize(14px, 18px, $phoneWidth) !important;
+  line-height: autoResize(17px, 24px, $phoneWidth) !important;
+  @media (max-width: $phoneWidth) {
+    font-size: autoResize(12px, 14px, $smallPhoneWidth, $phoneWidth) !important;
+    line-height: autoResize(
+      14px,
+      17px,
+      $smallPhoneWidth,
+      $phoneWidth
+    ) !important;
+  }
+}
+
+.mainSubtitleSemibold {
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 24px;
+  font-size: autoResize(14px, 18px, $phoneWidth) !important;
+  line-height: autoResize(17px, 24px, $phoneWidth) !important;
+
+  @media (max-width: $phoneWidth) {
+    font-size: autoResize(12px, 14px, $smallPhoneWidth, $phoneWidth) !important;
+    line-height: autoResize(
+      14px,
+      17px,
+      $smallPhoneWidth,
+      $phoneWidth
+    ) !important;
+  }
+}
+
+//Footer
+
+.footerMainFont {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.footerSubtitleFont {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}

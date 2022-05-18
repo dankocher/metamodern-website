@@ -1,0 +1,6 @@
+export enum SCREENS {
+  HOME = "/",
+  PORTFOLIO = "PORTFOLIO",
+  ABOUT_US = "ABOUT_US",
+  CONTACTS = "CONTACTS",
+}
