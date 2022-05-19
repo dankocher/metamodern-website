@@ -1,11 +1,12 @@
 @import "../../styles/foundations.scss";
 
 .container {
-  width: 100%;
-
   position: absolute;
   top: 0;
   left: 0;
+  right: 0;
+
+  display: block;
 
   padding-top: 40px;
 
@@ -17,14 +18,15 @@
 
     margin-left: 64px;
 
-    &__touchable {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+    cursor: pointer;
 
-      cursor: pointer;
+    @media (max-width: $landscape1133) {
+      margin-left: autoResize(
+        44px,
+        64px,
+        $landscape800,
+        $landscape1133
+      ) !important;
     }
 
     img {
@@ -38,12 +40,12 @@
 .menu {
   width: 100%;
 
-  display: flex;
-  justify-content: center;
-
   position: absolute;
   top: 0;
   left: 0;
+
+  display: flex;
+  justify-content: center;
 
   margin-top: 53px;
 

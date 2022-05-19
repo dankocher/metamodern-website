@@ -16,20 +16,6 @@ const Header = () => {
 
   return (
     <div className={`latoSemibold2024 ${styles.container}`}>
-      <div className={styles.logo}>
-        {/* <div
-          className={styles.logo__touchable}
-          onClick={() => navigateTo(SCREENS.HOME)}
-        >
-        </div> */}
-
-        <img src={logo} />
-        <div
-          className={styles.logo__touchable}
-          onClick={() => navigateTo(SCREENS.HOME)}
-        />
-      </div>
-
       <ul className={styles.menu}>
         <li onClick={() => navigateTo(SCREENS.PORTFOLIO)}>
           {translation.portfolio}
@@ -41,6 +27,10 @@ const Header = () => {
           {translation.contacts}
         </li>
       </ul>
+
+      <a className={styles.logo} onClick={() => navigateTo(SCREENS.HOME)}>
+        <img src={logo} />
+      </a>
     </div>
   );
 };
