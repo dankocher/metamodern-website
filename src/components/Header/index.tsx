@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { SCREENS } from "../../navigation/constants";
 
 import logo from "../../assets/images/logo.png";
+import menuLogo from "../../assets/images/menuLogo.png";
 
 import translation from "../../i18n/en.json";
 
@@ -31,6 +32,13 @@ const Header = () => {
       <a className={styles.logo} onClick={() => navigateTo(SCREENS.HOME)}>
         <img src={logo} />
       </a>
+
+      <button
+        className={styles.menuLogo}
+        onClick={() => navigateTo(SCREENS.HOME)}
+      >
+        <img src={menuLogo} />
+      </button>
     </div>
   );
 };

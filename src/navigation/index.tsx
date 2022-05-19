@@ -11,7 +11,6 @@ import { SCREENS } from "./constants";
 const Navigation = () => {
   return (
     <div>
-      <Header />
       <Routes>
         <Route path={SCREENS.HOME} element={<Home />}></Route>
         <Route path={SCREENS.PORTFOLIO} element={<Portfolio />} />
@@ -19,6 +18,7 @@ const Navigation = () => {
         <Route path={SCREENS.CONTACTS} element={<Contacts />} />
         <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
       </Routes>
+      <Header />
     </div>
   );
 };

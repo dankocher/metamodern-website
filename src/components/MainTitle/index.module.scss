@@ -29,6 +29,11 @@
       width: autoResize(646px, 797px, $landscape800, $landscape1133) !important;
     }
 
+    @media (max-width: $landscape800) {
+      height: autoResize(77px, 192px, $landscape320, $landscape800) !important;
+      width: autoResize(259px, 646px, $landscape320, $landscape800) !important;
+    }
+
     .circle {
       position: absolute;
 
@@ -44,6 +49,10 @@
       border-radius: 50%;
 
       background-color: $yellow100;
+
+      @media (max-width: $landscape800) {
+        display: none;
+      }
     }
 
     h1,
@@ -63,6 +72,14 @@
 
       top: autoResize(72px, 126px, $landscape1200) !important;
       right: 0;
+
+      @media (max-width: $landscape1133) {
+        top: autoResize(68px, 72px, $landscape800, $landscape1133) !important;
+      }
+
+      @media (max-width: $landscape800) {
+        top: autoResize(27px, 68px, $landscape320, $landscape800) !important;
+      }
 
       text-align: right;
       color: $white;
