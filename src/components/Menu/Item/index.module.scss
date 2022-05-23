@@ -1,0 +1,14 @@
+@import "../../../styles/foundations.scss";
+
+.container {
+  position: relative;
+  height: fit-content;
+  width: fit-content;
+
+  .lottie_wrapper {
+    width: 110%;
+
+    position: absolute;
+    left: -5%;
+  }
+}

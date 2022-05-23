@@ -66,28 +66,3 @@
     }
   }
 }
-
-.menu {
-  width: 100%;
-
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  display: flex;
-  justify-content: center;
-
-  margin-top: 53px;
-
-  @media (max-width: $landscape800) {
-    display: none;
-  }
-
-  li {
-    cursor: pointer;
-  }
-
-  :not(:last-child) {
-    margin-right: 40px;
-  }
-}

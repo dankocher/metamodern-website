@@ -6,7 +6,7 @@ import { SCREENS } from "../../navigation/constants";
 import logo from "../../assets/images/logo.png";
 import menuLogo from "../../assets/images/menuLogo.png";
 
-import translation from "../../i18n/en.json";
+import Menu from "../Menu";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -16,18 +16,8 @@ const Header = () => {
   };
 
   return (
-    <div className={`latoSemibold2024 ${styles.container}`}>
-      <ul className={styles.menu}>
-        <li onClick={() => navigateTo(SCREENS.PORTFOLIO)}>
-          {translation.portfolio}
-        </li>
-        <li onClick={() => navigateTo(SCREENS.ABOUT_US)}>
-          {translation.aboutUs}
-        </li>
-        <li onClick={() => navigateTo(SCREENS.CONTACTS)}>
-          {translation.contacts}
-        </li>
-      </ul>
+    <div className={styles.container}>
+      <Menu />
 
       <a className={styles.logo} onClick={() => navigateTo(SCREENS.HOME)}>
         <img src={logo} />
