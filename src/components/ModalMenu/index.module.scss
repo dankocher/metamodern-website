@@ -1,0 +1,33 @@
+@import "../../styles/foundations.scss";
+
+.container {
+  display: none;
+  position: absolute;
+
+  top: 0;
+  bottom: 0;
+  right: 0;
+
+  // transition: width 450ms ease-in-out;
+  background-color: $white;
+
+  ul {
+    margin-top: autoResize(286px, 342px, $landscape320, $landscape800);
+    margin-left: autoResize(24px, 96px, $landscape320, $landscape800);
+  }
+
+  .header {
+    position: absolute;
+    display: flex;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 40px;
+  }
+
+  @media (max-width: $landscape800) {
+    display: block;
+  }
+}

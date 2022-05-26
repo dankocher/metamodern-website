@@ -10,5 +10,10 @@
 
     position: absolute;
     left: -5%;
+
+    > * {
+      width: 100%;
+      height: auto;
+    }
   }
 }

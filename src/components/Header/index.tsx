@@ -1,34 +1,27 @@
 import styles from "./index.module.scss";
 
-import { useNavigate } from "react-router-dom";
 import { SCREENS } from "../../navigation/constants";
+
+import { useModalMenuContext } from "../../context/useModalMenuContext";
 
 import logo from "../../assets/images/logo.png";
 import menuLogo from "../../assets/images/menuLogo.png";
 
 import Menu from "../Menu";
+import { IconButton, IconLink } from "../ActiveIcon";
 
 const Header = () => {
-  const navigate = useNavigate();
+  const { setIsVisible } = useModalMenuContext();
 
-  const navigateTo = (path: SCREENS) => {
-    navigate(path);
-  };
+  const openModalMenu = () => setIsVisible(true);
 
   return (
     <div className={styles.container}>
       <Menu />
 
-      <a className={styles.logo} onClick={() => navigateTo(SCREENS.HOME)}>
-        <img src={logo} />
-      </a>
+      <IconLink icon={logo} link={SCREENS.HOME} />
 
-      <button
-        className={styles.menuLogo}
-        onClick={() => navigateTo(SCREENS.HOME)}
-      >
-        <img src={menuLogo} />
-      </button>
+      <IconButton icon={menuLogo} onClick={openModalMenu} />
     </div>
   );
 };

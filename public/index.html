@@ -24,6 +24,12 @@
       as="font"
       crossorigin="anonymous"
     />
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Gilroy/Gilroy-Black.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
     <!-- <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/Gilroy/Gilroy-Regular.ttf"
@@ -84,6 +90,15 @@
 
         font-weight: 600;
       } */
+
+      @font-face {
+        font-family: "Gilroy";
+        src: local("Gilroy"), local("GilroyBlack"), local("Gilroy-Black"),
+          local("Gilroy Black"),
+          url("%PUBLIC_URL%/fonts/Gilroy/Gilroy-Black.ttf");
+
+        font-weight: 400;
+      }
 
       @font-face {
         font-family: "BebasNeue";

@@ -1,7 +1,13 @@
-import Navigation  from "./navigation";
+import Navigation from "./navigation";
+
+import { ModalMenuProvider } from "./context/useModalMenuContext";
 
 function App() {
-  return <Navigation />;
+  return (
+    <ModalMenuProvider>
+      <Navigation />
+    </ModalMenuProvider>
+  );
 }
 
 export default App;

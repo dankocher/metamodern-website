@@ -5,6 +5,7 @@ import AboutUs from "../screens/AboutUs";
 import Contacts from "../screens/Contacts";
 import Home from "../screens/Home";
 import Portfolio from "../screens/Portfolio";
+import ModalMenu from "../components/ModalMenu";
 
 import { SCREENS } from "./constants";
 
@@ -19,6 +20,7 @@ const Navigation = () => {
         <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
       </Routes>
       <Header />
+      <ModalMenu />
     </div>
   );
 };

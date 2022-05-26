@@ -1,6 +1,6 @@
 export enum SCREENS {
   HOME = "/",
-  PORTFOLIO = "PORTFOLIO",
-  ABOUT_US = "ABOUT_US",
-  CONTACTS = "CONTACTS",
+  PORTFOLIO = "/portfolio",
+  ABOUT_US = "/about-us",
+  CONTACTS = "/contacts",
 }

@@ -2,25 +2,29 @@ import styles from "./index.module.scss";
 
 import { FC, useState } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { SCREENS } from "../../../navigation/constants";
 
 import Lottie from "react-lottie";
-import underline from "../../../assets/animations/underline.json";
+import underlineAnimation from "../../../assets/animations/underline.json";
+import underline from "../../../assets/svg/underline.svg";
 
 const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
+  const location = useLocation();
   const navigate = useNavigate();
 
   const navigateTo = () => {
     navigate(link);
   };
 
+  const isCurrentPage = () => location.pathname === link;
+
   const defaultOptions = {
     loop: true,
     autoplay: false,
-    animationData: underline,
+    animationData: underlineAnimation,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -35,14 +39,17 @@ const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
       <li onClick={navigateTo}>
         {title}
         <div className={styles.lottie_wrapper}>
-          <Lottie
-            options={defaultOptions}
-            height={"100%"}
-            width={"100%"}
-            isStopped={!isHovered}
-            // direction={1}
-            isPaused={false}
-          />
+          {isCurrentPage() ? (
+            <img src={underline} />
+          ) : (
+            <Lottie
+              options={defaultOptions}
+              height={"100%"}
+              width={"100%"}
+              isStopped={!isHovered}
+              isPaused={false}
+            />
+          )}
         </div>
       </li>
     </div>

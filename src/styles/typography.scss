@@ -87,6 +87,14 @@
   }
 }
 
+.gilroyBlack82 {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 900;
+  font-size: 82px;
+  line-height: 103px;
+  font-size: autoResize(52px, 82px, $landscape320, $landscape800) !important;
+  line-height: autoResize(65px, 103px, $landscape320, $landscape800) !important;
+}
 //Footer
 
 .footerMainFont {

@@ -1,0 +1,10 @@
+@import "../../../styles/foundations.scss";
+
+.container {
+  text-transform: uppercase;
+  color: $mainBlack;
+}
+
+.selected {
+  color: $yellow100;
+}
