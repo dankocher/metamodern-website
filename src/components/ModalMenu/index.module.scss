@@ -7,11 +7,18 @@
   top: 0;
   bottom: 0;
   right: 0;
+  left: 0;
 
-  // transition: width 450ms ease-in-out;
+  overflow: hidden;
+  transition: left 350ms ease-in;
   background-color: $white;
 
   ul {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
     margin-top: autoResize(286px, 342px, $landscape320, $landscape800);
     margin-left: autoResize(24px, 96px, $landscape320, $landscape800);
   }

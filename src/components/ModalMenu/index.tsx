@@ -20,17 +20,13 @@ const ModalMenu = () => {
   const openModalMenu = () => setIsVisible(false);
 
   useEffect(() => {
-    console.log(isVisible);
     document.getElementsByTagName("html")[0].style.overflowY = isVisible
       ? "hidden"
       : "auto";
   }, [isVisible]);
 
   return (
-    <div
-      style={{ width: isVisible ? "100vw" : "0" }}
-      className={styles.container}
-    >
+    <div style={{ left: isVisible ? 0 : "200%" }} className={styles.container}>
       <div className={styles.header}>
         <IconLink icon={logo} link={SCREENS.HOME} />
 
