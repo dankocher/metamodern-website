@@ -1,3 +1,5 @@
+@import "../../styles/foundations.scss";
+
 .container {
   width: 100vw;
 
@@ -6,4 +8,14 @@
   justify-content: center;
 
   margin-top: 36px;
+
+  img {
+    height: auto;
+    width: autoResize(566.5px, 800px, $landscape1133);
+
+    @media (max-width: $landscape1132) {
+      max-width: 800px;
+      width: 100%;
+    }
+  }
 }
