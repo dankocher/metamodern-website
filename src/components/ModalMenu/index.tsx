@@ -27,11 +27,11 @@ const ModalMenu = () => {
 
   return (
     <div style={{ left: isVisible ? 0 : "200%" }} className={styles.container}>
-      <div className={styles.header}>
+      {/* <div className={styles.header}>
         <IconLink icon={logo} link={SCREENS.HOME} />
 
         <IconButton icon={close} onClick={openModalMenu} />
-      </div>
+      </div> */}
       <ul className="gilroyBlack82">
         <Item link={SCREENS.PORTFOLIO} title={translation.portfolio} />
         <Item link={SCREENS.ABOUT_US} title={translation.aboutUs} />

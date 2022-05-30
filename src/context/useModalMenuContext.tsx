@@ -23,4 +23,5 @@ export const ModalMenuProvider = ({ children }) => {
   );
 };
 
-export const useModalMenuContext = () => React.useContext(ModalMenuContext);
+export const useModalMenuContext = (): ModalMenuContextProps =>
+  React.useContext(ModalMenuContext);

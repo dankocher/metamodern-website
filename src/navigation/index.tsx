@@ -19,8 +19,8 @@ const Navigation = () => {
         <Route path={SCREENS.CONTACTS} element={<Contacts />} />
         <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
       </Routes>
-      <Header />
       <ModalMenu />
+      <Header />
     </div>
   );
 };
