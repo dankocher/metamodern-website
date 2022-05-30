@@ -1,8 +1,9 @@
 @import "../../../styles/foundations.scss";
 
 .container {
-  text-transform: uppercase;
   color: $mainBlack;
+  cursor: pointer;
+  text-transform: uppercase;
 }
 
 .selected {
