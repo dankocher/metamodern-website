@@ -1,0 +1,90 @@
+@import "../../../styles/foundations.scss";
+
+$maxVisibleWidth: 566.5px;
+
+.container {
+  position: relative;
+
+  height: auto;
+  width: autoResize(566.5px, 800px, $landscape1133);
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  @media (max-width: $landscape1132) {
+    max-width: 800px;
+    width: 100%;
+  }
+
+  .content_wrapper {
+    position: absolute;
+
+    margin-top: 7.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .content {
+    margin-top: autoResize(44px, 64px, $landscape1133);
+    margin-left: autoResize(40px, 56px, $landscape1133);
+    margin-right: autoResize(40px, 56px, $landscape1133);
+
+    @media (max-width: $landscape1132) {
+      margin-top: autoResize(23.47px, 64px, $landscape320, $landscape1132);
+      margin-left: autoResize(16.81px, 56px, $landscape320, $landscape1132);
+      margin-right: autoResize(13px, 56px, $landscape384, $landscape1132);
+    }
+
+    h6 {
+      margin-bottom: autoResize(15px, 20px, $landscape1133);
+
+      @media (max-width: $landscape1132) {
+        margin-bottom: autoResize(15px, 20px, $maxVisibleWidth, $landscape1132);
+      }
+    }
+
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: autoResize(8.5px, 12px, $landscape1133);
+
+      max-width: 100%;
+
+      margin-bottom: autoResize(20px, 28px, $landscape1133);
+
+      @media (max-width: $landscape1132) {
+        gap: autoResize(8.5px, 12px, $maxVisibleWidth, $landscape1132);
+        margin-bottom: autoResize(20px, 28px, $maxVisibleWidth, $landscape1132);
+      }
+
+      @media (max-width: $maxVisibleWidth) {
+        display: none;
+      }
+
+      div {
+        padding: autoResize(8.5px, 12px, $landscape1133);
+
+        border: 0.708125px solid $white;
+        border-radius: autoResize(110.467px, 156px, $landscape1133);
+
+        @media (max-width: $landscape1132) {
+          padding: autoResize(8.5px, 12px, $maxVisibleWidth, $landscape1132);
+          border-radius: autoResize(
+            110.467px,
+            156px,
+            $maxVisibleWidth,
+            $landscape1132
+          );
+        }
+      }
+    }
+
+    p {
+      @media (max-width: $maxVisibleWidth) {
+        display: none;
+      }
+    }
+  }
+}

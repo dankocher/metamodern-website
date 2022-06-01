@@ -1,16 +1,21 @@
 import styles from "./index.module.scss";
 
-import Image from "../Image";
+import Project from "./Project";
 
-import img1 from "../../assets/images/truthOrDare.png";
-import img2 from "../../assets/images/timeZo.png";
+import { data } from "../../data/projectData";
 
 const ProjectList = () => {
   return (
     <div className={styles.container}>
-      <Image src={img1} images={null} />
-      <Image src={img2} images={null} />
-      <Image src={img1} images={null} />
+      {data.map(({ title, description, tags, bgImage, isDarkContent }) => (
+        <Project
+          title={title}
+          description={description}
+          tags={tags}
+          bgImage={bgImage}
+          isDarkContent={isDarkContent}
+        />
+      ))}
     </div>
   );
 };
