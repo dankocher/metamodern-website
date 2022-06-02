@@ -1,18 +1,23 @@
 {
   "files": {
-    "main.css": "/metamodern-website/static/css/main.dc21f273.css",
-    "main.js": "/metamodern-website/static/js/main.ab8e5c76.js",
+    "main.css": "/metamodern-website/static/css/main.17ce2bf2.css",
+    "main.js": "/metamodern-website/static/js/main.185f3e2f.js",
     "static/js/787.42db63fd.chunk.js": "/metamodern-website/static/js/787.42db63fd.chunk.js",
-    "static/media/truthOrDare.png": "/metamodern-website/static/media/truthOrDare.c070678672990b75ca29.png",
-    "static/media/timeZo.png": "/metamodern-website/static/media/timeZo.9393b5b1fead8a6c49c6.png",
+    "static/media/truthOrDare@3x.png": "/metamodern-website/static/media/truthOrDare@3x.5fb48c12da398c3722c7.png",
+    "static/media/truthOrDare@2x.png": "/metamodern-website/static/media/truthOrDare@2x.e510a359062c5522c268.png",
+    "static/media/timeZo@3x.png": "/metamodern-website/static/media/timeZo@3x.fe7ffe696abe5a732392.png",
+    "static/media/timeZo@2x.png": "/metamodern-website/static/media/timeZo@2x.bb73b729dfd5eb9f6756.png",
+    "static/media/truthOrDare.png": "/metamodern-website/static/media/truthOrDare.928fa206c960de851a59.png",
+    "static/media/timeZo.png": "/metamodern-website/static/media/timeZo.67e090ed6069606cb80d.png",
+    "static/media/bigUnderline.svg": "/metamodern-website/static/media/bigUnderline.e944bd75372ede03df6e34b6e6003df4.svg",
     "index.html": "/metamodern-website/index.html",
     "static/media/underline.svg": "/metamodern-website/static/media/underline.58356ea0570d3750e925e23c5095f369.svg",
-    "main.dc21f273.css.map": "/metamodern-website/static/css/main.dc21f273.css.map",
-    "main.ab8e5c76.js.map": "/metamodern-website/static/js/main.ab8e5c76.js.map",
+    "main.17ce2bf2.css.map": "/metamodern-website/static/css/main.17ce2bf2.css.map",
+    "main.185f3e2f.js.map": "/metamodern-website/static/js/main.185f3e2f.js.map",
     "787.42db63fd.chunk.js.map": "/metamodern-website/static/js/787.42db63fd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc21f273.css",
-    "static/js/main.ab8e5c76.js"
+    "static/css/main.17ce2bf2.css",
+    "static/js/main.185f3e2f.js"
   ]
 }
