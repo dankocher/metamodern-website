@@ -6,8 +6,6 @@ import { SCREENS } from "../../navigation/constants";
 import { useModalMenuContext } from "../../context/useModalMenuContext";
 
 import logo from "../../assets/images/logo.png";
-import menuClose from "../../assets/images/close.png";
-import menuLogo from "../../assets/images/menuLogo.png";
 
 import Menu from "../Menu";
 import { IconButton, IconLink } from "../ActiveIcon";
@@ -32,10 +30,7 @@ const Header = () => {
 
       <IconLink icon={logo} onClick={menuLogoHandler} />
 
-      <IconButton
-        icon={isVisible ? menuClose : menuLogo}
-        onClick={openModalMenu}
-      />
+      <IconButton onClick={openModalMenu} />
     </div>
   );
 };

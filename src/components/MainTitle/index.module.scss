@@ -67,11 +67,16 @@
       color: $mainBlack;
     }
 
-    h2 {
+    &__subtext {
       position: absolute;
 
       top: autoResize(72px, 126px, $landscape1200) !important;
       right: 0;
+
+      text-align: right;
+      color: $white;
+
+      -webkit-text-stroke: 2px $mainBlack;
 
       @media (max-width: $landscape1133) {
         top: autoResize(68px, 72px, $landscape800, $landscape1133) !important;
@@ -81,10 +86,13 @@
         top: autoResize(27px, 68px, $landscape320, $landscape800) !important;
       }
 
-      text-align: right;
-      color: $white;
-
-      -webkit-text-stroke: 2px $mainBlack;
+      img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        max-width: 100%;
+        height: auto;
+      }
     }
 
     span {

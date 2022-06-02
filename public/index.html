@@ -10,10 +10,7 @@
       content="Web site created using create-react-app"
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
+
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
     <title>MetaModern</title>
@@ -30,6 +27,7 @@
       as="font"
       crossorigin="anonymous"
     />
+
     <!-- <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/Gilroy/Gilroy-Regular.ttf"
@@ -57,6 +55,34 @@
     <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/Lato/Lato-Black.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Inter/Inter-Black.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Inter/Inter-SemiBold.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Inter/Inter-Medium.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Inter/Inter-Regular.ttf"
       as="font"
       crossorigin="anonymous"
     />
@@ -112,6 +138,41 @@
         font-weight: 600;
       }
 
+      @font-face {
+        font-family: "Inter";
+        src: local("Inter"), local("InterBlack"), local("Inter-Black"),
+          local("Inter Black"), url("%PUBLIC_URL%/fonts/Inter/Inter-Black.ttf");
+
+        font-weight: 900;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: local("Inter"), local("InterSemiBold"), local("Inter-SemiBold"),
+          local("Inter SemiBold"),
+          url("%PUBLIC_URL%/fonts/Inter/Inter-SemiBold.ttf");
+
+        font-weight: 600;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: local("Inter"), local("InterMedium"), local("Inter-Medium"),
+          local("Inter Medium"),
+          url("%PUBLIC_URL%/fonts/Inter/Inter-Medium.ttf");
+
+        font-weight: 500;
+      }
+
+      @font-face {
+        font-family: "Inter";
+        src: local("Inter"), local("InterRegular"), local("Inter-Regular"),
+          local("Inter Regular"),
+          url("%PUBLIC_URL%/fonts/Inter/Inter-Regular.ttf");
+
+        font-weight: 400;
+      }
+
       /* @font-face {
         font-family: "Lato";
         src: local("Lato"), url("%PUBLIC_URL%/fonts/Lato/Lato-Black.ttf");
@@ -122,15 +183,5 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
   </body>
 </html>

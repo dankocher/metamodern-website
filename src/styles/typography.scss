@@ -95,6 +95,95 @@
   font-size: autoResize(52px, 82px, $landscape320, $landscape800) !important;
   line-height: autoResize(65px, 103px, $landscape320, $landscape800) !important;
 }
+
+//Projects
+
+.interBlack2436 {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 44px;
+  font-size: autoResize(24px, 36px, $landscape1133) !important;
+  line-height: autoResize(32px, 44px, $landscape1133) !important;
+
+  @media (max-width: $landscape1132) {
+    font-size: autoResize(16px, 36px, $landscape320, $landscape1132) !important;
+    line-height: autoResize(
+      20px,
+      44px,
+      $landscape320,
+      $landscape1132
+    ) !important;
+  }
+}
+
+.interSemiBold2436 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  font-size: autoResize(24px, 36px, $landscape1133) !important;
+  line-height: autoResize(32px, 44px, $landscape1133) !important;
+
+  @media (max-width: $landscape1132) {
+    font-size: autoResize(16px, 36px, $landscape320, $landscape1132) !important;
+    line-height: autoResize(
+      20px,
+      44px,
+      $landscape320,
+      $landscape1132
+    ) !important;
+  }
+}
+
+.interMedium1216 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  font-size: autoResize(12px, 16px, $landscape1133) !important;
+  line-height: autoResize(14px, 20px, $landscape1133) !important;
+
+  @media (max-width: $landscape1132) {
+    font-size: autoResize(
+      12px,
+      16px,
+      $maxVisibleWidth,
+      $landscape1132
+    ) !important;
+    line-height: autoResize(
+      14px,
+      20px,
+      $maxVisibleWidth,
+      $landscape1132
+    ) !important;
+  }
+}
+
+.interRegular1216 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  font-size: autoResize(12px, 16px, $landscape1133) !important;
+  line-height: autoResize(16px, 22px, $landscape1133) !important;
+
+  @media (max-width: $landscape1132) {
+    font-size: autoResize(
+      12px,
+      16px,
+      $maxVisibleWidth,
+      $landscape1132
+    ) !important;
+    line-height: autoResize(
+      16px,
+      22px,
+      $maxVisibleWidth,
+      $landscape1132
+    ) !important;
+  }
+}
+
 //Footer
 
 .footerMainFont {

@@ -5,6 +5,7 @@ import Image from "../../Image";
 import { ProjectProps } from "./project.interface";
 
 const Project: FC<ProjectProps> = ({
+  name,
   title,
   description,
   tags,
@@ -20,8 +21,11 @@ const Project: FC<ProjectProps> = ({
           style={{ color: isDarkContent ? colors.dark : colors.light }}
           className={styles.content}
         >
-          <h6>{title}</h6>
-          <div className={styles.content__tags}>
+          <div className={styles.content__title}>
+            <h6 className="interBlack2436">{name}</h6>
+            <h6 className="interSemiBold2436">&nbsp;{`- ${title}`}</h6>
+          </div>
+          <div className={`interMedium1216 ${styles.content__tags}`}>
             {tags.map((tag) => (
               <div
                 style={{
@@ -32,7 +36,7 @@ const Project: FC<ProjectProps> = ({
               </div>
             ))}
           </div>
-          <p>{description}</p>
+          <p className="interRegular1216">{description}</p>
         </div>
       </div>
       <Image src={bgImage.x1} images={bgImage} alt={`${title} background`} />

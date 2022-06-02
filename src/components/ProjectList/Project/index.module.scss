@@ -1,7 +1,5 @@
 @import "../../../styles/foundations.scss";
 
-$maxVisibleWidth: 566.5px;
-
 .container {
   position: relative;
 
@@ -36,9 +34,13 @@ $maxVisibleWidth: 566.5px;
       margin-left: autoResize(16.81px, 56px, $landscape320, $landscape1132);
       margin-right: autoResize(13px, 56px, $landscape384, $landscape1132);
     }
-
-    h6 {
+    &__title {
+      // display: flex;
       margin-bottom: autoResize(15px, 20px, $landscape1133);
+
+      h6 {
+        display: inline;
+      }
 
       @media (max-width: $landscape1132) {
         margin-bottom: autoResize(15px, 20px, $maxVisibleWidth, $landscape1132);
