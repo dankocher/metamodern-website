@@ -9,6 +9,8 @@
   right: 0;
   left: 0;
 
+  min-height: 100vh;
+
   overflow: hidden;
   transition: left 350ms ease-in;
   background-color: $white;
@@ -19,22 +21,14 @@
     display: flex;
     flex-direction: column;
 
-    margin-top: autoResize(286px, 342px, $landscape320, $landscape800);
+    // margin-top: autoResize(286px, 342px, $landscape320, $landscape800);
     margin-left: autoResize(24px, 96px, $landscape320, $landscape800);
   }
 
-  .header {
-    position: absolute;
-    display: flex;
-
-    justify-content: space-between;
-
-    width: 100%;
-
-    margin-top: 40px;
-  }
-
   @media (max-width: $landscape800) {
-    display: block;
+    // display: block;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
   }
 }
