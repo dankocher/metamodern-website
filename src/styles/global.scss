@@ -11,10 +11,17 @@
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
+  height: 100%;
+
+  position: relative;
+
   overflow-y: auto;
   overflow-x: hidden;
+}
 
+html {
   ::-webkit-scrollbar {
     width: 0;
     background: transparent;
@@ -25,7 +32,6 @@ html {
 }
 
 body {
-  overflow-x: hidden;
   text-rendering: optimizeSpeed;
 }
 

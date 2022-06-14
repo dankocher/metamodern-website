@@ -17,6 +17,9 @@ const ModalMenu = () => {
     document.getElementsByTagName("html")[0].style.overflowY = isVisible
       ? "hidden"
       : "auto";
+    document.getElementsByTagName("body")[0].style.overflowY = isVisible
+      ? "hidden"
+      : "auto";
   }, [isVisible]);
 
   return (
