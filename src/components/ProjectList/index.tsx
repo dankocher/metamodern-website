@@ -1,15 +1,16 @@
-import styles from "./index.module.scss";
+import styles from './index.module.scss';
 
-import Project from "./Project";
+import Project from './Project';
 
-import { data } from "../../data/projectData";
+import { data } from '../../data/projectData';
 
 const ProjectList = () => {
   return (
     <div className={styles.container}>
       {data.map(
-        ({ name, title, description, tags, bgImage, isDarkContent }) => (
+        ({ name, title, description, tags, bgImage, isDarkContent }, index) => (
           <Project
+            key={`Project-${name}-${index}`}
             name={name}
             title={title}
             description={description}

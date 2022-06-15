@@ -1,22 +1,20 @@
-import styles from "./index.module.scss";
+import styles from './index.module.scss';
 
-import { useNavigate } from "react-router-dom";
-import { SCREENS } from "../../navigation/constants";
+import { SCREENS } from '../../navigation/constants';
 
-import { useModalMenuContext } from "../../context/useModalMenuContext";
+import { useModalMenuContext } from '../../context/useModalMenuContext';
 
-import logo from "../../assets/images/logo.png";
+import logo from '../../assets/images/logo.png';
 
-import Menu from "../Menu";
-import { IconButton, IconLink } from "../ActiveIcon";
+import Menu from '../Menu';
+import { IconButton, IconLink } from '../ActiveIcon';
 
 const Header = () => {
   const { isVisible, setIsVisible } = useModalMenuContext();
 
-  const navigate = useNavigate();
+  const altMainLogo = 'MetaModernLogo';
 
   const menuLogoHandler = () => {
-    navigate(SCREENS.HOME);
     if (isVisible) {
       setIsVisible(false);
     }
@@ -28,7 +26,12 @@ const Header = () => {
     <div className={styles.container}>
       <Menu />
 
-      <IconLink icon={logo} onClick={menuLogoHandler} />
+      <IconLink
+        icon={logo}
+        alt={altMainLogo}
+        link={SCREENS.HOME}
+        onClick={menuLogoHandler}
+      />
 
       <IconButton onClick={openModalMenu} />
     </div>

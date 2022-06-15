@@ -1,8 +1,8 @@
-import styles from "./index.module.scss";
-import { FC } from "react";
+import styles from './index.module.scss';
+import { FC } from 'react';
 
-import Image from "../../Image";
-import { ProjectProps } from "./project.interface";
+import Image from '../../Image';
+import { ProjectProps } from './project.interface';
 
 const Project: FC<ProjectProps> = ({
   name,
@@ -11,11 +11,12 @@ const Project: FC<ProjectProps> = ({
   tags,
   bgImage,
   isDarkContent,
+  ...props
 }) => {
-  const colors = { dark: "#242424", light: "#FFFFFF" };
+  const colors = { dark: '#242424', light: '#FFFFFF' };
 
   return (
-    <div className={styles.container}>
+    <div {...props} className={styles.container}>
       <div className={styles.content_wrapper}>
         <div
           style={{ color: isDarkContent ? colors.dark : colors.light }}
@@ -26,8 +27,9 @@ const Project: FC<ProjectProps> = ({
             <h6 className="interSemiBold2436">&nbsp;{`- ${title}`}</h6>
           </div>
           <div className={`interMedium1216 ${styles.content__tags}`}>
-            {tags.map((tag) => (
+            {tags.map((tag, index) => (
               <div
+                key={`${tag}-${index}`}
                 style={{
                   borderColor: isDarkContent ? colors.dark : colors.light,
                 }}
