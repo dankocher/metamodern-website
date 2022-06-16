@@ -1,7 +1,6 @@
 import styles from './index.module.scss';
 
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
@@ -10,11 +9,10 @@ import { SCREENS } from '../../navigation/constants';
 import Item from './Item';
 
 import translation from '../../i18n/en.json';
-import OvalButton from '../OvalButton';
+import StartProjectButton from '../StartProjectButton';
 
 const ModalMenu = () => {
-  const { isVisible, setIsVisible } = useModalMenuContext();
-  const navigate = useNavigate();
+  const { isVisible } = useModalMenuContext();
 
   useEffect(() => {
     document.getElementsByTagName('html')[0].style.overflowY = isVisible
@@ -25,18 +23,10 @@ const ModalMenu = () => {
       : 'auto';
   }, [isVisible]);
 
-  const startButtonHandler = () => {
-    navigate(SCREENS.CONTACTS);
-    setIsVisible(false);
-  };
-
   return (
     <div style={{ left: isVisible ? 0 : '200%' }} className={styles.container}>
       <div className={styles.middleBtn_wrapper}>
-        <OvalButton
-          label={translation.startProject}
-          onClick={startButtonHandler}
-        />
+        <StartProjectButton />
       </div>
       <ul className="gilroyBlack82">
         <Item link={SCREENS.PORTFOLIO} title={translation.portfolio} />

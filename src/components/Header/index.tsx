@@ -1,26 +1,27 @@
 import styles from './index.module.scss';
 
-import { SCREENS } from '../../navigation/constants';
+import { useNavigate } from 'react-router-dom';
 
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
 import logo from '../../assets/images/logo.png';
 
 import Menu from '../Menu';
-import { IconButton, IconLink } from '../ActiveIcon';
-import OvalButton from '../OvalButton';
+import { IconMenuButton, IconButton } from '../ActiveIcon';
+import StartProjectButton from '../StartProjectButton';
 
-import translation from '../../i18n/en.json';
+import { SCREENS } from '../../navigation/constants';
 
 const Header = () => {
-  const { isVisible, setIsVisible } = useModalMenuContext();
+  const { setIsVisible } = useModalMenuContext();
+
+  const navigate = useNavigate();
 
   const altMainLogo = 'MetaModernLogo';
 
   const menuLogoHandler = () => {
-    if (isVisible) {
-      setIsVisible(false);
-    }
+    navigate(SCREENS.HOME);
+    setIsVisible(false);
   };
 
   const openModalMenu = () => setIsVisible((isVisible) => !isVisible);
@@ -29,18 +30,13 @@ const Header = () => {
     <div className={styles.container}>
       <Menu />
 
-      <IconLink
-        icon={logo}
-        alt={altMainLogo}
-        link={SCREENS.HOME}
-        onClick={menuLogoHandler}
-      />
+      <IconButton icon={logo} alt={altMainLogo} onClick={menuLogoHandler} />
 
       <div className={styles.middleBtn_wrapper}>
-        <OvalButton label={translation.startProject} />
+        <StartProjectButton />
       </div>
 
-      <IconButton onClick={openModalMenu} />
+      <IconMenuButton onClick={openModalMenu} />
     </div>
   );
 };

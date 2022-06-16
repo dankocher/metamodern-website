@@ -7,6 +7,8 @@
   height: 52px;
   width: 52px;
 
+  background: transparent;
+
   cursor: pointer;
 
   @media (max-width: $landscape800) {
@@ -23,7 +25,6 @@
 
 .menuLogo {
   display: none;
-  background: transparent;
 
   @media (max-width: $landscape800) {
     display: block;

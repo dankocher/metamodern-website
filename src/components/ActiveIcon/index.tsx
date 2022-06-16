@@ -6,23 +6,20 @@ import Lottie from 'react-lottie';
 
 import menuIcon from '../../assets/animations/menuIcon.json';
 import { useModalMenuContext } from '../../context/useModalMenuContext';
-import { SCREENS } from '../../navigation/constants';
-import { Link } from 'react-router-dom';
 
-export const IconLink: FC<{
+export const IconButton: FC<{
   alt: string;
   icon: string;
-  link: SCREENS;
   onClick?: () => void;
-}> = ({ alt, icon, link, onClick = () => {} }) => {
+}> = ({ alt, icon, onClick = () => {} }) => {
   return (
-    <Link className={styles.logo} to={link} onClick={onClick}>
+    <button className={styles.logo} onClick={onClick}>
       <img alt={alt} src={icon} />
-    </Link>
+    </button>
   );
 };
 
-export const IconButton: FC<{ onClick: () => void }> = ({ onClick }) => {
+export const IconMenuButton: FC<{ onClick: () => void }> = ({ onClick }) => {
   const { isVisible } = useModalMenuContext();
   const [animConfig, setAnimConfig] = useState({
     isStopped: false,

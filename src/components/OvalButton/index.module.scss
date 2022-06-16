@@ -1,8 +1,12 @@
 @import '../../styles/foundations.scss';
 
 .button {
+  position: relative;
+
   padding: 12px 20px;
-  background-color: transparent;
+
   border: 1px solid $mainBlack;
   border-radius: 24px;
+
+  background-color: transparent;
 }
