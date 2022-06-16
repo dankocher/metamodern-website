@@ -1,4 +1,4 @@
-@import "../../styles/foundations.scss";
+@import '../../styles/foundations.scss';
 
 .container {
   position: absolute;
@@ -9,5 +9,20 @@
   display: flex;
   justify-content: space-between;
 
-  padding-top: 40px;
+  padding: 40px 64px 0;
+
+  @media (max-width: $landscape1133) {
+    padding: 40px autoResize(44px, 64px, $landscape800, $landscape1133) 0 !important;
+  }
+
+  @media (max-width: $landscape800) {
+    padding: autoResize(36px, 40px, $landscape384, $landscape800)
+      autoResize(24px, 44px, $landscape384, $landscape800) 0 !important;
+  }
+}
+
+.middleBtn_wrapper {
+  @media (max-width: $landscape800) {
+    display: none;
+  }
 }

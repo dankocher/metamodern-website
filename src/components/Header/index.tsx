@@ -8,6 +8,9 @@ import logo from '../../assets/images/logo.png';
 
 import Menu from '../Menu';
 import { IconButton, IconLink } from '../ActiveIcon';
+import OvalButton from '../OvalButton';
+
+import translation from '../../i18n/en.json';
 
 const Header = () => {
   const { isVisible, setIsVisible } = useModalMenuContext();
@@ -32,6 +35,10 @@ const Header = () => {
         link={SCREENS.HOME}
         onClick={menuLogoHandler}
       />
+
+      <div className={styles.middleBtn_wrapper}>
+        <OvalButton label={translation.startProject} />
+      </div>
 
       <IconButton onClick={openModalMenu} />
     </div>

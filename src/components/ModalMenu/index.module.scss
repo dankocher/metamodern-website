@@ -1,4 +1,4 @@
-@import "../../styles/foundations.scss";
+@import '../../styles/foundations.scss';
 
 .container {
   display: none;
@@ -26,5 +26,22 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+  }
+}
+
+.middleBtn_wrapper {
+  width: 100%;
+  display: flex;
+  align-self: self-start;
+  justify-content: center;
+
+  @media (max-width: $landscape800) {
+    padding: autoResize(36px, 40px, $landscape384, $landscape800)
+      autoResize(24px, 44px, $landscape384, $landscape800) 0 !important;
+  }
+
+  @media (max-width: 420px) {
+    align-self: self-end;
+    margin-bottom: 64px;
   }
 }
