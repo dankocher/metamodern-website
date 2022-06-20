@@ -1,13 +1,15 @@
 // import styles from "./index.module.scss";
+import { useRef } from 'react';
 
-import MainTitle from "../../components/MainTitle";
-import ProjectList from "../../components/ProjectList";
+import MainTitle from '../../components/MainTitle';
+import ProjectList from '../../components/ProjectList';
 
 const Home = () => {
+  const portfolioRef = useRef(null);
   return (
     <>
-      <MainTitle />
-      <ProjectList />
+      <MainTitle portfolioRef={portfolioRef} />
+      <ProjectList portfolioRef={portfolioRef} />
     </>
   );
 };

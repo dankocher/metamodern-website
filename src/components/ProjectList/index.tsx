@@ -4,9 +4,9 @@ import Project from './Project';
 
 import { data } from '../../data/projectData';
 
-const ProjectList = () => {
+const ProjectList = ({ portfolioRef }) => {
   return (
-    <div className={styles.container}>
+    <div ref={portfolioRef} className={styles.container}>
       {data.map(
         ({ name, title, description, tags, bgImage, isDarkContent }, index) => (
           <Project

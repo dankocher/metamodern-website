@@ -1,17 +1,18 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Header from "../components/Header";
-import AboutUs from "../screens/AboutUs";
-import Contacts from "../screens/Contacts";
-import Home from "../screens/Home";
-import Portfolio from "../screens/Portfolio";
-import ModalMenu from "../components/ModalMenu";
+import Header from '../components/Header';
+import AboutUs from '../screens/AboutUs';
+import Contacts from '../screens/Contacts';
+import Home from '../screens/Home';
+import Portfolio from '../screens/Portfolio';
+import ModalMenu from '../components/ModalMenu';
 
-import { SCREENS } from "./constants";
+import { SCREENS } from './constants';
+import ScrollToTop from './ScrollToTop';
 
 const Navigation = () => {
   return (
-    <div>
+    <ScrollToTop>
       <Routes>
         <Route path={SCREENS.HOME} element={<Home />}></Route>
         <Route path={SCREENS.PORTFOLIO} element={<Portfolio />} />
@@ -21,7 +22,7 @@ const Navigation = () => {
       </Routes>
       <ModalMenu />
       <Header />
-    </div>
+    </ScrollToTop>
   );
 };
 

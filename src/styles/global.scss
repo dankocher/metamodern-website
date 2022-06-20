@@ -1,4 +1,4 @@
-@import "./typography.scss";
+@import './typography.scss';
 
 * {
   padding: 0;
@@ -27,7 +27,9 @@ html {
     background: transparent;
   }
 
-  background-image: url("../assets/images/background.png");
+  scroll-behavior: smooth;
+
+  background-image: url('../assets/images/background.png');
   background-repeat: repeat;
 }
 

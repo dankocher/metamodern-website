@@ -30,6 +30,7 @@ export const IconMenuButton: FC<{ onClick: () => void }> = ({ onClick }) => {
     loop: false,
     autoplay: false,
     animationData: menuIcon,
+    ariaLabel: 'open menu',
     rendererSettings: {
       preserveAspectRatio: 'xMidYMid slice',
     },

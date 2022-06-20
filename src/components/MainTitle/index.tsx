@@ -1,9 +1,29 @@
-import styles from "./index.module.scss";
-import translate from "../../i18n/en.json";
+import styles from './index.module.scss';
 
-import underline from "../../assets/svg/bigUnderline.svg";
+import { useState } from 'react';
 
-const MainTitle = () => {
+import Lottie from 'react-lottie';
+
+import ourAppAnimation from '../../assets/animations/ourApp.json';
+
+import underline from '../../assets/svg/bigUnderline.svg';
+import translate from '../../i18n/en.json';
+
+const MainTitle = ({ portfolioRef }) => {
+  const [isHovering, setIsHovering] = useState(false);
+
+  const alt = Object.keys({ underline })[0];
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: false,
+    animationData: ourAppAnimation,
+    ariaLabel: 'navigate to our App',
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice',
+    },
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -12,13 +32,33 @@ const MainTitle = () => {
         <div className={styles.content__subtext}>
           <h2 className="bebasNeue288">
             {translate.design}
-            <img src={underline} />
+            <img src={underline} alt={alt} />
           </h2>
         </div>
         <span className="latoSemibold2230">
           {translate.mainTitleDescription}
         </span>
       </div>
+      <button
+        className={styles.ourAppBtn}
+        onClick={() =>
+          portfolioRef?.current?.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+          })
+        }
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        <Lottie
+          options={defaultOptions}
+          height={'100%'}
+          width={'100%'}
+          isStopped={false}
+          isPaused={!isHovering}
+          isClickToPauseDisabled={true}
+        />
+      </button>
     </div>
   );
 };
