@@ -16,7 +16,7 @@ const MainTitle = ({ portfolioRef }) => {
 
   const defaultOptions = {
     loop: true,
-    autoplay: false,
+    autoplay: true,
     animationData: ourAppAnimation,
     ariaLabel: 'navigate to our App',
     rendererSettings: {
@@ -55,7 +55,7 @@ const MainTitle = ({ portfolioRef }) => {
           height={'100%'}
           width={'100%'}
           isStopped={false}
-          isPaused={!isHovering}
+          isPaused={isHovering}
           isClickToPauseDisabled={true}
         />
       </button>
