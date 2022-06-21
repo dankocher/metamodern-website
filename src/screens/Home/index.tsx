@@ -1,4 +1,3 @@
-// import styles from "./index.module.scss";
 import { useRef } from 'react';
 
 import MainTitle from '../../components/MainTitle';
