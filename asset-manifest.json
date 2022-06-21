@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/metamodern-website/static/css/main.1dea8f28.css",
-    "main.js": "/metamodern-website/static/js/main.096da4b8.js",
+    "main.js": "/metamodern-website/static/js/main.019cdb38.js",
     "static/js/787.42db63fd.chunk.js": "/metamodern-website/static/js/787.42db63fd.chunk.js",
     "static/media/truthOrDare@3x.png": "/metamodern-website/static/media/truthOrDare@3x.5fb48c12da398c3722c7.png",
     "static/media/truthOrDare@2x.png": "/metamodern-website/static/media/truthOrDare@2x.e510a359062c5522c268.png",
@@ -13,11 +13,11 @@
     "index.html": "/metamodern-website/index.html",
     "static/media/underline.svg": "/metamodern-website/static/media/underline.58356ea0570d3750e925e23c5095f369.svg",
     "main.1dea8f28.css.map": "/metamodern-website/static/css/main.1dea8f28.css.map",
-    "main.096da4b8.js.map": "/metamodern-website/static/js/main.096da4b8.js.map",
+    "main.019cdb38.js.map": "/metamodern-website/static/js/main.019cdb38.js.map",
     "787.42db63fd.chunk.js.map": "/metamodern-website/static/js/787.42db63fd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1dea8f28.css",
-    "static/js/main.096da4b8.js"
+    "static/js/main.019cdb38.js"
   ]
 }
