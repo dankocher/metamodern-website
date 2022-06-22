@@ -13,6 +13,7 @@ import ScrollToTop from './ScrollToTop';
 const Navigation = () => {
   return (
     <ScrollToTop>
+      <Header />
       <Routes>
         <Route path={SCREENS.HOME} element={<Home />}></Route>
         <Route path={SCREENS.PORTFOLIO} element={<Portfolio />} />
@@ -21,7 +22,6 @@ const Navigation = () => {
         <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
       </Routes>
       <ModalMenu />
-      <Header />
     </ScrollToTop>
   );
 };

@@ -1,0 +1,21 @@
+@import '../../styles/foundations.scss';
+
+.container {
+  margin-top: 88px;
+  margin-left: 240px;
+
+  .header {
+    color: $mainBlack;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+
+    @media (max-width: $landscape800) {
+      margin-bottom: autoResize(
+        20px,
+        28px,
+        $landscape384,
+        $landscape800
+      ) !important;
+    }
+  }
+}

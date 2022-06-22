@@ -8,5 +8,13 @@
   border: 1px solid $mainBlack;
   border-radius: 24px;
 
+  color: $mainBlack;
+
   background-color: transparent;
+}
+
+.selected {
+  color: $white;
+
+  background-color: $mainBlack;
 }

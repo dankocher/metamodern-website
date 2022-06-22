@@ -1,7 +1,8 @@
 // import styles from "./index.module.scss";
+import PortfolioTableOfContents from '../../components/PortfolioTableOfContents';
 
 const Portfolio = () => {
-  return <div>Portfolio</div>;
+  return <PortfolioTableOfContents />;
 };
 
 export default Portfolio;

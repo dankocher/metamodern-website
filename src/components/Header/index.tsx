@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
@@ -13,11 +13,15 @@ import StartProjectButton from '../StartProjectButton';
 import { SCREENS } from '../../navigation/constants';
 
 const Header = () => {
+  const location = useLocation();
+
   const { setIsVisible } = useModalMenuContext();
 
   const navigate = useNavigate();
 
   const altMainLogo = 'MetaModernLogo';
+
+  const isHomePage = () => location.pathname === SCREENS.HOME;
 
   const menuLogoHandler = () => {
     navigate(SCREENS.HOME);
@@ -27,7 +31,10 @@ const Header = () => {
   const openModalMenu = () => setIsVisible((isVisible) => !isVisible);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ position: isHomePage() ? 'absolute' : 'relative' }}
+    >
       <Menu />
 
       <IconButton icon={logo} alt={altMainLogo} onClick={menuLogoHandler} />

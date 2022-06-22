@@ -3,11 +3,17 @@ import styles from './index.module.scss';
 import { FC } from 'react';
 
 const OvalButton: FC<{
+  selected?: boolean;
   label: string;
   onClick?: () => void;
-}> = ({ label, onClick = () => {} }) => {
+}> = ({ selected = false, label, onClick = () => {} }) => {
   return (
-    <button className={`latoSemibold2028 ${styles.button}`} onClick={onClick}>
+    <button
+      className={`latoSemibold2028 ${styles.button} ${
+        selected ? styles.selected : ''
+      }`}
+      onClick={onClick}
+    >
       {label}
     </button>
   );
