@@ -1,8 +1,25 @@
 // import styles from "./index.module.scss";
-import PortfolioTableOfContents from '../../components/PortfolioTableOfContents';
+import { useState } from 'react';
+
+import { ProjectTypes } from '../../constants/projectTypes';
+
+import PortfolioOptions from '../../components/PortfolioOptions';
+import ProjectList from '../../components/ProjectList';
 
 const Portfolio = () => {
-  return <PortfolioTableOfContents />;
+  const [currentFilter, setCurrentFilter] = useState<ProjectTypes>(
+    ProjectTypes.ALL
+  );
+
+  return (
+    <>
+      <PortfolioOptions
+        currentFilter={currentFilter}
+        setCurrentFilter={setCurrentFilter}
+      />
+      <ProjectList currentFilter={currentFilter} />
+    </>
+  );
 };
 
 export default Portfolio;

@@ -4,17 +4,21 @@ import { FC } from 'react';
 
 import OvalButton from '../OvalButton';
 
-import translation from '../../i18n/en.json';
+import { ProjectTypes } from '../../constants/projectTypes';
 
 const FilterList: FC<{
-  //   label: string;
-  //   onClick?: () => void;
-}> = () => {
+  currentFilter: ProjectTypes;
+  setCurrentFilter: React.Dispatch<React.SetStateAction<ProjectTypes>>;
+}> = ({ currentFilter, setCurrentFilter }) => {
   return (
     <div className={styles.container}>
-      <OvalButton selected={true} label="All projects" />
-      <OvalButton label="CRM" />
-      <OvalButton label="FBI" />
+      {Object.keys(ProjectTypes).map((item) => (
+        <OvalButton
+          selected={currentFilter === ProjectTypes[item]}
+          label={ProjectTypes[item]}
+          onClick={() => setCurrentFilter(ProjectTypes[item])}
+        />
+      ))}
     </div>
   );
 };

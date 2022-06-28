@@ -1,4 +1,4 @@
-@import "../../styles/foundations.scss";
+@import '../../styles/foundations.scss';
 
 .container {
   width: 100vw;
@@ -7,5 +7,13 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  // justify-content: flex-start;
+
   margin-top: 36px;
+
+  // padding: 0 autoResize(40px, 56px, $landscapeFHD, $landscape4k);
+
+  // @media (max-width: $landscape1132) {
+  //   justify-content: center;
+  // }
 }
