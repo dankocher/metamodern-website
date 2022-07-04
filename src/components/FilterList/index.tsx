@@ -1,22 +1,25 @@
 import styles from './index.module.scss';
 
-import { FC } from 'react';
-
 import OvalButton from '../OvalButton';
 
-import { ProjectTypes } from '../../constants/projectTypes';
+interface FilterListProps<T extends string> {
+  filterList: { [key in T]: string };
+  currentFilterList: T[];
+  setCurrentFilterList: React.Dispatch<React.SetStateAction<T>>;
+}
 
-const FilterList: FC<{
-  currentFilter: ProjectTypes;
-  setCurrentFilter: React.Dispatch<React.SetStateAction<ProjectTypes>>;
-}> = ({ currentFilter, setCurrentFilter }) => {
+const FilterList = <T extends string>({
+  filterList,
+  currentFilterList,
+  setCurrentFilterList,
+}: FilterListProps<T>) => {
   return (
     <div className={styles.container}>
-      {Object.keys(ProjectTypes).map((item) => (
+      {Object.keys(filterList).map((key) => (
         <OvalButton
-          selected={currentFilter === ProjectTypes[item]}
-          label={ProjectTypes[item]}
-          onClick={() => setCurrentFilter(ProjectTypes[item])}
+          selected={currentFilterList.some((item) => item === key)}
+          label={filterList[key]}
+          onClick={() => setCurrentFilterList(key as T)}
         />
       ))}
     </div>

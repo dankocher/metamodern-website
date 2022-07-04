@@ -1,7 +1,15 @@
-// import styles from "./index.module.scss";
+import styles from './index.module.scss';
 
-const Contacts = () => {
-  return <div>Contacts</div>;
+import Contacts from '../../components/Contacts';
+import Brief from '../../components/Brief';
+
+const ContactsScreen = () => {
+  return (
+    <div className={styles.container}>
+      <Contacts />
+      <Brief />
+    </div>
+  );
 };
 
-export default Contacts;
+export default ContactsScreen;

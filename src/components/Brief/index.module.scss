@@ -1,0 +1,16 @@
+@import '../../styles/foundations.scss';
+
+.container {
+  flex: 1;
+  background-color: brown;
+
+  padding-left: autoResize(44px, 64px, $landscape800, $landscapeFHD);
+
+  @media (min-width: $landscapeFHD) {
+    padding-left: 3.333%;
+  }
+
+  h5 {
+    margin-bottom: autoResize(16px, 32px, $landscape384, $landscape800);
+  }
+}

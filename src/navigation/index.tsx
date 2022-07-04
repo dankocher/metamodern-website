@@ -2,9 +2,9 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 import Header from '../components/Header';
 import AboutUs from '../screens/AboutUs';
-import Contacts from '../screens/Contacts';
+import ContactsScreen from '../screens/Contacts';
 import Home from '../screens/Home';
-import Portfolio from '../screens/Portfolio';
+import PortfolioScreen from '../screens/Portfolio';
 import ModalMenu from '../components/ModalMenu';
 
 import { SCREENS } from './constants';
@@ -16,9 +16,9 @@ const Navigation = () => {
       <Header />
       <Routes>
         <Route path={SCREENS.HOME} element={<Home />}></Route>
-        <Route path={SCREENS.PORTFOLIO} element={<Portfolio />} />
+        <Route path={SCREENS.PORTFOLIO} element={<PortfolioScreen />} />
         <Route path={SCREENS.ABOUT_US} element={<AboutUs />} />
-        <Route path={SCREENS.CONTACTS} element={<Contacts />} />
+        <Route path={SCREENS.CONTACTS} element={<ContactsScreen />} />
         <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
       </Routes>
       <ModalMenu />

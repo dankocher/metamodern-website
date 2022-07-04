@@ -1,6 +1,13 @@
-export enum ProjectTypes {
-  ALL = 'All projects',
-  MOBILE = 'Mobile app',
+export enum ProjectsTypes {
+  ALL = 'ALL',
+  MOBILE = 'MOBILE',
   CRM = 'CRM',
-  LANDING = 'Landing',
+  LANDING = 'LANDING',
 }
+
+export const projectsTypes = {
+  ALL: 'All projects',
+  MOBILE: 'Mobile app',
+  CRM: 'CRM',
+  LANDING: 'Landing',
+};

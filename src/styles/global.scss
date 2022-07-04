@@ -37,6 +37,10 @@ body {
   text-rendering: optimizeSpeed;
 }
 
+#root {
+  height: 100%;
+}
+
 img {
   user-select: none;
 }

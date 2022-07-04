@@ -1,0 +1,17 @@
+@import '../../styles/foundations.scss';
+
+.container {
+  display: flex;
+
+  margin-top: 92px;
+
+  color: $secondBlack;
+
+  @media (max-width: $landscape1200) {
+    flex-direction: column-reverse;
+  }
+
+  h2 {
+    margin-bottom: autoResize(20px, 68px, $landscape384, $landscape800);
+  }
+}

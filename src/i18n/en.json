@@ -5,5 +5,10 @@
   "portfolio": "Portfolio",
   "aboutUs": "About Us",
   "contacts": "Contacts",
-  "startProject": "Start project"
+  "startProject": "Start project",
+  "telegram": "Telegram:",
+  "email": "E-mail:",
+  "fillBrief": "Fill out the brief",
+  "whatServices": "What services do you need:",
+  "writeAboutProject": "Write a few words about the project:"
 }

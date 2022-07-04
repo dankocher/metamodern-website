@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { ProjectTypes } from '../../constants/projectTypes';
+import { ProjectsTypes } from '../../constants/projectTypes';
 
 import Project from './Project';
 
@@ -8,7 +8,7 @@ import { data } from '../../data/projectData';
 
 const ProjectList = ({
   portfolioRef = null,
-  currentFilter = ProjectTypes.ALL,
+  currentFilter = ProjectsTypes.ALL,
 }) => {
   return (
     <div ref={portfolioRef} className={styles.container}>
@@ -17,7 +17,7 @@ const ProjectList = ({
           { type, name, title, description, tags, bgImage, isDarkContent },
           index
         ) =>
-          (currentFilter === type || currentFilter === ProjectTypes.ALL) && (
+          (currentFilter === type || currentFilter === ProjectsTypes.ALL) && (
             <Project
               key={`Project-${name}-${index}`}
               name={name}

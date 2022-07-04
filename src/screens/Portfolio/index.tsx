@@ -1,25 +1,37 @@
-// import styles from "./index.module.scss";
+import styles from './index.module.scss';
+
 import { useState } from 'react';
 
-import { ProjectTypes } from '../../constants/projectTypes';
+import { ProjectsTypes, projectsTypes } from '../../constants/projectTypes';
 
-import PortfolioOptions from '../../components/PortfolioOptions';
 import ProjectList from '../../components/ProjectList';
+import FilterList from '../../components/FilterList';
 
-const Portfolio = () => {
-  const [currentFilter, setCurrentFilter] = useState<ProjectTypes>(
-    ProjectTypes.ALL
-  );
+import translation from '../../i18n/en.json';
+
+const PortfolioScreen = () => {
+  const [currentFilterList, setCurrentFilterList] = useState<ProjectsTypes[]>([
+    ProjectsTypes.ALL,
+  ]);
+
+  const [currentFilter] = currentFilterList;
+  const setCurrentFilterListHandler = (item) => setCurrentFilterList([item]);
 
   return (
     <>
-      <PortfolioOptions
-        currentFilter={currentFilter}
-        setCurrentFilter={setCurrentFilter}
-      />
+      <div className={styles.container}>
+        <h2 className={`bebasNeue132 ${styles.header}`}>
+          {translation.portfolio}
+        </h2>
+        <FilterList
+          filterList={projectsTypes}
+          currentFilterList={currentFilterList}
+          setCurrentFilterList={setCurrentFilterListHandler}
+        />
+      </div>
       <ProjectList currentFilter={currentFilter} />
     </>
   );
 };
 
-export default Portfolio;
+export default PortfolioScreen;

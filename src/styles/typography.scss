@@ -184,6 +184,24 @@
   }
 }
 
+.interMedium2432 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  font-size: autoResize(24px, 32px, $landscape384, $landscape800) !important;
+  line-height: autoResize(32px, 40px, $landscape384, $landscape800) !important;
+}
+
+.interRegular2024 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  font-size: autoResize(20px, 24px, $landscape384, $landscape800) !important;
+  line-height: autoResize(24px, 36px, $landscape384, $landscape800) !important;
+}
+
 .interRegular1216 {
   font-family: 'Inter', sans-serif;
   font-weight: 400;

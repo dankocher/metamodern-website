@@ -1,5 +1,5 @@
 import { ProjectProps } from '../components/ProjectList/Project/project.interface';
-import { ProjectTypes } from '../constants/projectTypes';
+import { ProjectsTypes } from '../constants/projectTypes';
 
 import timeZo from '../assets/images/timeZo.png';
 import timeZo2 from '../assets/images/timeZo@2x.png';
@@ -10,7 +10,7 @@ import truthOrDare3 from '../assets/images/truthOrDare@3x.png';
 
 const data: ProjectProps[] = [
   {
-    type: ProjectTypes.MOBILE,
+    type: ProjectsTypes.MOBILE,
     name: '”Правда или действие”',
     title: 'приложени имитации игры',
     description:
@@ -21,7 +21,7 @@ const data: ProjectProps[] = [
     isDarkContent: false,
   },
   {
-    type: ProjectTypes.MOBILE,
+    type: ProjectsTypes.MOBILE,
     name: 'TimeZo',
     title: 'конвертор временных зон',
     description:
@@ -31,7 +31,7 @@ const data: ProjectProps[] = [
     isDarkContent: true,
   },
   {
-    type: ProjectTypes.LANDING,
+    type: ProjectsTypes.LANDING,
     name: '”Правда или действие”',
     title: 'приложени имитации игры',
     description:

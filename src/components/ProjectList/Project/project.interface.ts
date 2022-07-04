@@ -1,8 +1,8 @@
 import { ImageSizes } from '../../Image/image.interface';
-import { ProjectTypes } from '../../../constants/projectTypes';
+import { ProjectsTypes } from '../../../constants/projectTypes';
 
 export interface ProjectProps {
-  type?: ProjectTypes;
+  type?: ProjectsTypes;
   name: string;
   title: string;
   description: string;
