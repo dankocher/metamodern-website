@@ -1,7 +1,13 @@
-// import styles from "./index.module.scss";
+import styles from './index.module.scss';
+
+import MInput from '../../components/MInput';
 
 const AboutUs = () => {
-  return <div>AboutUs</div>;
+  return (
+    <div className={styles.container}>
+      <MInput label='qwe'/>
+    </div>
+  );
 };
 
 export default AboutUs;

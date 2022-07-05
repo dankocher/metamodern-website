@@ -1,0 +1,19 @@
+@import '../../styles/foundations.scss';
+
+.container {
+  display: flex;
+
+  padding: 200px;
+
+  color: $secondBlack;
+
+  background-color: aquamarine;
+
+  @media (max-width: $landscape1200) {
+    flex-direction: column-reverse;
+  }
+
+  h2 {
+    margin-bottom: autoResize(20px, 68px, $landscape384, $landscape800);
+  }
+}

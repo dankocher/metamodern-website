@@ -1,0 +1,46 @@
+@import '../../styles/foundations.scss';
+
+.wrapper {
+  height: 72px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.container {
+  width: 100%;
+
+  position: relative;
+
+  padding-bottom: 10px;
+  border-bottom: 2px solid $secondBlack;
+  background-color: transparent;
+
+  input {
+    width: 100%;
+
+    background-color: inherit;
+
+    outline: none;
+
+    &:valid ~ span,
+    &:focus ~ span {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px !important;
+
+      transform: translateY(calc(-100% - 8px));
+      color: brown;
+    }
+  }
+
+  span {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    pointer-events: none;
+
+    transition: 0.5s;
+  }
+}

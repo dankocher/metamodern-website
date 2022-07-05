@@ -3,6 +3,7 @@ import styles from './index.module.scss';
 import { FC, useState } from 'react';
 
 import TagList from '../TagList';
+import MInput from '../MInput';
 
 import translate from '../../i18n/en.json';
 import { ServicesTypes, servicesTypes } from '../../constants/servicesTypes';
@@ -34,6 +35,7 @@ const Brief: FC<{}> = () => {
           setSelectedTagList={setCurrentServicesHandler}
         />
       </div>
+      {/* <MInput /> */}
     </div>
   );
 };
