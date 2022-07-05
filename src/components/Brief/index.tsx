@@ -2,7 +2,7 @@ import styles from './index.module.scss';
 
 import { FC, useState } from 'react';
 
-import FilterList from '../FilterList';
+import TagList from '../TagList';
 
 import translate from '../../i18n/en.json';
 import { ServicesTypes, servicesTypes } from '../../constants/servicesTypes';
@@ -28,10 +28,10 @@ const Brief: FC<{}> = () => {
       <div>
         <h5 className="interMedium2432">{translate.whatServices}</h5>
         <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
-        <FilterList
-          filterList={servicesTypes}
-          currentFilterList={currentServices}
-          setCurrentFilterList={setCurrentServicesHandler}
+        <TagList
+          tagList={servicesTypes}
+          selectedTagList={currentServices}
+          setSelectedTagList={setCurrentServicesHandler}
         />
       </div>
     </div>

@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { ProjectsTypes, projectsTypes } from '../../constants/projectTypes';
 
 import ProjectList from '../../components/ProjectList';
-import FilterList from '../../components/FilterList';
+import TagList from '../../components/TagList';
 
 import translation from '../../i18n/en.json';
 
@@ -23,10 +23,10 @@ const PortfolioScreen = () => {
         <h2 className={`bebasNeue132 ${styles.header}`}>
           {translation.portfolio}
         </h2>
-        <FilterList
-          filterList={projectsTypes}
-          currentFilterList={currentFilterList}
-          setCurrentFilterList={setCurrentFilterListHandler}
+        <TagList
+          tagList={projectsTypes}
+          selectedTagList={currentFilterList}
+          setSelectedTagList={setCurrentFilterListHandler}
         />
       </div>
       <ProjectList currentFilter={currentFilter} />

@@ -1,0 +1,29 @@
+import styles from './index.module.scss';
+
+import OvalButton from '../OvalButton';
+
+interface TagListProps<T extends string> {
+  tagList: { [key in T]: string };
+  selectedTagList: T[];
+  setSelectedTagList: React.Dispatch<React.SetStateAction<T>>;
+}
+
+const TagList = <T extends string>({
+  tagList,
+  selectedTagList,
+  setSelectedTagList,
+}: TagListProps<T>) => {
+  return (
+    <div className={styles.container}>
+      {Object.keys(tagList).map((key) => (
+        <OvalButton
+          selected={selectedTagList.some((item) => item === key)}
+          label={tagList[key]}
+          onClick={() => setSelectedTagList(key as T)}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default TagList;
