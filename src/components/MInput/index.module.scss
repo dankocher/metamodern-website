@@ -11,9 +11,12 @@
 
   position: relative;
 
-  padding-bottom: 10px;
-  border-bottom: 2px solid $secondBlack;
   background-color: transparent;
+
+  div {
+    margin-top: 10px;
+    border-bottom: 2px solid $secondBlack;
+  }
 
   input {
     width: 100%;
@@ -21,6 +24,10 @@
     background-color: inherit;
 
     outline: none;
+
+    &:focus ~ div {
+      border-bottom-color: $blue100;
+    }
 
     &:valid ~ span,
     &:focus ~ span {

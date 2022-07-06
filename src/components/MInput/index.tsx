@@ -19,6 +19,7 @@ const MInput: FC<{
           value={value}
         />
         <span className="interMedium2436">{label}</span>
+        <div />
       </div>
     </div>
   );
