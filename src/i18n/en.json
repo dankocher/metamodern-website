@@ -6,9 +6,12 @@
   "aboutUs": "About Us",
   "contacts": "Contacts",
   "startProject": "Start project",
-  "telegram": "Telegram:",
-  "email": "E-mail:",
+  "telegram": "Telegram",
+  "email": "E-mail",
   "fillBrief": "Fill out the brief",
   "whatServices": "What services do you need:",
-  "writeAboutProject": "Write a few words about the project:"
+  "writeAboutProject": "Write a few words about the project:",
+  "yourName": "Your name",
+  "description": "Description",
+  "send": "Send"
 }

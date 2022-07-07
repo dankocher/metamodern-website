@@ -13,12 +13,12 @@ const MInput: FC<{
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <input
-          className="interMedium2436"
+          className="interRegular2436"
           required={true}
           onChange={onChangeHandler}
           value={value}
         />
-        <span className="interMedium2436">{label}</span>
+        <span className="interRegular2436">{label}</span>
         <div />
       </div>
     </div>

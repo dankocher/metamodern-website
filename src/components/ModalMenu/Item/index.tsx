@@ -1,21 +1,22 @@
-import styles from "./index.module.scss";
+import styles from './index.module.scss';
 
-import { FC } from "react";
+import { FC } from 'react';
 
-import { useLocation, useNavigate } from "react-router-dom";
-import { SCREENS } from "../../../navigation/constants";
-import { useModalMenuContext } from "../../../context/useModalMenuContext";
+import { useNavigate } from 'react-router-dom';
+import { useIsPage } from '../../../hooks/useIsPage';
+import { useModalMenuContext } from '../../../context/useModalMenuContext';
+
+import { SCREENS } from '../../../navigation/constants';
 
 const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
-  const location = useLocation();
   const navigate = useNavigate();
+
+  const isCurrentPage = useIsPage(link);
 
   const { setIsVisible } = useModalMenuContext();
 
-  const isCurrentPage = () => location.pathname === link;
-
   const navigateTo = () => {
-    if (isCurrentPage()) return;
+    if (isCurrentPage) return;
 
     setIsVisible(false);
     navigate(link);
@@ -23,9 +24,7 @@ const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
 
   return (
     <li
-      className={`${styles.container} ${
-        isCurrentPage() ? styles.selected : ""
-      }`}
+      className={`${styles.container} ${isCurrentPage ? styles.selected : ''}`}
       onClick={navigateTo}
     >
       {title}

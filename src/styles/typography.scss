@@ -193,7 +193,17 @@
   line-height: autoResize(32px, 40px, $landscape384, $landscape800) !important;
 }
 
-.interMedium2436 {
+.interMedium2028 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+
+  font-size: autoResize(13px, 20px, $landscape384, $landscape800) !important;
+  line-height: autoResize(18px, 28px, $landscape384, $landscape800) !important;
+}
+
+.interRegular2436 {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 24px;

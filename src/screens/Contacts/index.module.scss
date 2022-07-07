@@ -3,7 +3,7 @@
 .container {
   display: flex;
 
-  margin-top: 92px;
+  margin-top: autoResize(56px, 88px, $landscape384, $landscape800);
 
   color: $secondBlack;
 

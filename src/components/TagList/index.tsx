@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import OvalButton from '../OvalButton';
+import Tag from './Tag';
 
 interface TagListProps<T extends string> {
   tagList: { [key in T]: string };
@@ -16,7 +16,7 @@ const TagList = <T extends string>({
   return (
     <div className={styles.container}>
       {Object.keys(tagList).map((key) => (
-        <OvalButton
+        <Tag
           selected={selectedTagList.some((item) => item === key)}
           label={tagList[key]}
           onClick={() => setSelectedTagList(key as T)}

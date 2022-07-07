@@ -10,6 +10,9 @@ import { ServicesTypes, servicesTypes } from '../../constants/servicesTypes';
 
 const Brief: FC<{}> = () => {
   const [currentServices, setCurrentServices] = useState<ServicesTypes[]>([]);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [description, setDescription] = useState('');
 
   const setCurrentServicesHandler = (item) => {
     const index = currentServices.indexOf(item);
@@ -26,16 +29,30 @@ const Brief: FC<{}> = () => {
   return (
     <div className={styles.container}>
       <h2 className="bebasNeue132">{translate.fillBrief}</h2>
-      <div>
+      <section>
         <h5 className="interMedium2432">{translate.whatServices}</h5>
-        <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
         <TagList
           tagList={servicesTypes}
           selectedTagList={currentServices}
           setSelectedTagList={setCurrentServicesHandler}
         />
-      </div>
-      {/* <MInput /> */}
+      </section>
+      <section className={styles.aboutProject}>
+        <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
+        <div className={styles.personalInformation}>
+          <MInput label={translate.yourName} value={name} onChange={setName} />
+          <MInput label={translate.email} value={email} onChange={setEmail} />
+        </div>
+
+        <MInput
+          label={translate.description}
+          value={description}
+          onChange={setDescription}
+        />
+      </section>
+      <button className={`latoSemibold2028 ${styles.sendBtn}`}>
+        {translate.send}
+      </button>
     </div>
   );
 };

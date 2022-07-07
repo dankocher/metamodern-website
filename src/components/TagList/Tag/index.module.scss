@@ -1,0 +1,22 @@
+@import '../../../styles/foundations.scss';
+
+.button {
+  position: relative;
+
+  padding: autoResize(8px, 12px, $landscape384, $landscape800)
+    autoResize(12px, 20px, $landscape384, $landscape800);
+
+  border: autoResize(0.640584px, 1px, $landscape384, $landscape800) solid
+    $secondBlack;
+  border-radius: autoResize(15.374px, 24px, $landscape384, $landscape800);
+
+  color: $secondBlack;
+
+  background-color: transparent;
+}
+
+.selected {
+  color: $white;
+
+  background-color: $secondBlack;
+}
