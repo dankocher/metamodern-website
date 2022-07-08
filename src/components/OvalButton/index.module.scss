@@ -5,12 +5,20 @@
 
   padding: 12px 20px;
 
-  border: 1px solid $mainBlack;
+  border: $defaultBorder solid $secondBlack;
   border-radius: 24px;
 
-  color: $mainBlack;
+  color: $secondBlack;
 
   background-color: transparent;
+
+  transition: $transitionEase;
+
+  &:hover {
+    color: $white;
+
+    background-color: $secondBlack;
+  }
 }
 
 .selected {

@@ -1,5 +1,4 @@
 // Size
-
 $landscape4k: 3840px;
 $landscapeFHD: 1920px;
 $landscape1200: 1200px;
@@ -10,19 +9,21 @@ $landscape420: 420px;
 $landscape384: 384px;
 $landscape320: 320px;
 
-//Projects
+// Projects
 $maxVisibleWidth: 566.5px;
 
 // Border
-$borderRadius: 4px;
-$bigBorderRadius: 8px;
+$defaultBorder: 1.5px;
 
-//Footer
+// Footer
 $footerPoint: 600px;
 $footerHeightLg: 148px;
 $footerHeightMob: 240px;
 
-//Z-INDEX
+// Z-INDEX
 $index0: 0;
 $index10: 10;
 $index20: 20;
+
+// Animation
+$transitionEase: 200ms ease;

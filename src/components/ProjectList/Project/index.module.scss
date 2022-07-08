@@ -1,4 +1,4 @@
-@import "../../../styles/foundations.scss";
+@import '../../../styles/foundations.scss';
 
 .container {
   position: relative;
@@ -68,7 +68,7 @@
       div {
         padding: autoResize(8.5px, 12px, $landscape1133);
 
-        border: 0.708125px solid $white;
+        border: $defaultBorder solid $white;
         border-radius: autoResize(110.467px, 156px, $landscape1133);
 
         @media (max-width: $landscape1132) {
