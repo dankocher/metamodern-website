@@ -28,14 +28,14 @@ const MainTitle = ({ portfolioRef }) => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.circle} />
-        <h1 className="bebasNeue320">{translate.metaModern}</h1>
+        <h1 className="bebasNeue320 noSelect">{translate.metaModern}</h1>
         <div className={styles.content__subtext}>
-          <h2 className="bebasNeue288">
+          <h2 className="bebasNeue288 noSelect">
             {translate.design}
-            <img src={underline} alt={alt} />
+            <img className="noSelect" src={underline} alt={alt} />
           </h2>
         </div>
-        <span className="latoSemibold2230">
+        <span className="latoSemibold2230 noSelect">
           {translate.mainTitleDescription}
         </span>
       </div>
