@@ -9,6 +9,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html,
@@ -53,7 +54,6 @@ a,
 a:hover,
 a:visited {
   text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
 }
 
 ul,
