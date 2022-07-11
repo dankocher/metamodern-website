@@ -9,12 +9,12 @@ import { useModalMenuContext } from '../../context/useModalMenuContext';
 
 export const IconButton: FC<{
   alt: string;
-  icon: string;
+  icon: any;
   onClick?: () => void;
 }> = ({ alt, icon, onClick = () => {} }) => {
   return (
     <button className={styles.logo} onClick={onClick}>
-      <img alt={alt} src={icon} />
+      {icon}
     </button>
   );
 };

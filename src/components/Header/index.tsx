@@ -6,7 +6,7 @@ import { useModalMenuContext } from '../../context/useModalMenuContext';
 
 import { useIsPage } from '../../hooks/useIsPage';
 
-import logo from '../../assets/images/logo.png';
+import { mainLogo } from '../../assets/svg/logo';
 
 import Menu from '../Menu';
 import { IconMenuButton, IconButton } from '../ActiveIcon';
@@ -38,7 +38,7 @@ const Header = () => {
     >
       <Menu />
 
-      <IconButton icon={logo} alt={altMainLogo} onClick={menuLogoHandler} />
+      <IconButton icon={mainLogo} alt={altMainLogo} onClick={menuLogoHandler} />
 
       {isNotContactsPage && (
         <div className={styles.middleBtn_wrapper}>

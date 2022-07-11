@@ -16,10 +16,24 @@
     width: autoResize(44px, 52px, $landscape384, $landscape800) !important;
   }
 
-  img {
+  svg {
     position: relative;
     height: 100%;
     width: auto;
+  }
+}
+
+.logo {
+  svg {
+    transition: $transitionEase;
+
+    @media (min-width: $landscape800) {
+      &:hover {
+        path {
+          fill: $yellow100;
+        }
+      }
+    }
   }
 }
 
