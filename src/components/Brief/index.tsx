@@ -7,6 +7,7 @@ import MInput from '../MInput';
 
 import translate from '../../i18n/en.json';
 import { ServicesTypes, servicesTypes } from '../../constants/servicesTypes';
+import MTextArea from '../MTextArea';
 
 const Brief: FC<{}> = () => {
   const [currentServices, setCurrentServices] = useState<ServicesTypes[]>([]);
@@ -44,7 +45,7 @@ const Brief: FC<{}> = () => {
           <MInput label={translate.email} value={email} onChange={setEmail} />
         </div>
 
-        <MInput
+        <MTextArea
           label={translate.description}
           value={description}
           onChange={setDescription}

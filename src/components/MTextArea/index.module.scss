@@ -1,0 +1,63 @@
+@import '../../styles/foundations.scss';
+
+.wrapper {
+  min-height: 72px;
+  // height: calc('min-content' + 24px);
+  display: flex;
+  align-items: flex-end;
+}
+
+.container {
+  width: 100%;
+
+  position: relative;
+
+  background-color: transparent;
+
+  textarea,
+  span {
+    color: $secondBlack;
+  }
+
+  div {
+    margin-top: 10px;
+    border-bottom: 2px solid $secondBlack;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+
+    cursor: auto;
+    outline: none !important;
+    resize: none;
+
+    vertical-align: top;
+
+    background-color: inherit;
+
+    &:focus ~ div {
+      border-bottom-color: $blue100;
+    }
+
+    &:valid ~ span,
+    &:focus ~ span {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 20px !important;
+
+      transform: translateY(calc(-100% - 8px));
+    }
+  }
+
+  span {
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    pointer-events: none;
+
+    transition: 0.5s;
+  }
+}

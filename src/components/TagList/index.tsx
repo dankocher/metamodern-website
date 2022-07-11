@@ -15,8 +15,9 @@ const TagList = <T extends string>({
 }: TagListProps<T>) => {
   return (
     <div className={styles.container}>
-      {Object.keys(tagList).map((key) => (
+      {Object.keys(tagList).map((key, index) => (
         <Tag
+          key={index}
           selected={selectedTagList.some((item) => item === key)}
           label={tagList[key]}
           onClick={() => setSelectedTagList(key as T)}
