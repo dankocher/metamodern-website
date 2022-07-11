@@ -49,6 +49,7 @@ const Brief: FC<{}> = () => {
           label={translate.description}
           value={description}
           onChange={setDescription}
+          rowsMax={12}
         />
       </section>
       <button className={`latoSemibold2028 ${styles.sendBtn}`}>

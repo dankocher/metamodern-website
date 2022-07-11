@@ -29,9 +29,7 @@
   a {
     color: $blue100;
 
-    @media (max-width: $landscape1200) {
-      text-decoration: underline;
-      color: $secondBlack;
-    }
+    text-decoration: underline;
+    color: $secondBlack;
   }
 }
