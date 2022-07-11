@@ -16,7 +16,7 @@ const Project: FC<ProjectProps> = ({
   const colors = { dark: '#242424', light: '#FFFFFF' };
 
   return (
-    <div {...props} className={styles.container}>
+    <div {...props} className={`${styles.container} noSelect`}>
       <div className={styles.content_wrapper}>
         <div
           style={{ color: isDarkContent ? colors.dark : colors.light }}

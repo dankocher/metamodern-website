@@ -6,13 +6,23 @@
   height: auto;
   width: autoResize(566.5px, 800px, $landscape1133);
 
-  img {
-    height: auto;
-    width: 100%;
+  cursor: pointer;
+
+  transition: $transitionEase;
+
+  @media (min-width: $landscape420) {
+    &:hover {
+      background-color: rgba(214, 214, 214, 0.25);
+    }
   }
 
   @media (max-width: $landscape1132) {
     max-width: 800px;
+    width: 100%;
+  }
+
+  img {
+    height: auto;
     width: 100%;
   }
 
