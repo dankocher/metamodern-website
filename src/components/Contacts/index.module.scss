@@ -1,17 +1,12 @@
 @import '../../styles/foundations.scss';
 
 .container {
-  width: 33.489583%;
+  width: 100%;
+  background-color: $yellow100;
+  padding: 96px autoResize(44px, 160px, $landscape800, $landscapeFHD);
 
-  padding-left: autoResize(0px, 160px, $landscape1200, $landscapeFHD);
   @media (min-width: $landscapeFHD) {
     padding-left: 8.333%;
-  }
-
-  @media (max-width: $landscape1200) {
-    width: 100%;
-    background-color: $yellow100;
-    padding: 96px 64px;
   }
 
   @media (max-width: $landscape384) {

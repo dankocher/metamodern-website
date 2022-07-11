@@ -3,14 +3,14 @@
 .container {
   flex: 1;
 
-  padding: 0 autoResize(44px, 64px, $landscape800, $landscapeFHD);
-
-  @media (max-width: $landscape800) {
-    padding: 0 autoResize(16px, 44px, $landscape800, $landscapeFHD);
-  }
+  padding: 0 autoResize(44px, 160px, $landscape800, $landscapeFHD);
 
   @media (min-width: $landscapeFHD) {
-    padding-left: 3.333%;
+    padding-left: 8.333%;
+  }
+
+  @media (max-width: $landscape800) {
+    padding: 0 autoResize(16px, 44px, $landscape384, $landscape800);
   }
 
   h2 {
