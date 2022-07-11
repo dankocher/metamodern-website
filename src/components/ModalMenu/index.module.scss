@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
 
-    margin-left: autoResize(24px, 96px, $landscape320, $landscape800);
+    margin-left: autoResize(10px, 96px, $landscape320, $landscape800);
   }
 
   @media (max-width: $landscape800) {

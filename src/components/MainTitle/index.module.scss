@@ -14,6 +14,9 @@
   }
 
   .ourAppBtn {
+    width: 136px;
+    height: 136px;
+
     position: absolute;
     bottom: 20px;
     background-color: transparent;
@@ -24,7 +27,6 @@
 
     height: 414px;
     width: 1399px;
-    height: autoResize(236px, 414px, $landscape1200) !important;
     width: autoResize(797px, 1399px, $landscape1200) !important;
 
     @media (max-width: $landscape1133) {

@@ -14,12 +14,17 @@
 
   background-color: transparent;
 
-  @media (hover: none) and (pointer: fine) {
-    // transition: $transitionEase;
+  transition: $transitionEase;
 
+  &:hover:not(.selected) {
+    border-color: $gray100;
+    background-color: $gray100;
+  }
+
+  @media (hover: none) {
     &:hover:not(.selected) {
-      border-color: $gray100;
-      background-color: $gray100;
+      border-color: inherit;
+      background-color: inherit;
     }
   }
 
