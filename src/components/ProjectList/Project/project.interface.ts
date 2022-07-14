@@ -9,4 +9,5 @@ export interface ProjectProps {
   tags: string[];
   bgImage: ImageSizes;
   isDarkContent: boolean;
+  gradient: { [key: string]: string };
 }

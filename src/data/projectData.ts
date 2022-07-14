@@ -17,7 +17,9 @@ const data: ProjectProps[] = [
       'Разработали инновационное приложения для семейного и дружественного отдыха в любых условиях.',
     tags: ['Приложение', 'Дизайн', 'Разработка', 'Иллюстрации'],
     bgImage: { x1: truthOrDare, x2: truthOrDare2, x3: truthOrDare3 },
-
+    gradient: {
+      '--gradient': 'linear-gradient(180deg, #E83F61 0%, #ffffff 100%)',
+    },
     isDarkContent: false,
   },
   {
@@ -28,6 +30,9 @@ const data: ProjectProps[] = [
       'Разработали инновационное приложения для семейного и дружественного отдыха в любых условиях.',
     tags: ['Приложение', 'Дизайн', 'Разработка', 'Иллюстрации'],
     bgImage: { x1: timeZo, x2: timeZo2, x3: timeZo3 },
+    gradient: {
+      '--gradient': 'linear-gradient(180deg, #ffe144 0%, #ffffff 100%)',
+    },
     isDarkContent: true,
   },
   {
@@ -46,7 +51,9 @@ const data: ProjectProps[] = [
       'Разработка',
     ],
     bgImage: { x1: truthOrDare, x2: truthOrDare2, x3: truthOrDare3 },
-
+    gradient: {
+      '--gradient': 'linear-gradient(180deg, #E83F61  0%, #ffffff 100%)',
+    },
     isDarkContent: false,
   },
 ];

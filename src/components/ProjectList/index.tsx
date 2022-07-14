@@ -14,19 +14,31 @@ const ProjectList = ({
     <div ref={portfolioRef} className={styles.container}>
       {data.map(
         (
-          { type, name, title, description, tags, bgImage, isDarkContent },
+          {
+            type,
+            name,
+            title,
+            description,
+            tags,
+            bgImage,
+            gradient,
+            isDarkContent,
+          },
           index
         ) =>
           (currentFilter === type || currentFilter === ProjectsTypes.ALL) && (
-            <Project
-              key={`Project-${name}-${index}`}
-              name={name}
-              title={title}
-              description={description}
-              tags={tags}
-              bgImage={bgImage}
-              isDarkContent={isDarkContent}
-            />
+            <div className={styles.projectCell}>
+              <Project
+                key={`Project-${name}-${index}`}
+                name={name}
+                title={title}
+                description={description}
+                tags={tags}
+                bgImage={bgImage}
+                gradient={gradient}
+                isDarkContent={isDarkContent}
+              />
+            </div>
           )
       )}
     </div>

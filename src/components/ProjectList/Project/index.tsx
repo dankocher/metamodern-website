@@ -10,6 +10,7 @@ const Project: FC<ProjectProps> = ({
   description,
   tags,
   bgImage,
+  gradient,
   isDarkContent,
   ...props
 }) => {
@@ -17,9 +18,16 @@ const Project: FC<ProjectProps> = ({
 
   return (
     <div {...props} className={`${styles.container} noSelect`}>
+      <div className={styles.aspectRation} />
+      <div className={styles.gradient} style={gradient} />
+
+      <Image src={bgImage.x1} images={bgImage} alt={`${title} background`} />
+
       <div className={styles.content_wrapper}>
         <div
-          style={{ color: isDarkContent ? colors.dark : colors.light }}
+          style={{
+            color: isDarkContent ? colors.dark : colors.light,
+          }}
           className={styles.content}
         >
           <div className={styles.content__title}>
@@ -41,7 +49,6 @@ const Project: FC<ProjectProps> = ({
           <p className="interRegular1216">{description}</p>
         </div>
       </div>
-      <Image src={bgImage.x1} images={bgImage} alt={`${title} background`} />
     </div>
   );
 };

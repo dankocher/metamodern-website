@@ -1,12 +1,7 @@
 @import '../../../styles/foundations.scss';
 
 .container {
-  position: relative;
-
-  height: auto;
-  width: autoResize(566.5px, 800px, $landscape1133);
-
-  cursor: pointer;
+  width: 100%;
 
   transition: $transitionEase;
 
@@ -16,79 +11,114 @@
     }
   }
 
-  @media (max-width: $landscape1132) {
-    max-width: 800px;
-    width: 100%;
+  .aspectRation {
+    padding-top: 117.5%;
   }
 
-  img {
-    height: auto;
-    width: 100%;
+  .gradient {
+    position: absolute;
+
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    margin: 7% 9.6%;
+
+    background: var(--gradient);
   }
 
   .content_wrapper {
     position: absolute;
 
-    margin-top: 7.5%;
-    margin-left: 10%;
-    margin-right: 10%;
-  }
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
 
-  .content {
-    margin-top: autoResize(44px, 64px, $landscape1133);
-    margin-left: autoResize(40px, 56px, $landscape1133);
-    margin-right: autoResize(40px, 56px, $landscape1133);
+    padding: 7% 9.6%;
 
-    @media (max-width: $landscape1132) {
-      margin-top: autoResize(23.47px, 64px, $landscape320, $landscape1132);
-      margin-left: autoResize(16.81px, 56px, $landscape320, $landscape1132);
-      margin-right: autoResize(13px, 56px, $landscape384, $landscape1132);
-    }
-    &__title {
-      // display: flex;
-      margin-bottom: autoResize(15px, 20px, $landscape1133);
+    .content {
+      position: relative;
 
-      h6 {
-        display: inline;
+      height: 100%;
+      padding: 7.15% 9.5%;
+      background: var(--gradient);
+
+      &__title {
+        margin-bottom: 3.09%;
+
+        h6 {
+          display: inline;
+        }
       }
 
-      @media (max-width: $landscape1132) {
-        margin-bottom: autoResize(15px, 20px, $maxVisibleWidth, $landscape1132);
-      }
-    }
+      &__tags {
+        display: flex;
+        flex-wrap: wrap;
 
-    &__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: autoResize(8.5px, 12px, $landscape1133);
+        max-width: 100%;
 
-      max-width: 100%;
+        margin-bottom: 4.3%;
 
-      margin-bottom: autoResize(20px, 28px, $landscape1133);
+        @media (max-width: $maxVisibleWidth) {
+          display: none;
+        }
 
-      @media (max-width: $landscape1132) {
-        gap: autoResize(8.5px, 12px, $maxVisibleWidth, $landscape1132);
-        margin-bottom: autoResize(20px, 28px, $maxVisibleWidth, $landscape1132);
-      }
+        gap: autoResize(8.5px, 12px, $maxVisibleWidth, $landscape800);
 
-      @media (max-width: $maxVisibleWidth) {
-        display: none;
-      }
+        @media (min-width: $landscape1133) {
+          gap: autoResize(7.5px, 12px, $landscape1133);
+        }
 
-      div {
-        padding: autoResize(8.5px, 12px, $landscape1133);
+        @media (min-width: $landscape1921) {
+          gap: autoResize(7.5px, 12px, $landscape1921, $landscape2720);
+        }
 
-        border: $defaultBorder solid $white;
-        border-radius: autoResize(110.467px, 156px, $landscape1133);
+        @media (min-width: $landscape3000) {
+          gap: autoResize(10px, 12px, $landscape3000, $landscape3520);
+        }
 
-        @media (max-width: $landscape1132) {
-          padding: autoResize(8.5px, 12px, $maxVisibleWidth, $landscape1132);
-          border-radius: autoResize(
-            110.467px,
-            156px,
-            $maxVisibleWidth,
-            $landscape1132
-          );
+        div {
+          padding: 1.875%;
+
+          border: $defaultBorder solid $white;
+          border-radius: autoResize(110.467px, 156px, $landscape801);
+
+          @media (max-width: $maxVisibleWidth) {
+            display: none;
+          }
+
+          @media (max-width: $landscape1132) {
+            border-radius: autoResize(
+              110.467px,
+              156px,
+              $maxVisibleWidth,
+              $landscape800
+            );
+          }
+
+          @media (max-width: $landscapeFHD) {
+            border-radius: autoResize(100.467px, 156px, $landscape1133);
+          }
+
+          @media (max-width: $landscape2999) {
+            border-radius: autoResize(
+              100.467px,
+              156px,
+              $landscapeFHD,
+              $landscape2720
+            );
+          }
+
+          @media (min-width: $landscape3000) {
+            border-radius: autoResize(
+              120.467px,
+              156px,
+              $landscape3000,
+              $landscape3520
+            );
+          }
         }
       }
     }
@@ -98,5 +128,16 @@
         display: none;
       }
     }
+  }
+
+  img {
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    height: auto;
+    max-height: 100%;
+    width: 100%;
   }
 }

@@ -1,19 +1,34 @@
 @import '../../styles/foundations.scss';
 
+$padding: 160px;
+
 .container {
   width: 100vw;
 
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-
-  // justify-content: flex-start;
 
   margin-top: 36px;
 
-  // padding: 0 autoResize(40px, 56px, $landscapeFHD, $landscape4k);
+  padding: 0 autoResize(0px, $padding, $landscape1200, $landscapeFHD);
 
-  // @media (max-width: $landscape1132) {
-  //   justify-content: center;
-  // }
+  .projectCell {
+    position: relative;
+
+    display: flex;
+
+    width: 100%;
+
+    @media (min-width: $landscape1133) {
+      width: 50%;
+    }
+
+    @media (min-width: $landscape1921) {
+      width: calc(100% / 3);
+    }
+
+    @media (min-width: 3000px) {
+      width: calc(100% / 4);
+    }
+  }
 }
