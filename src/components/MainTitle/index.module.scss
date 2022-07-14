@@ -27,9 +27,11 @@
 
     height: 414px;
     width: 1399px;
-    width: autoResize(797px, 1399px, $landscape1200) !important;
 
-    @media (max-width: $landscape1133) {
+    height: autoResize(77px, 192px, $landscape320, $landscape800) !important;
+    width: autoResize(259px, 646px, $landscape320, $landscape800) !important;
+
+    @media (min-width: $landscape800) {
       height: autoResize(
         192px,
         236px,
@@ -39,9 +41,19 @@
       width: autoResize(646px, 797px, $landscape800, $landscape1133) !important;
     }
 
-    @media (max-width: $landscape800) {
-      height: autoResize(77px, 192px, $landscape320, $landscape800) !important;
-      width: autoResize(259px, 646px, $landscape320, $landscape800) !important;
+    @media (min-width: $landscape1200) {
+      height: autoResize(
+        236px,
+        414px,
+        $landscape1200,
+        $landscapeFHD
+      ) !important;
+      width: autoResize(
+        797px,
+        1399px,
+        $landscape1200,
+        $landscapeFHD
+      ) !important;
     }
 
     .circle {
