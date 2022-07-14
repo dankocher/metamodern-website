@@ -18,7 +18,8 @@ const data: ProjectProps[] = [
     tags: ['Приложение', 'Дизайн', 'Разработка', 'Иллюстрации'],
     bgImage: { x1: truthOrDare, x2: truthOrDare2, x3: truthOrDare3 },
     gradient: {
-      '--gradient': 'linear-gradient(180deg, #E83F61 0%, #ffffff 100%)',
+      '--gradient':
+        'linear-gradient(47.96deg, #8449C4 14.04%, #8845BD 29.78%, #9C33BA 47.89%, #AA3594 72.47%, #A61F5A 95.92%)',
     },
     isDarkContent: false,
   },
@@ -52,7 +53,8 @@ const data: ProjectProps[] = [
     ],
     bgImage: { x1: truthOrDare, x2: truthOrDare2, x3: truthOrDare3 },
     gradient: {
-      '--gradient': 'linear-gradient(180deg, #E83F61  0%, #ffffff 100%)',
+      '--gradient':
+        'linear-gradient(47.96deg, #8449C4 14.04%, #8845BD 29.78%, #9C33BA 47.89%, #AA3594 72.47%, #A61F5A 95.92%)',
     },
     isDarkContent: false,
   },
