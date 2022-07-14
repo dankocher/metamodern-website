@@ -1,6 +1,5 @@
 @import '../../styles/foundations.scss';
 
-.logo,
 .menuLogo {
   position: relative;
 
@@ -20,20 +19,6 @@
     position: relative;
     height: 100%;
     width: auto;
-  }
-}
-
-.logo {
-  svg {
-    transition: $transitionEase;
-
-    @media (min-width: $landscape800) {
-      &:hover {
-        path {
-          fill: $yellow100;
-        }
-      }
-    }
   }
 }
 

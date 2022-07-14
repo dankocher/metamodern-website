@@ -6,12 +6,11 @@ import { useModalMenuContext } from '../../context/useModalMenuContext';
 
 import { useIsPage } from '../../hooks/useIsPage';
 
-import { mainLogo } from '../../assets/svg/logo';
-
 import Menu from '../Menu';
-import { IconMenuButton, IconButton } from '../ActiveIcon';
+import IconMenuButton from '../IconMenuButton';
 import StartProjectButton from '../StartProjectButton';
 
+import { mainLogo } from '../../assets/svg/logo';
 import { SCREENS } from '../../navigation/constants';
 
 const Header = () => {
@@ -21,8 +20,6 @@ const Header = () => {
   const isNotContactsPage = !useIsPage(SCREENS.CONTACTS);
 
   const { setIsVisible } = useModalMenuContext();
-
-  const altMainLogo = 'MetaModernLogo';
 
   const menuLogoHandler = () => {
     navigate(SCREENS.HOME);
@@ -38,7 +35,9 @@ const Header = () => {
     >
       <Menu />
 
-      <IconButton icon={mainLogo} alt={altMainLogo} onClick={menuLogoHandler} />
+      <button className={styles.logo} onClick={menuLogoHandler}>
+        {mainLogo}
+      </button>
 
       {isNotContactsPage && (
         <div className={styles.middleBtn_wrapper}>

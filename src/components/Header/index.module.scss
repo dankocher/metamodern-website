@@ -23,6 +23,42 @@
     padding: autoResize(36px, 40px, $landscape384, $landscape800)
       autoResize(24px, 44px, $landscape384, $landscape800) 0 !important;
   }
+
+  .logo {
+    position: relative;
+
+    height: 52px;
+    width: 52px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    @media (max-width: $landscape800) {
+      height: autoResize(44px, 52px, $landscape384, $landscape800) !important;
+      width: autoResize(44px, 52px, $landscape384, $landscape800) !important;
+    }
+
+    svg {
+      position: relative;
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .logo {
+    svg {
+      transition: $transitionEase;
+
+      @media (min-width: $landscape800) {
+        &:hover {
+          path {
+            fill: $yellow100;
+          }
+        }
+      }
+    }
+  }
 }
 
 .middleBtn_wrapper {

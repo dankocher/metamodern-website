@@ -7,18 +7,6 @@ import Lottie from 'react-lottie';
 import menuIcon from '../../assets/animations/menuIcon.json';
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
-export const IconButton: FC<{
-  alt: string;
-  icon: any;
-  onClick?: () => void;
-}> = ({ alt, icon, onClick = () => {} }) => {
-  return (
-    <button className={styles.logo} onClick={onClick}>
-      {icon}
-    </button>
-  );
-};
-
 export const IconMenuButton: FC<{ onClick: () => void }> = ({ onClick }) => {
   const { isVisible } = useModalMenuContext();
   const [animConfig, setAnimConfig] = useState({
@@ -60,3 +48,5 @@ export const IconMenuButton: FC<{ onClick: () => void }> = ({ onClick }) => {
     </button>
   );
 };
+
+export default IconMenuButton;
