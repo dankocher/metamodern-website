@@ -21,7 +21,7 @@ const Project: FC<ProjectProps> = ({
       <div className={styles.aspectRation} />
       <div className={styles.gradient} style={gradient} />
 
-      <Image src={bgImage.x1} images={bgImage} alt={`${title} background`} />
+      <Image src={bgImage.x1} images={bgImage} alt={`${name} background`} />
 
       <div className={styles.content_wrapper}>
         <div

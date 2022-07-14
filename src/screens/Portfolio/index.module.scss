@@ -1,21 +1,37 @@
 @import '../../styles/foundations.scss';
 
 .container {
+  width: 100%;
+
   margin-top: 88px;
-  margin-left: 240px;
+
+  padding: 0 9.6%;
+
+  @media (min-width: $landscape1133) {
+    padding-left: autoResize(
+      54.383px,
+      236.797px,
+      $landscape1133,
+      $landscapeFHD
+    );
+  }
+
+  @media (min-width: $landscape1921) {
+    padding-left: autoResize(
+      211.227px,
+      245.727px,
+      $landscape1921,
+      $landscape2999
+    );
+  }
+
+  @media (min-width: $landscape3000) {
+    padding-left: autoResize(224.313px, 392.289px, $landscape3000, 9999px);
+  }
 
   .header {
     color: $mainBlack;
     text-transform: uppercase;
-    margin-bottom: 28px;
-
-    @media (max-width: $landscape800) {
-      margin-bottom: autoResize(
-        20px,
-        28px,
-        $landscape384,
-        $landscape800
-      ) !important;
-    }
+    margin-bottom: autoResize(20px, 28px, $landscape384, $landscape800);
   }
 }

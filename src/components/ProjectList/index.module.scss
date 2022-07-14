@@ -27,7 +27,7 @@ $padding: 160px;
       width: calc(100% / 3);
     }
 
-    @media (min-width: 3000px) {
+    @media (min-width: $landscape3000) {
       width: calc(100% / 4);
     }
   }
