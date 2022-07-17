@@ -1,28 +1,17 @@
 import styles from './index.module.scss';
 
-import { FC } from 'react';
+import * as React from 'react';
 
-const MInput: FC<{
-  label: string;
-  value?: string;
-  onChange?: (value: string) => void;
-}> = ({ label, value, onChange }) => {
-  const onChangeHandler = (event) => onChange(event.target.value);
-
-  return (
+const MInput = React.forwardRef<HTMLInputElement, { label: string }>(
+  ({ label, ...props }, ref) => (
     <div className={styles.wrapper}>
       <div className={styles.container}>
-        <input
-          className="interRegular2436"
-          required={true}
-          onChange={onChangeHandler}
-          value={value}
-        />
+        <input ref={ref} className="interRegular2436" {...props} />
         <span className="interRegular2436">{label}</span>
         <div />
       </div>
     </div>
-  );
-};
+  )
+);
 
 export default MInput;

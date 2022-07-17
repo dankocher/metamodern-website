@@ -9,6 +9,7 @@ const Tag: FC<{
 }> = ({ selected = false, label, onClick = () => {} }) => {
   return (
     <button
+      type="button"
       className={`interMedium2028 ${styles.button} ${
         selected ? styles.selected : ''
       }`}
