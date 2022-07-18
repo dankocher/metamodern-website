@@ -21,7 +21,6 @@ interface IFormValues {
 const Brief: FC = () => {
   const { control, register, handleSubmit } = useForm<IFormValues>({
     defaultValues: {
-      currentServices: [],
       name: '',
       email: '',
       description: '',
@@ -44,6 +43,9 @@ const Brief: FC = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+  };
+  const onSubmitFile = (file) => {
+    console.log(file);
   };
 
   return (
@@ -84,6 +86,9 @@ const Brief: FC = () => {
               />
             )}
           />
+          <div>
+            <input id="fileInput" type="file" onChange={onSubmitFile} />
+          </div>
         </section>
         <button type="submit" className={`latoSemibold2028 ${styles.sendBtn}`}>
           {translate.send}

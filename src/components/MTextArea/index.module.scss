@@ -2,9 +2,10 @@
 
 .wrapper {
   min-height: 72px;
-  // height: calc('min-content' + 24px);
   display: flex;
   align-items: flex-end;
+
+  padding-bottom: 12px;
 }
 
 .container {
@@ -19,7 +20,7 @@
     color: $secondBlack;
   }
 
-  div {
+  .div {
     margin-top: 10px;
     border-bottom: 2px solid $secondBlack;
   }

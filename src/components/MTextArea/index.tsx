@@ -11,8 +11,7 @@ const MTextArea: FC<{
   rowsMax?: number;
 }> = ({ label, value, onChange, rowsMins = 1, rowsMax = 5 }) => {
   const textAreaRef = useRef(null);
-  const [textAreaHeight, setTextAreaHeight] = useState('auto');
-  const [textAreaWrapperHeight, setTextAreaWrapperHeight] = useState('auto');
+  const [textAreaHeight, setTextAreaHeight] = useState<string | number>('auto');
   const [isSizeFixed, setIsSizeFixed] = useState(false);
 
   useEffect(() => {
@@ -41,12 +40,10 @@ const MTextArea: FC<{
     ) {
       setIsSizeFixed(true);
       const height = padding * 2 + lineHeight * rowsMax;
-      setTextAreaHeight(`${height}px`);
-      setTextAreaWrapperHeight(`${height + 24}px`);
+      setTextAreaHeight(height);
     } else {
       setIsSizeFixed(false);
-      setTextAreaHeight(`${scrollHeight}px`);
-      setTextAreaWrapperHeight(`${scrollHeight + 24}px`);
+      setTextAreaHeight(scrollHeight);
     }
   }, [textAreaHeight]);
 
@@ -55,8 +52,24 @@ const MTextArea: FC<{
   };
 
   return (
-    <div className={styles.wrapper} style={{ height: textAreaWrapperHeight }}>
-      <div className={styles.container} style={{ height: textAreaHeight }}>
+    <div
+      className={styles.wrapper}
+      style={{
+        minHeight:
+          typeof textAreaHeight === 'string'
+            ? textAreaHeight
+            : `${textAreaHeight + 36}px`,
+      }}
+    >
+      <div
+        className={styles.container}
+        style={{
+          height:
+            typeof textAreaHeight === 'string'
+              ? textAreaHeight
+              : `${textAreaHeight}px`,
+        }}
+      >
         <textarea
           ref={textAreaRef}
           className="interRegular2436"
