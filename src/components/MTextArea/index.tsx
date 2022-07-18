@@ -45,7 +45,7 @@ const MTextArea: FC<{
       setIsSizeFixed(false);
       setTextAreaHeight(scrollHeight);
     }
-  }, [textAreaHeight]);
+  }, [textAreaHeight, rowsMax]);
 
   const onChangeHandler = (event) => {
     onChange(event.target.value);
