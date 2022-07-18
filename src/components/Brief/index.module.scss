@@ -40,6 +40,10 @@
       display: flex;
       gap: 60px;
 
+      & + div {
+        margin-bottom: 12px;
+      }
+
       & > div {
         flex: 1;
         margin-bottom: autoResize(16px, 28px, $landscape384, $landscape800);
@@ -47,6 +51,16 @@
 
       @media (max-width: $landscape800) {
         display: block;
+      }
+    }
+
+    .fileInput {
+      input {
+        display: none;
+      }
+      label {
+        cursor: pointer;
+        color: $blue100;
       }
     }
   }

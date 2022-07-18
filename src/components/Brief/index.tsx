@@ -44,8 +44,8 @@ const Brief: FC = () => {
   const onSubmit = (data) => {
     console.log(data);
   };
-  const onSubmitFile = (file) => {
-    console.log(file);
+  const onSubmitFile = (event) => {
+    console.log(event.target.value);
   };
 
   return (
@@ -86,8 +86,12 @@ const Brief: FC = () => {
               />
             )}
           />
-          <div>
+          <div className={styles.fileInput}>
             <input id="fileInput" type="file" onChange={onSubmitFile} />
+            <label
+              htmlFor={'fileInput'}
+              className="interMedium2036"
+            >{`+ ${translate.attachFile}`}</label>
           </div>
         </section>
         <button type="submit" className={`latoSemibold2028 ${styles.sendBtn}`}>

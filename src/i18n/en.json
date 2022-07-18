@@ -13,5 +13,6 @@
   "writeAboutProject": "Write a few words about the project:",
   "yourName": "Your name",
   "description": "Description",
-  "send": "Send"
+  "send": "Send",
+  "attachFile": "Attach file"
 }
