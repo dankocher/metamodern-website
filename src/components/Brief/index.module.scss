@@ -53,16 +53,6 @@
         display: block;
       }
     }
-
-    .fileInput {
-      input {
-        display: none;
-      }
-      label {
-        cursor: pointer;
-        color: $blue100;
-      }
-    }
   }
 
   .sendBtn {

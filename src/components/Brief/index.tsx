@@ -7,12 +7,14 @@ import { Controller, useForm } from 'react-hook-form';
 import TagList from '../TagList';
 import MInput from '../MInput';
 import MTextArea from '../MTextArea';
+import AttachFile from '../AttachFile';
 
 import translate from '../../i18n/en.json';
 import { ServicesTypes, servicesTypes } from '../../constants/servicesTypes';
 
+import { sendToEmail } from '../../api/helpers';
+
 interface IFormValues {
-  currentServices: ServicesTypes[];
   name: string;
   email: string;
   description: string;
@@ -28,6 +30,7 @@ const Brief: FC = () => {
   });
 
   const [currentServices, setCurrentServices] = useState<ServicesTypes[]>([]);
+  const [attachedFile, setAttachedFile] = useState<File | null>(null);
 
   const setCurrentServicesHandler = (item) => {
     const index = currentServices.indexOf(item);
@@ -42,10 +45,24 @@ const Brief: FC = () => {
   };
 
   const onSubmit = (data) => {
-    console.log(data);
+    const services = currentServices.length === 0 ? null : currentServices;
+    const json = JSON.stringify({ ...data, services });
+
+    const formData = new FormData();
+
+    formData.append('brief', json);
+
+    formData.append('file', attachedFile);
+
+    sendToEmail(formData);
   };
-  const onSubmitFile = (event) => {
-    console.log(event.target.value);
+
+  const onSubmitFile = async (file) => {
+    if (file == null) {
+      setAttachedFile(null);
+    } else {
+      setAttachedFile(file);
+    }
   };
 
   return (
@@ -86,13 +103,11 @@ const Brief: FC = () => {
               />
             )}
           />
-          <div className={styles.fileInput}>
-            <input id="fileInput" type="file" onChange={onSubmitFile} />
-            <label
-              htmlFor={'fileInput'}
-              className="interMedium2036"
-            >{`+ ${translate.attachFile}`}</label>
-          </div>
+          <AttachFile
+            label={translate.attachFile}
+            setFile={onSubmitFile}
+            attachedFileName={attachedFile?.name}
+          />
         </section>
         <button type="submit" className={`latoSemibold2028 ${styles.sendBtn}`}>
           {translate.send}

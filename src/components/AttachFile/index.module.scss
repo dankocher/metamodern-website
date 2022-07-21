@@ -1,0 +1,69 @@
+@import '../../styles/foundations.scss';
+
+.container {
+  .fileName {
+    margin-bottom: 4px;
+
+    display: flex;
+
+    gap: 8px;
+
+    span {
+      color: $mainBlack;
+    }
+
+    .removeBtn {
+      height: 18px;
+      width: 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+
+      border-radius: 50%;
+      background-color: $mainBlack;
+
+      cursor: pointer;
+
+      transition: $transitionEase;
+
+      &:hover {
+        background-color: $secondBlack;
+      }
+
+      &::before,
+      &::after {
+        content: '';
+
+        width: 10.2px;
+        height: 1.2px;
+
+        position: absolute;
+
+        background: $white;
+        border-radius: 1px;
+      }
+
+      &::before {
+        transform: rotate(135deg);
+      }
+      &::after {
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  label {
+    display: block;
+
+    color: $blue100;
+
+    cursor: pointer;
+  }
+}
