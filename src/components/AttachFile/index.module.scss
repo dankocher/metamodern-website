@@ -33,25 +33,25 @@
         background-color: $secondBlack;
       }
 
-      &::before,
-      &::after {
-        content: '';
+      // &::before,
+      // &::after {
+      //   content: '';
 
-        width: 10.2px;
-        height: 1.2px;
+      //   width: 10.2px;
+      //   height: 1.2px;
 
-        position: absolute;
+      //   position: absolute;
 
-        background: $white;
-        border-radius: 1px;
-      }
+      //   background: $white;
+      //   border-radius: 1px;
+      // }
 
-      &::before {
-        transform: rotate(135deg);
-      }
-      &::after {
-        transform: rotate(45deg);
-      }
+      // &::before {
+      //   transform: rotate(135deg);
+      // }
+      // &::after {
+      //   transform: rotate(45deg);
+      // }
     }
   }
 

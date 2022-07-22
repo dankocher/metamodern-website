@@ -2,6 +2,8 @@ import styles from './index.module.scss';
 
 import { FC } from 'react';
 
+import cross from '../../assets/svg/cross.svg';
+
 const AttachFile: FC<{
   attachedFileName?: string;
   label: string;
@@ -20,11 +22,9 @@ const AttachFile: FC<{
       {attachedFileName && (
         <div className={styles.fileName}>
           <span className="interMedium2036">{attachedFileName}</span>
-          <div
-            role="button"
-            className={styles.removeBtn}
-            onClick={removeFile}
-          />
+          <div role="button" className={styles.removeBtn} onClick={removeFile}>
+            <img src={cross} />
+          </div>
         </div>
       )}
       <label
