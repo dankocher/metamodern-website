@@ -13,7 +13,7 @@ const Footer = () => {
   const year: number = new Date().getFullYear();
 
   const constText = {
-    termOfUse: 'Terms of Use',
+    termOfUse: 'Terms of service',
     privacyPolicy: 'Privacy Policy',
   };
 
@@ -32,10 +32,16 @@ const Footer = () => {
           {year} © {company}
         </p>
       </div>
-      <div>
-        <img src={behance} />
-        <img src={dribbble} />
-        <img src={instagram} />
+      <div className={styles.social}>
+        <a>
+          <img src={behance} />
+        </a>
+        <a>
+          <img src={dribbble} />
+        </a>
+        <a>
+          <img src={instagram} />
+        </a>
       </div>
     </footer>
   );

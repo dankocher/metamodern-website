@@ -13,6 +13,10 @@
 
   background-color: $secondBlack;
 
+  a {
+    cursor: pointer;
+  }
+
   & > svg {
     & > * {
       fill: $white;
@@ -55,8 +59,6 @@
 
     margin-bottom: 24px;
 
-    cursor: pointer;
-
     @media (max-width: $landscape800) {
       flex-direction: column;
     }
@@ -65,6 +67,11 @@
       color: inherit;
     }
   }
+}
+
+.social {
+  display: flex;
+  gap: 20px;
 }
 
 .noSelect {
