@@ -1,55 +1,70 @@
 @import '../../styles/foundations.scss';
 
+// Footer
+$footerPoint: 980px;
+
+$backgroundColor: $secondBlack;
+$iconColor: $white;
+$linkTextColor: $white;
+$textColor: #8e98a2;
+
+$paddingHorizontal: 64px;
+
 .footer {
   width: 100%;
+
   position: relative;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
-  padding: 0 64px 28px;
-
-  color: $white;
-
-  background-color: $secondBlack;
+  background-color: $backgroundColor;
 
   a {
     cursor: pointer;
   }
 
   & > svg {
+    position: absolute;
+    left: $paddingHorizontal;
+
     & > * {
-      fill: $white;
+      fill: $iconColor;
     }
 
-    @media (max-width: $landscape800) {
+    @media (max-width: $footerPoint) {
       display: none;
     }
   }
 
-  @media (max-width: $landscape800) {
+  @media (max-width: $footerPoint) {
     flex-direction: column-reverse;
 
-    padding: 40px 0 28px;
+    padding-top: 40px;
   }
 }
 
 .info {
   height: 100%;
+
   display: flex;
   flex-direction: column;
 
   padding-top: 56px;
 
+  padding-bottom: 28px;
+
   text-align: center;
 
-  @media (max-width: $landscape800) {
+  @media (max-width: $footerPoint) {
     margin-top: 40px;
     padding-top: 0;
   }
 
   p {
     cursor: default;
+    color: $textColor;
   }
 
   &__links {
@@ -59,7 +74,9 @@
 
     margin-bottom: 24px;
 
-    @media (max-width: $landscape800) {
+    color: $linkTextColor;
+
+    @media (max-width: $footerPoint) {
       flex-direction: column;
     }
 
@@ -70,8 +87,15 @@
 }
 
 .social {
+  position: absolute;
+  right: $paddingHorizontal;
+
   display: flex;
   gap: 20px;
+
+  @media (max-width: $footerPoint) {
+    position: initial;
+  }
 }
 
 .noSelect {
