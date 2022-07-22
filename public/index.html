@@ -28,7 +28,7 @@
       crossorigin="anonymous"
     />
 
-    <!-- <link
+    <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/Gilroy/Gilroy-Regular.ttf"
       as="font"
@@ -40,7 +40,7 @@
       as="font"
       crossorigin="anonymous"
     />
-    <link
+    <!-- <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/Gilroy/Gilroy-Semibold.ttf"
       as="font"
@@ -88,25 +88,25 @@
     />
 
     <style>
-      /* @font-face {
-        font-family: "Gilroy";
-        src: local("Gilroy"), local("GilroyRegular"), local("Gilroy-Regular"),
-          local("Gilroy Regular"),
-          url("%PUBLIC_URL%/fonts/Gilroy/Gilroy-Regular.ttf");
+      @font-face {
+        font-family: 'Gilroy';
+        src: local('Gilroy'), local('GilroyRegular'), local('Gilroy-Regular'),
+          local('Gilroy Regular'),
+          url('%PUBLIC_URL%/fonts/Gilroy/Gilroy-Regular.ttf');
 
         font-weight: 400;
       }
 
       @font-face {
-        font-family: "Gilroy";
+        font-family: 'Gilroy';
 
-        src: local("Gilroy"), local("GilroyMedium"), local("Gilroy-Medium"),
-          local("Gilroy Medium"),
-          url("%PUBLIC_URL%/fonts/Gilroy/Gilroy-Medium.ttf");
+        src: local('Gilroy'), local('GilroyMedium'), local('Gilroy-Medium'),
+          local('Gilroy Medium'),
+          url('%PUBLIC_URL%/fonts/Gilroy/Gilroy-Medium.ttf');
 
         font-weight: 500;
       }
-
+      /*
       @font-face {
         font-family: "Gilroy";
 
@@ -123,13 +123,14 @@
           local('Gilroy Black'),
           url('%PUBLIC_URL%/fonts/Gilroy/Gilroy-Black.ttf');
 
-        font-weight: 400;
+        font-weight: 900;
       }
 
       @font-face {
         font-family: 'BebasNeue';
         src: local('BebasNeue-Regular'),
           url('%PUBLIC_URL%/fonts/BebasNeue/BebasNeue-Regular.ttf');
+        font-weight: 400;
       }
 
       @font-face {
@@ -181,7 +182,6 @@
     </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
 </html>

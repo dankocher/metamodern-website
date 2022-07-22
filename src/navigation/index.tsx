@@ -6,9 +6,10 @@ import ContactsScreen from '../screens/Contacts';
 import Home from '../screens/Home';
 import PortfolioScreen from '../screens/Portfolio';
 import ModalMenu from '../components/ModalMenu';
+import Footer from '../components/Footer';
+import ScrollToTop from './ScrollToTop';
 
 import { SCREENS } from './constants';
-import ScrollToTop from './ScrollToTop';
 
 const Navigation = () => {
   return (
@@ -21,6 +22,7 @@ const Navigation = () => {
         <Route path={SCREENS.CONTACTS} element={<ContactsScreen />} />
         <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
       </Routes>
+      <Footer />
       <ModalMenu />
     </ScrollToTop>
   );
