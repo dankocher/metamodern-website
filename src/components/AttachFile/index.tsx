@@ -13,6 +13,8 @@ const AttachFile: FC<{
     setFile(null);
   };
 
+  console.log('test');
+
   const setFileHandler = (event) => {
     setFile(event.target.files[0]);
   };

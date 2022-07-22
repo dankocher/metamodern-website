@@ -18,7 +18,7 @@ const PortfolioScreen = () => {
   const setCurrentFilterListHandler = (item) => setCurrentFilterList([item]);
 
   return (
-    <>
+    <div className={styles.wrapper}>
       <div className={styles.container}>
         <h2 className={`bebasNeue132 ${styles.header}`}>
           {translation.portfolio}
@@ -30,7 +30,7 @@ const PortfolioScreen = () => {
         />
       </div>
       <ProjectList currentFilter={currentFilter} />
-    </>
+    </div>
   );
 };
 
