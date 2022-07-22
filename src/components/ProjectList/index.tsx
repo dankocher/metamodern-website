@@ -27,9 +27,11 @@ const ProjectList = ({
           index
         ) =>
           (currentFilter === type || currentFilter === ProjectsTypes.ALL) && (
-            <div className={styles.projectCell}>
+            <div
+              key={`Project-${name}-${index}`}
+              className={styles.projectCell}
+            >
               <Project
-                key={`Project-${name}-${index}`}
                 name={name}
                 title={title}
                 description={description}
