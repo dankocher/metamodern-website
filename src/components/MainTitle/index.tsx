@@ -12,8 +12,6 @@ import translate from '../../i18n/en.json';
 const MainTitle = ({ portfolioRef }) => {
   const [isHovering, setIsHovering] = useState(false);
 
-  const alt = Object.keys({ underline })[0];
-
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -32,7 +30,7 @@ const MainTitle = ({ portfolioRef }) => {
         <div className={styles.content__subtext}>
           <h2 className="bebasNeue288 noSelect">
             {translate.design}
-            <img className="noSelect" src={underline} alt={alt} />
+            <img className="noSelect" src={underline} />
           </h2>
         </div>
         <span className="latoSemibold2230 noSelect">
