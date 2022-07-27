@@ -1,19 +1,35 @@
-@import "../../../styles/foundations.scss";
+@import '../../../styles/foundations.scss';
 
 .container {
   position: relative;
   height: fit-content;
   width: fit-content;
 
-  .lottie_wrapper {
-    width: 110%;
+  &::before {
+    content: '';
 
     position: absolute;
-    left: -5%;
 
-    > * {
+    top: 50%;
+    left: 0;
+
+    width: 0;
+    height: 2.5px;
+
+    background-color: $mainBlack;
+
+    transition: width 0.4s cubic-bezier(0.4, 0.6, 0.2, 1);
+  }
+
+  &:not(.selected):hover {
+    &::before {
       width: 100%;
-      height: auto;
     }
+  }
+}
+
+.selected {
+  &::before {
+    width: 100%;
   }
 }
