@@ -18,8 +18,9 @@ const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
   return (
     <div
       className={`${styles.container} ${isCurrentPage() && styles.selected}`}
+      onClick={navigateTo}
     >
-      <li onClick={navigateTo}>{title}</li>
+      <li>{title}</li>
     </div>
   );
 };
