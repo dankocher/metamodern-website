@@ -25,6 +25,15 @@
   line-height: autoResize(17px, 30px, $landscape1200) !important;
 }
 
+.latoSemibold2432 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  font-size: autoResize(20px, 24px, $landscape384, $landscape800) !important;
+  line-height: autoResize(24px, 32px, $landscape384, $landscape800) !important;
+}
+
 .bebasNeue320 {
   font-family: 'BebasNeue', sans-serif;
   font-weight: 400;
@@ -101,7 +110,7 @@
   line-height: 132px;
 
   @media (max-width: $landscape800) {
-    font-size: autoResize(84px, 132px, $landscape320, $landscape800) !important;
+    font-size: autoResize(84px, 132px, $landscape384, $landscape800) !important;
     line-height: autoResize(
       84px,
       132px,
@@ -109,6 +118,16 @@
       $landscape800
     ) !important;
   }
+}
+
+.bebasNeue13260 {
+  font-family: 'BebasNeue', sans-serif;
+  font-weight: 400;
+  font-size: 132px;
+  line-height: 132px;
+
+  font-size: autoResize(60px, 132px, $landscape384, $landscape800) !important;
+  line-height: autoResize(64px, 132px, $landscape384, $landscape800) !important;
 }
 
 .gilroyBlack82 {

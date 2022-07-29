@@ -14,5 +14,8 @@
   "yourName": "Your name",
   "description": "Description",
   "send": "Send",
-  "attachFile": "Attach file"
+  "attachFile": "Attach file",
+  "thxForMessage": "Thank you for message !",
+  "youCanSee": "Wait, we will contact you soon in the meantime you can see",
+  "ourWork": "our work"
 }
