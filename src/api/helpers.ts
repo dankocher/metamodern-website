@@ -1,15 +1,24 @@
 import axios from 'axios';
 
-export const sendToEmail = async (formData) => {
-  try {
-    const response = await axios.post('/user?ID=12345', formData, {
-      withCredentials: false,
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-      },
-    });
-    console.log(response);
-  } catch (error) {
-    console.error(error);
-  }
+const url = "https://dev.goodstudio.by/sendMessage.php";
+
+export const sendToEmail = async (data, file) => {
+
+    const formData = new FormData();
+    formData.append('brief', data);
+    if (file) {
+        formData.append('file', file);
+    }
+
+  return await axios.post(url, formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data'
+        },
+  }).then(res => res.data)
+      .then(async res => { return res})
+      .catch((e) => {
+        return {ok: false, status: "unreachable"}
+      });
+
 };
+
