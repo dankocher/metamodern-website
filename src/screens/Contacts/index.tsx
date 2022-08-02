@@ -6,8 +6,8 @@ import Brief from '../../components/Brief';
 const ContactsScreen = () => {
   return (
     <div className={styles.container}>
-      <Contacts />
       <Brief />
+      <Contacts />
     </div>
   );
 };

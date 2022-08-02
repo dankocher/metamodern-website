@@ -2,8 +2,11 @@
 
 .container {
   width: 100%;
-  background-color: $yellow100;
+
   padding: 96px autoResize(44px, 160px, $landscape800, $landscapeFHD);
+  margin-top: auto;
+
+  background-color: $yellow100;
 
   @media (min-width: $landscapeFHD) {
     padding-left: 8.333%;
