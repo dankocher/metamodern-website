@@ -1,7 +1,15 @@
 @import '../../styles/foundations.scss';
 
 .container {
-  flex: 1;
+  height: 100vh;
+
+  position: relative;
+  top: -92px;
+
+  @media (max-width: $landscape800) {
+    top: -84px;
+  }
+
   display: flex;
   flex-direction: column;
   justify-content: center;

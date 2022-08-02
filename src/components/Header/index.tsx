@@ -29,9 +29,11 @@ const Header = () => {
   const openModalMenu = () => setIsVisible((isVisible) => !isVisible);
 
   return (
-    <div
+    <header
       className={styles.container}
-      style={{ position: isHomePage ? 'absolute' : 'relative' }}
+      style={{
+        position: isHomePage ? 'absolute' : 'relative',
+      }}
     >
       <Menu />
 
@@ -46,7 +48,7 @@ const Header = () => {
       )}
 
       <IconMenuButton onClick={openModalMenu} />
-    </div>
+    </header>
   );
 };
 
