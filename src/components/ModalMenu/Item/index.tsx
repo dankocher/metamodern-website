@@ -16,9 +16,10 @@ const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
   const { setIsVisible } = useModalMenuContext();
 
   const navigateTo = () => {
+    setIsVisible(false);
+
     if (isCurrentPage) return;
 
-    setIsVisible(false);
     navigate(link);
   };
 
