@@ -29,7 +29,7 @@ const MainTitle = ({ portfolioRef }) => {
         <h1 className="bebasNeue320 noSelect">{translate.metaModern}</h1>
         <div className={styles.content__subtext}>
           <h2 className="bebasNeue288 noSelect">
-            {translate.design}
+            {translate.develop}
             <img className="noSelect" src={underline} />
           </h2>
         </div>
