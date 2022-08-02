@@ -34,7 +34,7 @@ const Project: FC<ProjectProps> = ({
             <h6 className="interBlack2436">{name}</h6>
             <h6 className="interSemiBold2436">&nbsp;{`- ${title}`}</h6>
           </div>
-          <div className={`interMedium1216 ${styles.content__tags}`}>
+          <div className={styles.content__tags}>
             {tags.map((tag, index) => (
               <div
                 key={`${tag}-${index}`}
@@ -42,7 +42,7 @@ const Project: FC<ProjectProps> = ({
                   borderColor: isDarkContent ? colors.dark : colors.light,
                 }}
               >
-                {tag}
+                <span className="interMedium1216">{tag}</span>
               </div>
             ))}
           </div>
