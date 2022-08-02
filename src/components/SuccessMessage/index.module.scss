@@ -2,12 +2,16 @@
 
 .container {
   height: 100vh;
+  width: 100%;
 
   position: relative;
   top: -92px;
 
+  margin-bottom: -92px;
+
   @media (max-width: $landscape800) {
     top: -84px;
+    margin-bottom: -84px;
   }
 
   display: flex;
