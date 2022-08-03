@@ -26,10 +26,10 @@
     position: relative;
 
     height: 414px;
-    width: 1399px;
+    width: 1426px;
 
     height: autoResize(77px, 192px, $landscape320, $landscape800) !important;
-    width: autoResize(259px, 646px, $landscape320, $landscape800) !important;
+    width: autoResize(267.79px, 661px, $landscape320, $landscape800) !important;
 
     @media (min-width: $landscape800) {
       height: autoResize(
@@ -38,7 +38,7 @@
         $landscape800,
         $landscape1133
       ) !important;
-      width: autoResize(646px, 797px, $landscape800, $landscape1133) !important;
+      width: autoResize(661px, 823px, $landscape800, $landscape1133) !important;
     }
 
     @media (min-width: $landscape1200) {
@@ -49,8 +49,8 @@
         $landscapeFHD
       ) !important;
       width: autoResize(
-        797px,
-        1399px,
+        823px,
+        1426px,
         $landscape1200,
         $landscapeFHD
       ) !important;
@@ -120,30 +120,21 @@
     span {
       position: absolute;
 
-      width: autoResize(404px, 710px, $landscape1200) !important;
+      width: autoResize(379px, 646px, $landscape1200);
 
-      left: autoResize(7px, 12px, $landscape1200) !important;
-      bottom: autoResize(32px, 56px, $landscape1200) !important;
+      left: autoResize(7px, 12px, $landscape1200);
+      bottom: autoResize(32px, 56px, $landscape1200);
+
+      color: $mainBlack;
 
       @media (max-width: $landscape800) {
         display: none;
       }
 
       @media (max-width: $landscape1133) {
-        width: autoResize(
-          350px,
-          404px,
-          $landscape800,
-          $landscape1133
-        ) !important;
-        bottom: autoResize(
-          18px,
-          32px,
-          $landscape800,
-          $landscape1133
-        ) !important;
+        width: autoResize(300px, 379px, $landscape800, $landscape1133);
+        bottom: autoResize(18px, 32px, $landscape800, $landscape1133);
       }
-      color: $mainBlack;
     }
   }
 }
