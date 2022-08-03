@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/metamodern-website/static/css/main.d43b2b0b.css",
+    "main.css": "/metamodern-website/static/css/main.7bcd1827.css",
     "main.js": "/metamodern-website/static/js/main.fa55d9c6.js",
     "static/js/787.42db63fd.chunk.js": "/metamodern-website/static/js/787.42db63fd.chunk.js",
     "static/media/timeZo@2x.png": "/metamodern-website/static/media/timeZo@2x.3b76a909260395382ea0.png",
@@ -13,12 +13,12 @@
     "static/media/dribbble.svg": "/metamodern-website/static/media/dribbble.d45c67d6d3ea2a046eb3d31dea2d8eb4.svg",
     "static/media/behance.svg": "/metamodern-website/static/media/behance.0c1e7d410819751ad5bbe6ed07ebc010.svg",
     "static/media/cross.svg": "/metamodern-website/static/media/cross.fb12580ec64a758ba589c015192bf27d.svg",
-    "main.d43b2b0b.css.map": "/metamodern-website/static/css/main.d43b2b0b.css.map",
+    "main.7bcd1827.css.map": "/metamodern-website/static/css/main.7bcd1827.css.map",
     "main.fa55d9c6.js.map": "/metamodern-website/static/js/main.fa55d9c6.js.map",
     "787.42db63fd.chunk.js.map": "/metamodern-website/static/js/787.42db63fd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d43b2b0b.css",
+    "static/css/main.7bcd1827.css",
     "static/js/main.fa55d9c6.js"
   ]
 }
