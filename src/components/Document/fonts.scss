@@ -1,0 +1,62 @@
+@import "./constants.scss";
+
+//Documents
+.docMain {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 48px;
+  font-size: autoResize(32px, 44px) !important;
+  line-height: autoResize(36px, 48px) !important;
+
+  @media (max-width: $mdDevice) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.docTitle0 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 44px;
+  font-size: autoResize(26px, 34px) !important;
+  line-height: autoResize(30px, 44px) !important;
+
+  @media (max-width: $mdDevice) {
+    font-size: 26px;
+    line-height: 30px;
+  }
+}
+
+.docTitle {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  font-size: autoResize(20px, 28px) !important;
+  line-height: autoResize(28px, 36px) !important;
+
+  @media (max-width: $mdDevice) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.docSubtitle {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  font-size: autoResize(16px, 18px) !important;
+  line-height: autoResize(22px, 26px) !important;
+
+  @media (max-width: $mdDevice) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}

@@ -10,7 +10,7 @@ $textColor: #8e98a2;
 
 $paddingHorizontal: 64px;
 
-.footer {
+.container {
   width: 100%;
 
   position: relative;
@@ -27,11 +27,11 @@ $paddingHorizontal: 64px;
     cursor: pointer;
   }
 
-  & > svg {
+  .logo {
     position: absolute;
     left: $paddingHorizontal;
 
-    & > * {
+    & svg > * {
       fill: $iconColor;
     }
 

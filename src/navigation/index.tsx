@@ -4,6 +4,7 @@ import AboutUs from '../screens/AboutUs';
 import ContactsScreen from '../screens/Contacts';
 import Home from '../screens/Home';
 import PortfolioScreen from '../screens/Portfolio';
+import PrivacyMetaModern from '../screens/PrivacyMetaModern';
 
 import PageWrapper from '../components/PageWrapper';
 import ScrollToTop from './ScrollToTop';
@@ -30,6 +31,11 @@ const Navigation = () => {
           path={SCREENS.CONTACTS}
           element={<PageWrapper children={<ContactsScreen />} />}
         />
+        <Route
+          path={SCREENS.META_MODERN_PRIVACY}
+          element={<PrivacyMetaModern />}
+        />
+
         <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
       </Routes>
     </ScrollToTop>

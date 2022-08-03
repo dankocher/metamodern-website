@@ -4,7 +4,7 @@ import { FC } from 'react';
 
 import translate from '../../i18n/en.json';
 
-import { mail, telegram } from '../../data/contacts';
+import { contacts } from '../../data/contacts';
 
 const Contacts: FC<{}> = () => {
   return (
@@ -15,14 +15,14 @@ const Contacts: FC<{}> = () => {
           <p className="interMedium2432">{translate.telegram}</p>
           <a
             className="interRegular2024"
-            href={`https://t.me/${telegram}`}
+            href={`https://t.me/${contacts.telegram}`}
             target="_blank"
             rel="noopener noreferrer"
-          >{`@${telegram}`}</a>
+          >{`@${contacts.telegram}`}</a>
 
           <p className="interMedium2432">{translate.email}</p>
-          <a className="interRegular2024" href={`mailto:${mail}`}>
-            {mail}
+          <a className="interRegular2024" href={`mailto:${contacts.mail}`}>
+            {contacts.mail}
           </a>
         </div>
       </div>

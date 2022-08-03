@@ -1,0 +1,49 @@
+$phoneWidth: 384px;
+
+$textColor: #2c2f36;
+$backgroundColor: #ffffff;
+
+.header {
+  position: absolute;
+
+  max-width: 800px;
+
+  width: 100%;
+
+  padding-top: 68px;
+  padding-left: 72px;
+
+  padding-top: autoResize(16px, 68px, $phoneWidth) !important;
+  padding-left: autoResize(16px, 72px, $phoneWidth) !important;
+
+  @media (max-width: 1230px) {
+    position: static;
+  }
+
+  .logo {
+    height: 60px;
+    width: 194px;
+
+    height: autoResize(46px, 60px, $phoneWidth) !important;
+    width: autoResize(134px, 194px, $phoneWidth) !important;
+  }
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+
+  footer {
+    position: static;
+    color: $textColor;
+  }
+
+  p {
+    color: #8e98a2;
+  }
+}
+
+.container {
+  position: relative;
+  background-color: $backgroundColor;
+}

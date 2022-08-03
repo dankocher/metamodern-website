@@ -1,6 +1,5 @@
 import styles from './styles.module.scss';
 
-import { mail, company } from './constants';
 import { SCREENS } from '../../navigation/constants';
 import { Link } from 'react-router-dom';
 
@@ -9,8 +8,12 @@ import behance from '../../assets/svg/behance.svg';
 import dribbble from '../../assets/svg/dribbble.svg';
 import instagram from '../../assets/svg/instagram.svg';
 
+import { contacts } from '../../data/contacts';
+
 const Footer = () => {
   const year: number = new Date().getFullYear();
+
+  const company: string = 'MetaModern';
 
   const constText = {
     termOfUse: 'Terms of service',
@@ -18,28 +21,35 @@ const Footer = () => {
   };
 
   return (
-    <footer className={styles.footer}>
-      {mainLogo}
+    <footer className={styles.container}>
+      <div className={styles.logo}>
+        <Link to={SCREENS.HOME}>{mainLogo}</Link>
+      </div>
+
       <div className={styles.info}>
         <div
           className={`${styles.info__links} ${styles.noSelect} footerMainFont`}
         >
-          <Link to={'SCREENS.PRIVACY'}>{constText.termOfUse}</Link>
-          <Link to={'SCREENS.PRIVACY'}>{constText.privacyPolicy}</Link>
-          <a href={`mailto:${mail}`}>{mail}</a>
+          {/* <Link to={'SCREENS.PRIVACY'}>{constText.termOfUse}</Link> */}
+          <Link to={SCREENS.META_MODERN_PRIVACY}>
+            {constText.privacyPolicy}
+          </Link>
+          <a href={`mailto:${contacts.mail}`}>{contacts.mail}</a>
         </div>
         <p className={'footerSubtitleFont'}>
           {year} © {company}
         </p>
       </div>
       <div className={styles.social}>
-        <a>
+        <a href={contacts.behance} rel="noreferrer\" target="_blank\">
           <img src={behance} />
         </a>
-        <a>
+
+        <a href={contacts.dribbble} rel="noreferrer\" target="_blank\">
           <img src={dribbble} />
         </a>
-        <a>
+
+        <a href={contacts.instagram} rel="noreferrer\" target="_blank\">
           <img src={instagram} />
         </a>
       </div>

@@ -1,0 +1,112 @@
+@import "./constants.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+
+  background-color: #ffffff;
+
+  .content {
+    width: autoResize(288px, 800px, 320px, $mdDevice);
+    flex-direction: column;
+    color: $neutral900;
+    padding-top: 88px;
+    padding-bottom: 144px;
+
+    @media (max-width: 1230px) {
+      padding-top: 30px;
+    }
+  }
+
+  .headerBlock {
+    padding-bottom: 28px;
+    border-bottom: 1px solid $neutral300;
+    margin-bottom: 40px;
+    padding-bottom: autoResize(24px, 28px) !important;
+
+    @media (max-width: $mdDevice) {
+      padding-bottom: 24px;
+    }
+
+    h2 {
+      text-transform: capitalize;
+      margin-bottom: 12px;
+      margin-bottom: autoResize(8px, 12px) !important;
+
+      @media (max-width: $mdDevice) {
+        margin-bottom: 8px;
+      }
+    }
+
+    p {
+      color: $neutral700;
+    }
+  }
+
+  .description {
+    .heading {
+      text-transform: capitalize;
+      margin-bottom: 32px;
+      margin-bottom: autoResize(24px, 32px) !important;
+
+      @media (max-width: $mdDevice) {
+        margin-bottom: 24px;
+      }
+    }
+
+    .title {
+      text-transform: capitalize;
+      margin-bottom: 20px;
+      margin-bottom: autoResize(16px, 20px) !important;
+
+      @media (max-width: $mdDevice) {
+        margin-bottom: 16px;
+      }
+    }
+
+    .text {
+      margin-bottom: 60px;
+
+      p,
+      ul:not(:last-child) {
+        margin-bottom: 26px;
+        margin-bottom: autoResize(22px, 26px) !important;
+
+        @media (max-width: $mdDevice) {
+          margin-bottom: 22px;
+        }
+      }
+
+      p.headingList {
+        margin-bottom: 20px;
+        margin-bottom: autoResize(16px, 20px) !important;
+
+        @media (max-width: $mdDevice) {
+          margin-bottom: 16px;
+        }
+      }
+
+      a {
+        word-break: break-all;
+        color: $accent;
+
+        &[href*="mailto:"] {
+          word-break: normal;
+        }
+      }
+
+      li {
+        margin-left: 32px;
+        list-style-type: disc;
+
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
