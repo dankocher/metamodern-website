@@ -28,7 +28,10 @@ const Navigation = () => {
           path={SCREENS.PORTFOLIO}
           element={<PageWrapper children={<PortfolioScreen />} />}
         />
-        <Route path={SCREENS.ABOUT_US} element={<AboutUs />} />
+        {/* <Route
+          path={SCREENS.ABOUT_US}
+          element={<PageWrapper children={<AboutUs />} />}
+        /> */}
 
         <Route
           path={SCREENS.CONTACTS}

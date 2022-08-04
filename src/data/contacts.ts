@@ -8,7 +8,7 @@ export interface Contacts {
 
 export const contacts: Contacts = {
   mail: 'support@metamodern.dev',
-  telegram: 'MetamodernDevBot',
+  telegram: 'panchen_ko',
   dribbble: 'https://dribbble.com/GraySWolf97',
   behance: 'https://www.behance.net/metamoderndev',
   instagram: 'https://www.instagram.com/metamoderndev/',

@@ -8,6 +8,7 @@ import TagList from '../TagList';
 import MInput from '../MInput';
 import MTextArea from '../MTextArea';
 import AttachFile from '../AttachFile';
+import SuccessMessage from '../SuccessMessage';
 
 import translate from '../../i18n/en.json';
 import { ServicesTypes, servicesTypes } from '../../constants/servicesTypes';
@@ -31,6 +32,7 @@ const Brief: FC = () => {
 
   const [currentServices, setCurrentServices] = useState<ServicesTypes[]>([]);
   const [attachedFile, setAttachedFile] = useState<File | null>(null);
+  const [isDataSent, setIsDataSent] = useState(false);
 
   const setCurrentServicesHandler = (item) => {
     const index = currentServices.indexOf(item);
@@ -45,12 +47,17 @@ const Brief: FC = () => {
   };
 
   const onSubmit = async (data) => {
-    const services = currentServices.length === 0 ? undefined : (currentServices.map(s => servicesTypes[s])).join(", ")
+    const services =
+      currentServices.length === 0
+        ? undefined
+        : currentServices.map((s) => servicesTypes[s]).join(', ');
     const brief = JSON.stringify({ ...data, services });
 
     let request = await sendToEmail(brief, attachedFile);
-    //TODO: check if (request.ok === true)
-    console.log(request)
+
+    if (request.ok) {
+      setIsDataSent(true);
+    }
   };
 
   const onSubmitFile = async (file) => {
@@ -62,54 +69,63 @@ const Brief: FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className={styles.container}>
-        <h2 className="bebasNeue132">{translate.fillBrief}</h2>
-        <section>
-          <h5 className="interMedium2432">{translate.whatServices}</h5>
-          <TagList
-            tagList={servicesTypes}
-            selectedTagList={currentServices}
-            setSelectedTagList={setCurrentServicesHandler}
-          />
-        </section>
-        <section className={styles.aboutProject}>
-          <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
-          <div className={styles.personalInformation}>
-            <MInput
-              label={translate.yourName}
-              required={true}
-              {...register('name', { required: true })}
-            />
-            <MInput
-              label={translate.email}
-              required={true}
-              {...register('email', { required: true })}
-            />
-          </div>
-          <Controller
-            name="description"
-            control={control}
-            render={({ field: { onChange, value } }) => (
-              <MTextArea
-                label={translate.description}
-                onChange={onChange}
-                value={value}
-                rowsMax={12}
+    <>
+      {isDataSent ? (
+        <SuccessMessage />
+      ) : (
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className={styles.container}>
+            <h2 className="bebasNeue132">{translate.fillBrief}</h2>
+            <section>
+              <h5 className="interMedium2432">{translate.whatServices}</h5>
+              <TagList
+                tagList={servicesTypes}
+                selectedTagList={currentServices}
+                setSelectedTagList={setCurrentServicesHandler}
               />
-            )}
-          />
-          <AttachFile
-            label={translate.attachFile}
-            setFile={onSubmitFile}
-            attachedFileName={attachedFile?.name}
-          />
-        </section>
-        <button type="submit" className={`latoSemibold2028 ${styles.sendBtn}`}>
-          {translate.send}
-        </button>
-      </div>
-    </form>
+            </section>
+            <section className={styles.aboutProject}>
+              <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
+              <div className={styles.personalInformation}>
+                <MInput
+                  label={translate.yourName}
+                  required={true}
+                  {...register('name', { required: true })}
+                />
+                <MInput
+                  label={translate.email}
+                  required={true}
+                  {...register('email', { required: true })}
+                />
+              </div>
+              <Controller
+                name="description"
+                control={control}
+                render={({ field: { onChange, value } }) => (
+                  <MTextArea
+                    label={translate.description}
+                    onChange={onChange}
+                    value={value}
+                    rowsMax={12}
+                  />
+                )}
+              />
+              <AttachFile
+                label={translate.attachFile}
+                setFile={onSubmitFile}
+                attachedFileName={attachedFile?.name}
+              />
+            </section>
+            <button
+              type="submit"
+              className={`latoSemibold2028 ${styles.sendBtn}`}
+            >
+              {translate.send}
+            </button>
+          </div>
+        </form>
+      )}
+    </>
   );
 };
 

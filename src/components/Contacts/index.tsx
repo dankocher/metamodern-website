@@ -6,7 +6,9 @@ import translate from '../../i18n/en.json';
 
 import { contacts } from '../../data/contacts';
 
-const Contacts: FC<{}> = () => {
+const Contacts: FC = () => {
+  const telegramTitle = 'MetamodernSales';
+
   return (
     <div className={styles.container}>
       <div>
@@ -18,7 +20,7 @@ const Contacts: FC<{}> = () => {
             href={`https://t.me/${contacts.telegram}`}
             target="_blank"
             rel="noopener noreferrer"
-          >{`@${contacts.telegram}`}</a>
+          >{`@${telegramTitle}`}</a>
 
           <p className="interMedium2432">{translate.email}</p>
           <a className="interRegular2024" href={`mailto:${contacts.mail}`}>
