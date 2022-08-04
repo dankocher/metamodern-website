@@ -1,5 +1,4 @@
-@import "src/styles/foundations.scss";
-@import "src/styles/autoResize.scss";
+@import '../../../styles/foundations.scss';
 
 $minHeightBlock: 328px;
 $minTop: 120px;
@@ -15,7 +14,10 @@ $minBottom: 124px;
   padding: 0 47px;
 
   @media (max-width: $lgDevice) {
-    min-height: max(calc(40vh + #{$minHeightBlock}/2 + #{$minBottom}), calc(#{$minTop} + #{$minBottom} + #{$minHeightBlock}));
+    min-height: max(
+      calc(40vh + #{$minHeightBlock}/ 2 + #{$minBottom}),
+      calc(#{$minTop} + #{$minBottom} + #{$minHeightBlock})
+    );
     padding: 0;
   }
 

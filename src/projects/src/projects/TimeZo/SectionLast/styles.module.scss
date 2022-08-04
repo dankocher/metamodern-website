@@ -1,5 +1,4 @@
-@import "src/styles/foundations.scss";
-@import "src/styles/autoResize.scss";
+@import '../../../styles/foundations.scss';
 
 .containerLast {
   @media (min-width: $footerPoint) {

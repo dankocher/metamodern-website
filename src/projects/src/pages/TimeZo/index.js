@@ -1,24 +1,25 @@
-import React, { useEffect } from "react"
+import { useEffect } from 'react';
 
-import { Layout } from "../../components/layout"
-import Seo from "../../components/seo"
-import TimeZo from "../../projects/TimeZo"
+import { Layout } from '../../components/layout';
+import TimeZo from '../../projects/TimeZo';
 
-import { colors } from "../../styles/colors"
+import { colors } from '../../styles/colors';
 
 const TimeZoPage = () => {
   useEffect(() => {
-    window.document.getElementsByTagName("html")[0].scrollTop = 0
-    window.document.getElementsByTagName("html")[0].removeAttribute("id")
-    window.document.getElementsByTagName("html")[0].style.backgroundColor = colors.timeZo
-  }, [])
+    const html = window.document.getElementsByTagName('html')[0];
+    html.style.backgroundColor = colors.timeZo;
+
+    return () => {
+      html.style.removeProperty('background-color');
+    };
+  }, []);
 
   return (
     <Layout theme="dark">
-      <Seo title="TimeZo" themeColor={colors.timeZo} />
       <TimeZo />
     </Layout>
-  )
-}
+  );
+};
 
-export default TimeZoPage
+export default TimeZoPage;

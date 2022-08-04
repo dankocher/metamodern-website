@@ -4,7 +4,7 @@ import layer1 from '../../../../assets/images/todLayer6_1.png';
 import layer2 from '../../../../assets/images/todLayer6_2.png';
 
 import Description from '../Description';
-import { StaticImage } from 'gatsby-plugin-image';
+import StaticImage from '../../../../components/StaticImage';
 
 const Section6 = ({ header, description }) => (
   <div className={styles.container}>

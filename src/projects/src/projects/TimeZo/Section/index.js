@@ -1,17 +1,21 @@
-import * as React from "react"
-import * as styles from "./styles.module.scss"
+import styles from './styles.module.scss';
 
-import { Icon } from "../../../components/Icon"
+import { Icon } from '../../../components/Icon';
+import StaticImage from '../../../components/StaticImage';
 
-import classNames from "classnames"
-import { StaticImage } from "gatsby-plugin-image"
+import timeZo_phone_1 from '../../../assets/images/TimeZo-phone-1.png';
+import timeZo_phone_2 from '../../../assets/images/TimeZo-phone-2.png';
+import timeZo_phone_3 from '../../../assets/images/TimeZo-phone-3.png';
+
+import classNames from 'classnames';
 
 const Section = ({ id, advantage }) => {
-  const circleStyle = (id) => classNames(styles.circle, {
-    [styles.circleOne]: id === "1",
-    [styles.circleTwo]: id === "2",
-    [styles.circleThree]: id === "3",
-  })
+  const circleStyle = (id) =>
+    classNames(styles.circle, {
+      [styles.circleOne]: id === '1',
+      [styles.circleTwo]: id === '2',
+      [styles.circleThree]: id === '3',
+    });
 
   return (
     <div className={styles.containerSection}>
@@ -29,14 +33,44 @@ const Section = ({ id, advantage }) => {
 
           <div className={styles.phoneImg}>
             <span className={circleStyle(id)} />
-            {id === "1" && <StaticImage className={styles.phone} src="../../../assets/images/TimeZo-phone-1.png" alt="phone" height={604} quality={95} formats={["AUTO", "WEBP", "AVIF"]} placeholder="none"/>}
-            {id === "2" && <StaticImage className={styles.phone} src="../../../assets/images/TimeZo-phone-2.png" alt="phone" height={604} quality={95} formats={["AUTO", "WEBP", "AVIF"]} placeholder="none"/>}
-            {id === "3" && <StaticImage className={styles.phone} src="../../../assets/images/TimeZo-phone-3.png" alt="phone" height={604} quality={95} formats={["AUTO", "WEBP", "AVIF"]} placeholder="none"/>}
+            {id === '1' && (
+              <StaticImage
+                className={styles.phone}
+                src={timeZo_phone_1}
+                alt="phone"
+                height={604}
+                quality={95}
+                formats={['AUTO', 'WEBP', 'AVIF']}
+                placeholder="none"
+              />
+            )}
+            {id === '2' && (
+              <StaticImage
+                className={styles.phone}
+                src={timeZo_phone_2}
+                alt="phone"
+                height={604}
+                quality={95}
+                formats={['AUTO', 'WEBP', 'AVIF']}
+                placeholder="none"
+              />
+            )}
+            {id === '3' && (
+              <StaticImage
+                className={styles.phone}
+                src={timeZo_phone_3}
+                alt="phone"
+                height={604}
+                quality={95}
+                formats={['AUTO', 'WEBP', 'AVIF']}
+                placeholder="none"
+              />
+            )}
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Section
+export default Section;

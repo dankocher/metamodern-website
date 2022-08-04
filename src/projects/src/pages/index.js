@@ -1,43 +1,46 @@
-import React, { useEffect, useRef, useState } from "react"
-import * as styles from "./styles.module.scss"
+import { useEffect, useRef, useState } from 'react';
+import styles from './styles.module.scss';
 
-import grained from "../utils/grained"
-import { isMobile } from "react-device-detect"
+import grained from '../utils/grained';
+import { isMobile } from 'react-device-detect';
 
-import { Layout } from "../components/layout"
-import Seo from "../components/seo"
-import ProjectCard from "../components/ProjectCard"
+import { Layout } from '../components/layout';
 
-import Data from "../../content/main-data-projects.json"
-import { colors } from "../styles/colors"
+import ProjectCard from '../components/ProjectCard';
 
-import useElementSize from "../utils/hooks/useElementSize"
-import { isThemeColorSupported } from "../utils/themeColorSupported"
-import { randomInteger } from "../utils/randomInteger"
+import Data from '../../content/main-data-projects.json';
 
-const HEIGHT_HEADER = 140
+import useElementSize from '../utils/hooks/useElementSize';
+
+import { randomInteger } from '../utils/randomInteger';
+
+const HEIGHT_HEADER = 140;
 
 const IndexPage = () => {
-  const textBlockRef = useRef()
-  const [topContent, setTopContent] = useState("0")
+  const textBlockRef = useRef();
+  const [topContent, setTopContent] = useState('0');
 
-  const [delay, setDelay] = useState(randomInteger(5000, 20000))
-  const [delayShowGlitch, setDelayShowGlitch] = useState(randomInteger(3000, 5000))
-  const [style, setStyle] = useState("")
+  const [delay, setDelay] = useState(randomInteger(5000, 20000));
+  const [delayShowGlitch, setDelayShowGlitch] = useState(
+    randomInteger(3000, 5000)
+  );
+  const [style, setStyle] = useState('');
 
-  const [activeGlitchMob, setActiveGlitchMob] = useState(false)
+  const [activeGlitchMob, setActiveGlitchMob] = useState(false);
 
-  const { height: heightTextBlock } = useElementSize(textBlockRef)
-
-  useEffect(() => {
-    setTopContent(`calc(50vh - ${(heightTextBlock + 240)/2}px - ${HEIGHT_HEADER}px)`)
-  }, [heightTextBlock])
+  const { height: heightTextBlock } = useElementSize(textBlockRef);
 
   useEffect(() => {
-    window.document.getElementsByTagName("html")[0].scrollTop = 0
-    window.document.getElementsByTagName("html")[0].id = "container-noise"
+    setTopContent(
+      `calc(50vh - ${(heightTextBlock + 240) / 2}px - ${HEIGHT_HEADER}px)`
+    );
+  }, [heightTextBlock]);
 
-    grained("#container-noise", {
+  useEffect(() => {
+    window.document.getElementsByTagName('html')[0].scrollTop = 0;
+    window.document.getElementsByTagName('html')[0].id = 'container-noise';
+
+    grained('#container-noise', {
       animate: true,
       patternWidth: 200,
       patternHeight: 200,
@@ -47,47 +50,66 @@ const IndexPage = () => {
       grainHeight: 2,
       grainChaos: 0.5,
       grainSpeed: 5,
-    })
-  }, [])
+    });
+  }, []);
 
   const randomEffect = () => {
     setTimeout(function run() {
-      setStyle(styles.glitchTextInterval)
+      setStyle(styles.glitchTextInterval);
 
       setTimeout(() => {
-        setStyle("")
-      }, delayShowGlitch)
+        setStyle('');
+      }, delayShowGlitch);
 
-      setDelay(randomInteger(5000, 20000))
-      setDelayShowGlitch(randomInteger(3000, 5000))
-    }, delay)
-  }
+      setDelay(randomInteger(5000, 20000));
+      setDelayShowGlitch(randomInteger(3000, 5000));
+    }, delay);
+  };
 
   useEffect(() => {
-    if (isMobile) return
+    if (isMobile) return;
 
-    randomEffect()
-    return () => clearTimeout(randomEffect)
-  }, [delay])
+    randomEffect();
+    return () => clearTimeout(randomEffect);
+  }, [delay]);
 
   const toggleActiveGlitchMob = () => {
-    if (!isMobile) return
-    setActiveGlitchMob(prevValue => !prevValue)
-  }
+    if (!isMobile) return;
+    setActiveGlitchMob((prevValue) => !prevValue);
+  };
 
   return (
-    <Layout theme="dark" positionHeader="absolute" mail={Data.link.mail} privacy={Data.link.privacy}>
-      <Seo title="Home" themeColor={isThemeColorSupported() ? colors.mainPage : colors.main} />
-          
-      <div className={styles.content} style={{ paddingTop: `${topContent}`, opacity: heightTextBlock === 0 ? 0 : 1}}>
+    <Layout
+      theme="dark"
+      positionHeader="absolute"
+      mail={Data.link.mail}
+      privacy={Data.link.privacy}
+    >
+      <div
+        className={styles.content}
+        style={{
+          paddingTop: `${topContent}`,
+          opacity: heightTextBlock === 0 ? 0 : 1,
+        }}
+      >
         <div className={styles.header} />
 
         <div className={styles.textBlock} ref={textBlockRef}>
           <div className={styles.glitchWrapper}>
-            <h1 className={`${styles.glitchText} ${style} ${activeGlitchMob ? styles.glitchTextInterval : ""} mainBigTitle`} data-glitch={Data.title}>
+            <h1
+              className={`${styles.glitchText} ${style} ${
+                activeGlitchMob ? styles.glitchTextInterval : ''
+              } mainBigTitle`}
+              data-glitch={Data.title}
+            >
               {Data.title}
             </h1>
-            {isMobile && <div className={styles.emptyBlock} onClick={toggleActiveGlitchMob} />}
+            {isMobile && (
+              <div
+                className={styles.emptyBlock}
+                onClick={toggleActiveGlitchMob}
+              />
+            )}
           </div>
 
           <p className={`${styles.text} mainSubtitle2`}>
@@ -96,11 +118,13 @@ const IndexPage = () => {
         </div>
 
         <div className={styles.projects}>
-          {Object.values(Data.projects).map(project => <ProjectCard key={project.name} {...project} />)}
+          {Object.values(Data.projects).map((project) => (
+            <ProjectCard key={project.name} {...project} />
+          ))}
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

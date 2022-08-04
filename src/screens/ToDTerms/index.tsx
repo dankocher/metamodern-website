@@ -1,3 +1,3 @@
-import ToDTerms from '../../projects/src/pages/ToD/terms';
+import ToDTermsScreen from '../../projects/src/pages/ToD/terms';
 
-export default ToDTerms;
+export default ToDTermsScreen;

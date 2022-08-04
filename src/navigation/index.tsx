@@ -10,9 +10,11 @@ import ContactsScreen from '../screens/Contacts';
 import Home from '../screens/Home';
 import PortfolioScreen from '../screens/Portfolio';
 import PrivacyMetaModern from '../screens/PrivacyMetaModern';
-import TodPage from '../screens/TOD';
-import TodPrivacy from '../screens/ToDPrivacy';
-import ToDTerms from '../screens/ToDTerms';
+import ToDScreen from '../screens/TOD';
+import ToDPrivacyScreen from '../screens/ToDPrivacy';
+import ToDTermsScreen from '../screens/ToDTerms';
+import TimeZoScreen from '../screens/TimeZO';
+import TimeZoPrivacyScreen from '../screens/TimeZOPrivacy';
 
 const Navigation = () => {
   return (
@@ -37,9 +39,15 @@ const Navigation = () => {
           element={<PrivacyMetaModern />}
         />
 
-        <Route path={SCREENS.TOD} element={<TodPage />} />
-        <Route path={SCREENS.TOD_PRIVACY} element={<TodPrivacy />} />
-        <Route path={SCREENS.TOD_TERMS} element={<ToDTerms />} />
+        <Route path={SCREENS.TOD} element={<ToDScreen />} />
+        <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen />} />
+        <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen />} />
+
+        <Route path={SCREENS.TimeZO} element={<TimeZoScreen />} />
+        <Route
+          path={SCREENS.TimeZO_PRIVACY}
+          element={<TimeZoPrivacyScreen />}
+        />
 
         <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
       </Routes>

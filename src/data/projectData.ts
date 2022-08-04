@@ -25,7 +25,7 @@ const data: ProjectProps[] = [
     isDarkContent: false,
   },
   {
-    link: SCREENS.TOD,
+    link: SCREENS.TimeZO,
     type: ProjectsTypes.MOBILE,
     name: 'TimeZo',
     title: 'конвертор временных зон',
@@ -37,29 +37,6 @@ const data: ProjectProps[] = [
       '--gradient': 'linear-gradient(180deg, #ffe144 0%, #ffffff 100%)',
     },
     isDarkContent: true,
-  },
-  {
-    link: SCREENS.TOD,
-    type: ProjectsTypes.LANDING,
-    name: '”Правда или действие”',
-    title: 'приложени имитации игры',
-    description:
-      'Разработали инновационное приложения для семейного и дружественного отдыха в любых условиях.',
-    tags: [
-      'Приложение',
-      'Дизайн',
-      'Разработка',
-      'Иллюстрации',
-      'Приложение',
-      'Дизайн',
-      'Разработка',
-    ],
-    bgImage: { x1: truthOrDare, x2: truthOrDare2 },
-    gradient: {
-      '--gradient':
-        'linear-gradient(47.96deg, #8449C4 14.04%, #8845BD 29.78%, #9C33BA 47.89%, #AA3594 72.47%, #A61F5A 95.92%)',
-    },
-    isDarkContent: false,
   },
 ];
 

@@ -1,3 +1,3 @@
-import TodPrivacy from '../../projects/src/pages/ToD/privacy';
+import ToDPrivacyScreen from '../../projects/src/pages/ToD/privacy';
 
-export default TodPrivacy;
+export default ToDPrivacyScreen;
