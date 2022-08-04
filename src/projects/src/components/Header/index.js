@@ -14,7 +14,11 @@ const Header = ({ theme, positionHeader }) => {
   }, []);
 
   return (
-    <header className={styles.header} style={{ position: positionHeader }}>
+    <header
+      id="header"
+      className={styles.header}
+      style={{ position: positionHeader }}
+    >
       <Link
         to="/"
         className={styles.logo}
