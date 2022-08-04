@@ -6,9 +6,11 @@ import timeZo2 from '../assets/images/timeZo@2x.png';
 
 import truthOrDare from '../assets/images/truthOrDare.png';
 import truthOrDare2 from '../assets/images/truthOrDare@2x.png';
+import { SCREENS } from '../navigation/constants';
 
 const data: ProjectProps[] = [
   {
+    link: SCREENS.TOD,
     type: ProjectsTypes.MOBILE,
     name: '”Правда или действие”',
     title: 'приложени имитации игры',
@@ -23,6 +25,7 @@ const data: ProjectProps[] = [
     isDarkContent: false,
   },
   {
+    link: SCREENS.TOD,
     type: ProjectsTypes.MOBILE,
     name: 'TimeZo',
     title: 'конвертор временных зон',
@@ -36,6 +39,7 @@ const data: ProjectProps[] = [
     isDarkContent: true,
   },
   {
+    link: SCREENS.TOD,
     type: ProjectsTypes.LANDING,
     name: '”Правда или действие”',
     title: 'приложени имитации игры',

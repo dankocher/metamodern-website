@@ -1,0 +1,163 @@
+@import "../../../../styles/foundations.scss";
+
+$minHeightBlock: 328px;
+$minTop: 120px;
+$minBottom: 124px;
+
+.container {
+  min-height: 100vh;
+
+  display: grid;
+
+  align-items: self-start;
+
+  grid-template-rows:
+    minmax(calc(#{autoResize($headerHeightMin, $headerHeightMax)} + 20px), 1fr)
+    min-content minmax(min-content, 1fr);
+
+  overflow: hidden;
+
+  padding: 0 24px;
+
+  @media (max-width: $tabletWidth) {
+    padding: 0 8px;
+  }
+
+  @media (max-width: $phoneWidth) {
+    display: block;
+  }
+
+  .content {
+    grid-area: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $tabletWidth) {
+      flex-direction: column;
+    }
+  }
+
+  .smWrapper {
+    position: relative;
+    z-index: 1;
+    @media (max-width: $phoneWidth) {
+      height: 100vh;
+      display: grid;
+
+      grid-template-rows: minmax(100px, 0) 1fr 20vh;
+
+      align-content: center;
+    }
+  }
+
+  .leftBlock {
+    width: autoResize(284, 524, 375, $tabletWidth);
+
+    grid-area: 2;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    @media (max-width: $lgDevice) {
+      margin-bottom: autoResize(44, 84, 375, $tabletWidth);
+    }
+
+    @media (max-width: $phoneWidth) {
+      grid-area: 2;
+      margin-bottom: unset;
+    }
+
+    .logo {
+      height: 96px;
+
+      position: relative;
+
+      align-self: start;
+
+      border-radius: 14px;
+
+      margin-bottom: 20px;
+
+      overflow: hidden;
+
+      @media (max-width: 767px) {
+        align-self: center;
+      }
+    }
+
+    .title {
+      width: autoResize(284, 524, 375, $tabletWidth);
+
+      position: relative;
+
+      margin-bottom: 16px;
+
+      color: $white;
+
+      font-size: autoResize(40.88, 48, 1635, 1920);
+      line-height: autoResize(44.28, 52, 1635, 1920);
+
+      @media (max-width: $tabletWidth) {
+        font-size: autoResize(28, 40.88, 375, $tabletWidth);
+        line-height: autoResize(32, 44.28, 375, $tabletWidth);
+      }
+    }
+
+    .description {
+      max-width: 370px;
+
+      position: relative;
+
+      margin-bottom: 32px;
+
+      font-size: autoResize(14, 16, 1635, 1920);
+      line-height: autoResize(17, 20, 1635, 1920);
+
+      span:nth-child(odd) {
+        color: $neutural100;
+      }
+
+      span:nth-child(even) {
+        color: $white;
+      }
+    }
+  }
+
+  .phoneBlock {
+    height: autoResize(532.67, 625.52, 1635, 1920);
+
+    > div {
+      height: 100%;
+    }
+
+    margin-left: -275px;
+    margin-right: -330px;
+
+    img {
+      height: 100%;
+      width: auto;
+      margin: auto;
+
+      object-fit: contain !important;
+    }
+
+    @media (max-width: $phoneWidth) {
+      display: none;
+    }
+
+    @media (max-width: $mdDevice) {
+      img {
+        width: autoResize(646, 746, 375, $tabletWidth);
+      }
+
+      margin-left: autoResize(-300, -245, 320, $tabletWidth);
+      // margin-right: -151px;
+    }
+  }
+}

@@ -1,0 +1,310 @@
+@import "foundations.scss";
+
+//Fonts
+
+/* ToD/Subtitle GExBold 16 20 */
+
+.timeZooBigTitle {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+}
+
+.todSubtitleRegular {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.todSubtitleBold {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.toDExtraBig {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 64px;
+  line-height: 80px;
+}
+
+.todMedium {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 49px;
+}
+
+//Documents
+
+.docMain {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 48px;
+  font-size: autoResize(32px, 44px) !important;
+  line-height: autoResize(36px, 48px) !important;
+
+  @media (max-width: $mdDevice) {
+    font-size: 32px;
+    line-height: 36px;
+  }
+}
+
+.docTitle0 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 44px;
+  font-size: autoResize(26px, 34px) !important;
+  line-height: autoResize(30px, 44px) !important;
+
+  @media (max-width: $mdDevice) {
+    font-size: 26px;
+    line-height: 30px;
+  }
+}
+
+.docTitle {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  font-size: autoResize(20px, 28px) !important;
+  line-height: autoResize(28px, 36px) !important;
+
+  @media (max-width: $mdDevice) {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
+.docSubtitle {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 26px;
+  font-size: autoResize(16px, 18px) !important;
+  line-height: autoResize(22px, 26px) !important;
+
+  @media (max-width: $mdDevice) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+//TimeZo fonts
+
+.title0 {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+  font-size: autoResize(28px, 40px) !important;
+  line-height: autoResize(32px, 48px) !important;
+
+  @media (max-width: $mdDevice) {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+.title1 {
+  font-family: "Gilroy", sans-serif;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.title2 {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.subtitleMain {
+  font-family: "Gilroy", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.subtitle {
+  font-family: "Gilroy", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  font-size: autoResize(14px, 16px) !important;
+  line-height: autoResize(17px, 20px) !important;
+}
+
+.subtitle0 {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.subtitleSmall {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.bigTitle {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 52px;
+  font-size: autoResize(28px, 48px) !important;
+  line-height: autoResize(32px, 52px) !important;
+
+  @media (max-width: $mdDevice) {
+    font-size: 28px;
+    line-height: 32px;
+  }
+}
+
+//TimeBlock
+.subtitle1 {
+  font-family: "Rubik", sans-serif;
+  font-size: 22px;
+  line-height: 26px;
+  font-size: autoResize(19px, 22px, $minSize) !important;
+  line-height: autoResize(22px, 26px, $minSize) !important;
+
+  @media (max-width: $minSize) {
+    font-size: 19px;
+    line-height: 22px;
+  }
+}
+
+.subtitle2 {
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-size: autoResize(14px, 16px, $minSize) !important;
+  line-height: autoResize(15px, 18px, $minSize) !important;
+
+  @media (max-width: $minSize) {
+    font-size: 14px;
+    line-height: 15px;
+  }
+}
+
+.subtitle3 {
+  font-family: "Rubik", sans-serif;
+  font-size: 12px;
+  line-height: 12px;
+  font-size: autoResize(10px, 12px, $minSize) !important;
+  line-height: autoResize(10px, 12px, $minSize) !important;
+
+  @media (max-width: $minSize) {
+    font-size: 10px;
+    line-height: 10px;
+  }
+}
+
+.subtitle4 {
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 48px;
+  font-size: autoResize(31px, 36px, $minSize) !important;
+  line-height: autoResize(40px, 48px, $minSize) !important;
+
+  @media (max-width: $minSize) {
+    font-size: 31px;
+    line-height: 40px;
+  }
+}
+
+//Links fonts
+
+.downFont {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.smallFont {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 15px;
+}
+
+//Main page fonts
+.mainBigTitle  {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 400;
+  font-size: 232px;
+  line-height: 200px;
+  font-size: autoResize(72px, 232px) !important;
+  line-height: autoResize(72px, 200px) !important;
+
+  @media (max-width: $maxDevice) {
+    font-size: 148px;
+    line-height: 124px;
+  }
+
+  @media (max-width: $miniDevice) {
+    font-size: 72px;
+    line-height: 72px;
+  }
+}
+
+.mainSubtitle {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.mainSubtitle1 {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.mainSubtitle2 {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  font-size: autoResize(14px, 18px) !important;
+  line-height: autoResize(16px, 24px) !important;
+
+  @media (max-width: $miniDevice) {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+.mainSubtitle3 {
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.fontSoon {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+}

@@ -1,0 +1,48 @@
+@import "../../../../styles/foundations.scss";
+
+.description {
+  width: autoResize(284, 498, 375, $tabletWidth);
+
+  position: relative;
+
+  margin-right: 44px;
+
+  @media (max-width: $tabletWidth) {
+    margin-right: unset;
+    margin-bottom: autoResize(34, 44, 375, $tabletWidth);
+
+    text-align: center;
+  }
+
+  span {
+    font-size: autoResize(20.4, 24, 1635, 1920);
+    line-height: autoResize(24, 28, 1635, 1920);
+
+    @media (max-width: $tabletWidth) {
+      font-size: autoResize(14, 20.4, 375, $tabletWidth);
+      line-height: autoResize(17, 24, 375, $tabletWidth);
+    }
+  }
+
+  span:nth-child(odd) {
+    color: $white;
+  }
+
+  span:nth-child(even) {
+    color: $neutural100;
+  }
+
+  h2 {
+    margin-bottom: 4px;
+
+    color: $white;
+
+    font-size: autoResize(54.5, 64, 1635, 1920);
+    line-height: autoResize(69, 81, 1635, 1920);
+
+    @media (max-width: $tabletWidth) {
+      font-size: autoResize(28, 54.5, 375, $tabletWidth);
+      line-height: autoResize(32, 69, 375, $tabletWidth);
+    }
+  }
+}

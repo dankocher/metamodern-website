@@ -1,0 +1,131 @@
+@import "src/styles/foundations.scss";
+@import "src/styles/autoResize.scss";
+
+$minHeightBlock: 328px;
+$minTop: 120px;
+$minBottom: 124px;
+
+.container {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0 47px;
+
+  @media (max-width: $lgDevice) {
+    min-height: max(calc(40vh + #{$minHeightBlock}/2 + #{$minBottom}), calc(#{$minTop} + #{$minBottom} + #{$minHeightBlock}));
+    padding: 0;
+  }
+
+  .centerBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: $main;
+
+    @media (max-width: $lgDevice) {
+      min-height: 80vh;
+      width: 100%;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  .headerBlock {
+    flex: 1;
+    min-height: $minTop;
+  }
+
+  .headerBlockMin {
+    flex: 1;
+    min-height: $minBottom;
+  }
+
+  .block {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $lgDevice) {
+      min-height: $minHeightBlock;
+    }
+  }
+
+  .content {
+    width: 524px;
+    position: relative;
+    z-index: 1;
+
+    @media (max-width: $mdDevice) {
+      width: initial;
+      max-width: 524px;
+    }
+
+    @media (max-width: $mdDevice) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      height: 96px;
+      position: relative;
+      display: flex;
+      margin-bottom: 20px;
+
+      @media (max-width: $mdDevice) {
+        align-self: center;
+      }
+    }
+
+    .title {
+      margin-bottom: 16px;
+
+      @media (max-width: 1480px) {
+        max-width: 440px;
+        max-width: autoResize(290, 440, 370, $lgDevice) !important;
+      }
+
+      @media (max-width: $mdDevice) {
+        max-width: 290px;
+      }
+    }
+
+    .description {
+      max-width: 370px;
+      margin-bottom: 32px;
+
+      @media (max-width: $mdDevice) {
+        max-width: 284px;
+      }
+    }
+  }
+
+  .phoneBlock {
+    height: 625px;
+    height: autoResize(532, 625, 1635, $maxDevice) !important;
+    margin-left: -275px;
+    margin-right: -330px;
+
+    @media (max-width: $maxDevice) {
+      height: 532px;
+      margin-left: -284px;
+      margin-right: -360px;
+    }
+
+    > div {
+      height: 100%;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+      margin: auto;
+    }
+
+    @media (max-width: $lgDevice) {
+      display: none;
+    }
+  }
+}

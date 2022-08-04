@@ -1,0 +1,39 @@
+@import "../../../../styles/foundations.scss";
+@import "../../styles/generalStyles.scss";
+
+.firstBackground,
+.secondBackground {
+  position: absolute;
+
+  @media (max-width: $tabletWidth) {
+    display: none !important;
+  }
+}
+
+.firstBackground {
+  top: 0;
+  left: 0;
+
+  height: autoResize(343, 402, 1635, 1920);
+  width: autoResize(320, 375, 1635, 1920);
+
+  transform: translateX(-46%) translateY(-36%);
+}
+
+.secondBackground {
+  height: 80vh;
+  max-height: 1250px;
+
+  position: absolute !important;
+
+  left: -200px;
+
+  img {
+    height: 100%;
+    max-width: 100%;
+
+    width: auto !important;
+
+    object-fit: contain !important;
+  }
+}

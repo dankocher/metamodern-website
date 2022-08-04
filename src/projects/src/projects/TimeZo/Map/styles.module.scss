@@ -1,0 +1,108 @@
+@import "src/styles/foundations.scss";
+
+.container {
+  min-height: 100vh;
+  padding: 0 58px;
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  transition: opacity $transition150;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: $mdDevice) {
+    margin-bottom: 96px;
+  }
+}
+
+.map {
+  position: relative;
+
+  img {
+    height: 100%;
+  }
+
+  .location {
+    height: 70px;
+    width: 58px;
+    height: autoResize(60px, 70px, $minSize) !important;
+    width: autoResize(50px, 58px, $minSize) !important;
+    transform: translate(-50%, -100%);
+    position: absolute;
+
+    @media (max-width: $minSize) {
+      height: 60px;
+      width: 50px;
+    }
+
+    .icon {
+      height: 100%;
+      width: 100%;
+      position: relative;
+
+      svg {
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .dateBlock {
+      height: 80px;
+      width: 343px;
+      height: autoResize(66px, 80px, $minSize) !important;
+      width: autoResize(292px, 343px, $minSize) !important;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      padding: autoResize(13px, 16px, $minSize) !important;
+      border-radius: 16px;
+      border-radius: autoResize(14px, 16px, $minSize) !important;
+      box-shadow: 12px 12px 44px rgba(0, 0, 0, 0.25);
+      background-color: $timeZo;
+      user-select: none;
+
+      @media (max-width: $minSize) {
+        height: 66px;
+        width: 292px;
+        padding: 13px;
+        border-radius: 14px;
+      }
+
+      .country {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        color: $grey;
+
+        .capital {
+          color: $textBlack;
+
+          @media (min-width: $mdDevice) {
+            margin-bottom: 4px;
+          }
+        }
+
+        .zone {
+          position: absolute;
+          top: 0;
+          left: 100%;
+        }
+      }
+
+      .time {
+        width: 112px;
+        width: autoResize(96px, 112px, $minSize) !important;
+        color: $textBlack;
+
+        @media (max-width: $minSize) {
+          width: 96px;
+        }
+      }
+    }
+  }
+}

@@ -3,8 +3,10 @@ import { FC } from 'react';
 
 import Image from '../../Image';
 import { ProjectProps } from './project.interface';
+import { useNavigate } from 'react-router-dom';
 
 const Project: FC<ProjectProps> = ({
+  link,
   name,
   title,
   description,
@@ -15,9 +17,18 @@ const Project: FC<ProjectProps> = ({
   ...props
 }) => {
   const colors = { dark: '#242424', light: '#FFFFFF' };
+  const navigate = useNavigate();
+
+  const navigateTo = () => {
+    navigate(link);
+  };
 
   return (
-    <div {...props} className={`${styles.container} noSelect`}>
+    <div
+      {...props}
+      className={`${styles.container} noSelect`}
+      onClick={navigateTo}
+    >
       <div className={styles.aspectRation} />
       <div className={styles.gradient} style={gradient} />
 

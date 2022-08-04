@@ -1,0 +1,124 @@
+@import "src/styles/foundations.scss";
+
+.containerSection {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-align: center;
+  min-height: 100vh;
+
+  @media (max-width: $mdDevice) {
+    padding: 0 18px;
+    margin-bottom: 160px;
+  }
+
+  &:not(:first-child) {
+    justify-content: center;
+  }
+
+  @media (min-width: $mdDevice + 1) {
+    &:nth-of-type(4) .phone__block {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .page {
+    height: autoResize(920, 1080, 1635, 1920);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    @media (max-width: $mdDevice) {
+      height: unset;
+    }
+  }
+}
+
+.phone__block {
+  height: 55.925925925925926%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: $mdDevice + 1) {
+    width: 766px;
+  }
+
+  @media (max-width: $mdDevice) {
+    flex-direction: column-reverse;
+  }
+
+  .advantage {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+
+    :not(:last-child) {
+      margin-bottom: 56px;
+    }
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: $textSecond;
+
+      :not(:last-child) {
+        color: $main;
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  .phoneImg {
+    height: 100%;
+    position: relative;
+
+    .phone {
+      height: 100%;
+
+      > div {
+        height: 100%;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+
+    @media (max-width: $mdDevice) {
+      margin-bottom: 44px;
+
+      .phone {
+        height: 470px;
+        height: autoResize(470px, 514px, 320px, $mdDevice) !important;
+      }
+    }
+
+    @media (min-width: $mdDevice + 1) {
+      .circle {
+        width: 116.1%;
+        height: 57.28%;
+        position: absolute;
+        border-radius: 50%;
+        background-color: $yellow;
+      }
+
+      .circleOne {
+        top: -4%;
+        left: 6.4%;
+      }
+
+      .circleTwo {
+        bottom: -3.8%;
+        left: 11.4%;
+      }
+
+      .circleThree {
+        top: 21.7%;
+        left: 36.9%;
+      }
+    }
+  }
+}

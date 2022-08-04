@@ -1,0 +1,59 @@
+{
+  "mainData": {
+    "nameShort": "TimeZo",
+    "name": "TimeZo helps travel in your workplace.",
+    "descriptionMain": "TimeZo is the most convenient and fastest way to keep your head clean.",
+    "descriptionLast": "Now your time is in your hands.",
+    "link": { "googlePlay": "", "appStore": "" }
+  },
+  "sections": [
+    {
+      "id": "1",
+      "advantage": [
+        {
+          "icon": "simpleDesign",
+          "title": "Simple design.",
+          "text": "We managed to create a laconic design with well-placed accents and clear functionality. And you can also have the option to choose a dark theme."
+        },
+        {
+          "icon": "phone",
+          "title": "One page app.",
+          "text": "We managed to place all the necessary information on one page because it helps to save the user's time so that he feels better."
+        }
+      ],
+      "phoneImg": "1"
+    },
+    {
+      "id": "2",
+      "advantage": [
+        {
+          "icon": "quickEditing",
+          "title": "Quick editing.",
+          "text": "You can easily add or remove a city, scroll through the time and select a different date. It is very convenient."
+        },
+        {
+          "icon": "touch",
+          "title": "One touch time scroll",
+          "text": "We have specially placed the time wheel on the bottom to make it comfortable for both left-handers and right-handers."
+        }
+      ],
+      "phoneImg": "2"
+    },
+    {
+      "id": "3",
+      "advantage": [
+        {
+          "icon": "sharing",
+          "title": "Quick sharing",
+          "text": "Swiping city to the right - send a quick message to your colleagues and friends about an upcoming event with time and date."
+        },
+        {
+          "icon": "calendar",
+          "title": "Connection with calendar apps",
+          "text": "Swiping to the right, you will enter the data into the calendar so as not to forget anything."
+        }
+      ],
+      "phoneImg": "3"
+    }
+  ]
+}

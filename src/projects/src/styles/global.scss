@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  text-rendering: optimizeSpeed;
+}
+
+img {
+  user-select: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}

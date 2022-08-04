@@ -1,0 +1,77 @@
+@import "../../styles/foundations";
+
+.header {
+  width: 100%;
+  height: $headerHeightMax;
+  height: autoResize($headerHeightMin, $headerHeightMax) !important;
+
+  display: flex;
+  align-items: flex-end;
+
+  position: fixed;
+
+  padding-left: 64px;
+  padding-right: 64px;
+  padding-left: autoResize(16px, 64px) !important;
+  padding-right: autoResize(16px, 64px) !important;
+
+  z-index: 2;
+
+  @media (max-width: $lgDevice) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media (max-width: $miniDevice) {
+    height: $headerHeightMin;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .logo {
+    height: $logoHeightMax;
+    width: $logoHeightMax;
+    height: autoResize($logoHeightMin, $logoHeightMax) !important;
+    width: autoResize($logoHeightMin, $logoHeightMax) !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    -webkit-transform: translateZ(0);
+
+    @media (max-width: $miniDevice) {
+      height: $logoHeightMin;
+      width: $logoHeightMin;
+    }
+
+    svg {
+      height: 100%;
+      width: 100%;
+
+      position: absolute;
+
+      transition: opacity $transition150;
+    }
+
+    .iconMain {
+      opacity: 1;
+    }
+
+    .iconGradient {
+      opacity: 0;
+    }
+
+    &:hover {
+      .iconMain {
+        opacity: 0;
+      }
+
+      .iconGradient {
+        opacity: 1;
+      }
+    }
+  }
+}

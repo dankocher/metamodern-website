@@ -1,0 +1,91 @@
+@import "../../../../styles/foundations.scss";
+@import "../../styles/generalStyles.scss";
+
+.firstBackground,
+.secondBackground,
+.thirdBackground {
+  position: absolute;
+
+  img {
+    height: 100%;
+    width: auto;
+
+    margin: auto;
+  }
+
+  @media (max-width: $tabletWidth) {
+    display: none;
+  }
+}
+
+.firstBackground {
+  top: 0;
+  left: 0;
+
+  height: autoResize(269, 316, 1635, 1920);
+  width: autoResize(228, 268, 1635, 1920);
+
+  transform: translateX(-49%) translateY(-43%);
+}
+
+.secondBackground {
+  right: 0;
+  top: 0;
+
+  height: autoResize(274, 322, 1635, 1920);
+  width: autoResize(237, 278, 1635, 1920);
+
+  transform: translateX(73%) translateY(-20%);
+}
+
+.thirdBackground {
+  bottom: 0;
+  left: 0;
+
+  height: autoResize(287, 337, 1635, 1920);
+  width: autoResize(287, 337, 1635, 1920);
+
+  transform: translateX(48%) translateY(44%);
+}
+
+.leftBackground,
+.rightBackground {
+  height: 100%;
+
+  position: absolute;
+  display: flex;
+
+  img {
+    width: auto;
+
+    margin: auto;
+  }
+}
+
+.leftBackground {
+  left: 0;
+
+  height: 85%;
+
+  img {
+    max-height: 100%;
+  }
+
+  @media (max-width: $tabletWidth) {
+    display: none;
+  }
+}
+
+.rightBackground {
+  right: 0;
+
+  height: 90%;
+
+  img {
+    max-height: 100%;
+  }
+
+  @media (max-width: 1250px) {
+    display: none;
+  }
+}

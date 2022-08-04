@@ -15,6 +15,7 @@ const ProjectList = ({
       {data.map(
         (
           {
+            link,
             type,
             name,
             title,
@@ -32,6 +33,7 @@ const ProjectList = ({
               className={styles.projectCell}
             >
               <Project
+                link={link}
                 name={name}
                 title={title}
                 description={description}

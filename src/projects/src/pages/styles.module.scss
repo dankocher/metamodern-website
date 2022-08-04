@@ -1,0 +1,173 @@
+@use 'sass:math';
+@import "src/styles/foundations.scss";
+
+.header {
+  display: flex;
+  height: 140px;
+}
+
+.content {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $main;
+  padding-bottom: $footerHeightLg;
+  transition: opacity 1s ease-in-out;
+
+  @media (max-width: $footerPoint) {
+    padding-bottom: $footerHeightMob;
+  }
+
+  .textBlock {
+    width: min-content;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .emptyBlock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .glitchWrapper {
+    user-select: none;
+    cursor: auto;
+    margin-bottom: 20px;
+    margin-bottom: autoResize(0, 20px) !important;
+
+    @media (max-width: $maxDevice) {
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: $miniDevice) {
+      margin-bottom: 0;
+    }
+  }
+
+  .glitchText {
+    position: relative;
+
+    &:before, &:after {
+      display: block;
+      text-transform: uppercase;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      opacity: .8;
+      color: $main;
+      overflow: hidden;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        &:before, &:after {
+          content: attr(data-glitch);
+          background: $mainPage;
+          animation-duration: 2s;
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+          animation-direction: alternate-reverse;
+        }
+
+        &:before {
+          left: 3px;
+          text-shadow: -2px 0 red;
+          animation-name: glitch-animation-1;
+        }
+
+        &:after {
+          left: -3px;
+          text-shadow: -2px 0 blue;
+          animation-name: glitch-animation-2;
+        }
+      }
+    }
+  }
+
+  .glitchTextInterval {
+    &:before, &:after {
+      content: attr(data-glitch);
+      background: $mainPage;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      animation-direction: alternate-reverse;
+    }
+
+    &:before {
+      left: 3px;
+      text-shadow: -2px 0 red;
+      animation-name: glitch-animation-1;
+    }
+
+    &:after {
+      left: -3px;
+      text-shadow: -2px 0 blue;
+      animation-name: glitch-animation-2;
+    }
+  }
+
+  .text {
+    max-width: 689px;
+    max-width: autoResize(300px, 689px) !important;
+    text-align: center;
+    padding-bottom: 72px;
+    padding-bottom: autoResize(96px, 72px) !important;
+
+    @media (max-width: $maxDevice) {
+      max-width: 584px;
+      padding-bottom: 52px;
+    }
+
+    @media (max-width: $miniDevice) {
+      max-width: 300px;
+      padding-bottom: 72px;
+    }
+
+    @media (max-width: $footerPoint) {
+      .textMob {
+        display: none;
+      }
+    }
+  }
+
+  .projects {
+    width: 100%;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 240px);
+    gap: 20px;
+    justify-content: center;
+
+    @media (max-width: $footerPoint) {
+      margin-bottom: 56px;
+    }
+  }
+}
+
+@keyframes glitch-animation-1 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*math.div(1, $steps))} {
+      clip: rect(random(150) + px, 1000px, random(150) + px, 30px);
+    }
+  }
+}
+
+@keyframes glitch-animation-2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*math.div(1, $steps))} {
+      clip: rect(random(150) + px, 1000px, random(150) + px, 30px);
+    }
+  }
+}

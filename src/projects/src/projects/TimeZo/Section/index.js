@@ -1,0 +1,42 @@
+import * as React from "react"
+import * as styles from "./styles.module.scss"
+
+import { Icon } from "../../../components/Icon"
+
+import classNames from "classnames"
+import { StaticImage } from "gatsby-plugin-image"
+
+const Section = ({ id, advantage }) => {
+  const circleStyle = (id) => classNames(styles.circle, {
+    [styles.circleOne]: id === "1",
+    [styles.circleTwo]: id === "2",
+    [styles.circleThree]: id === "3",
+  })
+
+  return (
+    <div className={styles.containerSection}>
+      <div className={styles.page}>
+        <div className={styles.phone__block}>
+          <div className={styles.advantage}>
+            {advantage.map(({ icon, title, text }) => (
+              <div key={icon} className={styles.advantage__item}>
+                <Icon name={icon} size={48} />
+                <p className="title1">{title}</p>
+                <p className="subtitleSmall">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className={styles.phoneImg}>
+            <span className={circleStyle(id)} />
+            {id === "1" && <StaticImage className={styles.phone} src="../../../assets/images/TimeZo-phone-1.png" alt="phone" height={604} quality={95} formats={["AUTO", "WEBP", "AVIF"]} placeholder="none"/>}
+            {id === "2" && <StaticImage className={styles.phone} src="../../../assets/images/TimeZo-phone-2.png" alt="phone" height={604} quality={95} formats={["AUTO", "WEBP", "AVIF"]} placeholder="none"/>}
+            {id === "3" && <StaticImage className={styles.phone} src="../../../assets/images/TimeZo-phone-3.png" alt="phone" height={604} quality={95} formats={["AUTO", "WEBP", "AVIF"]} placeholder="none"/>}
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Section

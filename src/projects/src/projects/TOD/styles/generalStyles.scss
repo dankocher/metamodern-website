@@ -1,0 +1,107 @@
+@import "src/styles/foundations.scss";
+
+.container {
+  min-height: 100vh;
+  width: 100vw;
+
+  position: relative;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+
+  @media (max-width: $tabletWidth) {
+    min-height: unset;
+    align-items: flex-start;
+  }
+}
+
+.page {
+  height: autoResize(920, 1080, 1635, 1920);
+
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+
+  @media (max-width: $tabletWidth) {
+    height: unset;
+  }
+}
+
+.content {
+  width: 840px;
+
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+
+  align-items: center;
+  justify-content: space-between;
+
+  @media (max-width: $tabletWidth) {
+    flex-direction: column-reverse;
+  }
+}
+
+.phoneContainer {
+  height: 55.925925925925926%;
+
+  position: relative;
+
+  display: flex;
+
+  .phone {
+    height: 100%;
+
+    > div {
+      height: 100%;
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  @media (max-width: $tabletWidth) {
+    height: autoResize(470, 604, 375, $tabletWidth);
+  }
+}
+
+.backgroundImg {
+  max-height: 100%;
+  max-width: 100%;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  > div {
+    max-height: 1220px;
+
+    height: 100%;
+    width: 100%;
+
+    img {
+      max-width: 100%;
+
+      height: 100%;
+      width: auto;
+      margin: auto;
+
+      object-fit: contain !important;
+    }
+  }
+
+  @media (max-width: $tabletWidth) {
+    display: none;
+  }
+}

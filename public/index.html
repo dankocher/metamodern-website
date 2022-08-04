@@ -40,12 +40,12 @@
       as="font"
       crossorigin="anonymous"
     />
-    <!-- <link
+    <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/Gilroy/Gilroy-Semibold.ttf"
       as="font"
       crossorigin="anonymous"
-    /> -->
+    />
     <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/Lato/Lato-Semibold.woff"
@@ -62,6 +62,20 @@
     <link
       rel="preload"
       href="%PUBLIC_URL%/fonts/Inter/Inter-Black.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Inter/Inter-ExtraBold.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Inter/Inter-Bold.ttf"
       as="font"
       crossorigin="anonymous"
     />
@@ -106,16 +120,16 @@
 
         font-weight: 500;
       }
-      /*
-      @font-face {
-        font-family: "Gilroy";
 
-        src: local("Gilroy"), local("GilroySemibold"), local("Gilroy-Semibold"),
-          local("Gilroy Semibold"),
-          url("%PUBLIC_URL%/fonts/Gilroy/Gilroy-Semibold.ttf");
+      @font-face {
+        font-family: 'Gilroy';
+
+        src: local('Gilroy'), local('GilroySemibold'), local('Gilroy-Semibold'),
+          local('Gilroy Semibold'),
+          url('%PUBLIC_URL%/fonts/Gilroy/Gilroy-Semibold.ttf');
 
         font-weight: 600;
-      } */
+      }
 
       @font-face {
         font-family: 'Gilroy';
@@ -145,6 +159,22 @@
           local('Inter Black'), url('%PUBLIC_URL%/fonts/Inter/Inter-Black.ttf');
 
         font-weight: 900;
+      }
+
+      @font-face {
+        font-family: 'Inter';
+        src: local('Inter'), local('InterBlack'), local('Inter-Black'),
+          local('Inter Black'), url('%PUBLIC_URL%/fonts/Inter/Inter-Black.ttf');
+
+        font-weight: 800;
+      }
+
+      @font-face {
+        font-family: 'Inter';
+        src: local('Inter'), local('InterBlack'), local('Inter-Black'),
+          local('Inter Black'), url('%PUBLIC_URL%/fonts/Inter/Inter-Black.ttf');
+
+        font-weight: 700;
       }
 
       @font-face {

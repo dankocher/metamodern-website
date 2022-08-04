@@ -1,0 +1,13 @@
+@import "../styles/foundations.scss";
+
+.layout {
+  position: relative;
+
+  main {
+    min-height: calc(100vh + #{$footerHeightLg});
+
+    @media (max-width: $footerPoint) {
+      min-height: calc(100vh + #{$footerHeightMob});
+    }
+  }
+}
