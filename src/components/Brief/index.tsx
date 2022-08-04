@@ -44,17 +44,13 @@ const Brief: FC = () => {
     }
   };
 
-  const onSubmit = (data) => {
-    const services = currentServices.length === 0 ? null : currentServices;
-    const json = JSON.stringify({ ...data, services });
+  const onSubmit = async (data) => {
+    const services = currentServices.length === 0 ? undefined : (currentServices.map(s => servicesTypes[s])).join(", ")
+    const brief = JSON.stringify({ ...data, services });
 
-    const formData = new FormData();
-
-    formData.append('brief', json);
-
-    formData.append('file', attachedFile);
-
-    sendToEmail(formData);
+    let request = await sendToEmail(brief, attachedFile);
+    //TODO: check if (request.ok === true)
+    console.log(request)
   };
 
   const onSubmitFile = async (file) => {
