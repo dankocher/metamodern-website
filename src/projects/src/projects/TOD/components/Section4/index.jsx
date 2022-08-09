@@ -1,10 +1,10 @@
 import styles from './index.module.scss';
 
-import todLayer4 from '../../../../assets/images/todLayer4.png';
-
+import Description from '../Description';
 import StaticImage from '../../../../components/StaticImage';
 
-import Description from '../Description';
+import todLayer4 from '../../../../assets/images/todLayer4.png';
+import todPhone4 from '../../../../assets/images/todPhone4.png';
 
 const Section4 = ({ header, description }) => (
   <div className={styles.container}>
@@ -22,7 +22,7 @@ const Section4 = ({ header, description }) => (
       <div className={styles.content}>
         <div className={styles.phoneContainer}>
           <StaticImage
-            src="../../../../assets/images/todPhone4.png"
+            src={todPhone4}
             alt="phone"
             quality={95}
             formats={['AUTO', 'PNG', 'AVIF']}

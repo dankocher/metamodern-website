@@ -1,10 +1,11 @@
 import styles from './index.module.scss';
 
-import layer1 from '../../../../assets/images/todLayer6_1.png';
-import layer2 from '../../../../assets/images/todLayer6_2.png';
-
 import Description from '../Description';
 import StaticImage from '../../../../components/StaticImage';
+
+import layer1 from '../../../../assets/images/todLayer6_1.png';
+import layer2 from '../../../../assets/images/todLayer6_2.png';
+import todPhone6 from '../../../../assets/images/todPhone6.png';
 
 const Section6 = ({ header, description }) => (
   <div className={styles.container}>
@@ -20,7 +21,7 @@ const Section6 = ({ header, description }) => (
       <div className={styles.content}>
         <div className={styles.phoneContainer}>
           <StaticImage
-            src="../../../../assets/images/todPhone6.png"
+            src={todPhone6}
             alt="phone"
             quality={95}
             formats={['AUTO', 'PNG', 'AVIF']}
