@@ -4,6 +4,13 @@
 
 //Links fonts
 
+.latoSemibold2012 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  font-size: autoResize(12px, 20px, $landscape1200);
+  line-height: autoResize(17px, 28px, $landscape1200);
+}
+
 .latoSemibold2028 {
   font-family: 'Lato', sans-serif;
   font-weight: 600;

@@ -33,7 +33,7 @@ const MainTitle = ({ portfolioRef }) => {
             <img className="noSelect" src={underline} />
           </h2>
         </div>
-        <span className="latoSemibold2230 noSelect">
+        <span className="latoSemibold2012 noSelect">
           {translate.mainTitleDescription}
         </span>
       </div>
