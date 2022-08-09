@@ -1,4 +1,4 @@
-@import "../../../../styles/foundations.scss";
+@import '../../../../styles/foundations.scss';
 
 $minHeightBlock: 328px;
 $minTop: 120px;
@@ -142,6 +142,8 @@ $minBottom: 124px;
     img {
       height: 100%;
       width: auto;
+      min-width: 1186px;
+
       margin: auto;
 
       object-fit: contain !important;
@@ -157,7 +159,6 @@ $minBottom: 124px;
       }
 
       margin-left: autoResize(-300, -245, 320, $tabletWidth);
-      // margin-right: -151px;
     }
   }
 }
