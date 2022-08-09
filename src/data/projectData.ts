@@ -12,11 +12,11 @@ const data: ProjectProps[] = [
   {
     link: SCREENS.TOD,
     type: ProjectsTypes.MOBILE,
-    name: '”Правда или действие”',
-    title: 'приложени имитации игры',
+    name: 'Truth or Dare',
+    title: 'application of the imitation game',
     description:
-      'Разработали инновационное приложения для семейного и дружественного отдыха в любых условиях.',
-    tags: ['Приложение', 'Дизайн', 'Разработка', 'Иллюстрации'],
+      'Truth or Dare removes your responsibility and has a universal approach to any kind of fun.',
+    tags: ['Design', 'Mobile', 'Landing'],
     bgImage: { x1: truthOrDare, x2: truthOrDare2 },
     gradient: {
       '--gradient':
@@ -28,10 +28,10 @@ const data: ProjectProps[] = [
     link: SCREENS.TimeZO,
     type: ProjectsTypes.MOBILE,
     name: 'TimeZo',
-    title: 'конвертор временных зон',
+    title: 'world time zone app',
     description:
-      'Разработали инновационное приложения для семейного и дружественного отдыха в любых условиях.',
-    tags: ['Приложение', 'Дизайн', 'Разработка', 'Иллюстрации'],
+      'TimeZo is the most convenient and fastest way to keep your head clean.',
+    tags: ['Design', 'Mobile', 'Landing'],
     bgImage: { x1: timeZo, x2: timeZo2 },
     gradient: {
       '--gradient': 'linear-gradient(180deg, #ffe144 0%, #ffffff 100%)',

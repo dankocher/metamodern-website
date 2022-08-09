@@ -3,7 +3,7 @@ export interface Contacts {
   telegram: string;
   dribbble: string;
   behance: string;
-  instagram: string;
+  linkedin: string;
 }
 
 export const contacts: Contacts = {
@@ -11,5 +11,5 @@ export const contacts: Contacts = {
   telegram: 'panchen_ko',
   dribbble: 'https://dribbble.com/GraySWolf97',
   behance: 'https://www.behance.net/metamoderndev',
-  instagram: 'https://www.instagram.com/metamoderndev/',
+  linkedin: 'https://www.linkedin.com/company/metamoderndev/about/',
 };

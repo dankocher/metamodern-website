@@ -14,6 +14,10 @@
 
   padding: 0 9.6%;
 
+  & > div {
+    display: none;
+  }
+
   @media (min-width: $landscape1133) {
     padding-left: autoResize(
       54.383px,
@@ -39,6 +43,6 @@
   .header {
     color: $mainBlack;
     text-transform: uppercase;
-    margin-bottom: autoResize(20px, 28px, $landscape384, $landscape800);
+    // margin-bottom: autoResize(20px, 28px, $landscape384, $landscape800);
   }
 }

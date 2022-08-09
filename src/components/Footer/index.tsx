@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { mainLogo } from '../../assets/svg/logo';
 import behance from '../../assets/svg/behance.svg';
 import dribbble from '../../assets/svg/dribbble.svg';
-import instagram from '../../assets/svg/instagram.svg';
+import linkedin from '../../assets/svg/linkedin.svg';
 
 import { contacts } from '../../data/contacts';
 
@@ -49,8 +49,8 @@ const Footer = () => {
           <img src={dribbble} />
         </a>
 
-        <a href={contacts.instagram} rel="noreferrer\" target="_blank\">
-          <img src={instagram} />
+        <a href={contacts.linkedin} rel="noreferrer\" target="_blank\">
+          <img src={linkedin} />
         </a>
       </div>
     </footer>
