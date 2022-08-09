@@ -42,6 +42,12 @@
     />
     <link
       rel="preload"
+      href="%PUBLIC_URL%/fonts/Gilroy/Gilroy-Bold.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
       href="%PUBLIC_URL%/fonts/Gilroy/Gilroy-Semibold.ttf"
       as="font"
       crossorigin="anonymous"
@@ -129,6 +135,15 @@
           url('%PUBLIC_URL%/fonts/Gilroy/Gilroy-Semibold.ttf');
 
         font-weight: 600;
+      }
+
+      @font-face {
+        font-family: 'Gilroy';
+
+        src: local('Gilroy'), local('GilroyBold'), local('Gilroy-Bold'),
+          local('Gilroy Bold'), url('%PUBLIC_URL%/fonts/Gilroy/Gilroy-Bold.ttf');
+
+        font-weight: 700;
       }
 
       @font-face {
