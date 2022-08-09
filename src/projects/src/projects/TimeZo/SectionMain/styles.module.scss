@@ -110,12 +110,6 @@ $minBottom: 124px;
     margin-left: -275px;
     margin-right: -330px;
 
-    @media (max-width: $maxDevice) {
-      height: 532px;
-      margin-left: -284px;
-      margin-right: -360px;
-    }
-
     > div {
       height: 100%;
     }
@@ -123,7 +117,16 @@ $minBottom: 124px;
     img {
       height: 100%;
       width: auto;
+      min-width: 1187px;
       margin: auto;
+
+      object-fit: contain !important;
+    }
+
+    @media (max-width: $maxDevice) {
+      height: 532px;
+      margin-left: -284px;
+      margin-right: -360px;
     }
 
     @media (max-width: $lgDevice) {

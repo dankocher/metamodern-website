@@ -132,12 +132,12 @@ $minBottom: 124px;
   .phoneBlock {
     height: autoResize(532.67, 625.52, 1635, 1920);
 
+    margin-left: -275px;
+    margin-right: -330px;
+
     > div {
       height: 100%;
     }
-
-    margin-left: -275px;
-    margin-right: -330px;
 
     img {
       height: 100%;
