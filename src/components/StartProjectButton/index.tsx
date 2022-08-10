@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
@@ -9,10 +9,16 @@ import OvalButton from '../OvalButton';
 
 const StartProjectButton = () => {
   const { setIsVisible } = useModalMenuContext();
+  const location = useLocation();
   const navigate = useNavigate();
 
   const startButtonHandler = () => {
-    navigate(SCREENS.CONTACTS);
+    if (location.pathname === SCREENS.CONTACTS) {
+      navigate(0);
+    } else {
+      navigate(SCREENS.CONTACTS);
+    }
+
     setIsVisible(false);
   };
 
