@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 import PageWrapper from '../components/PageWrapper';
 import ScrollToTop from './ScrollToTop';
+import Redirect from './Redirect';
 
 import { SCREENS } from './constants';
 
@@ -46,10 +47,20 @@ const Navigation = () => {
         <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen />} />
         <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen />} />
 
-        <Route path={SCREENS.TimeZO} element={<TimeZoScreen />} />
+        <Route path={SCREENS.TIME_ZO} element={<TimeZoScreen />} />
         <Route
-          path={SCREENS.TimeZO_PRIVACY}
+          path={SCREENS.TIME_ZO_PRIVACY}
           element={<TimeZoPrivacyScreen />}
+        />
+        <Route
+          path={SCREENS.CALM_CATS}
+          element={
+            <Redirect
+              url={
+                'https://dribbble.com/shots/15948449-Relaxiki-Meditation-app'
+              }
+            />
+          }
         />
 
         <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />

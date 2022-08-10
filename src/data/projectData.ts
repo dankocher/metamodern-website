@@ -33,7 +33,7 @@ const data: ProjectProps[] = [
     isDarkContent: false,
   },
   {
-    link: SCREENS.TimeZO,
+    link: SCREENS.TIME_ZO,
     type: ProjectsTypes.MOBILE,
     name: 'TimeZo',
     title: 'world time zone app',
@@ -61,7 +61,7 @@ const data: ProjectProps[] = [
     isDarkContent: false,
   },
   {
-    link: '',
+    link: SCREENS.CALM_CATS,
     type: ProjectsTypes.MOBILE,
     name: 'CalmCats',
     title: 'meditation app',
