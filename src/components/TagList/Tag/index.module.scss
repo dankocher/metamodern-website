@@ -7,18 +7,18 @@
     autoResize(12px, 20px, $landscape384, $landscape800);
 
   border: autoResize(1px, $defaultBorder, $landscape384, $landscape800) solid
-    $secondBlack;
+    $mainBlack;
   border-radius: autoResize(15.374px, 24px, $landscape384, $landscape800);
 
-  color: $secondBlack;
+  color: $mainBlack;
 
   background-color: transparent;
 
   transition: $transitionEase;
 
   &:hover:not(.selected) {
-    border-color: $gray100;
-    background-color: $gray100;
+    border-color: $yellow50;
+    background-color: $yellow50;
   }
 
   @media (hover: none) {
@@ -30,7 +30,6 @@
 }
 
 .selected {
-  color: $white;
-
-  background-color: $secondBlack;
+  border-color: $yellow100;
+  background-color: $yellow100;
 }

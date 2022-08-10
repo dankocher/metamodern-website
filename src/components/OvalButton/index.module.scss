@@ -5,24 +5,29 @@
 
   padding: 11px 20px 13px;
 
-  border: $defaultBorder solid $secondBlack;
+  border: $defaultBorder solid $mainBlack;
   border-radius: 24px;
 
-  color: $secondBlack;
+  color: $mainBlack;
 
   background-color: transparent;
 
   transition: $transitionEase;
 
-  &:hover {
-    color: $white;
+  &:hover:not(.selected) {
+    border-color: $yellow50;
+    background-color: $yellow50;
+  }
 
-    background-color: $secondBlack;
+  @media (hover: none) {
+    &:hover:not(.selected) {
+      border-color: inherit;
+      background-color: inherit;
+    }
   }
 }
 
 .selected {
-  color: $white;
-
-  background-color: $mainBlack;
+  border-color: $yellow100;
+  background-color: $yellow100;
 }
