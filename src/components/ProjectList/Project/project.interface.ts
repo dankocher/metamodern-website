@@ -11,5 +11,5 @@ export interface ProjectProps {
   bgImage: ImageSizes;
   isDarkContent: boolean;
   gradient: { [key: string]: string };
-  link: SCREENS;
+  link: SCREENS | string;
 }

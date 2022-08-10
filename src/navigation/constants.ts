@@ -10,4 +10,7 @@ export enum SCREENS {
   TimeZO = '/TimeZo',
   TimeZO_PRIVACY = '/TimeZo/privacy',
   TimeZO_TERMS = '/TimeZo/terms',
+  NeverHaveEver = '/NeverHaveEver',
+  NeverHaveEver_PRIVACY = '/NeverHaveEver/privacy',
+  NeverHaveEver_TERMS = '/NeverHaveEver/terms',
 }
