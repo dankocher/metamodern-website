@@ -18,6 +18,9 @@ import TimeZoScreen from '../screens/TimeZO';
 import TimeZoPrivacyScreen from '../screens/TimeZOPrivacy';
 
 const Navigation = () => {
+  const CatDribble =
+    'https://dribbble.com/shots/15948449-Relaxiki-Meditation-app';
+
   return (
     <ScrollToTop>
       <Routes>
@@ -54,13 +57,7 @@ const Navigation = () => {
         />
         <Route
           path={SCREENS.CALM_CATS}
-          element={
-            <Redirect
-              url={
-                'https://dribbble.com/shots/15948449-Relaxiki-Meditation-app'
-              }
-            />
-          }
+          element={<Redirect url={CatDribble} />}
         />
 
         <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
