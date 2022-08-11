@@ -1,16 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from "react";
 
-import Navigation from './navigation';
+import Navigation from "./navigation";
 
-import { ModalMenuProvider } from './context/useModalMenuContext';
+import { ModalMenuProvider } from "./context/useModalMenuContext";
 
-import grained from './utils/grained';
+import grained from "./utils/grained";
+import Cursor from "./components/Cursor/Cursor";
 
 function App() {
   useEffect(() => {
-    window.document.getElementsByTagName('html')[0].id = 'container-noise';
+    window.document.getElementsByTagName("html")[0].id = "container-noise";
 
-    grained('#container-noise', {
+    grained("#container-noise", {
       animate: true,
       patternWidth: 200,
       patternHeight: 200,
@@ -25,6 +26,7 @@ function App() {
 
   return (
     <ModalMenuProvider>
+      <Cursor />
       <Navigation />
     </ModalMenuProvider>
   );

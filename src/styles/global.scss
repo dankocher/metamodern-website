@@ -1,4 +1,4 @@
-@import './typography.scss';
+@import "./typography.scss";
 
 $selectionColor: #fce04e;
 
@@ -26,6 +26,7 @@ body {
 
   overflow-y: auto;
   overflow-x: hidden;
+  cursor: none !important;
 }
 
 html {
@@ -52,10 +53,6 @@ img {
   user-select: none;
 }
 
-button {
-  cursor: pointer;
-}
-
 a,
 a:hover,
 a:visited {
@@ -79,4 +76,11 @@ ol {
   :focus {
     outline: none !important;
   }
+}
+input {
+  cursor: none !important;
+}
+
+a {
+  cursor: none !important;
 }
