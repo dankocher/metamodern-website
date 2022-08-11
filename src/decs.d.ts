@@ -1,2 +1,1 @@
-declare module "react-animated-cursor";
-declare module "./utils/grained";
+declare module "react-animated-cursor"
