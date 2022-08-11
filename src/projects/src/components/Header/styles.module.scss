@@ -1,4 +1,8 @@
-@import "../../styles/foundations";
+@import '../../styles/foundations.scss';
+
+$landscape384: 384px;
+$landscape800: 800px;
+$landscape1133: 1133px;
 
 .header {
   width: 100%;
@@ -10,29 +14,29 @@
 
   position: fixed;
 
-  padding-left: 64px;
-  padding-right: 64px;
-  padding-left: autoResize(16px, 64px) !important;
-  padding-right: autoResize(16px, 64px) !important;
+  padding: 40px autoResize(44px, 64px, $landscape800, $landscape1133) 0 !important;
+
+  @media (max-width: $landscape800) {
+    padding: autoResize(36px, 40px, $landscape384, $landscape800)
+      autoResize(24px, 44px, $landscape384, $landscape800) 0 !important;
+  }
 
   z-index: 2;
 
-  @media (max-width: $lgDevice) {
-    padding-left: 40px;
-    padding-right: 40px;
-  }
+  // @media (max-width: $lgDevice) {
+  //   padding-left: 40px;
+  //   padding-right: 40px;
+  // }
 
   @media (max-width: $miniDevice) {
     height: $headerHeightMin;
-    padding-left: 16px;
-    padding-right: 16px;
+    // padding-left: 16px;
+    // padding-right: 16px;
   }
 
   .logo {
-    height: $logoHeightMax;
-    width: $logoHeightMax;
-    height: autoResize($logoHeightMin, $logoHeightMax) !important;
-    width: autoResize($logoHeightMin, $logoHeightMax) !important;
+    height: autoResize(44px, 52px, $landscape384, $landscape800) !important;
+    width: autoResize(44px, 52px, $landscape384, $landscape800) !important;
 
     display: flex;
     align-items: center;

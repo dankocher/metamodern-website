@@ -17,7 +17,6 @@ const Header = () => {
   const navigate = useNavigate();
 
   const isHomePage = useIsPage(SCREENS.HOME);
-  const isNotContactsPage = !useIsPage(SCREENS.CONTACTS);
 
   const { setIsVisible } = useModalMenuContext();
 
@@ -41,11 +40,9 @@ const Header = () => {
         {mainLogo}
       </button>
 
-      {isNotContactsPage && (
-        <div className={styles.middleBtn_wrapper}>
-          <StartProjectButton />
-        </div>
-      )}
+      <div className={styles.middleBtn_wrapper}>
+        <StartProjectButton />
+      </div>
 
       <IconMenuButton onClick={openModalMenu} />
     </header>
