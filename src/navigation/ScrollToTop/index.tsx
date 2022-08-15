@@ -1,13 +1,14 @@
-import { useEffect } from 'react';
-import { useLocation } from 'react-router';
+import { useContext, useEffect } from "react";
+import { useLocation } from "react-router";
+import { ScrollContext } from "../../App";
 
 const ScrollToTop = ({ children }) => {
   const location = useLocation();
+  const scrollbarRef = useContext(ScrollContext);
+  
   useEffect(() => {
-    const body = document.getElementsByTagName('body')[0];
-    body.scrollTo(0, 0);
+    scrollbarRef.current.scrollbar.scrollTo(0, 0);
   }, [location.pathname]);
-
   return <>{children}</>;
 };
 

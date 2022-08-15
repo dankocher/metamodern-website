@@ -1,28 +1,28 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from "react-router-dom";
 
-import PageWrapper from '../components/PageWrapper';
-import ScrollToTop from './ScrollToTop';
-import Redirect from './Redirect';
+import PageWrapper from "../components/PageWrapper";
+import ScrollToTop from "./ScrollToTop";
+import Redirect from "./Redirect";
 
-import { SCREENS } from './constants';
+import { SCREENS } from "./constants";
 
-import AboutUs from '../screens/AboutUs';
-import ContactsScreen from '../screens/Contacts';
-import Home from '../screens/Home';
-import PortfolioScreen from '../screens/Portfolio';
-import PrivacyMetaModern from '../screens/PrivacyMetaModern';
-import ToDScreen from '../screens/TOD';
-import ToDPrivacyScreen from '../screens/ToDPrivacy';
-import ToDTermsScreen from '../screens/ToDTerms';
-import TimeZoScreen from '../screens/TimeZO';
-import TimeZoPrivacyScreen from '../screens/TimeZOPrivacy';
+import AboutUs from "../screens/AboutUs";
+import ContactsScreen from "../screens/Contacts";
+import Home from "../screens/Home";
+import PortfolioScreen from "../screens/Portfolio";
+import PrivacyMetaModern from "../screens/PrivacyMetaModern";
+import ToDScreen from "../screens/TOD";
+import ToDPrivacyScreen from "../screens/ToDPrivacy";
+import ToDTermsScreen from "../screens/ToDTerms";
+import TimeZoScreen from "../screens/TimeZO";
+import TimeZoPrivacyScreen from "../screens/TimeZOPrivacy";
 
-const Navigation = () => {
+const Navigation = (props) => {
   const CatDribble =
-    'https://dribbble.com/shots/15948449-Relaxiki-Meditation-app';
+    "https://dribbble.com/shots/15948449-Relaxiki-Meditation-app";
 
   return (
-    <ScrollToTop>
+    <ScrollToTop >
       <Routes>
         <Route
           path={SCREENS.HOME}

@@ -1,25 +1,32 @@
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
-import { useState } from 'react';
+import { useContext, useState } from "react";
 
-import Lottie from 'react-lottie';
+import Lottie from "react-lottie";
 
-import ourAppAnimation from '../../assets/animations/ourApp.json';
+import ourAppAnimation from "../../assets/animations/ourApp.json";
 
-import underline from '../../assets/svg/bigUnderline.svg';
-import translate from '../../i18n/en.json';
+import underline from "../../assets/svg/bigUnderline.svg";
+import translate from "../../i18n/en.json";
+import { ScrollContext } from "../../App";
 
 const MainTitle = ({ portfolioRef }) => {
   const [isHovering, setIsHovering] = useState(false);
+  const scrollbarRef = useContext(ScrollContext);
 
   const defaultOptions = {
     loop: true,
     autoplay: true,
     animationData: ourAppAnimation,
-    ariaLabel: 'navigate to our App',
+    ariaLabel: "navigate to our App",
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice',
+      preserveAspectRatio: "xMidYMid slice",
     },
+  };
+
+  const mainTitleOnClick = () => {
+    const { x, y } = portfolioRef?.current?.getBoundingClientRect();
+    scrollbarRef.current.scrollbar.scrollTo(x, y, 600);
   };
 
   return (
@@ -39,19 +46,14 @@ const MainTitle = ({ portfolioRef }) => {
       </div>
       <button
         className={styles.ourAppBtn}
-        onClick={() =>
-          portfolioRef?.current?.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-          })
-        }
+        onClick={() => mainTitleOnClick()}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
       >
         <Lottie
           options={defaultOptions}
-          height={'100%'}
-          width={'100%'}
+          height={"100%"}
+          width={"100%"}
           isStopped={false}
           isPaused={isHovering}
           isClickToPauseDisabled={true}
