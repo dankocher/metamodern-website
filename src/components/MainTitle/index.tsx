@@ -25,8 +25,7 @@ const MainTitle = ({ portfolioRef }) => {
   };
 
   const mainTitleOnClick = () => {
-    const { x, y } = portfolioRef?.current?.getBoundingClientRect();
-    scrollbarRef.current.scrollbar.scrollTo(x, y, 600);
+    scrollbarRef.current.scrollbar.scrollIntoView(portfolioRef?.current);
   };
 
   return (
