@@ -25,13 +25,14 @@ const TodLanding = () => {
   return (
     <div className={styles.container}>
       {sectionList.map((Section, index) => (
-        <Section
-          {...data[index]}
-          key={index}
-          link={
-            index === 0 || sectionList.length - 1 === index ? link : undefined
-          }
-        />
+      
+          <Section
+            {...data[index]}
+            key={index}
+            link={
+              index === 0 || sectionList.length - 1 === index ? link : undefined
+            }
+          />
       ))}
     </div>
   );

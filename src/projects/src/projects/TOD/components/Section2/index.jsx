@@ -12,6 +12,10 @@ import todPhone2 from '../../../../assets/images/todPhone2.png';
 import Description from '../Description';
 
 import StaticImage from '../../../../components/StaticImage';
+import { motion } from 'framer-motion';
+import { animationTypes } from '../../../../../../constants/animationTypes';
+import { variables as v } from '../../../../../../constants/animationVariables';
+
 
 const Section2 = ({ header, description }) => (
   <div className={styles.container}>
@@ -22,35 +26,40 @@ const Section2 = ({ header, description }) => (
     <div className={styles.rightBackground}>
       <img src={rightLayer} alt="background2" />
     </div>
+    <motion.div
+      initial={{ opacity: 0, y: v.y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: v.duration, delay: 2 * v.delay }}
+      viewport={{ once: true }}>
+      <div className={styles.page}>
+        <div className={styles.content}>
+          <div className={styles.phoneContainer}>
+            <div className={styles.firstBackground}>
+              <img src={layer1} alt="background1" />
+            </div>
 
-    <div className={styles.page}>
-      <div className={styles.content}>
-        <div className={styles.phoneContainer}>
-          <div className={styles.firstBackground}>
-            <img src={layer1} alt="background1" />
+            <div className={styles.secondBackground}>
+              <img src={layer2} alt="background2" />
+            </div>
+
+            <div className={styles.thirdBackground}>
+              <img src={layer3} alt="background3" />
+            </div>
+
+            <StaticImage
+              src={todPhone2}
+              alt="phone"
+              quality={95}
+              formats={['AUTO', 'PNG', 'AVIF']}
+              placeholder="none"
+              className={styles.phone}
+            />
           </div>
 
-          <div className={styles.secondBackground}>
-            <img src={layer2} alt="background2" />
-          </div>
-
-          <div className={styles.thirdBackground}>
-            <img src={layer3} alt="background3" />
-          </div>
-
-          <StaticImage
-            src={todPhone2}
-            alt="phone"
-            quality={95}
-            formats={['AUTO', 'PNG', 'AVIF']}
-            placeholder="none"
-            className={styles.phone}
-          />
+          <Description header={header} description={description} />
         </div>
-
-        <Description header={header} description={description} />
       </div>
-    </div>
+    </motion.div>
   </div>
 );
 

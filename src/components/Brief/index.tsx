@@ -1,19 +1,22 @@
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
-import { FC, useState } from 'react';
+import { FC, useState } from "react";
 
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useForm } from "react-hook-form";
 
-import TagList from '../TagList';
-import MInput from '../MInput';
-import MTextArea from '../MTextArea';
-import AttachFile from '../AttachFile';
-import SuccessMessage from '../SuccessMessage';
+import TagList from "../TagList";
+import MInput from "../MInput";
+import MTextArea from "../MTextArea";
+import AttachFile from "../AttachFile";
+import SuccessMessage from "../SuccessMessage";
 
-import translate from '../../i18n/en.json';
-import { ServicesTypes, servicesTypes } from '../../constants/servicesTypes';
+import translate from "../../i18n/en.json";
+import { ServicesTypes, servicesTypes } from "../../constants/servicesTypes";
 
-import { sendToEmail } from '../../api/helpers';
+import { sendToEmail } from "../../api/helpers";
+import AnimatedBlock from "../AnimatedBlock";
+import { animationTypes } from "../../constants/animationTypes";
+import { variables as v } from "../../constants/animationVariables";
 
 interface IFormValues {
   name: string;
@@ -24,9 +27,9 @@ interface IFormValues {
 const Brief: FC = () => {
   const { control, register, handleSubmit } = useForm<IFormValues>({
     defaultValues: {
-      name: '',
-      email: '',
-      description: '',
+      name: "",
+      email: "",
+      description: "",
     },
   });
 
@@ -50,7 +53,7 @@ const Brief: FC = () => {
     const services =
       currentServices.length === 0
         ? undefined
-        : currentServices.map((s) => servicesTypes[s]).join(', ');
+        : currentServices.map((s) => servicesTypes[s]).join(", ");
     const brief = JSON.stringify({ ...data, services });
 
     let request = await sendToEmail(brief, attachedFile);
@@ -75,53 +78,71 @@ const Brief: FC = () => {
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.container}>
-            <h2 className="bebasNeue132">{translate.fillBrief}</h2>
-            <section>
-              <h5 className="interMedium2432">{translate.whatServices}</h5>
-              <TagList
-                tagList={servicesTypes}
-                selectedTagList={currentServices}
-                setSelectedTagList={setCurrentServicesHandler}
-              />
-            </section>
-            <section className={styles.aboutProject}>
-              <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
-              <div className={styles.personalInformation}>
-                <MInput
-                  label={translate.yourName}
-                  required={true}
-                  {...register('name', { required: true })}
-                />
-                <MInput
-                  label={translate.email}
-                  required={true}
-                  {...register('email', { required: true })}
-                />
-              </div>
-              <Controller
-                name="description"
-                control={control}
-                render={({ field: { onChange, value } }) => (
-                  <MTextArea
-                    label={translate.description}
-                    onChange={onChange}
-                    value={value}
-                    rowsMax={12}
-                  />
-                )}
-              />
-              <AttachFile
-                label={translate.attachFile}
-                setFile={onSubmitFile}
-                attachedFileName={attachedFile?.name}
-              />
-            </section>
-            <button
-              type="submit"
-              className={`latoSemibold2028 ${styles.sendBtn}`}
+            <AnimatedBlock
+              animation={animationTypes.DEFAULT}
+              transition={{ duration: v.duration, delay: v.delay }}
             >
-              {translate.send}
-            </button>
+              <h2 className="bebasNeue132">{translate.fillBrief}</h2>
+            </AnimatedBlock>
+            <AnimatedBlock
+              animation={animationTypes.UP}
+              transition={{ duration: v.duration*0.8, delay: v.delay + v.duration*0.8 }}
+            >
+              <section>
+                <h5 className="interMedium2432">{translate.whatServices}</h5>
+                <TagList
+                  tagList={servicesTypes}
+                  selectedTagList={currentServices}
+                  setSelectedTagList={setCurrentServicesHandler}
+                />
+              </section>
+            </AnimatedBlock>
+            <AnimatedBlock
+              animation={animationTypes.UP}
+              transition={{ duration: v.duration*0.8, delay: v.duration*1.2}}
+            >
+              <section className={styles.aboutProject}>
+                <h5 className="interMedium2432">
+                  {translate.writeAboutProject}
+                </h5>
+                <div className={styles.personalInformation}>
+                  <MInput
+                    label={translate.yourName}
+                    required={true}
+                    {...register("name", { required: true })}
+                  />
+                  <MInput
+                    label={translate.email}
+                    required={true}
+                    {...register("email", { required: true })}
+                  />
+                </div>
+                <Controller
+                  name="description"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <MTextArea
+                      label={translate.description}
+                      onChange={onChange}
+                      value={value}
+                      rowsMax={12}
+                    />
+                  )}
+                />
+                <AttachFile
+                  label={translate.attachFile}
+                  setFile={onSubmitFile}
+                  attachedFileName={attachedFile?.name}
+                />
+              </section>
+
+              <button
+                type="submit"
+                className={`latoSemibold2028 ${styles.sendBtn}`}
+              >
+                {translate.send}
+              </button>
+            </AnimatedBlock>
           </div>
         </form>
       )}

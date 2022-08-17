@@ -1,13 +1,21 @@
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
-import Contacts from '../../components/Contacts';
-import Brief from '../../components/Brief';
+import Contacts from "../../components/Contacts";
+import Brief from "../../components/Brief";
+import AnimatedBlock from "../../components/AnimatedBlock";
+import { animationTypes } from "../../constants/animationTypes";
+import { variables as v } from "../../constants/animationVariables";
 
 const ContactsScreen = () => {
   return (
     <div className={styles.container}>
       <Brief />
-      <Contacts />
+      <AnimatedBlock
+        animation={animationTypes.UP}
+        transition={{ duration: v.duration, delay: v.delay }}
+      >
+        <Contacts />
+      </AnimatedBlock>
     </div>
   );
 };

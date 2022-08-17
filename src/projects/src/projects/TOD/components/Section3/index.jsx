@@ -8,9 +8,13 @@ import StaticImage from '../../../../components/StaticImage';
 
 import Description from '../Description';
 
+import { motion } from 'framer-motion';
+import { variables as v } from '../../../../../../constants/animationVariables';
+
 const Section3 = ({ header, description }) => (
   <div className={styles.container}>
     <div className={styles.page}>
+
       <div className={styles.content}>
         <StaticImage
           src={todLayer3_2}
@@ -20,23 +24,29 @@ const Section3 = ({ header, description }) => (
           placeholder="none"
           className={styles.secondBackground}
         />
+        <motion.div
+          className={styles.animateContainer}
+          initial={{ opacity: 0, y: v.y }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: v.duration, delay: 2 * v.delay }}
+          viewport={{ once: true }}>
+          <div className={styles.phoneContainer}>
+            <div className={styles.firstBackground}>
+              <img src={layer1} alt="background1" />
+            </div>
 
-        <div className={styles.phoneContainer}>
-          <div className={styles.firstBackground}>
-            <img src={layer1} alt="background1" />
+            <StaticImage
+              src={todPhone3}
+              alt="phone"
+              quality={95}
+              formats={['AUTO', 'PNG', 'AVIF']}
+              placeholder="none"
+              className={styles.phone}
+            />
           </div>
 
-          <StaticImage
-            src={todPhone3}
-            alt="phone"
-            quality={95}
-            formats={['AUTO', 'PNG', 'AVIF']}
-            placeholder="none"
-            className={styles.phone}
-          />
-        </div>
-
-        <Description header={header} description={description} />
+          <Description header={header} description={description} />
+        </motion.div>
       </div>
     </div>
   </div>

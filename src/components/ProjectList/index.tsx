@@ -1,10 +1,14 @@
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
-import { ProjectsTypes } from '../../constants/projectTypes';
+import { ProjectsTypes } from "../../constants/projectTypes";
 
-import Project from './Project';
+import Project from "./Project";
 
-import { data } from '../../data/projectData';
+import { data } from "../../data/projectData";
+import AnimatedBlock from "../AnimatedBlock";
+import { animationTypes } from "../../constants/animationTypes";
+import { motion } from "framer-motion";
+import { variables as v } from "../../constants/animationVariables";
 
 const ProjectList = ({
   portfolioRef = null,
@@ -28,7 +32,11 @@ const ProjectList = ({
           index
         ) =>
           (currentFilter === type || currentFilter === ProjectsTypes.ALL) && (
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: v.y }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: v.duration, delay: v.delay }}
+              viewport={{ once: true }}
               key={`Project-${name}-${index}`}
               className={styles.projectCell}
             >
@@ -42,7 +50,7 @@ const ProjectList = ({
                 gradient={gradient}
                 isDarkContent={isDarkContent}
               />
-            </div>
+            </motion.div>
           )
       )}
     </div>
