@@ -31,7 +31,8 @@ const Header = () => {
     <header
       className={styles.container}
       style={{
-        position: isHomePage ? 'absolute' : 'relative',
+        // position: isHomePage ? 'absolute' : 'relative',
+        position: 'absolute',
       }}
     >
       <Menu />

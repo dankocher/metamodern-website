@@ -5,9 +5,11 @@ import { ScrollContext } from "../../App";
 const ScrollToTop = ({ children }) => {
   const location = useLocation();
   const scrollbarRef = useContext(ScrollContext);
-  
+
   useEffect(() => {
-    scrollbarRef.current.scrollbar.scrollTo(0, 0);
+    setTimeout(() => {
+      scrollbarRef.current.scrollbar.scrollTo(0, 0);
+    }, 200);
   }, [location.pathname]);
   return <>{children}</>;
 };

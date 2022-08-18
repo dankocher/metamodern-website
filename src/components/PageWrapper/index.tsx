@@ -6,14 +6,14 @@ import { FC } from "react";
 import ModalMenu from "../ModalMenu";
 import AnimatedBlock from "../AnimatedBlock";
 import { animationTypes } from "../../constants/animationTypes";
+import { AnimatePresence, motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 const PageWrapper: FC<{ children: React.ReactNode }> = ({ children }) => {
+ 
   return (
     <>
-      <AnimatedBlock animation={animationTypes.DOWN}>
-        <Header />
-      </AnimatedBlock>
-      {children}
+        <motion.div exit={{ opacity: 0 }} >{children}</motion.div>
       <Footer />
       <ModalMenu />
     </>

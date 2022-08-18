@@ -21,17 +21,18 @@ const PortfolioScreen = () => {
 
   return (
     <div className={styles.wrapper}>
-      <AnimatedBlock animation={animationTypes.UP}>
-        <div className={styles.container}>
-          <h2 className={`bebasNeue132 ${styles.header}`}>
-            {translation.portfolio}
-          </h2>
-          <TagList
-            tagList={projectsTypes}
-            selectedTagList={currentFilterList}
-            setSelectedTagList={setCurrentFilterListHandler}
-          />
-        </div>
+      <AnimatedBlock
+        animation={animationTypes.UP}
+        options={{ className: styles.container }}
+      >
+        <h2 className={`bebasNeue132 ${styles.header}`}>
+          {translation.portfolio}
+        </h2>
+        <TagList
+          tagList={projectsTypes}
+          selectedTagList={currentFilterList}
+          setSelectedTagList={setCurrentFilterListHandler}
+        />
       </AnimatedBlock>
       <ProjectList currentFilter={currentFilter} />
     </div>
