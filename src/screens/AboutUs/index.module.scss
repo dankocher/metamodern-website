@@ -1,6 +1,85 @@
-@import '../../styles/foundations.scss';
+@import "../../styles/foundations.scss";
 
-.container {
-  display: flex;
-  flex: 1;
+.about_title {
+  &_string {
+    max-width: 968px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  margin-bottom: autoResize(44px, 88px);
+}
+.containerImg {
+  width: 100%;
+  // max-width: 1600px;
+  display: inline-block;
+  margin-bottom: 88px;
+  overflow: hidden;
+  background: #ffffff;
+
+  @media (max-width: 1200px) {
+    margin-bottom: autoResize(64px, 88px, $landscape800, $landscape1200);
+  }
+  @media (max-width: 800px) {
+    margin-bottom: autoResize(48px, 64px, $landscape384, $landscape800);
+  }
+  @media (min-width: 1200px) {
+    height: autoResize(144px, 560px);
+  }
+  .aboutUsImg {
+    width: 100%;
+    border: none;
+    @media (min-width: 1200px) {
+      margin-top: -7%;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  max-width: 1204px;
+  @media (min-width: 1200px) {
+    align-self: flex-start;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    :not(:last-child) {
+      border-bottom: solid 1px $gray100;
+    }
+    :first-child {
+      padding-top: 0px !important;
+    }
+    margin-top: 100px;
+    @media (max-width: 1200px) {
+      margin-top: autoResize(56px, 100px, $landscape800, $landscape1200);
+    }
+    @media (max-width: 800px) {
+      margin-top: autoResize(44Zpx, 56px, $landscape384, $landscape800);
+    }
+    .item {
+      display: flex;
+      width: 100%;
+      padding-top: 32px;
+      padding-bottom: 32px;
+      justify-content: space-between;
+      @media (max-width: 800px) {
+        flex-direction: column;
+      }
+      @media (min-width: 800px) {
+        padding-top: 56px;
+        padding-bottom: 56px;
+      }
+
+      &_subtitle {
+        min-width: 350px;
+        border: none;
+      }
+
+      &_description {
+        max-width: 724px;
+      }
+    }
+  }
 }

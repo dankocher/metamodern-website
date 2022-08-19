@@ -26,19 +26,19 @@ const Navigation = (props) => {
     "https://dribbble.com/shots/15948449-Relaxiki-Meditation-app";
   const location = useLocation();
   const comparePathnames = () => {
-    return [SCREENS.HOME, SCREENS.PORTFOLIO, SCREENS.CONTACTS].some(
+    return [SCREENS.HOME, SCREENS.PORTFOLIO, SCREENS.CONTACTS, SCREENS.ABOUT_US].some(
       (pathname) => location.pathname === pathname
     );
   };
   return (
     <ScrollToTop>
-      <AnimatePresence exitBeforeEnter>
+      
         {comparePathnames() && (
           <AnimatedBlock animation={animationTypes.DOWN}>
             <Header />
           </AnimatedBlock>
         )}
-
+<AnimatePresence exitBeforeEnter>
         <Routes key={location.pathname} location={location}>
           <Route
             path={SCREENS.HOME}
@@ -49,10 +49,10 @@ const Navigation = (props) => {
             path={SCREENS.PORTFOLIO}
             element={<PageWrapper children={<PortfolioScreen />} />}
           />
-          {/* <Route
+          <Route
           path={SCREENS.ABOUT_US}
           element={<PageWrapper children={<AboutUs />} />}
-        /> */}
+        />
 
           <Route
             path={SCREENS.CONTACTS}
@@ -70,9 +70,9 @@ const Navigation = (props) => {
           <Route
             path={SCREENS.TOD}
             element={
-              <motion.div exit={{ opacity: 0 }}>
+             
                 <ToDScreen />
-              </motion.div>
+     
             }
           />
           <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen />} />

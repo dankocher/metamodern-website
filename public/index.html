@@ -107,6 +107,13 @@
       crossorigin="anonymous"
     />
 
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/fonts/Roboto/Roboto-Regular.ttf"
+      as="font"
+      crossorigin="anonymous"
+    />
+
     <style>
       @font-face {
         font-family: 'Gilroy';
@@ -115,6 +122,15 @@
           url('%PUBLIC_URL%/fonts/Gilroy/Gilroy-Regular.ttf');
 
         font-weight: 400;
+      }
+
+      @font-face {
+        font-family: 'Roboto';
+        src: local('Roboto'), local('RobotoRegular'), local('Roboto-Regular'),
+          local('Roboto Regular'),
+          url('%PUBLIC_URL%/fonts/Roboto/Roboto-Regular.ttf');
+
+        font-weight: 500;
       }
 
       @font-face {

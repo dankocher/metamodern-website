@@ -39,7 +39,7 @@ const AnimatedBlock = ({
   children,
   animation,
   options = {},
-  transition = { duration: 1, delay: v.delay },
+  transition = { duration: v.duration, delay: v.delay },
 }) => {
   return (
     <motion.div

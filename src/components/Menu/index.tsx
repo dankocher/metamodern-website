@@ -9,7 +9,7 @@ const Menu = () => {
   return (
     <ul className={`latoSemibold2024  ${styles.menu}`}>
       <Item link={SCREENS.PORTFOLIO} title={translation.portfolio} />
-      {/* <Item link={SCREENS.ABOUT_US} title={translation.aboutUs} /> */}
+      <Item link={SCREENS.ABOUT_US} title={translation.aboutUs} />
       <Item link={SCREENS.CONTACTS} title={translation.contacts} />
     </ul>
   );
