@@ -1,29 +1,30 @@
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
-import PageWrapper from "../components/PageWrapper";
-import ScrollToTop from "./ScrollToTop";
-import Redirect from "./Redirect";
+import PageWrapper from '../components/PageWrapper';
+import ScrollToTop from './ScrollToTop';
+import Redirect from './Redirect';
 
-import { SCREENS } from "./constants";
+import { SCREENS } from './constants';
 
-import AboutUs from "../screens/AboutUs";
-import ContactsScreen from "../screens/Contacts";
-import Home from "../screens/Home";
-import PortfolioScreen from "../screens/Portfolio";
-import PrivacyMetaModern from "../screens/PrivacyMetaModern";
-import ToDScreen from "../screens/TOD";
-import ToDPrivacyScreen from "../screens/ToDPrivacy";
-import ToDTermsScreen from "../screens/ToDTerms";
-import TimeZoScreen from "../screens/TimeZO";
-import TimeZoPrivacyScreen from "../screens/TimeZOPrivacy";
-import AnimatedBlock from "../components/AnimatedBlock";
-import { animationTypes } from "../constants/animationTypes";
-import Header from "../components/Header";
-import { AnimatePresence, motion } from "framer-motion";
+import AboutUs from '../screens/AboutUs';
+import ContactsScreen from '../screens/Contacts';
+import Home from '../screens/Home';
+import PortfolioScreen from '../screens/Portfolio';
+import PrivacyMetaModern from '../screens/PrivacyMetaModern';
+import ToDScreen from '../screens/TOD';
+import ToDPrivacyScreen from '../screens/ToDPrivacy';
+import ToDTermsScreen from '../screens/ToDTerms';
+import TimeZoScreen from '../screens/TimeZO';
+import TimeZoPrivacyScreen from '../screens/TimeZOPrivacy';
+import AnimatedBlock from '../components/AnimatedBlock';
+import { animationTypes } from '../constants/animationTypes';
+import Header from '../components/Header';
+import { AnimatePresence, motion } from 'framer-motion';
+import { variables as v } from '../constants/animationVariables';
 
 const Navigation = () => {
   const CatDribble =
-    "https://dribbble.com/shots/15948449-Relaxiki-Meditation-app";
+    'https://dribbble.com/shots/15948449-Relaxiki-Meditation-app';
   const location = useLocation();
   const comparePathnames = () => {
     return [
@@ -36,7 +37,10 @@ const Navigation = () => {
   return (
     <ScrollToTop>
       {comparePathnames() && (
-        <AnimatedBlock animation={animationTypes.DOWN}>
+        <AnimatedBlock
+          animation={animationTypes.DOWN}
+          transition={{ duration: v.duration, delay: v.delay }}
+        >
           <Header />
         </AnimatedBlock>
       )}
@@ -90,7 +94,7 @@ const Navigation = () => {
             element={<Redirect url={CatDribble} />}
           />
 
-          <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
+          <Route path='*' element={<Navigate to={SCREENS.HOME} replace />} />
         </Routes>
       </AnimatePresence>
     </ScrollToTop>

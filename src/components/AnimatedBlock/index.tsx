@@ -1,6 +1,6 @@
-import { motion } from "framer-motion";
-import { animationTypes } from "../../constants/animationTypes";
-import { variables as v } from "../../constants/animationVariables";
+import { motion } from 'framer-motion';
+import { animationTypes } from '../../constants/animationTypes';
+import { variables as v } from '../../constants/animationVariables';
 
 const downAnimations = {
   initial: { opacity: 0, y: -v.y },
@@ -44,9 +44,9 @@ const AnimatedBlock = ({
   return (
     <motion.div
       variants={getAnimations(animation)}
-      initial={"initial"}
-      animate={"animate"}
-      exit={"exit"}
+      initial={'initial'}
+      animate={'animate'}
+      exit={'exit'}
       transition={transition}
       {...options}
     >

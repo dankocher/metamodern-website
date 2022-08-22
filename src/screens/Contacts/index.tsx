@@ -1,10 +1,10 @@
-import styles from "./index.module.scss";
+import styles from './index.module.scss';
 
-import Contacts from "../../components/Contacts";
-import Brief from "../../components/Brief";
-import AnimatedBlock from "../../components/AnimatedBlock";
-import { animationTypes } from "../../constants/animationTypes";
-import { variables as v } from "../../constants/animationVariables";
+import Contacts from '../../components/Contacts';
+import Brief from '../../components/Brief';
+import AnimatedBlock from '../../components/AnimatedBlock';
+import { animationTypes } from '../../constants/animationTypes';
+import { variables as v } from '../../constants/animationVariables';
 
 const ContactsScreen = () => {
   return (

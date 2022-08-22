@@ -1,22 +1,22 @@
-import styles from "./index.module.scss";
+import styles from './index.module.scss';
 
-import { FC, useState } from "react";
+import { FC, useState } from 'react';
 
-import { Controller, useForm } from "react-hook-form";
+import { Controller, useForm } from 'react-hook-form';
 
-import TagList from "../TagList";
-import MInput from "../MInput";
-import MTextArea from "../MTextArea";
-import AttachFile from "../AttachFile";
-import SuccessMessage from "../SuccessMessage";
+import TagList from '../TagList';
+import MInput from '../MInput';
+import MTextArea from '../MTextArea';
+import AttachFile from '../AttachFile';
+import SuccessMessage from '../SuccessMessage';
 
-import translate from "../../i18n/en.json";
-import { ServicesTypes, servicesTypes } from "../../constants/servicesTypes";
+import translate from '../../i18n/en.json';
+import { ServicesTypes, servicesTypes } from '../../constants/servicesTypes';
 
-import { sendToEmail } from "../../api/helpers";
-import AnimatedBlock from "../AnimatedBlock";
-import { animationTypes } from "../../constants/animationTypes";
-import { variables as v } from "../../constants/animationVariables";
+import { sendToEmail } from '../../api/helpers';
+import AnimatedBlock from '../AnimatedBlock';
+import { animationTypes } from '../../constants/animationTypes';
+import { variables as v } from '../../constants/animationVariables';
 
 interface IFormValues {
   name: string;
@@ -27,9 +27,9 @@ interface IFormValues {
 const Brief: FC = () => {
   const { control, register, handleSubmit } = useForm<IFormValues>({
     defaultValues: {
-      name: "",
-      email: "",
-      description: "",
+      name: '',
+      email: '',
+      description: '',
     },
   });
 
@@ -53,7 +53,7 @@ const Brief: FC = () => {
     const services =
       currentServices.length === 0
         ? undefined
-        : currentServices.map((s) => servicesTypes[s]).join(", ");
+        : currentServices.map((s) => servicesTypes[s]).join(', ');
     const brief = JSON.stringify({ ...data, services });
 
     let request = await sendToEmail(brief, attachedFile);
@@ -82,14 +82,14 @@ const Brief: FC = () => {
               animation={animationTypes.UP}
               transition={{ duration: v.duration, delay: v.delay }}
             >
-              <h2 className="bebasNeue132">{translate.fillBrief}</h2>
+              <h2 className='bebasNeue132'>{translate.fillBrief}</h2>
             </AnimatedBlock>
             <AnimatedBlock
               animation={animationTypes.UP}
-              transition={{ duration: v.duration, delay: v.delay  }}
+              transition={{ duration: v.duration, delay: v.delay }}
             >
               <section>
-                <h5 className="interMedium2432">{translate.whatServices}</h5>
+                <h5 className='interMedium2432'>{translate.whatServices}</h5>
                 <TagList
                   tagList={servicesTypes}
                   selectedTagList={currentServices}
@@ -99,26 +99,26 @@ const Brief: FC = () => {
             </AnimatedBlock>
             <AnimatedBlock
               animation={animationTypes.UP}
-              transition={{ duration: v.duration, delay: v.delay}}
+              transition={{ duration: v.duration, delay: v.delay }}
             >
               <section className={styles.aboutProject}>
-                <h5 className="interMedium2432">
+                <h5 className='interMedium2432'>
                   {translate.writeAboutProject}
                 </h5>
                 <div className={styles.personalInformation}>
                   <MInput
                     label={translate.yourName}
                     required={true}
-                    {...register("name", { required: true })}
+                    {...register('name', { required: true })}
                   />
                   <MInput
                     label={translate.email}
                     required={true}
-                    {...register("email", { required: true })}
+                    {...register('email', { required: true })}
                   />
                 </div>
                 <Controller
-                  name="description"
+                  name='description'
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <MTextArea
@@ -137,7 +137,7 @@ const Brief: FC = () => {
               </section>
 
               <button
-                type="submit"
+                type='submit'
                 className={`latoSemibold2028 ${styles.sendBtn}`}
               >
                 {translate.send}

@@ -1,14 +1,12 @@
-import styles from "./index.module.scss";
+import styles from './index.module.scss';
 
-import { ProjectsTypes } from "../../constants/projectTypes";
+import { ProjectsTypes } from '../../constants/projectTypes';
 
-import Project from "./Project";
+import Project from './Project';
 
-import { data } from "../../data/projectData";
-import AnimatedBlock from "../AnimatedBlock";
-import { animationTypes } from "../../constants/animationTypes";
-import { motion } from "framer-motion";
-import { variables as v } from "../../constants/animationVariables";
+import { data } from '../../data/projectData';
+import { motion } from 'framer-motion';
+import { variables as v } from '../../constants/animationVariables';
 
 const ProjectList = ({
   portfolioRef = null,

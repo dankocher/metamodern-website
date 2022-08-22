@@ -2,7 +2,7 @@
 import styles from "./index.module.scss";
 
 
-const PageContainer = ({children}) => {
+const PageContainer = ({ children }) => {
 
     return (
         <div className={styles.container}>
