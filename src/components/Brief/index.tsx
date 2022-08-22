@@ -4,7 +4,6 @@ import { FC, useState } from 'react';
 
 import { Controller, useForm } from 'react-hook-form';
 
-import { useIntl } from 'react-intl';
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
 import * as Yup from 'yup';
 
