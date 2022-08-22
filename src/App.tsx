@@ -7,7 +7,7 @@ import OverscrollPlugin from "smooth-scrollbar/plugins/overscroll";
 import Scrollbar from "react-smooth-scrollbar";
 
 import axios from "axios";
-import Cursor from "./components/Cursor/Cursor";
+import Cursor from "./components/Cursor";
 
 axios.defaults.baseURL = process.env.PUBLIC_URL;
 

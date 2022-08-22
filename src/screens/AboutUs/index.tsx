@@ -8,6 +8,7 @@ import { animationTypes } from "../../constants/animationTypes";
 import aboutUs from "./../../assets/images/aboutUs.png";
 import { motion } from "framer-motion";
 
+import zigzagImage from "../../assets/images/zigzag.png";
 const principlesList = [
   {
     subtitle: "System approach",
@@ -35,15 +36,21 @@ const AboutUs = () => {
   return (
     <PageContainer>
       <AnimatedBlock
-        animation={animationTypes.DEFAULT}
-        options={{ className: styles.about_title }}
+        animation={animationTypes.UP}
+        options={{ className: `${styles.about_title} bebasNeue36` }}
       >
-        <h2 className={`${styles.about_title_string} bebasNeue36`}>
-          {translate.aboutUsTitle.slice(0, 17) + "\n"}
-        </h2>
-        <h2 className={`${styles.about_title_string} bebasNeue36`}>
-          {translate.aboutUsTitle.slice(17)}
-        </h2>
+        <span className={styles.about_title_string}>
+          {translate.weSolveProblems}
+        </span>
+        <span className={styles.about_title_string}>
+          <span>{translate.with}&nbsp;</span>
+          <span className={styles.zigzag_container}>
+            {translate.design}
+            <img className={styles.zigzag} src={zigzagImage} />
+          </span>
+          <span>&nbsp;{translate.and}&nbsp;</span>
+          <span className={styles.underline}>{translate.logic}</span>
+        </span>
       </AnimatedBlock>
       <AnimatedBlock
         animation={animationTypes.UP}

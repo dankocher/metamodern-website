@@ -21,24 +21,26 @@ import { animationTypes } from "../constants/animationTypes";
 import Header from "../components/Header";
 import { AnimatePresence, motion } from "framer-motion";
 
-const Navigation = (props) => {
+const Navigation = () => {
   const CatDribble =
     "https://dribbble.com/shots/15948449-Relaxiki-Meditation-app";
   const location = useLocation();
   const comparePathnames = () => {
-    return [SCREENS.HOME, SCREENS.PORTFOLIO, SCREENS.CONTACTS, SCREENS.ABOUT_US].some(
-      (pathname) => location.pathname === pathname
-    );
+    return [
+      SCREENS.HOME,
+      SCREENS.PORTFOLIO,
+      SCREENS.CONTACTS,
+      SCREENS.ABOUT_US,
+    ].some((pathname) => location.pathname === pathname);
   };
   return (
     <ScrollToTop>
-      
-        {comparePathnames() && (
-          <AnimatedBlock animation={animationTypes.DOWN}>
-            <Header />
-          </AnimatedBlock>
-        )}
-<AnimatePresence exitBeforeEnter>
+      {comparePathnames() && (
+        <AnimatedBlock animation={animationTypes.DOWN}>
+          <Header />
+        </AnimatedBlock>
+      )}
+      <AnimatePresence exitBeforeEnter>
         <Routes key={location.pathname} location={location}>
           <Route
             path={SCREENS.HOME}
@@ -50,9 +52,9 @@ const Navigation = (props) => {
             element={<PageWrapper children={<PortfolioScreen />} />}
           />
           <Route
-          path={SCREENS.ABOUT_US}
-          element={<PageWrapper children={<AboutUs />} />}
-        />
+            path={SCREENS.ABOUT_US}
+            element={<PageWrapper children={<AboutUs />} />}
+          />
 
           <Route
             path={SCREENS.CONTACTS}
@@ -67,14 +69,7 @@ const Navigation = (props) => {
             }
           />
 
-          <Route
-            path={SCREENS.TOD}
-            element={
-             
-                <ToDScreen />
-     
-            }
-          />
+          <Route path={SCREENS.TOD} element={<ToDScreen />} />
           <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen />} />
           <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen />} />
 

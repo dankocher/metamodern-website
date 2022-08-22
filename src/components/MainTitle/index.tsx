@@ -11,6 +11,7 @@ import translate from "../../i18n/en.json";
 import { ScrollContext } from "../../App";
 import AnimatedBlock from "../AnimatedBlock";
 import { animationTypes } from "../../constants/animationTypes";
+import { variables as v } from "../../constants/animationVariables";
 
 const MainTitle = ({ portfolioRef }) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -26,7 +27,7 @@ const MainTitle = ({ portfolioRef }) => {
     },
   };
 
-  const mainTitleOnClick = () => {
+  const ourAppBtnOnClick = () => {
     scrollbarRef.current.scrollbar.scrollIntoView(portfolioRef?.current);
   };
 
@@ -36,7 +37,7 @@ const MainTitle = ({ portfolioRef }) => {
         <AnimatedBlock
           animation={animationTypes.TOLEFT}
           options={{ className: styles.circle }}
-          transition={{ duration: 1.5, delay: 0.7 }}
+          transition={{ duration: v.duration +0.15, delay: v.delay *3 }}
         > </AnimatedBlock>
         <AnimatedBlock
           animation={animationTypes.DEFAULT}
@@ -48,7 +49,7 @@ const MainTitle = ({ portfolioRef }) => {
           <AnimatedBlock
             animation={animationTypes.DEFAULT}
             options={{ className: `${styles.h2} bebasNeue288 noSelect` }}
-            transition={{ duration: 1.5, delay: 0.7 }}
+            transition={{ duration: v.duration+0.15, delay: v.delay*3 }}
           >
             {translate.develop}
             <img className="noSelect" src={underline} />
@@ -57,7 +58,7 @@ const MainTitle = ({ portfolioRef }) => {
         <AnimatedBlock
           animation={animationTypes.DEFAULT}
           options={{ className: `${styles.span} latoSemibold2012 noSelect` }}
-          transition={{ duration: 1.5, delay: 2 }}
+          transition={{ duration: v.duration+0.15, delay: v.delay*2*3 }}
         >
           {translate.mainTitleDescription}
         </AnimatedBlock>
@@ -66,7 +67,7 @@ const MainTitle = ({ portfolioRef }) => {
         animation={animationTypes.UP}
         options={{
           className: styles.ourAppBtn,
-          onClick: () => mainTitleOnClick(),
+          onClick: () => ourAppBtnOnClick(),
           onMouseEnter: () => setIsHovering(true),
           onMouseLeave: () => setIsHovering(false),
         }}

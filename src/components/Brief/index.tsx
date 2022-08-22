@@ -79,14 +79,14 @@ const Brief: FC = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.container}>
             <AnimatedBlock
-              animation={animationTypes.DEFAULT}
+              animation={animationTypes.UP}
               transition={{ duration: v.duration, delay: v.delay }}
             >
               <h2 className="bebasNeue132">{translate.fillBrief}</h2>
             </AnimatedBlock>
             <AnimatedBlock
               animation={animationTypes.UP}
-              transition={{ duration: v.duration*0.8, delay: v.delay + v.duration*0.8 }}
+              transition={{ duration: v.duration, delay: v.delay  }}
             >
               <section>
                 <h5 className="interMedium2432">{translate.whatServices}</h5>
@@ -99,7 +99,7 @@ const Brief: FC = () => {
             </AnimatedBlock>
             <AnimatedBlock
               animation={animationTypes.UP}
-              transition={{ duration: v.duration*0.8, delay: v.duration*1.2}}
+              transition={{ duration: v.duration, delay: v.delay}}
             >
               <section className={styles.aboutProject}>
                 <h5 className="interMedium2432">

@@ -1,17 +1,17 @@
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-import { useModalMenuContext } from '../../context/useModalMenuContext';
+import { useModalMenuContext } from "../../context/useModalMenuContext";
 
-import { useIsPage } from '../../hooks/useIsPage';
+import { useIsPage } from "../../hooks/useIsPage";
 
-import Menu from '../Menu';
-import IconMenuButton from '../IconMenuButton';
-import StartProjectButton from '../StartProjectButton';
+import Menu from "../Menu";
+import IconMenuButton from "../IconMenuButton";
+import StartProjectButton from "../StartProjectButton";
 
-import { mainLogo } from '../../assets/svg/logo';
-import { SCREENS } from '../../navigation/constants';
+import { mainLogo } from "../../assets/svg/logo";
+import { SCREENS } from "../../navigation/constants";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -31,8 +31,7 @@ const Header = () => {
     <header
       className={styles.container}
       style={{
-        // position: isHomePage ? 'absolute' : 'relative',
-        position: 'absolute',
+        position: "absolute",
       }}
     >
       <Menu />
