@@ -4,6 +4,10 @@ import { FC, useState } from 'react';
 
 import { Controller, useForm } from 'react-hook-form';
 
+import { useIntl } from 'react-intl';
+import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
+import * as Yup from 'yup';
+
 import TagList from '../TagList';
 import MInput from '../MInput';
 import MTextArea from '../MTextArea';
@@ -38,13 +42,24 @@ interface IFormValues {
 }
 
 const Brief: FC = () => {
-  const { control, register, handleSubmit } = useForm<IFormValues>({
+  // const intl = useIntl();
+  const { control, formState, register, handleSubmit } = useForm<IFormValues>({
     defaultValues: {
       name: '',
       email: '',
       description: '',
     },
+    resolver: yupResolver(
+      Yup.object({
+        email: Yup.string().email(
+          // intl.formatMessage({ defaultMessage: 'Incorrect Email format' })
+          'Incorrect Email format'
+        ),
+      })
+    ),
   });
+
+  const { errors, isSubmitting } = formState;
 
   const [attachedFile, setAttachedFile] = useState<File | null>(null);
   const [isDataSent, setIsDataSent] = useState(false);
@@ -229,7 +244,13 @@ const Brief: FC = () => {
                   required={true}
                   {...register('email', { required: true })}
                 />
+                {/* {errors.email && (
+                  <div className="alert alert-danger mt-3 mb-0">
+                    {errors.eamil?.message}
+                  </div>
+                )} */}
               </div>
+              {/* <span title={intl.formatDate(date)}></span> */}
               <Controller
                 name="description"
                 control={control}
