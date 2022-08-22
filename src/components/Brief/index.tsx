@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { Controller, useForm } from 'react-hook-form';
 
@@ -41,7 +41,6 @@ interface IFormValues {
 }
 
 const Brief: FC = () => {
-  // const intl = useIntl();
   const { control, formState, register, handleSubmit } = useForm<IFormValues>({
     defaultValues: {
       name: '',
@@ -50,15 +49,13 @@ const Brief: FC = () => {
     },
     resolver: yupResolver(
       Yup.object({
-        email: Yup.string().email(
-          // intl.formatMessage({ defaultMessage: 'Incorrect Email format' })
-          'Incorrect Email format'
-        ),
+        email: Yup.string().email('Incorrect Email format'),
       })
     ),
   });
 
-  const { errors, isSubmitting } = formState;
+  // TODO error message
+  // const { errors, isSubmitting } = formState;
 
   const [attachedFile, setAttachedFile] = useState<File | null>(null);
   const [isDataSent, setIsDataSent] = useState(false);
@@ -74,6 +71,16 @@ const Brief: FC = () => {
   const [currentAdditionalServices, setCurrentAdditionalServices] = useState<
     AdditionalServicesTypes[]
   >([]);
+
+  useEffect(() => {
+    setCurrentServices([]);
+    setCurrentIndustry([]);
+    setCurrentFrontEnd([]);
+    setCurrentBackEnd([]);
+    setCurrentMobile([]);
+    setCurrentTesting([]);
+    setCurrentAdditionalServices([]);
+  }, [isOutsourcing]);
 
   const setCurrentTags = (item, setTags) => {
     const index = currentServices.indexOf(item);

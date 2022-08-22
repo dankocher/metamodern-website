@@ -21,7 +21,7 @@
     margin-bottom: autoResize(56px, 80px, $landscape384, $landscape800);
 
     @media (max-width: $landscape384) {
-      padding: 0 autoResize(44px, 56px, $landscape320, $landscape384);
+      margin-bottom: autoResize(44px, 56px, $landscape320, $landscape384);
     }
 
     .switch {
