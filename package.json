@@ -2,7 +2,7 @@
   "name": "metamodern.website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://dankocher.github.io/metamodern-website/",
+  "homepage": "https://metamodern.dev/",
   "dependencies": {
     "@hookform/resolvers": "^2.9.7",
     "@testing-library/jest-dom": "^5.16.4",
