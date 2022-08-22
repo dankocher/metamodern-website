@@ -11,9 +11,25 @@ import AttachFile from '../AttachFile';
 import SuccessMessage from '../SuccessMessage';
 
 import translate from '../../i18n/en.json';
-import { ServicesTypes, servicesTypes } from '../../constants/servicesTypes';
+import {
+  ServicesTypes,
+  servicesTypes,
+  IndustryTypes,
+  industryTypes,
+  FrontEndTypes,
+  frontEndTypes,
+  BackEndTypes,
+  backEndTypes,
+  MobileTypes,
+  mobileTypes,
+  TestingTypes,
+  testingTypes,
+  AdditionalServicesTypes,
+  additionalServicesTypes,
+} from '../../constants/servicesTypes';
 
 import { sendToEmail } from '../../api/helpers';
+import Tag from '../TagList/Tag';
 
 interface IFormValues {
   name: string;
@@ -30,27 +46,63 @@ const Brief: FC = () => {
     },
   });
 
-  const [currentServices, setCurrentServices] = useState<ServicesTypes[]>([]);
   const [attachedFile, setAttachedFile] = useState<File | null>(null);
   const [isDataSent, setIsDataSent] = useState(false);
 
-  const setCurrentServicesHandler = (item) => {
+  const [isOutsourcing, setIsOutsourcing] = useState(false);
+
+  const [currentServices, setCurrentServices] = useState<ServicesTypes[]>([]);
+  const [currentIndustry, setCurrentIndustry] = useState<IndustryTypes[]>([]);
+  const [currentFrontEnd, setCurrentFrontEnd] = useState<FrontEndTypes[]>([]);
+  const [currentBackEnd, setCurrentBackEnd] = useState<BackEndTypes[]>([]);
+  const [currentMobile, setCurrentMobile] = useState<MobileTypes[]>([]);
+  const [currentTesting, setCurrentTesting] = useState<TestingTypes[]>([]);
+  const [currentAdditionalServices, setCurrentAdditionalServices] = useState<
+    AdditionalServicesTypes[]
+  >([]);
+
+  const setCurrentTags = (item, setTags) => {
     const index = currentServices.indexOf(item);
     if (index < 0) {
-      setCurrentServices((prev) => [...prev, item]);
+      setTags((prev) => [...prev, item]);
     } else {
-      setCurrentServices((prev) => [
+      setTags((prev) => [
         ...prev.slice(0, index),
         ...prev.slice(index + 1, prev.length),
       ]);
     }
   };
 
+  const getParsedTagList = (currentList, list) => {
+    return currentList.length === 0
+      ? undefined
+      : currentList.map((key) => list[key]).join(', ');
+  };
+
   const onSubmit = async (data) => {
-    const services =
-      currentServices.length === 0
-        ? undefined
-        : currentServices.map((s) => servicesTypes[s]).join(', ');
+    let services = '';
+
+    if (isOutsourcing) {
+      services = `${translate.outsourcing}\n${translate.whatAppOrServices}: ${
+        getParsedTagList(currentServices, servicesTypes) || '-'
+      }\n${translate.selectIndustry} ${
+        getParsedTagList(currentIndustry, industryTypes) || '-'
+      }`;
+    } else {
+      services = `${translate.outstaffing}\n${translate.frontEnd}: ${
+        getParsedTagList(currentFrontEnd, frontEndTypes) || '-'
+      }\n${translate.backEnd}: ${
+        getParsedTagList(currentBackEnd, backEndTypes) || '-'
+      }\n${translate.mobile}: ${
+        getParsedTagList(currentMobile, mobileTypes) || '-'
+      }\n${translate.qATesting}: ${
+        getParsedTagList(currentTesting, testingTypes) || '-'
+      }\n${translate.additionalServices}: ${
+        getParsedTagList(currentAdditionalServices, additionalServicesTypes) ||
+        '-'
+      }`;
+    }
+
     const brief = JSON.stringify({ ...data, services });
 
     let request = await sendToEmail(brief, attachedFile);
@@ -76,14 +128,94 @@ const Brief: FC = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.container}>
             <h2 className="bebasNeue132">{translate.fillBrief}</h2>
-            <section>
-              <h5 className="interMedium2432">{translate.whatServices}</h5>
-              <TagList
-                tagList={servicesTypes}
-                selectedTagList={currentServices}
-                setSelectedTagList={setCurrentServicesHandler}
-              />
-            </section>
+            <div className={styles.servicesSwitch}>
+              <h5 className="interMedium2432">{translate.whatAppOrServices}</h5>
+              <div className={styles.switch}>
+                <Tag
+                  label={translate.outstaffing}
+                  selected={!isOutsourcing}
+                  onClick={() => setIsOutsourcing(false)}
+                />
+                <Tag
+                  label={translate.outsourcing}
+                  selected={isOutsourcing}
+                  onClick={() => setIsOutsourcing(true)}
+                />
+              </div>
+            </div>
+
+            {isOutsourcing ? (
+              <section className={styles.outsourcing}>
+                <h5 className="interMedium2432">
+                  {translate.whatAppOrServices}
+                </h5>
+                <TagList
+                  tagList={servicesTypes}
+                  selectedTagList={currentServices}
+                  setSelectedTagList={(index) =>
+                    setCurrentTags(index, setCurrentServices)
+                  }
+                />
+                <h5 className="interMedium2432">{translate.selectIndustry}</h5>
+                <TagList
+                  tagList={industryTypes}
+                  selectedTagList={currentIndustry}
+                  setSelectedTagList={(index) =>
+                    setCurrentTags(index, setCurrentIndustry)
+                  }
+                />
+              </section>
+            ) : (
+              <>
+                <section className={styles.outstaffing}>
+                  <h5 className="interMedium2432">{translate.frontEnd}</h5>
+                  <TagList
+                    tagList={frontEndTypes}
+                    selectedTagList={currentFrontEnd}
+                    setSelectedTagList={(index) =>
+                      setCurrentTags(index, setCurrentFrontEnd)
+                    }
+                  />
+                  <h5 className="interMedium2432">{translate.backEnd}</h5>
+                  <TagList
+                    tagList={backEndTypes}
+                    selectedTagList={currentBackEnd}
+                    setSelectedTagList={(index) =>
+                      setCurrentTags(index, setCurrentBackEnd)
+                    }
+                  />
+                  <h5 className="interMedium2432">{translate.mobile}</h5>
+                  <TagList
+                    tagList={mobileTypes}
+                    selectedTagList={currentMobile}
+                    setSelectedTagList={(index) =>
+                      setCurrentTags(index, setCurrentMobile)
+                    }
+                  />
+                  <h5 className="interMedium2432">{translate.qATesting}</h5>
+                  <TagList
+                    tagList={testingTypes}
+                    selectedTagList={currentTesting}
+                    setSelectedTagList={(index) =>
+                      setCurrentTags(index, setCurrentTesting)
+                    }
+                  />
+                </section>
+                <section className={styles.additionalServices}>
+                  <h5 className="interMedium2432">
+                    {translate.additionalServices}
+                  </h5>
+                  <TagList
+                    tagList={additionalServicesTypes}
+                    selectedTagList={currentAdditionalServices}
+                    setSelectedTagList={(index) =>
+                      setCurrentTags(index, setCurrentAdditionalServices)
+                    }
+                  />
+                </section>
+              </>
+            )}
+
             <section className={styles.aboutProject}>
               <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
               <div className={styles.personalInformation}>
