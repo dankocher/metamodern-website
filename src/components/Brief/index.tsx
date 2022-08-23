@@ -4,6 +4,8 @@ import { FC, useEffect, useState } from 'react';
 
 import { Controller, useForm } from 'react-hook-form';
 
+import { useIsCleanUpContactsContext } from '../../context/useIsCleanUpContacts';
+
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
 import * as Yup from 'yup';
 
@@ -12,6 +14,7 @@ import MInput from '../MInput';
 import MTextArea from '../MTextArea';
 import AttachFile from '../AttachFile';
 import SuccessMessage from '../SuccessMessage';
+import Tag from '../TagList/Tag';
 
 import translate from '../../i18n/en.json';
 import {
@@ -32,7 +35,6 @@ import {
 } from '../../constants/servicesTypes';
 
 import { sendToEmail } from '../../api/helpers';
-import Tag from '../TagList/Tag';
 
 interface IFormValues {
   name: string;
@@ -41,7 +43,7 @@ interface IFormValues {
 }
 
 const Brief: FC = () => {
-  const { control, formState, register, handleSubmit } = useForm<IFormValues>({
+  const { control, formState, setValue, handleSubmit } = useForm<IFormValues>({
     defaultValues: {
       name: '',
       email: '',
@@ -53,6 +55,9 @@ const Brief: FC = () => {
       })
     ),
   });
+
+  const { isCleanUpContacts, setIsCleanUpContacts } =
+    useIsCleanUpContactsContext();
 
   // TODO error message
   // const { errors, isSubmitting } = formState;
@@ -72,7 +77,7 @@ const Brief: FC = () => {
     AdditionalServicesTypes[]
   >([]);
 
-  useEffect(() => {
+  const cleanUpTags = () => {
     setCurrentServices([]);
     setCurrentIndustry([]);
     setCurrentFrontEnd([]);
@@ -80,7 +85,26 @@ const Brief: FC = () => {
     setCurrentMobile([]);
     setCurrentTesting([]);
     setCurrentAdditionalServices([]);
+  };
+
+  useEffect(() => {
+    cleanUpTags();
   }, [isOutsourcing]);
+
+  const setOption = { shouldValidate: true, shouldDirty: true };
+
+  useEffect(() => {
+    if (isCleanUpContacts) {
+      cleanUpTags();
+      setValue('name', '', setOption);
+      setValue('email', '', setOption);
+      setValue('description', '', setOption);
+      onSubmitFile(null);
+      setIsOutsourcing(false);
+
+      setIsCleanUpContacts(false);
+    }
+  }, [isCleanUpContacts]);
 
   const setCurrentTags = (item, setTags) => {
     const index = currentServices.indexOf(item);

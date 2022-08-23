@@ -1,12 +1,15 @@
 import Navigation from './navigation';
 
 import { ModalMenuProvider } from './context/useModalMenuContext';
+import { CleanUpContactsProvider } from './context/useIsCleanUpContacts';
 
 function App() {
   return (
-    <ModalMenuProvider>
-      <Navigation />
-    </ModalMenuProvider>
+    <CleanUpContactsProvider>
+      <ModalMenuProvider>
+        <Navigation />
+      </ModalMenuProvider>
+    </CleanUpContactsProvider>
   );
 }
 
