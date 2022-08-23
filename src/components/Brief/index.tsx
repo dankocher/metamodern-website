@@ -281,39 +281,6 @@ const Brief: FC = () => {
                 attachedFileName={attachedFile?.name}
               />
             </section>
-            <section className={styles.aboutProject}>
-              <h5 className='interMedium2432'>{translate.writeAboutProject}</h5>
-              <div className={styles.personalInformation}>
-                <MInput
-                  label={translate.yourName}
-                  required={true}
-                  {...register('name', { required: true })}
-                />
-                <MInput
-                  label={translate.email}
-                  required={true}
-                  {...register('email', { required: true })}
-                />
-              </div>
-              <Controller
-                name='description'
-                control={control}
-                render={({ field: { onChange, value } }) => (
-                  <MTextArea
-                    label={translate.description}
-                    onChange={onChange}
-                    value={value}
-                    rowsMax={12}
-                  />
-                )}
-              />
-              <AttachFile
-                label={translate.attachFile}
-                setFile={onSubmitFile}
-                attachedFileName={attachedFile?.name}
-              />
-            </section>
-
             <button
               type='submit'
               className={`latoSemibold2028 ${styles.sendBtn}`}

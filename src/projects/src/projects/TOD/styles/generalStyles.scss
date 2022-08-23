@@ -1,4 +1,4 @@
-@import "src/styles/foundations.scss";
+@import 'src/styles/foundations.scss';
 
 .container {
   min-height: 100vh;
@@ -18,6 +18,7 @@
 }
 
 .page {
+  width: 100vw;
   height: autoResize(920, 1080, 1635, 1920);
 
   display: flex;

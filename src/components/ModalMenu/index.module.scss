@@ -1,7 +1,7 @@
 @import '../../styles/foundations.scss';
 
 .container {
-  display: flex;
+  display: none;
   position: absolute;
 
   top: 0;
@@ -9,10 +9,9 @@
   right: 0;
   left: 0;
 
-  overflow: hidden;
+  overflow: hidden !important;
   transition: left 350ms ease-in;
   background-color: $white;
-  overflow-y:unset;
   justify-content: center;
   @media (max-width: $landscape800) {
     height: 100vh;
@@ -24,7 +23,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // margin-left: autoResize(10px, 96px, $landscape320, $landscape800);
     
     :not(:last-child) {
       margin-bottom: autoResize(40px, 64px, $landscape384, $landscape800);

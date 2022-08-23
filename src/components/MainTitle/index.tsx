@@ -41,14 +41,14 @@ const MainTitle = ({ portfolioRef }) => {
         > </AnimatedBlock>
         <AnimatedBlock
           animation={animationTypes.DEFAULT}
-          options={{ className: `${styles.h1} bebasNeue320 noSelect` }}
+          options={{ className: `${styles.metamodern_title} bebasNeue320 noSelect` }}
         >
           {translate.metaModern}
         </AnimatedBlock>
         <div className={styles.content__subtext}>
           <AnimatedBlock
             animation={animationTypes.DEFAULT}
-            options={{ className: `${styles.h2} bebasNeue288 noSelect` }}
+            options={{ className: `${styles.develop_title} bebasNeue288 noSelect` }}
             transition={{ duration: v.duration + 0.15, delay: v.delay * 3 }}
           >
             {translate.develop}

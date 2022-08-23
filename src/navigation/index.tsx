@@ -73,7 +73,14 @@ const Navigation = () => {
             }
           />
 
-          <Route path={SCREENS.TOD} element={<ToDScreen />} />
+          <Route
+            path={SCREENS.TOD}
+            element={
+              <motion.div exit={{ opacity: 0 }}>
+                <ToDScreen />
+              </motion.div>
+            }
+          />
           <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen />} />
           <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen />} />
 

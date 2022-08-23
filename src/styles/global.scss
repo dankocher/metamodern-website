@@ -1,4 +1,4 @@
-@import "./typography.scss";
+@import './typography.scss';
 
 $selectionColor: #fce04e;
 
@@ -83,4 +83,12 @@ input {
 
 a {
   cursor: none !important;
+}
+
+.scrollbar-track {
+  display: none !important;
+}
+
+.scrollContainer{
+  width: 100vw;
 }

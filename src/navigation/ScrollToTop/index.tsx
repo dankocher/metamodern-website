@@ -11,6 +11,8 @@ const ScrollToTop = ({ children }) => {
       scrollbarRef.current.scrollbar.scrollTo(0, 0);
     }, 200);
   }, [location.pathname]);
+  
+  // console.log(scrollbarRef.current?.scrollbar.containerEl);
   return <>{children}</>;
 };
 

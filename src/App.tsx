@@ -1,4 +1,4 @@
-import React, { useRef, createContext } from 'react';
+import React, { useRef, createContext, useEffect } from 'react';
 import Navigation from './navigation';
 import { ModalMenuProvider } from './context/useModalMenuContext';
 import { BrowserRouter } from 'react-router-dom';
@@ -17,12 +17,16 @@ export const ScrollContext = createContext(Scrollbar);
 
 function App() {
   const scrollbarRef = useRef(null);
-
+  useEffect(() => {
+    scrollbarRef.current.scrollbar.updatePluginOptions('overscroll', {
+      effect: 'glow',
+    });
+  });
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Cursor />
       <ModalMenuProvider>
-        <Scrollbar ref={scrollbarRef}>
+        <Scrollbar ref={scrollbarRef} className={"scrollContainer"}>
           <ScrollContext.Provider value={scrollbarRef}>
             <Navigation />
           </ScrollContext.Provider>

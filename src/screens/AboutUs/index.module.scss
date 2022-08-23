@@ -1,4 +1,4 @@
-@import "../../styles/foundations.scss";
+@import '../../styles/foundations.scss';
 
 .about_title {
   display: flex;
@@ -15,14 +15,14 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      
+
       .zigzag {
         position: absolute;
         bottom: -10%;
         width: 100%;
       }
     }
-    .underline{
+    .underline {
       text-decoration: underline;
     }
   }
@@ -36,6 +36,7 @@
   margin-bottom: 88px;
   overflow: hidden;
   background: #ffffff;
+  max-height: 836px;;
 
   @media (max-width: 1200px) {
     margin-bottom: autoResize(64px, 88px, $landscape800, $landscape1200);
@@ -43,9 +44,7 @@
   @media (max-width: 800px) {
     margin-bottom: autoResize(48px, 64px, $landscape384, $landscape800);
   }
-  @media (min-width: 1200px) {
-    height: autoResize(144px, 560px);
-  }
+  
   .aboutUsImg {
     width: 100%;
     border: none;
@@ -65,8 +64,12 @@
   .list {
     display: flex;
     flex-direction: column;
+    margin-bottom: 100px;
     :not(:last-child) {
-      border-bottom: solid 1px $gray100;
+      border-bottom: solid 2px $gray100;
+    }
+    :last-child {
+      padding-bottom: 0px !important;
     }
     :first-child {
       padding-top: 0px !important;

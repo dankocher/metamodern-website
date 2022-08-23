@@ -1,4 +1,4 @@
-@import "../../styles/foundations.scss";
+@import '../../styles/foundations.scss';
 
 .container {
   width: 100vw;
@@ -80,12 +80,12 @@
       }
     }
 
-    .h1,
-    .h2 {
+    .metamodern_title,
+    .develop_title {
       text-transform: uppercase;
     }
 
-    .h1 {
+    .metamodern_title {
       position: relative;
 
       text-align: left;
