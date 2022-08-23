@@ -18,14 +18,15 @@
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
-    margin-left: autoResize(10px, 96px, $landscape320, $landscape800);
+    width: 100%;
 
     :not(:last-child) {
-      margin-bottom: autoResize(40px, 64px, $landscape384, $landscape800);
+      margin-bottom: autoResize(20px, 44px, $landscape384, $landscape800);
 
       @media (max-width: $landscape384) {
-        margin-bottom: autoResize(0px, 40px, $landscape320, $landscape384);
+        margin-bottom: autoResize(0px, 20px, $landscape320, $landscape384);
       }
     }
   }

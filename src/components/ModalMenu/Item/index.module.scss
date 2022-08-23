@@ -1,11 +1,19 @@
-@import "../../../styles/foundations.scss";
+@import '../../../styles/foundations.scss';
 
 .container {
+  display: flex;
+
+  justify-content: center;
+
   color: $mainBlack;
   cursor: pointer;
   text-transform: uppercase;
+
+  padding-top: autoResize(12px, 20px, $landscape384, $landscape800);
+
+  transition: background-color $transitionEase;
 }
 
 .selected {
-  color: $yellow100;
+  background-color: $yellow100;
 }
