@@ -60,6 +60,7 @@ const MTextArea: FC<{
             ? textAreaHeight
             : `${textAreaHeight + 36}px`,
       }}
+      onClick={() => textAreaRef.current.focus()}
     >
       <div
         className={styles.container}

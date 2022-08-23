@@ -240,15 +240,29 @@ const Brief: FC = () => {
             <section className={styles.aboutProject}>
               <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
               <div className={styles.personalInformation}>
-                <MInput
-                  label={translate.yourName}
-                  required={true}
-                  {...register('name', { required: true })}
+                <Controller
+                  name="name"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <MInput
+                      label={translate.yourName}
+                      onChange={onChange}
+                      value={value}
+                      required={true}
+                    />
+                  )}
                 />
-                <MInput
-                  label={translate.email}
-                  required={true}
-                  {...register('email', { required: true })}
+                <Controller
+                  name="email"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <MInput
+                      label={translate.email}
+                      onChange={onChange}
+                      value={value}
+                      required={true}
+                    />
+                  )}
                 />
                 {/* {errors.email && (
                   <div className="alert alert-danger mt-3 mb-0">
