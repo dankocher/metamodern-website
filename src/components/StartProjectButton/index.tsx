@@ -27,7 +27,7 @@ const StartProjectButton = () => {
 
   return (
     <OvalButton
-      label={translation.startProject}
+      label={translation.contactUs}
       selected={isContactsPage}
       onClick={startButtonHandler}
     />
