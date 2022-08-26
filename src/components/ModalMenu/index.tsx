@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
@@ -10,10 +10,11 @@ import Item from './Item';
 
 import translation from '../../i18n/en.json';
 import StartProjectButton from '../StartProjectButton';
+import { ScrollContext } from '../DesctopAppContent/DesctopAppContent';
 
 const ModalMenu = () => {
   const { isVisible } = useModalMenuContext();
-
+  const scrollbarRef = useContext(ScrollContext);
   useEffect(() => {
     document.getElementsByTagName('html')[0].style.overflowY = isVisible
       ? 'hidden'
@@ -21,6 +22,15 @@ const ModalMenu = () => {
     document.getElementsByTagName('body')[0].style.overflowY = isVisible
       ? 'hidden'
       : 'auto';
+    if (scrollbarRef.current)
+      if (isVisible)
+        document.querySelector('.scroll-content').classList.add('stopScroll');
+      else {
+        document
+          .querySelector('.scroll-content')
+          .classList.remove('stopScroll');
+        scrollbarRef.current.scrollbar.scrollTo(0, 0);
+      }
   }, [isVisible]);
 
   return (

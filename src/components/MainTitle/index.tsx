@@ -28,7 +28,6 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
   };
 
   const ourAppBtnOnClick = () => {
-    console.log(scrollbarRef)
     if (isMobile) {
       portfolioRef?.current?.scrollIntoView({
         behavior: 'smooth',

@@ -41,7 +41,7 @@ html {
 body {
   text-rendering: optimizeSpeed;
   &::before {
-    content: "";
+    content: '';
     position: fixed;
     position: absolute;
     top: 0;
@@ -52,7 +52,7 @@ body {
     background-color: #fff;
     background-image: url(https://web-alt.ru/images/noise-gif-square-anim.gif);
     background-blend-mode: hard-light;
-    opacity: .04;
+    opacity: 0.04;
     overflow: hidden;
     pointer-events: none;
   }
@@ -103,4 +103,8 @@ a {
 
 .scrollbar-track {
   display: none !important;
+}
+
+.stopScroll {
+  transform: translate3d(0, 0, 0) !important;
 }
