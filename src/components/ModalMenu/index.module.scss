@@ -10,7 +10,7 @@
   left: 0;
 
   overflow: hidden !important;
-  transition: left 350ms ease-in;
+  
   background-color: $white;
   justify-content: center;
   @media (max-width: $landscape800) {
@@ -22,7 +22,9 @@
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    justify-content: center;
+    white-space: nowrap;;
     :not(:last-child) {
       margin-bottom: autoResize(20px, 44px, $landscape384, $landscape800);
 

@@ -21,6 +21,7 @@ import { animationTypes } from '../constants/animationTypes';
 import Header from '../components/Header';
 import { AnimatePresence, motion } from 'framer-motion';
 import { variables as v, variables } from '../constants/animationVariables';
+import ModalMenu from '../components/ModalMenu';
 
 const Navigation = ({ isMobile }) => {
   const CatDribble =
@@ -98,6 +99,7 @@ const Navigation = ({ isMobile }) => {
           <Route path='*' element={<Navigate to={SCREENS.HOME} replace />} />
         </Routes>
       </AnimatePresence>
+      <ModalMenu />
     </ScrollToTop>
   );
 };
