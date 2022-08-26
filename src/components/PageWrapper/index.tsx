@@ -14,7 +14,7 @@ const PageWrapper: FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <>
-      <motion.div exit={{ opacity: 0 }} transition={{ duration: duration }} style={{position: "relative"}}>
+      <motion.div exit={{ opacity: 0 }} transition={{ duration: duration }}>
         {children}
         <Footer />
       </motion.div>
