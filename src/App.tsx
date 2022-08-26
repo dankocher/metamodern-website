@@ -1,14 +1,9 @@
-import React, { useRef, createContext, useEffect } from 'react';
-import Navigation from './navigation';
-import { ModalMenuProvider } from './context/useModalMenuContext';
 import { BrowserRouter } from 'react-router-dom';
-import SmoothScrollbar from 'smooth-scrollbar';
-import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
-import Scrollbar from 'react-smooth-scrollbar';
 import { useDeviceSelectors } from 'react-device-detect';
 import axios from 'axios';
 import MobileAppContent from './components/MobileAppContent/MobileAppContent';
 import DesctopAppContent from './components/DesctopAppContent/DesctopAppContent';
+import { CleanUpContactsProvider } from './context/useIsCleanUpContacts';
 
 axios.defaults.baseURL = process.env.PUBLIC_URL;
 
@@ -18,7 +13,9 @@ function App() {
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      {isMobile ? <MobileAppContent /> : <DesctopAppContent />}
+      <CleanUpContactsProvider>
+        {isMobile ? <MobileAppContent /> : <DesctopAppContent />}
+      </CleanUpContactsProvider>
     </BrowserRouter>
   );
 }

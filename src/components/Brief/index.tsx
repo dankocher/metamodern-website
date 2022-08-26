@@ -4,6 +4,8 @@ import { FC, useEffect, useState } from 'react';
 
 import { Controller, useForm } from 'react-hook-form';
 
+import { useIsCleanUpContactsContext } from '../../context/useIsCleanUpContacts';
+
 import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
 import * as Yup from 'yup';
 
@@ -12,6 +14,7 @@ import MInput from '../MInput';
 import MTextArea from '../MTextArea';
 import AttachFile from '../AttachFile';
 import SuccessMessage from '../SuccessMessage';
+import Tag from '../TagList/Tag';
 
 import translate from '../../i18n/en.json';
 import {
@@ -32,7 +35,6 @@ import {
 } from '../../constants/servicesTypes';
 
 import { sendToEmail } from '../../api/helpers';
-import Tag from '../TagList/Tag';
 import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
@@ -44,7 +46,7 @@ interface IFormValues {
 }
 
 const Brief: FC = () => {
-  const { control, formState, register, handleSubmit } = useForm<IFormValues>({
+  const { control, formState, setValue, handleSubmit } = useForm<IFormValues>({
     defaultValues: {
       name: '',
       email: '',
@@ -56,6 +58,9 @@ const Brief: FC = () => {
       })
     ),
   });
+
+  const { isCleanUpContacts, setIsCleanUpContacts } =
+    useIsCleanUpContactsContext();
 
   // TODO error message
   // const { errors, isSubmitting } = formState;
@@ -75,7 +80,7 @@ const Brief: FC = () => {
     AdditionalServicesTypes[]
   >([]);
 
-  useEffect(() => {
+  const cleanUpTags = () => {
     setCurrentServices([]);
     setCurrentIndustry([]);
     setCurrentFrontEnd([]);
@@ -83,7 +88,26 @@ const Brief: FC = () => {
     setCurrentMobile([]);
     setCurrentTesting([]);
     setCurrentAdditionalServices([]);
+  };
+
+  useEffect(() => {
+    cleanUpTags();
   }, [isOutsourcing]);
+
+  const setOption = { shouldValidate: true, shouldDirty: true };
+
+  useEffect(() => {
+    if (isCleanUpContacts) {
+      cleanUpTags();
+      setValue('name', '', setOption);
+      setValue('email', '', setOption);
+      setValue('description', '', setOption);
+      onSubmitFile(null);
+      setIsOutsourcing(false);
+
+      setIsCleanUpContacts(false);
+    }
+  }, [isCleanUpContacts]);
 
   const setCurrentTags = (item, setTags) => {
     const index = currentServices.indexOf(item);
@@ -246,15 +270,29 @@ const Brief: FC = () => {
             <section className={styles.aboutProject}>
               <h5 className='interMedium2432'>{translate.writeAboutProject}</h5>
               <div className={styles.personalInformation}>
-                <MInput
-                  label={translate.yourName}
-                  required={true}
-                  {...register('name', { required: true })}
+                <Controller
+                  name="name"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <MInput
+                      label={translate.yourName}
+                      onChange={onChange}
+                      value={value}
+                      required={true}
+                    />
+                  )}
                 />
-                <MInput
-                  label={translate.email}
-                  required={true}
-                  {...register('email', { required: true })}
+                <Controller
+                  name="email"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <MInput
+                      label={translate.email}
+                      onChange={onChange}
+                      value={value}
+                      required={true}
+                    />
+                  )}
                 />
                 {/* {errors.email && (
                   <div className="alert alert-danger mt-3 mb-0">

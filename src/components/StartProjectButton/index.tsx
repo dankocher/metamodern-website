@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 
 import { useModalMenuContext } from '../../context/useModalMenuContext';
+import { useIsCleanUpContactsContext } from '../../context/useIsCleanUpContacts';
 
 import { SCREENS } from '../../navigation/constants';
 
@@ -11,23 +12,24 @@ import { useIsPage } from '../../hooks/useIsPage';
 const StartProjectButton = () => {
   const { setIsVisible } = useModalMenuContext();
 
+  const { setIsCleanUpContacts } = useIsCleanUpContactsContext();
+
   const navigate = useNavigate();
 
   const isContactsPage = useIsPage(SCREENS.CONTACTS);
 
   const startButtonHandler = () => {
     if (isContactsPage) {
-      navigate(0);
+      setIsCleanUpContacts(true);
     } else {
       navigate(SCREENS.CONTACTS);
     }
-
     setIsVisible(false);
   };
 
   return (
     <OvalButton
-      label={translation.startProject}
+      label={translation.contactUs}
       selected={isContactsPage}
       onClick={startButtonHandler}
     />
