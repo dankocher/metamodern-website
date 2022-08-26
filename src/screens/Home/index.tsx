@@ -5,11 +5,11 @@ import { useRef } from 'react';
 import MainTitle from '../../components/MainTitle';
 import ProjectList from '../../components/ProjectList';
 
-const Home = () => {
+const Home = ({ isMobile }) => {
   const portfolioRef = useRef(null);
   return (
     <div className={styles.container}>
-      <MainTitle portfolioRef={portfolioRef} />
+      <MainTitle isMobile={isMobile} portfolioRef={portfolioRef} />
       <ProjectList portfolioRef={portfolioRef} />
     </div>
   );

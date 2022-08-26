@@ -20,35 +20,21 @@ import AnimatedBlock from '../components/AnimatedBlock';
 import { animationTypes } from '../constants/animationTypes';
 import Header from '../components/Header';
 import { AnimatePresence, motion } from 'framer-motion';
-import { variables as v } from '../constants/animationVariables';
+import { variables as v, variables } from '../constants/animationVariables';
 
-const Navigation = () => {
+const Navigation = ({ isMobile }) => {
   const CatDribble =
     'https://dribbble.com/shots/15948449-Relaxiki-Meditation-app';
   const location = useLocation();
-  const comparePathnames = () => {
-    return [
-      SCREENS.HOME,
-      SCREENS.PORTFOLIO,
-      SCREENS.CONTACTS,
-      SCREENS.ABOUT_US,
-    ].some((pathname) => location.pathname === pathname);
-  };
   return (
-    <ScrollToTop>
-      {comparePathnames() && (
-        <AnimatedBlock
-          animation={animationTypes.DOWN}
-          transition={{ duration: v.duration, delay: v.delay }}
-        >
-          <Header />
-        </AnimatedBlock>
-      )}
+    <ScrollToTop isMobile={isMobile}>
+      <Header />
+
       <AnimatePresence exitBeforeEnter>
         <Routes key={location.pathname} location={location}>
           <Route
             path={SCREENS.HOME}
-            element={<PageWrapper children={<Home />} />}
+            element={<PageWrapper children={<Home isMobile={isMobile} />} />}
           />
 
           <Route
@@ -67,16 +53,24 @@ const Navigation = () => {
           <Route
             path={SCREENS.META_MODERN_PRIVACY}
             element={
-              <motion.div exit={{ opacity: 0 }}>
+              <AnimatedBlock
+                animation={animationTypes.DEFAULT}
+                transition={{
+                  duration: variables.duration,
+                  delay: 0,
+                }}
+                options={{ exit: { opacity: 0 } }}
+              >
                 <PrivacyMetaModern />
-              </motion.div>
+              </AnimatedBlock>
             }
           />
 
           <Route
             path={SCREENS.TOD}
             element={
-              <motion.div exit={{ opacity: 0 }}>
+              <motion.div
+               exit={{ opacity: 0 }}>
                 <ToDScreen />
               </motion.div>
             }

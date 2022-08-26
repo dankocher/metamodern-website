@@ -10,9 +10,6 @@ import { SCREENS } from '../../navigation/constants';
 
 const DocumentWrapper = ({ children }) => (
   <div className={styles.container}>
-    <div className={styles.header}>
-      <Link to={SCREENS.HOME}>{mainLogo}</Link>
-    </div>
     {children}
 
     <Footer />

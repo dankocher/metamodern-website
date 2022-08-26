@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
@@ -12,11 +12,29 @@ import StartProjectButton from '../StartProjectButton';
 
 import { mainLogo } from '../../assets/svg/logo';
 import { SCREENS } from '../../navigation/constants';
+import { Icon } from '../../projects/src/components/Icon';
+import { colors } from '../../styles/colors';
+import Logo from './Logo/Logo';
+import { useEffect, useState } from 'react';
+import AnimatedBlock from '../AnimatedBlock';
+import { animationTypes } from '../../constants/animationTypes';
+import { variables } from '../../constants/animationVariables';
+import { AnimatePresence } from 'framer-motion';
+
+const screensSubProject = [
+  SCREENS.TOD,
+  SCREENS.TIME_ZO,
+  SCREENS.META_MODERN_PRIVACY,
+];
+
+const comparePathes = (path, patches) => {
+  return patches.some((pathname) => path === pathname);
+};
 
 const Header = () => {
   const navigate = useNavigate();
-
-  const isHomePage = useIsPage(SCREENS.HOME);
+  const location = useLocation();
+  const [isSubProject, setIsSubProject] = useState(false);
 
   const { setIsVisible } = useModalMenuContext();
 
@@ -26,25 +44,53 @@ const Header = () => {
   };
 
   const openModalMenu = () => setIsVisible((isVisible) => !isVisible);
+  useEffect(() => {
+    if (comparePathes(location.pathname, screensSubProject))
+      setIsSubProject(true);
+    else setIsSubProject(false);
+  }, [location.pathname]);
 
   return (
-    <header
-      className={styles.container}
-      style={{
-        position: 'absolute',
-      }}
-    >
-      <Menu />
+    <header className={styles.container}>
+      <AnimatedBlock
+        animation={animationTypes.DOWN}
+        transition={{ duration: variables.duration, delay: variables.delay }}
+        options={{ className: styles.animatedBlock }}
+      >
+        <Logo
+          onClick={menuLogoHandler}
+          location={location}
+          isSubProject={isSubProject}
+          comparePathes={comparePathes}
+        />
+        <AnimatePresence exitBeforeEnter>
+          {!isSubProject && (
+            <AnimatedBlock
+              animation={animationTypes.DEFAULT}
+              transition={{
+                duration: variables.duration / 2,
+                delay: 0.2,
+              }}
+              options={{
+                exit: {
+                  transition: {
+                    delay: 0,
+                    duration: variables.duration / 2,
+                  },
+                  opacity: 0,
+                },
+              }}
+            >
+              <Menu />
+              <div className={styles.middleBtn_wrapper}>
+                <StartProjectButton />
+              </div>
 
-      <button className={styles.logo} onClick={menuLogoHandler}>
-        {mainLogo}
-      </button>
-
-      <div className={styles.middleBtn_wrapper}>
-        <StartProjectButton />
-      </div>
-
-      <IconMenuButton onClick={openModalMenu} />
+              <IconMenuButton onClick={openModalMenu} />
+            </AnimatedBlock>
+          )}
+        </AnimatePresence>
+      </AnimatedBlock>
     </header>
   );
 };

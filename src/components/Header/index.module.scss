@@ -6,53 +6,88 @@
   left: 0;
   right: 0;
 
-  display: flex;
-  justify-content: space-between;
-
-  padding: 40px 64px 0;
-
   z-index: $index10;
 
   color: $mainBlack;
 
-  @media (max-width: $landscape1133) {
-    padding: 40px autoResize(44px, 64px, $landscape800, $landscape1133) 0 !important;
-  }
-
-  @media (max-width: $landscape800) {
-    padding: autoResize(36px, 40px, $landscape384, $landscape800)
-      autoResize(24px, 44px, $landscape384, $landscape800) 0 !important;
-  }
-
-  .logo {
-    position: relative;
-
-    height: autoResize(44px, 52px, $landscape384, $landscape800);
-    width: autoResize(44px, 52px, $landscape384, $landscape800);
-
-    background: transparent;
-    svg {
-      position: relative;
-      height: 100%;
-      width: auto;
+  .animatedBlock {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 64px 0;
+    @media (max-width: $landscape1133) {
+      padding: 40px autoResize(44px, 64px, $landscape800, $landscape1133) 0 !important;
     }
-  }
 
-  .logo {
-    svg {
-      transition: $transitionEase;
+    @media (max-width: $landscape800) {
+      padding: autoResize(36px, 40px, $landscape384, $landscape800)
+        autoResize(24px, 44px, $landscape384, $landscape800) 0 !important;
+    }
+    .logo {
+      height: autoResize(44px, 52px, $landscape384, $landscape800) !important;
+      width: autoResize(44px, 52px, $landscape384, $landscape800) !important;
 
-      @media (min-width: $landscape800) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+
+      -webkit-transform: translateZ(0);
+      z-index: $index10;
+      @media (max-width: $landscape768) {
+        height: $logoHeightMin;
+        width: $logoHeightMin;
+      }
+
+      svg {
+        height: 100%;
+        width: 100%;
+
+        position: absolute;
+
+        transition: opacity $transition150;
+      }
+
+      @media (max-width: $landscape800) {
+        .iconMain {
+          opacity: 1;
+        }
+
+        .iconGradient {
+          opacity: 0;
+        }
         &:hover {
-          path {
-            fill: $yellow100;
+          .iconMain {
+            opacity: 1 !important;
           }
+
+          .iconGradient {
+            opacity: 0 !important;
+          }
+        }
+      }
+      .iconMain {
+        opacity: 1;
+      }
+
+      .iconGradient {
+        opacity: 0;
+      }
+
+      &:hover {
+        .iconMain {
+          opacity: 0;
+        }
+
+        .iconGradient {
+          opacity: 1;
         }
       }
     }
   }
 }
-
 .middleBtn_wrapper {
   @media (max-width: $landscape800) {
     display: none;

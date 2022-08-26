@@ -5,33 +5,20 @@ import { BrowserRouter } from 'react-router-dom';
 import SmoothScrollbar from 'smooth-scrollbar';
 import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import Scrollbar from 'react-smooth-scrollbar';
-
+import { useDeviceSelectors } from 'react-device-detect';
 import axios from 'axios';
-import Cursor from './components/Cursor';
+import MobileAppContent from './components/MobileAppContent/MobileAppContent';
+import DesctopAppContent from './components/DesctopAppContent/DesctopAppContent';
 
 axios.defaults.baseURL = process.env.PUBLIC_URL;
 
-SmoothScrollbar.use(OverscrollPlugin);
-
-export const ScrollContext = createContext(Scrollbar);
-
 function App() {
-  const scrollbarRef = useRef(null);
-  useEffect(() => {
-    scrollbarRef.current.scrollbar.updatePluginOptions('overscroll', {
-      effect: 'glow',
-    });
-  });
+  const [selectors, data] = useDeviceSelectors(window.navigator.userAgent);
+  const { isMobile } = selectors;
+
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Cursor />
-      <ModalMenuProvider>
-        <Scrollbar ref={scrollbarRef} className={"scrollContainer"}>
-          <ScrollContext.Provider value={scrollbarRef}>
-            <Navigation />
-          </ScrollContext.Provider>
-        </Scrollbar>
-      </ModalMenuProvider>
+      {isMobile ? <MobileAppContent /> : <DesctopAppContent />}
     </BrowserRouter>
   );
 }

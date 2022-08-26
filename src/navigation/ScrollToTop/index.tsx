@@ -1,17 +1,20 @@
-import { useContext, useEffect } from "react";
-import { useLocation } from "react-router";
-import { ScrollContext } from "../../App";
+import { useContext, useEffect } from 'react';
+import { useLocation } from 'react-router';
+import { ScrollContext } from '../../components/DesctopAppContent/DesctopAppContent';
 
-const ScrollToTop = ({ children }) => {
+const ScrollToTop = ({ children, isMobile }) => {
   const location = useLocation();
   const scrollbarRef = useContext(ScrollContext);
 
   useEffect(() => {
     setTimeout(() => {
-      scrollbarRef.current.scrollbar.scrollTo(0, 0);
+      if (isMobile) {
+        const body = document.getElementsByTagName('body')[0];
+        body.scrollTo(0, 0);
+      } else scrollbarRef.current.scrollbar.scrollTo(0, 0);
     }, 200);
   }, [location.pathname]);
-  
+
   // console.log(scrollbarRef.current?.scrollbar.containerEl);
   return <>{children}</>;
 };

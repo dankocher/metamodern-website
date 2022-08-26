@@ -8,12 +8,12 @@ import ourAppAnimation from '../../assets/animations/ourApp.json';
 
 import underline from '../../assets/svg/bigUnderline.svg';
 import translate from '../../i18n/en.json';
-import { ScrollContext } from '../../App';
+import { ScrollContext } from '../DesctopAppContent/DesctopAppContent';
 import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
 
-const MainTitle = ({ portfolioRef }) => {
+const MainTitle = ({ portfolioRef, isMobile }) => {
   const [isHovering, setIsHovering] = useState(false);
   const scrollbarRef = useContext(ScrollContext);
 
@@ -28,7 +28,13 @@ const MainTitle = ({ portfolioRef }) => {
   };
 
   const ourAppBtnOnClick = () => {
-    scrollbarRef.current.scrollbar.scrollIntoView(portfolioRef?.current);
+    console.log(scrollbarRef)
+    if (isMobile) {
+      portfolioRef?.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    } else scrollbarRef.current.scrollbar.scrollIntoView(portfolioRef?.current);
   };
 
   return (
@@ -41,14 +47,18 @@ const MainTitle = ({ portfolioRef }) => {
         > </AnimatedBlock>
         <AnimatedBlock
           animation={animationTypes.DEFAULT}
-          options={{ className: `${styles.metamodern_title} bebasNeue320 noSelect` }}
+          options={{
+            className: `${styles.metamodern_title} bebasNeue320 noSelect`,
+          }}
         >
           {translate.metaModern}
         </AnimatedBlock>
         <div className={styles.content__subtext}>
           <AnimatedBlock
             animation={animationTypes.DEFAULT}
-            options={{ className: `${styles.develop_title} bebasNeue288 noSelect` }}
+            options={{
+              className: `${styles.develop_title} bebasNeue288 noSelect`,
+            }}
             transition={{ duration: v.duration + 0.15, delay: v.delay * 3 }}
           >
             {translate.develop}

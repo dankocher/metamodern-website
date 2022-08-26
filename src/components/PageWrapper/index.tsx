@@ -8,8 +8,9 @@ const PageWrapper: FC<{ children: React.ReactNode }> = ({ children }) => {
     <>
       <motion.div exit={{ opacity: 0 }} transition={{ duration: 0.2 }}>
         {children}
+
+        <Footer />
       </motion.div>
-      <Footer />
       <ModalMenu />
     </>
   );
