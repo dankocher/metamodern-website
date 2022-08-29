@@ -51,7 +51,7 @@ const Brief: FC = () => {
     },
     resolver: yupResolver(
       Yup.object({
-        email: Yup.string().email('Incorrect Email format'),
+        email: Yup.string().email('E-mail entered incorrectly'),
       })
     ),
   });
@@ -59,8 +59,7 @@ const Brief: FC = () => {
   const { isCleanUpContacts, setIsCleanUpContacts } =
     useIsCleanUpContactsContext();
 
-  // TODO error message
-  // const { errors, isSubmitting } = formState;
+  const { errors } = formState;
 
   const [attachedFile, setAttachedFile] = useState<File | null>(null);
   const [isDataSent, setIsDataSent] = useState(false);
@@ -285,33 +284,29 @@ const Brief: FC = () => {
                       onChange={onChange}
                       value={value}
                       required={true}
+                      error={errors.email ? errors.email.message : null}
                     />
                   )}
                 />
-                {/* {errors.email && (
-                  <div className="alert alert-danger mt-3 mb-0">
-                    {errors.eamil?.message}
-                  </div>
-                )} */}
+
+                <Controller
+                  name="description"
+                  control={control}
+                  render={({ field: { onChange, value } }) => (
+                    <MTextArea
+                      label={translate.description}
+                      onChange={onChange}
+                      value={value}
+                      rowsMax={12}
+                    />
+                  )}
+                />
+                <AttachFile
+                  label={translate.attachFile}
+                  setFile={onSubmitFile}
+                  attachedFileName={attachedFile?.name}
+                />
               </div>
-              {/* <span title={intl.formatDate(date)}></span> */}
-              <Controller
-                name="description"
-                control={control}
-                render={({ field: { onChange, value } }) => (
-                  <MTextArea
-                    label={translate.description}
-                    onChange={onChange}
-                    value={value}
-                    rowsMax={12}
-                  />
-                )}
-              />
-              <AttachFile
-                label={translate.attachFile}
-                setFile={onSubmitFile}
-                attachedFileName={attachedFile?.name}
-              />
             </section>
             <button
               type="submit"

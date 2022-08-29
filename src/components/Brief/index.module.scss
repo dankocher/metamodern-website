@@ -75,28 +75,14 @@
   .aboutProject {
     margin-bottom: autoResize(56px, 68px, $landscape384, $landscape800);
 
-    & > div {
-      @media (max-width: $landscape800) {
-        max-width: 400px;
-      }
+    h5 {
+      margin-bottom: autoResize(16px, 32px, $landscape384, $landscape800);
     }
 
     .personalInformation {
       display: flex;
-      gap: 60px;
-
-      & + div {
-        margin-bottom: 12px;
-      }
-
-      & > div {
-        flex: 1;
-        margin-bottom: autoResize(16px, 28px, $landscape384, $landscape800);
-      }
-
-      @media (max-width: $landscape800) {
-        display: block;
-      }
+      flex-direction: column;
+      gap: 44px;
     }
   }
 
