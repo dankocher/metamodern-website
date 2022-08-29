@@ -10,6 +10,7 @@
   text-transform: uppercase;
 
   padding-top: autoResize(12px, 20px, $landscape384, $landscape800);
+  padding-bottom: autoResize(8px, 12px, $landscape384, $landscape800);
 
   transition: background-color $transitionEase;
 }
