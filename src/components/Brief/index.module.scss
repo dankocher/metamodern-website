@@ -24,6 +24,10 @@
       margin-bottom: autoResize(44px, 56px, $landscape320, $landscape384);
     }
 
+    h5 {
+      margin-bottom: autoResize(16px, 24px, $landscape384, $landscape800);
+    }
+
     .switch {
       display: flex;
       gap: autoResize(8px, 12px, $landscape384, $landscape800);
@@ -39,25 +43,33 @@
   .additionalServices {
     margin-bottom: autoResize(56px, 80px, $landscape384, $landscape800);
 
+    h5 {
+      margin-bottom: autoResize(16px, 24px, $landscape384, $landscape800);
+    }
+
     & > :last-child {
       margin-bottom: 0;
     }
   }
 
   .outsourcing {
+    h5 {
+      margin-bottom: autoResize(16px, 32px, $landscape384, $landscape800);
+    }
+
     h5 ~ div {
       margin-bottom: autoResize(56px, 64px, $landscape384, $landscape800);
     }
   }
 
   .outstaffing {
-    h5 ~ div {
-      margin-bottom: autoResize(56px, 32px, $landscape384, $landscape800);
+    h5 {
+      margin-bottom: autoResize(16px, 24px, $landscape384, $landscape800);
     }
-  }
 
-  h5 {
-    margin-bottom: autoResize(16px, 32px, $landscape384, $landscape800);
+    h5 ~ div {
+      margin-bottom: 32px;
+    }
   }
 
   .aboutProject {
