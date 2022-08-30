@@ -26,9 +26,11 @@ const MainTitle = ({ portfolioRef }) => {
     <div className={styles.container}>
       <div className={styles.content}>
         <div className={styles.circle} />
-        <h1 className="bebasNeue320 noSelect">{translate.metaModern}</h1>
+        <h1 className="bebasNeue320 noSelect" translate="no">
+          {translate.metaModern}
+        </h1>
         <div className={styles.content__subtext}>
-          <h2 className="bebasNeue288 noSelect">
+          <h2 className="bebasNeue288 noSelect" translate="no">
             {translate.develop}
             <img className="noSelect" src={underline} />
           </h2>
