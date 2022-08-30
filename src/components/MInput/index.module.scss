@@ -2,9 +2,25 @@
 
 .wrapper {
   height: 72px;
+
+  position: relative;
+
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   cursor: text;
+
+  & > span {
+    position: absolute;
+    color: $red100;
+
+    transform: translateY(100%);
+    bottom: -8px;
+  }
+}
+
+.error {
+  border-bottom-color: $red100 !important;
 }
 
 .container {

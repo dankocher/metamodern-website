@@ -50,7 +50,7 @@ const data: ProjectProps[] = [
     link: '',
     type: ProjectsTypes.MOBILE,
     name: 'Never Have i ever',
-    title: 'gamer for party',
+    title: 'game for party',
     description:
       'Never have I ever... Stop racking your brain to complete this statement. Just download our game. It will make even the most boring evening unforgettable.',
     tags: ['Design', 'Mobile', 'Landing'],
