@@ -23,11 +23,11 @@
     transition: width 0.4s cubic-bezier(0.4, 0.6, 0.2, 1);
   }
 
-  &:not(.selected):hover {
-    &::before {
-      width: 100%;
-    }
-  }
+  // &:not(.selected):hover {
+  //   &::before {
+  //     width: 100%;
+  //   }
+  // }
 }
 
 .selected {

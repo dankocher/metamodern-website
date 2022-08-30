@@ -4,6 +4,7 @@ import { FC } from 'react';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 import { SCREENS } from '../../../navigation/constants';
+import StaggerText from '../../StaggerText';
 
 const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
   const location = useLocation();
@@ -20,7 +21,9 @@ const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
       className={`${styles.container} ${isCurrentPage() && styles.selected}`}
       onClick={navigateTo}
     >
-      <li>{title}</li>
+      <li>
+        <StaggerText text={title} />
+      </li>
     </div>
   );
 };
