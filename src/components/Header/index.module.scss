@@ -5,11 +5,13 @@
   top: 0;
   left: 0;
   right: 0;
-
   z-index: $index10;
 
-  color: $mainBlack;
 
+  color: $mainBlack;
+  @media (max-width: $landscape800) {
+    z-index:auto;
+  }
   .animatedBlock {
     width: 100%;
     height: 100%;

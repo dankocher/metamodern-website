@@ -36,7 +36,7 @@
   margin-bottom: 88px;
   overflow: hidden;
   background: #ffffff;
-  max-height: 836px;;
+  max-height: 836px;
 
   @media (max-width: 1200px) {
     margin-bottom: autoResize(64px, 88px, $landscape800, $landscape1200);
@@ -44,7 +44,7 @@
   @media (max-width: 800px) {
     margin-bottom: autoResize(48px, 64px, $landscape384, $landscape800);
   }
-  
+
   .aboutUsImg {
     width: 100%;
     border: none;

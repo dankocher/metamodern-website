@@ -43,7 +43,8 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
           animation={animationTypes.TOLEFT}
           options={{ className: styles.circle }}
           transition={{ duration: v.duration + 0.15, delay: v.delay * 3 }}
-        > </AnimatedBlock>
+        >
+        </AnimatedBlock>
         <AnimatedBlock
           animation={animationTypes.DEFAULT}
           options={{
@@ -61,7 +62,7 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
             transition={{ duration: v.duration + 0.15, delay: v.delay * 3 }}
           >
             {translate.develop}
-            <img className='noSelect' src={underline} />
+            <img className="noSelect" src={underline} />
           </AnimatedBlock>
         </div>
         <AnimatedBlock

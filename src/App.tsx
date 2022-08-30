@@ -10,7 +10,7 @@ axios.defaults.baseURL = process.env.PUBLIC_URL;
 function App() {
   const [selectors, data] = useDeviceSelectors(window.navigator.userAgent);
   const { isMobile } = selectors;
-
+  
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <CleanUpContactsProvider>

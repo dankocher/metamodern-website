@@ -24,12 +24,12 @@ const Logo = ({ location, isSubProject, comparePathes, onClick }) => {
   return (
     <div className={styles.logo} onClick={onClick}>
       <Icon
-        name='logo'
+        name="logo"
         color={theme === themes.WHITE ? colors.white : colors.secondBlack}
         className={styles.iconMain}
       />
       <Icon
-        name='logo'
+        name="logo"
         className={styles.iconGradient}
         color={isSubProject ? null : colors.yellow100}
       />

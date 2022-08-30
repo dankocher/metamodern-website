@@ -178,9 +178,9 @@ const Brief: FC = () => {
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.container}>
-            <h2 className='bebasNeue132'>{translate.fillBrief}</h2>
+            <h2 className="bebasNeue132">{translate.fillBrief}</h2>
             <div className={styles.servicesSwitch}>
-              <h5 className='interMedium2432'>{translate.whatAppOrServices}</h5>
+              <h5 className="interMedium2432">{translate.whatAppOrServices}</h5>
               <div className={styles.switch}>
                 <Tag
                   label={translate.outstaffing}
@@ -197,7 +197,7 @@ const Brief: FC = () => {
 
             {isOutsourcing ? (
               <section className={styles.outsourcing}>
-                <h5 className='interMedium2432'>
+                <h5 className="interMedium2432">
                   {translate.whatAppOrServices}
                 </h5>
                 <TagList
@@ -207,7 +207,7 @@ const Brief: FC = () => {
                     setCurrentTags(index, setCurrentServices)
                   }
                 />
-                <h5 className='interMedium2432'>{translate.selectIndustry}</h5>
+                <h5 className="interMedium2432">{translate.selectIndustry}</h5>
                 <TagList
                   tagList={industryTypes}
                   selectedTagList={currentIndustry}
@@ -219,7 +219,7 @@ const Brief: FC = () => {
             ) : (
               <>
                 <section className={styles.outstaffing}>
-                  <h5 className='interMedium2432'>{translate.frontEnd}</h5>
+                  <h5 className="interMedium2432">{translate.frontEnd}</h5>
                   <TagList
                     tagList={frontEndTypes}
                     selectedTagList={currentFrontEnd}
@@ -227,7 +227,7 @@ const Brief: FC = () => {
                       setCurrentTags(index, setCurrentFrontEnd)
                     }
                   />
-                  <h5 className='interMedium2432'>{translate.backEnd}</h5>
+                  <h5 className="interMedium2432">{translate.backEnd}</h5>
                   <TagList
                     tagList={backEndTypes}
                     selectedTagList={currentBackEnd}
@@ -235,7 +235,7 @@ const Brief: FC = () => {
                       setCurrentTags(index, setCurrentBackEnd)
                     }
                   />
-                  <h5 className='interMedium2432'>{translate.mobile}</h5>
+                  <h5 className="interMedium2432">{translate.mobile}</h5>
                   <TagList
                     tagList={mobileTypes}
                     selectedTagList={currentMobile}
@@ -243,7 +243,7 @@ const Brief: FC = () => {
                       setCurrentTags(index, setCurrentMobile)
                     }
                   />
-                  <h5 className='interMedium2432'>{translate.qATesting}</h5>
+                  <h5 className="interMedium2432">{translate.qATesting}</h5>
                   <TagList
                     tagList={testingTypes}
                     selectedTagList={currentTesting}
@@ -253,7 +253,7 @@ const Brief: FC = () => {
                   />
                 </section>
                 <section className={styles.additionalServices}>
-                  <h5 className='interMedium2432'>
+                  <h5 className="interMedium2432">
                     {translate.additionalServices}
                   </h5>
                   <TagList
@@ -268,7 +268,7 @@ const Brief: FC = () => {
             )}
 
             <section className={styles.aboutProject}>
-              <h5 className='interMedium2432'>{translate.writeAboutProject}</h5>
+              <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
               <div className={styles.personalInformation}>
                 <Controller
                   name="name"
@@ -302,7 +302,7 @@ const Brief: FC = () => {
               </div>
               {/* <span title={intl.formatDate(date)}></span> */}
               <Controller
-                name='description'
+                name="description"
                 control={control}
                 render={({ field: { onChange, value } }) => (
                   <MTextArea
@@ -320,7 +320,7 @@ const Brief: FC = () => {
               />
             </section>
             <button
-              type='submit'
+              type="submit"
               className={`latoSemibold2028 ${styles.sendBtn}`}
             >
               {translate.send}

@@ -37,7 +37,7 @@ const Cursor = () => {
     <AnimatedCursor
       innerSize={8}
       outerSize={40}
-      color='0, 0, 0'
+      color="0, 0, 0"
       outerAlpha={0.4}
       innerScale={0.7}
       outerScale={1.5}

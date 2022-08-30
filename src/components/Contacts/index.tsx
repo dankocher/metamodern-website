@@ -12,18 +12,18 @@ const Contacts: FC = () => {
   return (
     <div className={styles.container}>
       <div>
-        <h2 className='bebasNeue132'>{translate.contacts}</h2>
+        <h2 className="bebasNeue132">{translate.contacts}</h2>
         <div className={styles.contacts}>
-          <p className='interMedium2432'>{translate.telegram}</p>
+          <p className="interMedium2432">{translate.telegram}</p>
           <a
-            className='interRegular2024'
+            className="interRegular2024"
             href={`https://t.me/${contacts.telegram}`}
-            target='_blank'
-            rel='noopener noreferrer'
+            target="_blank"
+            rel="noopener noreferrer"
           >{`@${telegramTitle}`}</a>
 
-          <p className='interMedium2432'>{translate.email}</p>
-          <a className='interRegular2024' href={`mailto:${contacts.mail}`}>
+          <p className="interMedium2432">{translate.email}</p>
+          <a className="interRegular2024" href={`mailto:${contacts.mail}`}>
             {contacts.mail}
           </a>
         </div>

@@ -6,7 +6,6 @@ import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import Scrollbar from 'react-smooth-scrollbar';
 import Cursor from '../../components/Cursor';
 
-
 SmoothScrollbar.use(OverscrollPlugin);
 
 export const ScrollContext = createContext(Scrollbar);
@@ -25,7 +24,7 @@ function DesctopAppContent() {
       <ModalMenuProvider>
         <Scrollbar ref={scrollbarRef} className={'scrollContainer'}>
           <ScrollContext.Provider value={scrollbarRef}>
-            <Navigation isMobile = {false}/>
+            <Navigation isMobile={false} />
           </ScrollContext.Provider>
         </Scrollbar>
       </ModalMenuProvider>
@@ -34,4 +33,3 @@ function DesctopAppContent() {
 }
 
 export default DesctopAppContent;
- 

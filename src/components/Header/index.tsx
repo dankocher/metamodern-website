@@ -4,16 +4,11 @@ import { useLocation, useNavigate } from 'react-router-dom';
 
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
-import { useIsPage } from '../../hooks/useIsPage';
-
 import Menu from '../Menu';
 import IconMenuButton from '../IconMenuButton';
 import StartProjectButton from '../StartProjectButton';
 
-import { mainLogo } from '../../assets/svg/logo';
 import { SCREENS } from '../../navigation/constants';
-import { Icon } from '../../projects/src/components/Icon';
-import { colors } from '../../styles/colors';
 import Logo from './Logo/Logo';
 import { useEffect, useState } from 'react';
 import AnimatedBlock from '../AnimatedBlock';
@@ -23,7 +18,11 @@ import { AnimatePresence } from 'framer-motion';
 
 const screensSubProject = [
   SCREENS.TOD,
+  SCREENS.TOD_PRIVACY,
+  SCREENS.TOD_TERMS,
   SCREENS.TIME_ZO,
+  SCREENS.TIME_ZO_PRIVACY,
+  SCREENS.TIME_ZO_TERMS,
   SCREENS.META_MODERN_PRIVACY,
 ];
 
@@ -44,7 +43,9 @@ const Header = () => {
   };
 
   const openModalMenu = () => setIsVisible((isVisible) => !isVisible);
+  
   useEffect(() => {
+    
     if (comparePathes(location.pathname, screensSubProject))
       setIsSubProject(true);
     else setIsSubProject(false);

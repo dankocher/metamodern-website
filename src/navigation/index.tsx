@@ -53,25 +53,13 @@ const Navigation = ({ isMobile }) => {
           />
           <Route
             path={SCREENS.META_MODERN_PRIVACY}
-            element={
-              <AnimatedBlock
-                animation={animationTypes.DEFAULT}
-                transition={{
-                  duration: variables.duration,
-                  delay: 0,
-                }}
-                options={{ exit: { opacity: 0 } }}
-              >
-                <PrivacyMetaModern />
-              </AnimatedBlock>
-            }
+            element={<PrivacyMetaModern />}
           />
 
           <Route
             path={SCREENS.TOD}
             element={
-              <motion.div
-               exit={{ opacity: 0 }}>
+              <motion.div exit={{ opacity: 0 }}>
                 <ToDScreen />
               </motion.div>
             }
@@ -96,7 +84,7 @@ const Navigation = ({ isMobile }) => {
             element={<Redirect url={CatDribble} />}
           />
 
-          <Route path='*' element={<Navigate to={SCREENS.HOME} replace />} />
+          <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
         </Routes>
       </AnimatePresence>
       <ModalMenu />
