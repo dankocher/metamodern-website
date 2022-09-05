@@ -4,6 +4,8 @@
   display: inline-block;
   position: relative;
 
+  color: var(--primary-clr);
+
   & * {
     pointer-events: none;
   }
@@ -20,14 +22,13 @@
 
     &_inner {
       display: inline-block;
-      color: aqua;
 
       &:after {
         content: attr(data-letter);
         position: absolute;
         top: 100%;
         left: 0;
-        color: greenyellow;
+        color: var(--secondary-clr);
       }
     }
   }

@@ -22,7 +22,7 @@ const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
       onClick={navigateTo}
     >
       <li>
-        <StaggerText text={title} />
+        <StaggerText duration={0.3} stagger={-0.02} text={title} />
       </li>
     </div>
   );
