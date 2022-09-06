@@ -16,15 +16,11 @@
     display: none;
   }
 
-<<<<<<< HEAD
-  :not(:last-child) {
-=======
   li {
     cursor: pointer;
   }
 
   & > :not(:last-child) {
->>>>>>> main
     margin-right: 40px;
   }
 }

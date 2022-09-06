@@ -1,4 +1,4 @@
-export const principlesList = [
+export const principlesList: Array<{subtitle:string, description:string}> = [
     {
       subtitle: 'System approach',
       description:
