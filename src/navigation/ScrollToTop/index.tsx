@@ -15,7 +15,6 @@ const ScrollToTop = ({ children, isMobile }) => {
     }, 200);
   }, [location.pathname]);
 
-  // console.log(scrollbarRef.current?.scrollbar.containerEl);
   return <>{children}</>;
 };
 

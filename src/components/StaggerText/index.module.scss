@@ -1,0 +1,35 @@
+@import '../../styles/foundations.scss';
+
+.container {
+  display: inline-block;
+  position: relative;
+
+  color: var(--primary-clr);
+
+  & * {
+    pointer-events: none;
+  }
+
+  .word {
+    display: inline-flex;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .char {
+    display: inline-block;
+    position: relative;
+
+    &_inner {
+      display: inline-block;
+
+      &:after {
+        content: attr(data-letter);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        color: var(--secondary-clr);
+      }
+    }
+  }
+}

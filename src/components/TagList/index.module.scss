@@ -4,5 +4,5 @@
   display: flex;
   flex-wrap: wrap;
 
-  gap: autoResize(8px, 16px, $landscape384, $landscape800);
+  gap: autoResize(8px, 12px, $landscape384, $landscape800);
 }

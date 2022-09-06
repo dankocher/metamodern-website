@@ -67,7 +67,7 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
         </div>
         <AnimatedBlock
           animation={animationTypes.DEFAULT}
-          options={{ className: `${styles.span} latoSemibold2012 noSelect` }}
+          options={{ className: `${styles.description} latoSemibold2012 noSelect` }}
           transition={{ duration: v.duration + 0.15, delay: v.delay * 2 * 3 }}
         >
           {translate.mainTitleDescription}
