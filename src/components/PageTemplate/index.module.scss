@@ -1,0 +1,11 @@
+@import "../../styles/foundations.scss";
+
+.container {
+  flex: 1;
+  display: flex;
+  padding-top: autoResize(140, 180);
+  padding-left: autoResize(16, 160);
+  padding-right: autoResize(16, 160);
+  flex-direction: column;
+  align-items: center;
+}

@@ -9,19 +9,22 @@
   right: 0;
   left: 0;
 
-  overflow: hidden;
-  transition: left 350ms ease-in;
+  overflow: hidden !important;
+  
   background-color: $white;
+  justify-content: center;
+  @media (max-width: $landscape800) {
+    height: 100vh;
+  }
 
   ul {
     position: absolute;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-
     width: 100%;
-
+    justify-content: center;
+    white-space: nowrap;;
     :not(:last-child) {
       margin-bottom: autoResize(20px, 44px, $landscape384, $landscape800);
 

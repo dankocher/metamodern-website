@@ -1,6 +1,108 @@
 @import '../../styles/foundations.scss';
 
-.container {
+.about_title {
   display: flex;
-  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  &_string {
+    display: flex;
+    max-width: 968px;
+
+    white-space: nowrap;
+    .zigzag_container {
+      position: relative;
+      width: min-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .zigzag {
+        position: absolute;
+        bottom: -10%;
+        width: 100%;
+      }
+    }
+    .underline {
+      text-decoration: underline;
+    }
+  }
+
+  margin-bottom: autoResize(44px, 88px);
+}
+.containerImg {
+  width: 100%;
+  // max-width: 1600px;
+  display: inline-block;
+  margin-bottom: 88px;
+  overflow: hidden;
+  background: #ffffff;
+  max-height: 836px;
+
+  @media (max-width: 1200px) {
+    margin-bottom: autoResize(64px, 88px, $landscape800, $landscape1200);
+  }
+  @media (max-width: 800px) {
+    margin-bottom: autoResize(48px, 64px, $landscape384, $landscape800);
+  }
+
+  .aboutUsImg {
+    width: 100%;
+    border: none;
+    @media (min-width: 1200px) {
+      margin-top: -7%;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  max-width: 1204px;
+  @media (min-width: 1200px) {
+    align-self: flex-start;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+    :not(:last-child) {
+      border-bottom: solid 2px $gray100;
+    }
+    :last-child {
+      padding-bottom: 0px !important;
+    }
+    :first-child {
+      padding-top: 0px !important;
+    }
+    margin-top: 100px;
+    @media (max-width: 1200px) {
+      margin-top: autoResize(56px, 100px, $landscape800, $landscape1200);
+    }
+    @media (max-width: 800px) {
+      margin-top: autoResize(44Zpx, 56px, $landscape384, $landscape800);
+    }
+    .item {
+      display: flex;
+      width: 100%;
+      padding-top: 32px;
+      padding-bottom: 32px;
+      justify-content: space-between;
+      @media (max-width: 800px) {
+        flex-direction: column;
+      }
+      @media (min-width: 800px) {
+        padding-top: 56px;
+        padding-bottom: 56px;
+      }
+
+      &_subtitle {
+        min-width: 350px;
+        border: none;
+      }
+
+      &_description {
+        max-width: 724px;
+      }
+    }
+  }
 }

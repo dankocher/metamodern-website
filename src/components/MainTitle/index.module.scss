@@ -3,7 +3,7 @@
 .container {
   width: 100vw;
   height: 100vh;
-
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,7 +19,10 @@
 
     position: absolute;
     bottom: 20px;
-    background-color: transparent;
+
+    button {
+      background-color: transparent;
+    }
   }
 
   .content {
@@ -77,12 +80,12 @@
       }
     }
 
-    h1,
-    h2 {
+    .metamodern_title,
+    .develop_title {
       text-transform: uppercase;
     }
 
-    h1 {
+    .metamodern_title {
       position: relative;
 
       text-align: left;
@@ -117,7 +120,7 @@
       }
     }
 
-    span {
+    .description {
       position: absolute;
 
       width: autoResize(379px, 646px, $landscape1200);

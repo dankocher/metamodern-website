@@ -1,4 +1,4 @@
-@import '../../styles/foundations.scss';
+@import "../../styles/foundations.scss";
 
 .container {
   .fileName {
@@ -25,8 +25,6 @@
       border-radius: 50%;
       background-color: $mainBlack;
 
-      cursor: pointer;
-
       transition: $transitionEase;
 
       &:hover {
@@ -43,7 +41,5 @@
     display: block;
 
     color: $blue100;
-
-    cursor: pointer;
   }
 }

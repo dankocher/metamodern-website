@@ -1,13 +1,15 @@
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import { ProjectsTypes, projectsTypes } from '../../constants/projectTypes';
+import { ProjectsTypes, projectsTypes } from "../../constants/projectTypes";
 
-import ProjectList from '../../components/ProjectList';
-import TagList from '../../components/TagList';
+import ProjectList from "../../components/ProjectList";
+import TagList from "../../components/TagList";
 
-import translation from '../../i18n/en.json';
+import translation from "../../i18n/en.json";
+import AnimatedBlock from "../../components/AnimatedBlock";
+import { animationTypes } from "../../constants/animationTypes";
 
 const PortfolioScreen = () => {
   const [currentFilterList, setCurrentFilterList] = useState<ProjectsTypes[]>([
@@ -19,7 +21,10 @@ const PortfolioScreen = () => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.container}>
+      <AnimatedBlock
+        animation={animationTypes.UP}
+        options={{ className: styles.container }}
+      >
         <h2 className={`bebasNeue132 ${styles.header}`}>
           {translation.portfolio}
         </h2>
@@ -28,7 +33,7 @@ const PortfolioScreen = () => {
           selectedTagList={currentFilterList}
           setSelectedTagList={setCurrentFilterListHandler}
         />
-      </div>
+      </AnimatedBlock>
       <ProjectList currentFilter={currentFilter} />
     </div>
   );

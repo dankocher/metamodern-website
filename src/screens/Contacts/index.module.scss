@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
 
-  margin-top: autoResize(56px, 88px, $landscape384, $landscape800);
+  padding-top: autoResize(140px, 180px, $landscape384, $landscape800);
 
   color: $secondBlack;
 

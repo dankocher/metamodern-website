@@ -21,7 +21,7 @@
     color: $neutral900;
     padding-top: 88px;
     padding-bottom: 144px;
-
+    padding-top: autoResize(140, 180);
     @media (max-width: 1000px) {
       padding-top: 112px;
     }

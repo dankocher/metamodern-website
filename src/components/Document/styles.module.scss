@@ -3,19 +3,17 @@
 .container {
   display: flex;
   justify-content: center;
-
+  padding-top: autoResize(140, 180);
   background-color: #ffffff;
 
   .content {
     width: autoResize(288px, 800px, 320px, $mdDevice);
     flex-direction: column;
     color: $neutral900;
-    padding-top: 88px;
+    
     padding-bottom: 144px;
 
-    @media (max-width: 1230px) {
-      padding-top: 30px;
-    }
+   
   }
 
   .headerBlock {

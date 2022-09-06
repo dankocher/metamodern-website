@@ -6,8 +6,15 @@ import LinkButtons from '../../../../components/LinkButtons';
 
 import todPhone7_1 from '../../../../assets/images/todPhone7_1.png';
 import todPhone7_2 from '../../../../assets/images/todPhone7_2.png';
+import { motion } from 'framer-motion';
+import { variables as v } from '../../../../../../constants/animationVariables';
 
-const Section7 = ({ header, description, link }) => (
+const Section7 = ({ header, description, link }) => (<motion.div
+
+  initial={{ opacity: 0, y: v.y }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: v.duration, delay: 2 * v.delay }}
+  viewport={{ once: true }}>
   <div className={styles.container}>
     <div className={styles.contentBlock}>
       <div className={styles.phoneImg}>
@@ -43,7 +50,8 @@ const Section7 = ({ header, description, link }) => (
         />
       </div>
     </div>
-  </div>
+
+  </div ></motion.div>
 );
 
 export default Section7;

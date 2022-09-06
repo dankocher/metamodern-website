@@ -23,10 +23,6 @@ $paddingHorizontal: 64px;
 
   background-color: $backgroundColor;
 
-  a {
-    cursor: pointer;
-  }
-
   .logo {
     position: absolute;
     left: $paddingHorizontal;
@@ -65,7 +61,6 @@ $paddingHorizontal: 64px;
   }
 
   p {
-    cursor: default;
     color: $textColor;
   }
 

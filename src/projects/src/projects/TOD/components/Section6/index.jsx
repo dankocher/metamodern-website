@@ -6,6 +6,8 @@ import StaticImage from '../../../../components/StaticImage';
 import layer1 from '../../../../assets/images/todLayer6_1.png';
 import layer2 from '../../../../assets/images/todLayer6_2.png';
 import todPhone6 from '../../../../assets/images/todPhone6.png';
+import { motion } from 'framer-motion';
+import { variables as v } from '../../../../../../constants/animationVariables';
 
 const Section6 = ({ header, description }) => (
   <div className={styles.container}>
@@ -16,7 +18,11 @@ const Section6 = ({ header, description }) => (
     <div className={styles.secondBackground}>
       <img src={layer2} alt="background2" />
     </div>
-
+    <motion.div
+      initial={{ opacity: 0, y: v.y }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: v.duration, delay: 2 * v.delay }}
+      viewport={{ once: true }}>
     <div className={styles.page}>
       <div className={styles.content}>
         <div className={styles.phoneContainer}>
@@ -33,6 +39,7 @@ const Section6 = ({ header, description }) => (
         <Description header={header} description={description} />
       </div>
     </div>
+    </motion.div>
   </div>
 );
 

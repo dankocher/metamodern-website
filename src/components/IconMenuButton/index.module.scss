@@ -2,13 +2,11 @@
 
 .menuLogo {
   position: relative;
-
+  z-index: $index10;
   height: 52px;
   width: 52px;
 
   background: transparent;
-
-  cursor: pointer;
 
   @media (max-width: $landscape800) {
     height: autoResize(44px, 52px, $landscape384, $landscape800) !important;

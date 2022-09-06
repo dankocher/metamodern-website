@@ -10,12 +10,21 @@
 .container {
   width: 100%;
 
-  margin-top: 88px;
+  margin-top: 180px;
 
   padding: 0 9.6%;
 
   & > div {
     display: none;
+  }
+
+  @media (max-width: $landscape800) {
+    margin-top: autoResize(
+      140px,
+      180px,
+      $landscape384,
+      $landscape800
+    );
   }
 
   @media (min-width: $landscape1133) {

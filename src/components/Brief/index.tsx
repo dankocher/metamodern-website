@@ -35,6 +35,9 @@ import {
 } from '../../constants/servicesTypes';
 
 import { sendToEmail } from '../../api/helpers';
+import AnimatedBlock from '../AnimatedBlock';
+import { animationTypes } from '../../constants/animationTypes';
+import { variables as v } from '../../constants/animationVariables';
 
 interface IFormValues {
   name: string;
@@ -165,7 +168,10 @@ const Brief: FC = () => {
   };
 
   return (
-    <>
+    <AnimatedBlock
+      animation={animationTypes.UP}
+      transition={{ duration: v.duration, delay: v.delay }}
+    >
       {isDataSent ? (
         <SuccessMessage />
       ) : (
@@ -317,7 +323,7 @@ const Brief: FC = () => {
           </div>
         </form>
       )}
-    </>
+    </AnimatedBlock>
   );
 };
 

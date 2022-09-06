@@ -1,16 +1,16 @@
-import styles from "./styles.module.scss";
-import "./fonts.scss";
+import styles from './styles.module.scss';
+import './fonts.scss';
 
-import { useEffect } from "react";
-import parse from "html-react-parser";
+import { useEffect } from 'react';
+import parse from 'html-react-parser';
 
-import moment from "moment";
+import moment from 'moment';
 
 export const Document = ({ title, description, date }) => {
-  const dateFormat = moment(date).format("MMMM DD, YYYY");
+  const dateFormat = moment(date).format('MMMM DD, YYYY');
 
   useEffect(() => {
-    window.document.getElementsByTagName("html")[0].removeAttribute("id");
+    window.document.getElementsByTagName('html')[0].removeAttribute('id');
   }, []);
 
   return (
@@ -23,31 +23,31 @@ export const Document = ({ title, description, date }) => {
 
         <div className={styles.description}>
           {Object.keys(description).map((keyName) => {
-            if (keyName.includes("heading")) {
+            if (keyName.includes('heading')) {
               return (
                 <h2 className={`${styles.heading} docTitle0`}>
                   {description[keyName]}
                 </h2>
               );
             }
-            if (keyName.includes("title")) {
+            if (keyName.includes('title')) {
               return (
                 <h3 className={`${styles.title} docTitle`}>
                   {description[keyName]}
                 </h3>
               );
             }
-            if (keyName.includes("text")) {
+            if (keyName.includes('text')) {
               return (
                 <div className={`${styles.text} docSubtitle`}>
                   {Object.keys(description[keyName]).map((key) => {
-                    if (key.includes("sections")) {
+                    if (key.includes('sections')) {
                       return (
                         <>
                           {description[keyName][key].map((item, index) => {
                             //br
-                            if (item.includes("\n")) {
-                              const strings = item.split("\n");
+                            if (item.includes('\n')) {
+                              const strings = item.split('\n');
                               return (
                                 <p key={index.toString()}>
                                   {strings[0]}
@@ -63,7 +63,7 @@ export const Document = ({ title, description, date }) => {
                       );
                     }
                     //Lists
-                    if (key.includes("list")) {
+                    if (key.includes('list')) {
                       return (
                         <>
                           <p className={styles.headingList}>
@@ -73,8 +73,8 @@ export const Document = ({ title, description, date }) => {
                             {description[keyName][key].items.map(
                               (item, index) => {
                                 //br
-                                if (item.includes("\n")) {
-                                  const strings = item.split("\n");
+                                if (item.includes('\n')) {
+                                  const strings = item.split('\n');
                                   return (
                                     <li key={index.toString()}>
                                       {strings.map((element) => (
