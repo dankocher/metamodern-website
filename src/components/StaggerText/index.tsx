@@ -6,6 +6,7 @@ import { FC, useEffect, useRef } from 'react';
 
 const StaggerText: FC<{
   text: string;
+  disabled?: boolean;
   secondaryClr?: string;
   primaryClr?: string;
   duration?: number;
@@ -16,6 +17,7 @@ const StaggerText: FC<{
   stagger = 0.03,
   secondaryClr = '#A6A6A6',
   primaryClr = '#242424',
+  disabled = true,
 }) => {
   const ref = useRef(null);
   const wordsArr = text.split(' ');
@@ -23,6 +25,15 @@ const StaggerText: FC<{
   const clrsVar: any = {
     '--secondary-clr': secondaryClr,
     '--primary-clr': primaryClr,
+  };
+
+  const playHandler = (_) => {
+    if (disabled) return;
+    ref?.current?.animation.play();
+  };
+
+  const reverseHandler = (_) => {
+    ref?.current?.animation.reverse();
   };
 
   useEffect(() => {
@@ -40,26 +51,16 @@ const StaggerText: FC<{
       ease: Expo.inOut,
       stagger,
     });
-
-    const playHandler = (event) => {
-      event.currentTarget.animation.play();
-    };
-
-    const reverseHandler = (_) => {
-      element.animation.reverse();
-    };
-
-    element.addEventListener('mouseenter', playHandler);
-    element.addEventListener('mouseout', reverseHandler);
-
-    return () => {
-      element.removeEventListener('mouseenter', playHandler);
-      element.removeEventListener('mouseout', reverseHandler);
-    };
   }, []);
 
   return (
-    <span ref={ref} className={styles.container} style={clrsVar}>
+    <span
+      ref={ref}
+      className={styles.container}
+      style={clrsVar}
+      onMouseEnter={playHandler}
+      onMouseLeave={reverseHandler}
+    >
       {wordsArr.map((word, index) => (
         <span key={`${word}-${index}`} className={styles.word}>
           {word.split('').map((letter, letterIndex) => (

@@ -5,31 +5,13 @@
   height: fit-content;
   width: fit-content;
 
-  &::before {
-    content: '';
+  cursor: pointer;
 
-    position: absolute;
-
-    top: 50%;
-    left: 0;
-
-    width: 0;
-    height: 2px;
-
-    background-color: $mainBlack;
-
-    transition: width 0.4s cubic-bezier(0.4, 0.6, 0.2, 1);
-  }
-
-  // &:not(.selected):hover {
-  //   &::before {
-  //     width: 100%;
-  //   }
-  // }
+  padding: 12px;
+  border-radius: 24px;
+  transition: $transitionEase;
 }
 
 .selected {
-  &::before {
-    width: 100%;
-  }
+  background-color: $yellow100;
 }
