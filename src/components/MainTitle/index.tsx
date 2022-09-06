@@ -38,7 +38,7 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.content}>
+      <div className={styles.content} translate="no">
         <AnimatedBlock
           animation={animationTypes.TOLEFT}
           options={{ className: styles.circle }}
