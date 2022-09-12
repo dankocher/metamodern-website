@@ -121,8 +121,9 @@ const Brief: FC = () => {
     // }, 200);
   }, [isDataSent]);
 
-  const setCurrentTags = (item, setTags) => {
-    const index = currentServices.indexOf(item);
+  const setCurrentTags = (item, currentList, setTags) => {
+    const index = currentList.indexOf(item);
+
     if (index < 0) {
       setTags((prev) => [...prev, item]);
     } else {
@@ -216,7 +217,7 @@ const Brief: FC = () => {
                   tagList={servicesTypes}
                   selectedTagList={currentServices}
                   setSelectedTagList={(index) =>
-                    setCurrentTags(index, setCurrentServices)
+                    setCurrentTags(index, currentServices, setCurrentServices)
                   }
                 />
                 <h5 className="interMedium2432">{translate.selectIndustry}</h5>
@@ -224,7 +225,7 @@ const Brief: FC = () => {
                   tagList={industryTypes}
                   selectedTagList={currentIndustry}
                   setSelectedTagList={(index) =>
-                    setCurrentTags(index, setCurrentIndustry)
+                    setCurrentTags(index, currentIndustry, setCurrentIndustry)
                   }
                 />
               </section>
@@ -236,7 +237,7 @@ const Brief: FC = () => {
                     tagList={frontEndTypes}
                     selectedTagList={currentFrontEnd}
                     setSelectedTagList={(index) =>
-                      setCurrentTags(index, setCurrentFrontEnd)
+                      setCurrentTags(index, currentFrontEnd, setCurrentFrontEnd)
                     }
                   />
                   <h5 className="interMedium2432">{translate.backEnd}</h5>
@@ -244,7 +245,7 @@ const Brief: FC = () => {
                     tagList={backEndTypes}
                     selectedTagList={currentBackEnd}
                     setSelectedTagList={(index) =>
-                      setCurrentTags(index, setCurrentBackEnd)
+                      setCurrentTags(index, currentBackEnd, setCurrentBackEnd)
                     }
                   />
                   <h5 className="interMedium2432">{translate.mobile}</h5>
@@ -252,7 +253,7 @@ const Brief: FC = () => {
                     tagList={mobileTypes}
                     selectedTagList={currentMobile}
                     setSelectedTagList={(index) =>
-                      setCurrentTags(index, setCurrentMobile)
+                      setCurrentTags(index, currentMobile, setCurrentMobile)
                     }
                   />
                   <h5 className="interMedium2432">{translate.qATesting}</h5>
@@ -260,7 +261,7 @@ const Brief: FC = () => {
                     tagList={testingTypes}
                     selectedTagList={currentTesting}
                     setSelectedTagList={(index) =>
-                      setCurrentTags(index, setCurrentTesting)
+                      setCurrentTags(index, currentTesting, setCurrentTesting)
                     }
                   />
                 </section>
@@ -272,7 +273,11 @@ const Brief: FC = () => {
                     tagList={additionalServicesTypes}
                     selectedTagList={currentAdditionalServices}
                     setSelectedTagList={(index) =>
-                      setCurrentTags(index, setCurrentAdditionalServices)
+                      setCurrentTags(
+                        index,
+                        currentAdditionalServices,
+                        setCurrentAdditionalServices
+                      )
                     }
                   />
                 </section>
