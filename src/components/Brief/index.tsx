@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { FC, useEffect, useState } from 'react';
+import { FC, useContext, useEffect, useState } from 'react';
 
 import { Controller, useForm } from 'react-hook-form';
 
@@ -38,6 +38,8 @@ import { sendToEmail } from '../../api/helpers';
 import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
+import { isMobile } from 'react-device-detect';
+import { ScrollContext } from '../DesctopAppContent/DesctopAppContent';
 
 interface IFormValues {
   name: string;
@@ -107,6 +109,17 @@ const Brief: FC = () => {
       setIsCleanUpContacts(false);
     }
   }, [isCleanUpContacts]);
+
+  const scrollbarRef = useContext(ScrollContext);
+
+  useEffect(() => {
+    // setTimeout(() => {
+    if (isMobile) {
+      const body = document.getElementsByTagName('body')[0];
+      body.scrollTo(0, 0);
+    } else scrollbarRef.current.scrollbar.scrollTo(0, 0);
+    // }, 200);
+  }, [isDataSent]);
 
   const setCurrentTags = (item, setTags) => {
     const index = currentServices.indexOf(item);
