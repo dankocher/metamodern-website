@@ -6,9 +6,9 @@
   "portfolio": "Portfolio",
   "aboutUs": "About Us",
   "weSolveProblems": "We solve problems",
-  "with":"with",
-  "and":"and",
-  "logic":"logic",
+  "with": "with",
+  "and": "and",
+  "logic": "logic",
   "contacts": "Contacts",
   "contactUs": "Contacts Us",
   "startProject": "Start project",
@@ -32,5 +32,6 @@
   "attachFile": "Attach file",
   "thxForMessage": "Thank you for message !",
   "youCanSee": "Wait, we will contact you soon in the meantime you can see",
-  "ourWork": "our work"
+  "ourWork": "our work",
+  "basicPrinciplesMetaModern": "Basic principles of MetaModern"
 }

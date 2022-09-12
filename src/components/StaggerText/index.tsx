@@ -15,7 +15,7 @@ const StaggerText: FC<{
   text,
   duration = 0.3,
   stagger = 0.03,
-  secondaryClr = '#A6A6A6',
+  secondaryClr = '#242424',
   primaryClr = '#242424',
   disabled = true,
 }) => {
