@@ -1,7 +1,6 @@
 import Footer from '../Footer';
 import { FC, useEffect, useRef, useState } from 'react';
 import styles from './index.module.scss';
-import ModalMenu from '../ModalMenu';
 import { motion } from 'framer-motion';
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
@@ -9,21 +8,29 @@ const PageWrapper: FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isVisible } = useModalMenuContext();
   const [duration, setDuration] = useState(0.2);
   const wrapperRef = useRef(null);
-
   useEffect(() => {
     isVisible ? setDuration(0) : setDuration(0.2);
   }, [isVisible]);
 
   useEffect(() => {
     if (
-      document.documentElement.clientHeight > wrapperRef.current.clientHeight
+      document.documentElement.clientHeight > wrapperRef.current.scrollHeight
     ) {
+      console.log(
+        document.documentElement.clientHeight,
+        wrapperRef.current.scrollHeight
+      );
       document.documentElement.style.setProperty(
         '--element-height',
-        100 + 'vh'
+        'calc(100vh - 148px)'
+      );
+    } else {
+      document.documentElement.style.setProperty(
+        '--element-height',
+        'fit-content'
       );
     }
-  }, [document.documentElement.clientHeight]);
+  }, [wrapperRef.current?.scrollHeight]);
 
   return (
     <>
