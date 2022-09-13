@@ -61,7 +61,7 @@ const data: ProjectProps[] = [
     isDarkContent: false,
   },
   {
-    link: SCREENS.CALM_CATS,
+    link: `https://dribbble.com/shots/15948449-Relaxiki-Meditation-app`,
     type: ProjectsTypes.MOBILE,
     name: 'CalmCats',
     title: 'meditation app',
