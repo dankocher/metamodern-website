@@ -16,11 +16,8 @@ import ToDPrivacyScreen from '../screens/ToDPrivacy';
 import ToDTermsScreen from '../screens/ToDTerms';
 import TimeZoScreen from '../screens/TimeZO';
 import TimeZoPrivacyScreen from '../screens/TimeZOPrivacy';
-import AnimatedBlock from '../components/AnimatedBlock';
-import { animationTypes } from '../constants/animationTypes';
 import Header from '../components/Header';
 import { AnimatePresence, motion } from 'framer-motion';
-import { variables as v, variables } from '../constants/animationVariables';
 import ModalMenu from '../components/ModalMenu';
 
 const Navigation = ({ isMobile }) => {
