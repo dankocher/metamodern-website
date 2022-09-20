@@ -1,11 +1,12 @@
 import styles from './index.module.scss';
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 
 import Image from '../../Image';
 import { ProjectProps } from './project.interface';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { SCREENS } from '../../../navigation/constants';
+import { useYScrollContext } from '../../../navigation/YScroll';
 
 const Project: FC<ProjectProps> = ({
   link,
@@ -20,10 +21,16 @@ const Project: FC<ProjectProps> = ({
 }) => {
   const colors = { dark: '#242424', light: '#FFFFFF' };
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const { yScroll } = useYScrollContext();
 
   const navigateTo = () => {
     if (Object.values(SCREENS).includes(link as SCREENS) || link === '') {
-      navigate(link);
+      console.log('SDELAL');
+      navigate(link, {
+        state: { backward: { key: location.key, yscroll: yScroll } },
+      });
     } else {
       window.open(link, '_blank', 'noopener,noreferrer');
     }

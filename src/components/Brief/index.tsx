@@ -39,7 +39,7 @@ import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
 import { isMobile } from 'react-device-detect';
-import { ScrollContext } from '../DesctopAppContent/DesctopAppContent';
+import { ScrollContext } from '../DesctopAppContent';
 
 interface IFormValues {
   name: string;
@@ -116,7 +116,9 @@ const Brief: FC = () => {
     if (isMobile) {
       const body = document.getElementsByTagName('body')[0];
       body.scrollTo(0, 0);
-    } else scrollbarRef.current.scrollbar.scrollTo(0, 0);
+    } else {
+      scrollbarRef.current.scrollbar.scrollTo(0, 0);
+    }
   }, [isDataSent]);
 
   const setCurrentTags = (item, currentList, setTags) => {
