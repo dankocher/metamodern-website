@@ -1,5 +1,12 @@
 // @ts-nocheck
-import { FC, useContext, useEffect, useState } from 'react';
+import {
+  FC,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+  useLayoutEffect,
+} from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 import PageWrapper from '../components/PageWrapper';
@@ -20,7 +27,7 @@ import TimeZoPrivacyScreen from '../screens/TimeZOPrivacy';
 import Header from '../components/Header';
 import { AnimatePresence, motion } from 'framer-motion';
 import ModalMenu from '../components/ModalMenu';
-import { CustomRouter, history } from './CustomRouter';
+import { history } from './CustomRouter';
 import { useYScrollContext } from './YScroll';
 import { ScrollContext } from '../components/DesctopAppContent';
 
@@ -47,10 +54,19 @@ const Navigation: FC<{
   }, [yScroll]);
 
   useEffect(() => {
+    console.log('NAVIGATION');
+  }, []);
+
+  useEffect(() => {
     return history.listen(({ location, action }) => {
+      console.log({ location, action });
       if (action === 'POP') {
         const fwdKey = sessionStorage.getItem('key');
         const yscroll = sessionStorage.getItem('yvalue');
+        console.log({
+          key: fwdKey,
+          yscroll: yscroll,
+        });
         location = {
           ...location,
           state: {
@@ -70,69 +86,118 @@ const Navigation: FC<{
         },
         currentKey: location.key,
       });
-      console.log(action, location.pathname, location.state, location.key);
+      // console.log(action, location.pathname, location.state, location.key);
     });
   }, []);
 
+  const scrollTo = useCallback(
+    (x, y) => {
+      setTimeout(() => {
+        if (isMobile) {
+          const body = document.getElementsByTagName('body')[0];
+          body.scrollTo(x, y);
+        } else {
+          console.log(x, y);
+          scrollbarRef.current?.scrollbar.scrollTo(x, y);
+        }
+      }, 200);
+    },
+    [isMobile]
+  );
+
+  useLayoutEffect(() => {
+    console.log('useLayoutEffect');
+
+    console.log(currHist);
+
+    const { action, location, currentKey } = currHist;
+    // debugger;
+    // debugger;
+
+    if (action && action === 'POP') {
+      if (location.state.hasOwnProperty('forward')) {
+        console.log('FORWARD1');
+
+        if (currentKey === location.state.forward.key) {
+          console.log('FORWARD');
+          // console.log(`forward ${location.state.forward.yscroll}`);
+        }
+      } else if (location.state.hasOwnProperty('backward')) {
+        console.log('BACKWARD1');
+        if (currentKey === location.state.backward.key) {
+          console.log('BACKWARD');
+
+          // console.log(`backward ${location.state.backward.yscroll}`);
+          scrollTo(0, parseFloat(location.state.backward.yscroll));
+        }
+      } else {
+        scrollTo(0, 0);
+      }
+    } else {
+      scrollTo(0, 0);
+    }
+    console.log(location);
+  }, [currHist]);
+
   return (
     <>
-      <ScrollToTop isMobile={isMobile} currHist={currHist}>
-        <Header />
+      {/* <ScrollToTop isMobile={isMobile} currHist={currHist}> */}
+      <Header />
 
-        <AnimatePresence exitBeforeEnter>
-          <Routes key={location.pathname} location={location}>
-            <Route
-              path={SCREENS.HOME}
-              element={<PageWrapper children={<Home isMobile={isMobile} />} />}
-            />
+      <AnimatePresence exitBeforeEnter>
+        <Routes key={location.pathname} location={location}>
+          <Route
+            path={SCREENS.HOME}
+            element={<PageWrapper children={<Home isMobile={isMobile} />} />}
+          />
 
-            <Route
-              path={SCREENS.PORTFOLIO}
-              element={<PageWrapper children={<PortfolioScreen />} />}
-            />
-            <Route
-              path={SCREENS.ABOUT_US}
-              element={<PageWrapper children={<AboutUs />} />}
-            />
+          <Route
+            path={SCREENS.PORTFOLIO}
+            element={<PageWrapper children={<PortfolioScreen />} />}
+          />
+          <Route
+            path={SCREENS.ABOUT_US}
+            element={<PageWrapper children={<AboutUs />} />}
+          />
 
-            <Route
-              path={SCREENS.CONTACTS}
-              element={<PageWrapper children={<ContactsScreen />} />}
-            />
-            <Route
-              path={SCREENS.META_MODERN_PRIVACY}
-              element={<PrivacyMetaModern />}
-            />
+          <Route
+            path={SCREENS.CONTACTS}
+            element={<PageWrapper children={<ContactsScreen />} />}
+          />
+          <Route
+            path={SCREENS.META_MODERN_PRIVACY}
+            element={<PrivacyMetaModern />}
+          />
 
-            <Route
-              path={SCREENS.TOD}
-              element={
-                <motion.div exit={{ opacity: 0 }}>
-                  <ToDScreen />
-                </motion.div>
-              }
-            />
-            <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen />} />
-            <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen />} />
+          <Route
+            path={SCREENS.TOD}
+            element={
+              <motion.div exit={{ opacity: 0 }}>
+                <ToDScreen />
+              </motion.div>
+            }
+          />
+          <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen />} />
+          <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen />} />
 
-            <Route
-              path={SCREENS.TIME_ZO}
-              element={
-                <motion.div exit={{ opacity: 0 }}>
-                  <TimeZoScreen />
-                </motion.div>
-              }
-            />
-            <Route
-              path={SCREENS.TIME_ZO_PRIVACY}
-              element={<TimeZoPrivacyScreen />}
-            />
+          <Route
+            path={SCREENS.TIME_ZO}
+            element={
+              <motion.div exit={{ opacity: 0 }}>
+                <TimeZoScreen />
+              </motion.div>
+            }
+          />
+          <Route
+            path={SCREENS.TIME_ZO_PRIVACY}
+            element={<TimeZoPrivacyScreen />}
+          />
 
-            <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
-          </Routes>
-        </AnimatePresence>
-        <ModalMenu />
-      </ScrollToTop>
+          <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
+        </Routes>
+      </AnimatePresence>
+      <ModalMenu />
+      {/* </ScrollToTop> */}
     </>
   );
 };

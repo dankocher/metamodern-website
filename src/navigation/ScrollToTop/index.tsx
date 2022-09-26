@@ -1,9 +1,9 @@
-import { useContext, useEffect, useLayoutEffect } from 'react';
+import { useCallback, useContext, useEffect, useLayoutEffect } from 'react';
 import { useLocation } from 'react-router';
 import { ScrollContext } from '../../components/DesctopAppContent/';
 
 const ScrollToTop = ({ children, isMobile, currHist }) => {
-  // const location = useLocation();
+  const location = useLocation();
   const scrollbarRef = useContext(ScrollContext);
 
   // useEffect(() => {
@@ -15,12 +15,12 @@ const ScrollToTop = ({ children, isMobile, currHist }) => {
   //   }, 200);
   // }, [location.pathname]);
 
-  useEffect(() => {
-    console.log({ currHist });
-  }, [currHist]);
+  // useEffect(() => {
+  //   console.log({ currHist });
+  // }, [currHist]);
 
-  useLayoutEffect(() => {
-    const scrollTo = (x, y) => {
+  const scrollTo = useCallback(
+    (x, y) => {
       setTimeout(() => {
         if (isMobile) {
           const body = document.getElementsByTagName('body')[0];
@@ -30,22 +30,29 @@ const ScrollToTop = ({ children, isMobile, currHist }) => {
           scrollbarRef.current?.scrollbar.scrollTo(x, y);
         }
       }, 200);
-    };
+    },
+    [isMobile]
+  );
 
+  useLayoutEffect(() => {
     console.log('useLayoutEffect');
 
     console.log(currHist);
+    debugger;
+
 
     const { action, location, currentKey } = currHist;
+    // debugger;
     if (action && action === 'POP') {
       if (location?.state?.hasOwnProperty('forward')) {
         if (currentKey === location.state.forward.key) {
-          console.log(`forward ${location.state.forward.yscroll}`);
+          console.log('FORWARD');
+          // console.log(`forward ${location.state.forward.yscroll}`);
         }
       } else if (location?.state?.hasOwnProperty('backward')) {
         if (currentKey === location.state.backward.key) {
-          console.log('IA ZDES');
-          console.log(`backward ${location.state.backward.yscroll}`);
+          // console.log('IA ZDES');
+          // console.log(`backward ${location.state.backward.yscroll}`);
           scrollTo(0, parseFloat(location.state.backward.yscroll));
         }
       } else {
@@ -54,8 +61,8 @@ const ScrollToTop = ({ children, isMobile, currHist }) => {
     } else {
       scrollTo(0, 0);
     }
-    // console.log(location);
-  }, [currHist]);
+    console.log(location);
+  }, [currHist, scrollTo]);
 
   return <>{children}</>;
 };

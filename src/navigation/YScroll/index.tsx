@@ -15,6 +15,7 @@ const YScrollContext = createContext<YScrollProps>(initialState);
 export const YScrollProvider = ({ children }) => {
   const [yScroll, setYScroll] = useState(0);
   const value = { yScroll, setYScroll };
+
   return (
     <YScrollContext.Provider value={value}>{children}</YScrollContext.Provider>
   );
