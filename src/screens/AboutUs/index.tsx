@@ -1,13 +1,17 @@
 import styles from './index.module.scss';
+
 import { variables as v } from '../../constants/animationVariables';
 import AnimatedBlock from '../../components/AnimatedBlock';
-import PageContainer from '../../components/PageTemplate/PageContainer';
-import translate from '../../i18n/en.json';
 import { animationTypes } from '../../constants/animationTypes';
+import { motion } from 'framer-motion';
+
+import PageContainer from '../../components/PageTemplate/PageContainer';
+
 import aboutUs from './../../assets/images/aboutUs.png';
 import zigzagImage from '../../assets/images/zigzag.png';
+
 import { principlesList } from './data';
-import { motion } from 'framer-motion';
+import translate from '../../i18n/en.json';
 
 const AboutUs = () => {
   return (
@@ -37,11 +41,14 @@ const AboutUs = () => {
       </AnimatedBlock>
       <div className={styles.content}>
         <AnimatedBlock animation={animationTypes.UP}>
-          <h3 className={`pageSubtitleFont`}>Basic principles of MetaModern</h3>
+          <h3 className={`pageSubtitleFont`}>
+            {translate.basicPrinciplesMetaModern}
+          </h3>
         </AnimatedBlock>
         <motion.ul className={styles.list}>
-          {principlesList.map((item, i) => (
+          {principlesList.map((item, index) => (
             <motion.li
+              key={`principles-${index}`}
               className={styles.item}
               initial={{ opacity: 0, y: v.y }}
               whileInView={{ opacity: 1, y: 0 }}

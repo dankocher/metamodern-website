@@ -5,6 +5,8 @@ import Image from '../../Image';
 import { ProjectProps } from './project.interface';
 import { useNavigate } from 'react-router-dom';
 
+import { SCREENS } from '../../../navigation/constants';
+
 const Project: FC<ProjectProps> = ({
   link,
   name,
@@ -20,7 +22,11 @@ const Project: FC<ProjectProps> = ({
   const navigate = useNavigate();
 
   const navigateTo = () => {
-    navigate(link);
+    if (Object.values(SCREENS).includes(link as SCREENS) || link === '') {
+      navigate(link);
+    } else {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
   };
 
   return (
