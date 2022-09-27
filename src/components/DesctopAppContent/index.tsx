@@ -4,7 +4,7 @@ import { ModalMenuProvider } from '../../context/useModalMenuContext';
 import SmoothScrollbar from 'smooth-scrollbar';
 import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import Scrollbar from 'react-smooth-scrollbar';
-import Cursor from '../../components/Cursor';
+import Cursor from '../Cursor';
 
 SmoothScrollbar.use(OverscrollPlugin);
 

@@ -8,7 +8,7 @@ import ourAppAnimation from '../../assets/animations/ourApp.json';
 
 import underline from '../../assets/svg/bigUnderline.svg';
 import translate from '../../i18n/en.json';
-import { ScrollContext } from '../DesctopAppContent/DesctopAppContent';
+import { ScrollContext } from '../DesctopAppContent';
 import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';

@@ -16,10 +16,6 @@ const PageWrapper: FC<{ children: React.ReactNode }> = ({ children }) => {
     if (
       document.documentElement.clientHeight > wrapperRef.current.scrollHeight
     ) {
-      console.log(
-        document.documentElement.clientHeight,
-        wrapperRef.current.scrollHeight
-      );
       document.documentElement.style.setProperty(
         '--element-height',
         'calc(100vh - 148px)'
