@@ -3,7 +3,7 @@
 .button {
   position: relative;
 
-  padding: 11px 20px 13px;
+  padding: 13px 28px 15px;
 
   border: $defaultBorder solid $mainBlack;
   border-radius: 24px;
@@ -13,7 +13,7 @@
   background-color: transparent;
 
   transition: $transitionEase;
-
+  gap: 10px;
   &:hover:not(.selected) {
     border-color: $yellow50;
     background-color: $yellow50;

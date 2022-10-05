@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import Lottie from 'react-lottie';
 
@@ -8,7 +8,7 @@ import ourAppAnimation from '../../assets/animations/ourApp.json';
 
 import underline from '../../assets/svg/bigUnderline.svg';
 import translate from '../../i18n/en.json';
-import { ScrollContext } from '../DesctopAppContent/DesctopAppContent';
+import { ScrollContext } from '../DesktopAppContent/DesktopAppContent';
 import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
@@ -35,6 +35,10 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
       });
     } else scrollbarRef.current.scrollbar.scrollIntoView(portfolioRef?.current);
   };
+
+  useEffect(()=>{
+    document.documentElement.style.setProperty("--block-height", window.innerHeight + "px");
+  },[])
 
   return (
     <div className={styles.container}>

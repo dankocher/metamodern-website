@@ -41,6 +41,7 @@ const Cursor = () => {
       outerAlpha={0.4}
       innerScale={0.7}
       outerScale={1.5}
+      trailingSpeed={1}
       clickables={clicables}
     />
   );

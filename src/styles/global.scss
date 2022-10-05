@@ -1,4 +1,7 @@
 @import './typography.scss';
+:root {
+  --body-height: 0;
+}
 
 $selectionColor: #fce04e;
 
@@ -20,7 +23,7 @@ $selectionColor: #fce04e;
 
 html,
 body {
-  height: 100%;
+  height: var(--body-height);
 
   position: relative;
 

@@ -1,5 +1,7 @@
 @import '../../styles/foundations.scss';
-
+:root {
+  --block-height: 0;
+}
 .container {
   display: none;
   position: absolute;
@@ -10,11 +12,11 @@
   left: 0;
 
   overflow: hidden !important;
-  
+
   background-color: $white;
   justify-content: center;
   @media (max-width: $landscape800) {
-    height: 100vh;
+    height: var(--block-height);
   }
 
   ul {
@@ -24,7 +26,7 @@
     flex-direction: column;
     width: 100%;
     justify-content: center;
-    white-space: nowrap;;
+    white-space: nowrap;
     :not(:last-child) {
       margin-bottom: autoResize(20px, 44px, $landscape384, $landscape800);
 

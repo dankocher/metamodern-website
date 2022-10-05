@@ -10,7 +10,7 @@ import Item from './Item';
 
 import translation from '../../i18n/en.json';
 import StartProjectButton from '../StartProjectButton';
-import { ScrollContext } from '../DesctopAppContent/DesctopAppContent';
+import { ScrollContext } from '../DesktopAppContent/DesktopAppContent';
 import { motion, AnimatePresence } from 'framer-motion';
 import { variables as v } from '../../constants/animationVariables';
 import { useLocation } from 'react-router-dom';
@@ -62,9 +62,9 @@ const ModalMenu = () => {
           </div>
 
           <ul className="gilroyBlack82">
+            <Item link={SCREENS.SERVICES} title={translation.services} />
             <Item link={SCREENS.PORTFOLIO} title={translation.portfolio} />
-            <Item link={SCREENS.ABOUT_US} title={translation.aboutUs} />
-            <Item link={SCREENS.CONTACTS} title={translation.contacts} />
+            <Item link={SCREENS.ABOUT_US} title={translation.about} />
           </ul>
         </motion.div>
       )}

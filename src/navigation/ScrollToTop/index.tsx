@@ -1,6 +1,6 @@
 import { useContext, useEffect } from 'react';
 import { useLocation } from 'react-router';
-import { ScrollContext } from '../../components/DesctopAppContent/DesctopAppContent';
+import { ScrollContext } from '../../components/DesktopAppContent/DesktopAppContent';
 
 const ScrollToTop = ({ children, isMobile }) => {
   const location = useLocation();

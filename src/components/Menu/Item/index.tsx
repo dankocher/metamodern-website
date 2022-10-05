@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import { useLocation, useNavigate } from 'react-router-dom';
 import { SCREENS } from '../../../navigation/constants';
@@ -14,19 +14,23 @@ const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
     navigate(link);
   };
 
-  const isCurrentPage = () => location.pathname === link;
+  const isCurrentPage = location.pathname === link;
+  const [isHover, setIsHover] = useState(false);
 
   return (
     <div
-      className={`${styles.container} ${isCurrentPage() && styles.selected}`}
+      className={`${styles.container} ${isCurrentPage && styles.selected}`}
       onClick={navigateTo}
+      onMouseEnter={() => setIsHover(!isHover)}
+      onMouseLeave={() => setIsHover(!isHover)}
     >
       <li>
         <StaggerText
           duration={0.3}
           stagger={-0.02}
           text={title}
-          disabled={isCurrentPage()}
+          disabled={isCurrentPage}
+          isHover={isHover}
         />
       </li>
     </div>

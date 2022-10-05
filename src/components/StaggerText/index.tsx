@@ -3,10 +3,11 @@ import styles from './index.module.scss';
 import { Expo, gsap } from 'gsap/all';
 
 import { FC, useEffect, useRef } from 'react';
-
+import { usePrevious } from '../../hooks/usePrevious';
 const StaggerText: FC<{
   text: string;
   disabled?: boolean;
+  isHover?: boolean;
   secondaryClr?: string;
   primaryClr?: string;
   duration?: number;
@@ -18,6 +19,7 @@ const StaggerText: FC<{
   secondaryClr = '#242424',
   primaryClr = '#242424',
   disabled = true,
+  isHover = false,
 }) => {
   const ref = useRef(null);
   const wordsArr = text.split(' ');
@@ -27,12 +29,16 @@ const StaggerText: FC<{
     '--primary-clr': primaryClr,
   };
 
+  const prevDisabled = usePrevious(disabled);
+  const prevPrevDisabled = usePrevious(prevDisabled);
+
   const playHandler = (_) => {
     if (disabled) return;
     ref?.current?.animation.play();
   };
 
   const reverseHandler = (_) => {
+    if (disabled) return;
     ref?.current?.animation.reverse();
   };
 
@@ -53,14 +59,27 @@ const StaggerText: FC<{
     });
   }, []);
 
+  useEffect(() => {
+    if (
+      disabled === false &&
+      prevPrevDisabled === undefined &&
+      prevDisabled === true
+    ) {
+      ref?.current?.animation.reverse(0);
+    }
+  }, [disabled]);
+
+  useEffect(() => {
+    if (isHover) playHandler(0);
+    else reverseHandler(0);
+  }, [isHover]);
+
+  useEffect(() => {
+    if (!disabled) reverseHandler(0);
+  }, [disabled]);
+
   return (
-    <span
-      ref={ref}
-      className={styles.container}
-      style={clrsVar}
-      onMouseEnter={playHandler}
-      onMouseLeave={reverseHandler}
-    >
+    <span ref={ref} className={styles.container} style={clrsVar}>
       {wordsArr.map((word, index) => (
         <span key={`${word}-${index}`} className={styles.word}>
           {word.split('').map((letter, letterIndex) => (

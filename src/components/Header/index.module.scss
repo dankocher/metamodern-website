@@ -7,10 +7,9 @@
   right: 0;
   z-index: $index10;
 
-
   color: $mainBlack;
   @media (max-width: $landscape800) {
-    z-index:auto;
+    z-index: auto;
   }
   .animatedBlock {
     width: 100%;

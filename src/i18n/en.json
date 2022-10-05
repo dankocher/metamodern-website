@@ -5,12 +5,13 @@
   "mainTitleDescription": "Metamodern is the desire to catch the elusive truth. We create apps and games maintaining balance between beauty, convenience and logic.",
   "portfolio": "Portfolio",
   "aboutUs": "About Us",
+  "about": "About",
   "weSolveProblems": "We solve problems",
   "with": "with",
   "and": "and",
   "logic": "logic",
   "contacts": "Contacts",
-  "contactUs": "Contacts Us",
+  "contactUs": "Contact Us",
   "startProject": "Start project",
   "telegram": "Telegram",
   "email": "E-mail",
@@ -33,5 +34,6 @@
   "thxForMessage": "Thank you for message !",
   "youCanSee": "Wait, we will contact you soon in the meantime you can see",
   "ourWork": "our work",
-  "basicPrinciplesMetaModern": "Basic principles of MetaModern"
+  "basicPrinciplesMetaModern": "Basic principles of MetaModern",
+  "services": "Services"
 }

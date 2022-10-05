@@ -6,7 +6,10 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
+  
 );
+document.getElementById('root').setAttribute('translate', 'no');
+
 root.render(
   <React.StrictMode>
     <App />
