@@ -10,7 +10,7 @@ import Item from './Item';
 
 import translation from '../../i18n/en.json';
 import StartProjectButton from '../StartProjectButton';
-import { ScrollContext } from '../DesktopAppContent/DesktopAppContent';
+import { ScrollContext } from '../DesktopAppContent';
 import { motion, AnimatePresence } from 'framer-motion';
 import { variables as v } from '../../constants/animationVariables';
 import { useLocation } from 'react-router-dom';

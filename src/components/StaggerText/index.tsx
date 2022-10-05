@@ -81,15 +81,18 @@ const StaggerText: FC<{
   return (
     <span ref={ref} className={styles.container} style={clrsVar}>
       {wordsArr.map((word, index) => (
-        <span key={`${word}-${index}`} className={styles.word}>
-          {word.split('').map((letter, letterIndex) => (
-            <span key={`${letter}-${letterIndex}`} className={styles.char}>
-              <span className={styles.char_inner} data-letter={letter}>
-                {letter}
+        <>
+          <span key={`${word}-${index}`} className={styles.word}>
+            {word.split('').map((letter, letterIndex) => (
+              <span key={`${letter}-${letterIndex}`} className={styles.char}>
+                <span className={styles.char_inner} data-letter={letter}>
+                  {letter}
+                </span>
               </span>
-            </span>
-          ))}
-        </span>
+            ))}
+          </span>
+          <span key={`space-{index}`}> </span>
+        </>
       ))}
     </span>
   );

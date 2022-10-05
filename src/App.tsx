@@ -1,8 +1,8 @@
 import { BrowserRouter } from 'react-router-dom';
 import { useDeviceSelectors } from 'react-device-detect';
 import axios from 'axios';
-import MobileAppContent from './components/MobileAppContent/MobileAppContent';
-import DesktopAppContent from './components/DesktopAppContent/DesktopAppContent';
+import MobileAppContent from './components/MobileAppContent';
+import DesktopAppContent from './components/DesktopAppContent';
 import { CleanUpContactsProvider } from './context/useIsCleanUpContacts';
 import { useEffect } from 'react';
 
@@ -20,6 +20,7 @@ function App() {
       bodyHeight
     );
   }, []);
+
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>

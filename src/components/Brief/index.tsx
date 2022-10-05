@@ -39,7 +39,8 @@ import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
 import { isMobile } from 'react-device-detect';
-import { ScrollContext } from '../DesktopAppContent/DesktopAppContent';
+
+import { ScrollContext } from '../DesktopAppContent';
 
 interface IFormValues {
   name: string;
