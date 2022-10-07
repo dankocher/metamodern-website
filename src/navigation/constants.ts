@@ -2,6 +2,7 @@ export enum SCREENS {
   HOME = '/',
   PORTFOLIO = '/portfolio',
   ABOUT_US = '/about-us',
+  SERVICES = /*'/services'*/ '#',
   CONTACTS = '/contacts',
   META_MODERN_PRIVACY = '/privacy',
   TOD = '/ToD',

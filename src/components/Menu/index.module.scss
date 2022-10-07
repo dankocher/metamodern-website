@@ -10,7 +10,7 @@
   display: flex;
   justify-content: center;
 
-  margin-top: 53px;
+  margin-top: 40px;
 
   @media (max-width: $landscape800) {
     display: none;
@@ -21,6 +21,6 @@
   }
 
   & > :not(:last-child) {
-    margin-right: 40px;
+    margin-right: 12px;
   }
 }

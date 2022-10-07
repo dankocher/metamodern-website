@@ -9,7 +9,7 @@ const OvalButton: FC<{
 }> = ({ selected = false, label, onClick = () => {} }) => {
   return (
     <button
-      className={`latoSemibold2028 ${styles.button} ${
+      className={`latoSemibold2024 ${styles.button} ${
         selected ? styles.selected : ''
       }`}
       onClick={onClick}

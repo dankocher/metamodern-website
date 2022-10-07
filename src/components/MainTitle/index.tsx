@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import Lottie from 'react-lottie';
 
@@ -8,7 +8,9 @@ import ourAppAnimation from '../../assets/animations/ourApp.json';
 
 import underline from '../../assets/svg/bigUnderline.svg';
 import translate from '../../i18n/en.json';
-import { ScrollContext } from '../DesctopAppContent';
+
+import { ScrollContext } from '../DesktopAppContent';
+
 import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
@@ -36,6 +38,14 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
     } else scrollbarRef.current.scrollbar.scrollIntoView(portfolioRef?.current);
   };
 
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      '--block-height',
+      // window.innerHeight + 'px'
+      document.documentElement.clientHeight + 'px'
+    );
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.content} translate="no">
@@ -43,8 +53,7 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
           animation={animationTypes.TOLEFT}
           options={{ className: styles.circle }}
           transition={{ duration: v.duration + 0.15, delay: v.delay * 3 }}
-        >
-        </AnimatedBlock>
+        > </AnimatedBlock>
         <AnimatedBlock
           animation={animationTypes.DEFAULT}
           options={{
@@ -67,7 +76,9 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
         </div>
         <AnimatedBlock
           animation={animationTypes.DEFAULT}
-          options={{ className: `${styles.description} latoSemibold2012 noSelect` }}
+          options={{
+            className: `${styles.description} latoSemibold2012 noSelect`,
+          }}
           transition={{ duration: v.duration + 0.15, delay: v.delay * 2 * 3 }}
         >
           {translate.mainTitleDescription}

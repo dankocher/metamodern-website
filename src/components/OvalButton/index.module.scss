@@ -3,9 +3,12 @@
 .button {
   position: relative;
 
-  padding: 11px 20px 13px;
-
-  border: $defaultBorder solid $mainBlack;
+  padding: 12px 27px 14px;
+  @media (max-width: $landscape800) {
+    outline: none !important;
+  }
+  outline: 1px solid rgba(36, 36, 36, 0.5);
+  border: 1px solid rgba(36, 36, 36, 1);
   border-radius: 24px;
 
   color: $mainBlack;
@@ -13,14 +16,16 @@
   background-color: transparent;
 
   transition: $transitionEase;
-
+  gap: 10px;
   &:hover:not(.selected) {
+    outline-color: $yellow50;
     border-color: $yellow50;
     background-color: $yellow50;
   }
 
   @media (hover: none) {
     &:hover:not(.selected) {
+      outline-color: inherit;
       border-color: inherit;
       background-color: inherit;
     }
@@ -30,4 +35,5 @@
 .selected {
   border-color: $yellow100;
   background-color: $yellow100;
+  outline: 1px solid rgba(252, 224, 78, 1);
 }
