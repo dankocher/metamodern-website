@@ -1,6 +1,6 @@
 @import '../../styles/foundations.scss';
 :root {
-  --block-height: 0;
+  --modal-height: 0;
 }
 .container {
   display: none;
@@ -10,13 +10,13 @@
   bottom: 0;
   right: 0;
   left: 0;
-
+  
   overflow: hidden !important;
 
   background-color: $white;
   justify-content: center;
   @media (max-width: $landscape800) {
-    height: var(--block-height);
+    height: var(--modal-height);
   }
 
   ul {

@@ -14,14 +14,29 @@ import { ScrollContext } from '../DesktopAppContent';
 import { motion, AnimatePresence } from 'framer-motion';
 import { variables as v } from '../../constants/animationVariables';
 import { useLocation } from 'react-router-dom';
+import { useDeviceSelectors } from 'react-device-detect';
 
 const duration = v.duration * 0.6;
 
 const ModalMenu = () => {
+  const [selectors, data] = useDeviceSelectors(window.navigator.userAgent);
   const { isVisible } = useModalMenuContext();
   const scrollbarRef = useContext(ScrollContext);
   const location = useLocation();
+
   useEffect(() => {
+    const modalHeight =
+      selectors.isIOS && !selectors.isYandex
+        ? document.documentElement.clientHeight + 'px'
+        : window.innerHeight + 'px';
+
+    if (isVisible) {
+      document.documentElement.style.setProperty('--modal-height', modalHeight);
+      document.documentElement.style.setProperty('--body-height', '100vh');
+    } else {
+      document.documentElement.style.setProperty('--body-height', 'fit-content');
+    }
+
     document.getElementsByTagName('html')[0].style.overflowY = isVisible
       ? 'hidden'
       : 'auto';
@@ -37,6 +52,11 @@ const ModalMenu = () => {
           .classList.remove('stopScroll');
         scrollbarRef.current.scrollbar.scrollTo(0, 0);
       }
+    else {
+      const html = document.querySelector('html');
+
+      html.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    }
   }, [isVisible]);
 
   let variants = {

@@ -41,7 +41,8 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
   useEffect(() => {
     document.documentElement.style.setProperty(
       '--block-height',
-      window.innerHeight + 'px'
+      // window.innerHeight + 'px'
+      document.documentElement.clientHeight + 'px'
     );
   }, []);
 

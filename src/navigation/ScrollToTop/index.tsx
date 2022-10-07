@@ -9,8 +9,9 @@ const ScrollToTop = ({ children, isMobile }) => {
   useEffect(() => {
     setTimeout(() => {
       if (isMobile) {
-        const body = document.getElementsByTagName('body')[0];
-        body.scrollTo(0, 0);
+        const html = document.querySelector('html');
+        
+        html.scrollTo({top: 0, left: 0,});
       } else scrollbarRef.current.scrollbar.scrollTo(0, 0);
     }, 200);
   }, [location.pathname]);
