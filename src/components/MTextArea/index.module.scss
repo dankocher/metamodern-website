@@ -1,5 +1,7 @@
 @import '../../styles/foundations.scss';
-
+:root {
+  --textShadow: 0;
+}
 .wrapper {
   min-height: 72px;
   display: flex;
@@ -45,12 +47,12 @@
 
     &:valid ~ span,
     &:focus ~ span {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 20px !important;
-
-      transform: translateY(calc(-100% - 8px));
-      -webkit-transform: translateY(calc(-100% - 8px));
+      text-shadow: var(--textShadow);
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      transform: translateX(-18%) translateY(calc(-100%)) scale(0.66);
+      -webkit-transform: translateX(-18%) translateY(calc(-100%)) scale(0.66);
     }
   }
 
@@ -62,6 +64,7 @@
 
     pointer-events: none;
 
-    transition: transform 0.5s ease 0.15s, font-size 0.15s ease;
+    transition: transform 0.5s ease 0.15s, text-shadow 0.5s ease 0.15s;
+    -webkit-transform: transform 0.5s ease 0.15s, text-shadow 0.5s ease 0.15s;
   }
 }

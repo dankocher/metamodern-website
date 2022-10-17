@@ -19,11 +19,21 @@ import TimeZoPrivacyScreen from '../screens/TimeZOPrivacy';
 import Header from '../components/Header';
 import { AnimatePresence, motion } from 'framer-motion';
 import ModalMenu from '../components/ModalMenu';
+import { useEffect } from 'react';
 
 const Navigation = ({ isMobile }) => {
   const CatDribble =
     'https://dribbble.com/shots/15948449-Relaxiki-Meditation-app';
   const location = useLocation();
+  const duration = 0.2;
+
+  useEffect(()=>{
+    if ('scrollRestoration' in window.history && isMobile) {
+      // Back off, browser, I got this...
+      window.history.scrollRestoration = 'manual';
+  }
+  },[])
+
   return (
     <ScrollToTop isMobile={isMobile}>
       <Header />
@@ -56,7 +66,10 @@ const Navigation = ({ isMobile }) => {
           <Route
             path={SCREENS.TOD}
             element={
-              <motion.div exit={{ opacity: 0 }}>
+              <motion.div
+                exit={{ opacity: 0 }}
+                transition={{ duration: duration, transition:{ duration: duration }  }}
+              >
                 <ToDScreen />
               </motion.div>
             }
@@ -67,7 +80,10 @@ const Navigation = ({ isMobile }) => {
           <Route
             path={SCREENS.TIME_ZO}
             element={
-              <motion.div exit={{ opacity: 0 }}>
+              <motion.div
+                exit={{ opacity: 0, transition:{ duration: duration } }}
+                transition={{ duration: duration }}
+              >
                 <TimeZoScreen />
               </motion.div>
             }

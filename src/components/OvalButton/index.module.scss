@@ -4,9 +4,9 @@
   position: relative;
 
   padding: 12px 27px 14px;
-  @media (max-width: $landscape800) {
-    outline: none !important;
-  }
+  // @media (max-width: $landscape800) {
+  //   outline: none !important;
+  // }
   outline: 1px solid rgba(36, 36, 36, 0.5);
   border: 1px solid rgba(36, 36, 36, 1);
   border-radius: 24px;
@@ -22,7 +22,9 @@
     border-color: $yellow50;
     background-color: $yellow50;
   }
-
+  @media (max-width: $landscape800) {
+    outline: none !important;
+  }
   @media (hover: none) {
     &:hover:not(.selected) {
       outline-color: inherit;
