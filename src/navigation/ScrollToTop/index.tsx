@@ -23,7 +23,6 @@ const ScrollToTop = ({ children, isMobile }) => {
     let y = null;
     setTimeout(() => {
       if (isMobile) {
-        const html = document.querySelector('html');
         y = window.pageYOffset;
         if (offset && patches.some((p) => location.pathname === p)) {
           window.scrollTo({ top: offset.y, left: 0 });

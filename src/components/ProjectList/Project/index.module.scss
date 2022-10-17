@@ -82,7 +82,6 @@
         div {
           padding: 6px 8px 6px 8px;
 
-          border: $defaultBorder solid $white;
           border-radius: autoResize(110.467px, 156px, $landscape801);
 
           // @media (max-width: $maxVisibleWidth) {
@@ -125,11 +124,11 @@
       }
     }
 
-    // p {
-    //   @media (max-width: $maxVisibleWidth) {
-    //     display: none;
-    //   }
-    // }
+    p {
+      @media (max-width: $landscape480) {
+        display: none;
+      }
+    }
   }
 
   img {
@@ -141,5 +140,18 @@
     height: auto;
     max-height: 100%;
     width: 100%;
+  }
+}
+.darkBorder {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  @media (min-width: $landscape800) {
+    border-color: black !important;
+  }
+}
+
+.whiteBorder {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  @media (min-width: $landscape800) {
+    border-color: white !important;
   }
 }
