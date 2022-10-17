@@ -29,7 +29,7 @@ const Section2 = ({ header, description }) => (
     <motion.div
       initial={{ opacity: 0, y: v.y }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: v.duration, delay: 2 * v.delay }}
+      transition={{ duration: v.duration, delay: v.delay }}
       viewport={{ once: true }}>
       <div className={styles.page}>
         <div className={styles.content}>

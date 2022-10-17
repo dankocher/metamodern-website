@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
@@ -19,24 +19,13 @@ import { useDeviceSelectors } from 'react-device-detect';
 const duration = v.duration * 0.6;
 
 const ModalMenu = () => {
+  const modalRef = useRef(null);
   const [selectors, data] = useDeviceSelectors(window.navigator.userAgent);
-  const { isVisible } = useModalMenuContext();
+  const { isVisible, setIsVisible } = useModalMenuContext();
   const scrollbarRef = useContext(ScrollContext);
   const location = useLocation();
 
-  useEffect(() => {
-    const modalHeight =
-      selectors.isIOS && !selectors.isYandex
-        ? document.documentElement.clientHeight + 'px'
-        : window.innerHeight + 'px';
-
-    if (isVisible) {
-      document.documentElement.style.setProperty('--modal-height', modalHeight);
-      document.documentElement.style.setProperty('--body-height', '100vh');
-    } else {
-      document.documentElement.style.setProperty('--body-height', 'fit-content');
-    }
-
+  const scrollToTop = (isVisible) => {
     document.getElementsByTagName('html')[0].style.overflowY = isVisible
       ? 'hidden'
       : 'auto';
@@ -57,7 +46,48 @@ const ModalMenu = () => {
 
       html.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     }
+  };
+
+  useEffect(() => {
+    const modalHeight =
+      selectors.isIOS && !selectors.isYandex
+        ? document.documentElement.clientHeight + 'px'
+        : window.innerHeight + 'px';
+
+    if (isVisible) {
+      document.documentElement.style.setProperty('--modal-height', modalHeight);
+      document.documentElement.style.setProperty('--body-height', '100vh');
+    } else {
+      document.documentElement.style.setProperty(
+        '--body-height',
+        'fit-content'
+      );
+    }
+
+    scrollToTop(isVisible);
   }, [isVisible]);
+
+  useEffect(() => {
+    window.addEventListener(
+      'popstate',
+      () => {
+        let thisIsVisible = null;
+        setIsVisible((prev) => {
+          thisIsVisible = prev;
+          return prev;
+        });
+        if (thisIsVisible) {
+          setIsVisible(false);
+
+          scrollToTop(false);
+          modalRef.current.style.visible = 'none';
+          modalRef.current.style.height = '0px';
+        }
+        console.log(modalRef.current.style.visible);
+      },
+      false
+    );
+  }, []);
 
   let variants = {
     initial: { x: '100vw' },
@@ -69,6 +99,7 @@ const ModalMenu = () => {
     <AnimatePresence exitBeforeEnter>
       {isVisible && (
         <motion.div
+          ref={modalRef}
           key={location.pathname}
           className={styles.container}
           variants={variants}

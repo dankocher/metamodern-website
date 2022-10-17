@@ -29,7 +29,7 @@ body {
 
   overflow-y: auto;
   overflow-x: hidden;
-  cursor: none !important;
+  // cursor: none !important;
 }
 
 html {
@@ -66,6 +66,7 @@ body {
   flex-direction: column;
   overflow: hidden;
   height: 100%;
+  min-height: 100vh;
 }
 
 img {
@@ -97,11 +98,13 @@ ol {
   }
 }
 input {
-  cursor: none !important;
+  cursor: pointer;
+  // cursor: none !important;
 }
 
 a {
-  cursor: none !important;
+  cursor: pointer;
+  // cursor: none !important;
 }
 
 .scrollbar-track {
@@ -110,4 +113,8 @@ a {
 
 .stopScroll {
   transform: translate3d(0, 0, 0) !important;
+}
+
+button{
+  cursor: pointer;
 }

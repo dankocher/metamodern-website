@@ -61,9 +61,9 @@
 
         margin-bottom: 4.3%;
 
-        @media (max-width: $maxVisibleWidth) {
-          display: none;
-        }
+        // @media (max-width: $maxVisibleWidth) {
+        //   display: none;
+        // }
 
         gap: autoResize(8.5px, 12px, $maxVisibleWidth, $landscape800);
 
@@ -80,15 +80,17 @@
         }
 
         div {
-          padding: 1.875%;
+          padding: 6px 8px 6px 8px;
 
           border: $defaultBorder solid $white;
           border-radius: autoResize(110.467px, 156px, $landscape801);
 
-          @media (max-width: $maxVisibleWidth) {
-            display: none;
+          // @media (max-width: $maxVisibleWidth) {
+          //   display: none;
+          // }
+          @media (min-width: $landscape800) {
+            padding: 12px;
           }
-
           @media (max-width: $landscape1132) {
             border-radius: autoResize(
               110.467px,
@@ -123,11 +125,11 @@
       }
     }
 
-    p {
-      @media (max-width: $maxVisibleWidth) {
-        display: none;
-      }
-    }
+    // p {
+    //   @media (max-width: $maxVisibleWidth) {
+    //     display: none;
+    //   }
+    // }
   }
 
   img {
