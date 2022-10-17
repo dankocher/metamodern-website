@@ -22,7 +22,9 @@
     border-color: $yellow50;
     background-color: $yellow50;
   }
-
+  @media (max-width: $landscape800) {
+    outline: none !important;
+  }
   @media (hover: none) {
     &:hover:not(.selected) {
       outline-color: inherit;
