@@ -54,12 +54,7 @@ const MTextArea: FC<{
   return (
     <div
       className={styles.wrapper}
-      style={{
-        minHeight:
-          typeof textAreaHeight === 'string'
-            ? textAreaHeight
-            : `${textAreaHeight + 36}px`,
-      }}
+     
       onClick={() => textAreaRef.current.focus()}
     >
       <div
@@ -73,7 +68,7 @@ const MTextArea: FC<{
       >
         <textarea
           ref={textAreaRef}
-          className="interRegular2436"
+          className={'interRegular2232'}
           rows={rowsMins}
           style={{
             overflow: isSizeFixed ? 'overlay' : 'hidden',

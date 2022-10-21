@@ -288,34 +288,47 @@
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: 16px;
+  line-height: 20px;
 
-  font-size: autoResize(
-    12px,
-    16px,
-    $maxVisibleWidth,
-    $landscape1132
-  ) !important;
-
-  @media (min-width: $landscape1133) {
-    font-size: autoResize(12px, 16px, $landscape1133) !important;
+  @media (min-width: $landscape1920) {
+    font-size: 16px;
+    line-height: 20px;
   }
-
-  @media (min-width: $landscape1921) {
+  @media (max-width: $landscape320) {
+    font-size: 8px;
+    line-height: 12px;
+  }
+  @media (min-width: calc($landscape1200 + 1px)) and (max-width: $landscape1920) {
     font-size: autoResize(
       12px,
       16px,
-      $landscape1921,
-      $landscape2720
-    ) !important;
+      calc($landscape1200 + 1px),
+      $landscape1920
+    );
+    line-height: autoResize(
+      14px,
+      20px,
+      calc($landscape1200 + 1px),
+      $landscape1920
+    );
   }
 
-  @media (min-width: $landscape3000) {
-    font-size: autoResize(
-      12px,
-      16px,
-      $landscape3000,
-      $landscape3520
-    ) !important;
+  @media (max-width: $landscape1200) and (min-width: $landscape1133) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  @media (min-width: $landscape801) and (max-width: $landscape1132) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  @media (min-width: $landscape384) and (max-width: $landscape800) {
+    font-size: autoResize(10px, 16px, $landscape384, $landscape800);
+    line-height: autoResize(14px, 20px, $landscape384, $landscape800);
+  }
+  @media (min-width: $landscape320) and (max-width: $landscape384) {
+    font-size: autoResize(8px, 10px, $landscape320, $landscape384);
+    line-height: autoResize(12px, 14px, $landscape320, $landscape384);
   }
 }
 
@@ -353,6 +366,13 @@
 
   font-size: autoResize(18px, 20px, $landscape384, $landscape800) !important;
   line-height: autoResize(24px, 36px, $landscape384, $landscape800) !important;
+}
+
+.interRegular2232 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 32px;
 }
 
 .interRegular2436 {

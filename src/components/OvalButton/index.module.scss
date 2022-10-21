@@ -24,6 +24,7 @@
   }
   @media (max-width: $landscape800) {
     outline: none !important;
+    border-width: 2px;
   }
   @media (hover: none) {
     &:hover:not(.selected) {

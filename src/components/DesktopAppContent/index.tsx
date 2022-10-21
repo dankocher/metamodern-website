@@ -23,7 +23,7 @@ function DesktopAppContent() {
     <>
       {/* <Cursor /> */}
       <ModalMenuProvider>
-        <Scrollbar ref={scrollbarRef} className={'scrollContainer'}  damping={0.2}>
+        <Scrollbar ref={scrollbarRef} className={'scrollContainer'} continuousScrolling={true} damping={0.2}>
           <ScrollContext.Provider value={scrollbarRef}>
             <Navigation isMobile={false} />
           </ScrollContext.Provider>

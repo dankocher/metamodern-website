@@ -83,6 +83,10 @@
       display: flex;
       flex-direction: column;
       gap: 44px;
+
+      @media(max-width: $landscape384){
+        gap: 32px;
+      }
     }
   }
 

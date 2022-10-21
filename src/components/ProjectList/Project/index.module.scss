@@ -42,7 +42,11 @@
       position: relative;
 
       height: 100%;
-      padding: 7.15% 9.5%;
+      padding: 7.5%;
+      @media (min-width: $landscape500) {
+        padding-left: 8.5% !important;
+      }
+
       background: var(--gradient);
 
       &__title {
@@ -87,9 +91,31 @@
           // @media (max-width: $maxVisibleWidth) {
           //   display: none;
           // }
-          @media (min-width: $landscape800) {
-            padding: 12px;
+
+          @media (min-width: calc($landscape1200 + 1px)) and (max-width: $landscape1920) {
+            padding: autoResize(
+              7.5px,
+              11px,
+              calc($landscape1200 + 1px),
+              $landscape1920
+            );
           }
+
+          @media (max-width: $landscape1200) and (min-width: $landscape1133) {
+            padding: 7.5px;
+          }
+
+          @media (min-width: $landscape801) and (max-width: $landscape1132) {
+            padding: 11px;
+          }
+          @media (min-width: $landscape384) and (max-width: $landscape800) {
+            padding: autoResize(6px, 11px, $landscape384, $landscape800)
+              autoResize(8px, 11px, $landscape384, $landscape800);
+          }
+          @media (min-width: $landscape1920) {
+            padding: 11px;
+          }
+
           @media (max-width: $landscape1132) {
             border-radius: autoResize(
               110.467px,
