@@ -73,6 +73,7 @@ const Header = () => {
                 delay: 0.2,
               }}
               options={{
+                className: styles.itemsContainer,
                 exit: {
                   transition: {
                     delay: 0,

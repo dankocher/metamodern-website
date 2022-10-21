@@ -1,6 +1,8 @@
-@import "../../styles/foundations.scss";
+@import '../../styles/foundations.scss';
 
 .container {
+  width: fit-content;
+  
   .fileName {
     margin-bottom: 4px;
 
@@ -37,7 +39,7 @@
     display: none;
   }
 
-  label {
+  label {cursor: pointer;
     display: block;
 
     color: $blue100;

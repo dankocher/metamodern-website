@@ -42,7 +42,7 @@ const data: ProjectProps[] = [
     tags: ['Design', 'Mobile', 'Landing'],
     bgImage: { x1: timeZo, x2: timeZo2 },
     gradient: {
-      '--gradient': 'linear-gradient(180deg, #ffe144 0%, #ffffff 100%)',
+      '--gradient': 'linear-gradient(180deg, #FFD600 0%, rgba(255, 214, 0, 0.44) 100%)',
     },
     isDarkContent: true,
   },

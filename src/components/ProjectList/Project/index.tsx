@@ -55,9 +55,8 @@ const Project: FC<ProjectProps> = ({
             {tags.map((tag, index) => (
               <div
                 key={`${tag}-${index}`}
-                style={{
-                  borderColor: isDarkContent ? colors.dark : colors.light,
-                }}
+                className={isDarkContent ? styles.darkBorder : styles.whiteBorder}
+                
               >
                 <span className="interMedium1216">{tag}</span>
               </div>

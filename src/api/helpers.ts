@@ -1,24 +1,118 @@
 import axios from 'axios';
-
-const url = "https://dev.goodstudio.by/sendMessage.php";
+import { BrowserRouter } from 'react-router-dom';
+import { useDeviceSelectors } from 'react-device-detect';
+import { useEffect, useState } from 'react';
+import { colors } from '../styles/colors';
+import { screenWidths } from '../data/screenWidths';
+const url = 'https://dev.goodstudio.by/sendMessage.php';
 
 export const sendToEmail = async (data, file) => {
+  const formData = new FormData();
+  formData.append('brief', data);
+  if (file) {
+    formData.append('file', file);
+  }
 
-    const formData = new FormData();
-    formData.append('brief', data);
-    if (file) {
-        formData.append('file', file);
-    }
-
-  return await axios.post(url, formData, {
-        headers: {
-            'Content-Type': 'multipart/form-data'
-        },
-  }).then(res => res.data)
-      .then(async res => { return res})
-      .catch((e) => {
-        return {ok: false, status: "unreachable"}
-      });
-
+  return await axios
+    .post(url, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
+    .then((res) => res.data)
+    .then(async (res) => {
+      return res;
+    })
+    .catch((e) => {
+      return { ok: false, status: 'unreachable' };
+    });
 };
 
+const startScalingHandler = (event) => {
+  const addCtrlScreen = () => {
+    let div = document.createElement('div');
+    div.style.width = '100%';
+    div.style.height = '100%';
+    div.style.position = 'absolute';
+    div.style.top = '0';
+    div.id = 'ctrlScreen';
+    document.body.append(div);
+  };
+  if ((event.code === 'ControlLeft' || event.ctrlKey) && !document.querySelector('#ctrlScreen')) {
+    addCtrlScreen();
+    setTimeout(() => {
+      let div = document.querySelector('#ctrlScreen');
+      document.body.removeChild(div);
+    }, 1000);
+  }
+};
+
+const endScalingHandler = (event) => {
+  if (!event.ctrlKey) {
+    let div = document.querySelector('#ctrlScreen');
+    document.body.removeChild(div);
+  }
+};
+
+export const init = (selectors, isMobile) => {
+  let bodyHeight = null;
+  let textShadow = null;
+  let secondBlack = colors.secondBlack;
+  let backgroundHeight = '100vh';
+  let backgroundPosition = 'fixed';
+  const html = document.querySelector('div');
+  html.addEventListener('touchstart', (e) => {
+    let touches = e.changedTouches;
+    for (var i = 0; i < touches.length; i++) {
+      let touch = touches[i];
+      if (touch.pageX > 20 && touch.pageX < window.innerWidth - 20) return;
+    }
+    e.preventDefault();
+  });
+
+  if (isMobile) {
+    if (selectors.isIOS) {
+      backgroundHeight = '100%';
+      backgroundPosition = 'absolute';
+    }
+    bodyHeight = 'fit-content';
+    textShadow = `0 0 0.7px ${secondBlack},`.repeat(4);
+    textShadow = textShadow.substring(0, textShadow.length - 1);
+  } else {
+    bodyHeight = '100%';
+    textShadow = `0 0 0.7px ${secondBlack},`.repeat(2);
+    textShadow = textShadow.substring(0, textShadow.length - 1);
+  }
+  document.documentElement.style.setProperty(
+    '--background-height',
+    backgroundHeight
+  );
+  document.documentElement.style.setProperty(
+    '--background-position',
+    backgroundPosition
+  );
+  document.documentElement.style.setProperty('--body-height', bodyHeight);
+  document.documentElement.style.setProperty('--textShadow', textShadow);
+  screenWidths.forEach((element) => {
+    document.documentElement.style.setProperty(
+      element.name,
+      element.value + 'px'
+    );
+  });
+
+  window.addEventListener('keydown', startScalingHandler);
+  window.addEventListener('keyup', endScalingHandler);
+  document.addEventListener('wheel', startScalingHandler, { capture: false });
+  // document.addEventListener('wheel', endScalingHandler, { capture: true });
+
+  return () => {
+    window.removeEventListener('keydown', startScalingHandler);
+    window.removeEventListener('keyup', endScalingHandler);
+    document.removeEventListener('wheel', startScalingHandler);
+    document.removeEventListener('wheel', endScalingHandler);
+  };
+  // document.body.style.zoom = 1/window.devicePixelRatio
+  // document.body.style.webkitTransform = 'scale(2)';
+  // if (navigator.userAgent.indexOf('Win') !== -1 || navigator.userAgent.indexOf('Linux') !== -1)
+  //   document.body.style.setProperty('zoom', 1 / window.devicePixelRatio + '');
+};

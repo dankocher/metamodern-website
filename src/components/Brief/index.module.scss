@@ -83,6 +83,10 @@
       display: flex;
       flex-direction: column;
       gap: 44px;
+
+      @media(max-width: $landscape384){
+        gap: 32px;
+      }
     }
   }
 
@@ -92,7 +96,8 @@
 
     margin-bottom: 64px;
 
-    border: $defaultBorder solid $mainBlack;
+    outline: 1px solid rgba(36, 36, 36, 0.5);
+    border: 1px solid rgba(36, 36, 36, 1);
     border-radius: 24px;
 
     color: $mainBlack;
@@ -100,10 +105,14 @@
     background-color: transparent;
 
     transition: $transitionEase;
+    
+    @media (max-width: $landscape800) {
+      outline: none !important;
+    }
 
     &:hover {
       border: 0;
-
+      outline-color: $yellow50;
       background-color: $yellow50;
     }
 
@@ -111,7 +120,7 @@
       width: 100%;
 
       border: 0;
-
+      outline: 1px solid rgba(252, 224, 78, 1);
       background-color: $yellow100;
     }
   }

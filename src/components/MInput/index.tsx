@@ -12,7 +12,7 @@ const MInput: FC<IProps> = ({ label, error, ...props }) => {
   return (
     <div className={styles.wrapper} onClick={() => ref?.current?.focus()}>
       <div className={`${styles.container}`}>
-        <input ref={ref} className="interRegular2436" {...props} />
+        <input ref={ref} className="interRegular2232" {...props} />
         <span className="interRegular2436">{label}</span>
         <div className={error != null ? styles.error : ''} />
       </div>

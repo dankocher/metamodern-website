@@ -14,11 +14,10 @@ $padding: 160px;
 
   .projectCell {
     position: relative;
-
     display: flex;
-
     width: 100%;
-
+    cursor: pointer;
+    
     @media (min-width: $landscape1133) {
       width: 50%;
     }

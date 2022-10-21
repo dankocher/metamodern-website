@@ -1,8 +1,10 @@
 @import '../../styles/foundations.scss';
-
+:root {
+  --block-height: 0;
+}
 .container {
   width: 100vw;
-  height: 100vh;
+  height: var(--block-height);
   position: relative;
   display: flex;
   flex-direction: column;
