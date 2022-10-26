@@ -25,7 +25,7 @@ $selectionColor: #fce04e;
 
 html,
 body {
-  height: var(--body-height);
+  height: fit-content;
 
   position: relative;
 
@@ -35,10 +35,10 @@ body {
 }
 
 html {
-  ::-webkit-scrollbar {
-    width: 0;
-    background: transparent;
-  }
+  // ::-webkit-scrollbar {
+  //   width: 0;
+  //   background: transparent;
+  // }
   &::before {
     content: '';
 

@@ -9,7 +9,7 @@ import ourAppAnimation from '../../assets/animations/ourApp.json';
 import underline from '../../assets/svg/bigUnderline.svg';
 import translate from '../../i18n/en.json';
 
-import { ScrollContext } from '../DesktopAppContent';
+// import { ScrollContext } from '../DesktopAppContent';
 
 import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
@@ -17,7 +17,7 @@ import { variables as v } from '../../constants/animationVariables';
 
 const MainTitle = ({ portfolioRef, isMobile }) => {
   const [isHovering, setIsHovering] = useState(false);
-  const scrollbarRef = useContext(ScrollContext);
+  // const scrollbarRef = useContext(ScrollContext);
 
   const defaultOptions = {
     loop: true,
@@ -30,12 +30,12 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
   };
 
   const ourAppBtnOnClick = () => {
-    if (isMobile) {
+    // if (isMobile) {
       portfolioRef?.current?.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
-    } else scrollbarRef.current.scrollbar.scrollIntoView(portfolioRef?.current);
+    // } else scrollbarRef.current.scrollbar.scrollIntoView(portfolioRef?.current);
   };
 
   useEffect(() => {

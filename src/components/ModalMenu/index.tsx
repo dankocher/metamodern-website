@@ -10,7 +10,7 @@ import Item from './Item';
 
 import translation from '../../i18n/en.json';
 import StartProjectButton from '../StartProjectButton';
-import { ScrollContext } from '../DesktopAppContent';
+// import { ScrollContext } from '../DesktopAppContent';
 import { motion, AnimatePresence } from 'framer-motion';
 import { variables as v } from '../../constants/animationVariables';
 import { useLocation } from 'react-router-dom';
@@ -22,7 +22,7 @@ const ModalMenu = () => {
   const modalRef = useRef(null);
   const [selectors, data] = useDeviceSelectors(window.navigator.userAgent);
   const { isVisible, setIsVisible } = useModalMenuContext();
-  const scrollbarRef = useContext(ScrollContext);
+  // const scrollbarRef = useContext(ScrollContext);
   const location = useLocation();
 
   const scrollToTop = (isVisible) => {
@@ -32,20 +32,20 @@ const ModalMenu = () => {
     document.getElementsByTagName('body')[0].style.overflowY = isVisible
       ? 'hidden'
       : 'auto';
-    if (scrollbarRef.current)
-      if (isVisible)
-        document.querySelector('.scroll-content').classList.add('stopScroll');
-      else {
-        document
-          .querySelector('.scroll-content')
-          .classList.remove('stopScroll');
-        scrollbarRef.current.scrollbar.scrollTo(0, 0);
-      }
-    else {
+    // if (scrollbarRef.current)
+    //   if (isVisible)
+    //     document.querySelector('.scroll-content').classList.add('stopScroll');
+    //   else {
+    //     document
+    //       .querySelector('.scroll-content')
+    //       .classList.remove('stopScroll');
+    //     scrollbarRef.current.scrollbar.scrollTo(0, 0);
+    //   }
+    // else {
       const html = document.querySelector('html');
 
       html.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-    }
+    // }
   };
 
   useEffect(() => {

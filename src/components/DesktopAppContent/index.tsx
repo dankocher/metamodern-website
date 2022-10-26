@@ -8,26 +8,26 @@ import Cursor from '../Cursor';
 
 SmoothScrollbar.use(OverscrollPlugin);
 
-export const ScrollContext = createContext(Scrollbar);
+// export const ScrollContext = createContext(Scrollbar);
 
 function DesktopAppContent() {
   const scrollbarRef = useRef(null);
 
-  useEffect(() => {
-    scrollbarRef.current.scrollbar.updatePluginOptions('overscroll', {
-      effect: '',
-    });
-  });
+  // useEffect(() => {
+  //   scrollbarRef.current.scrollbar.updatePluginOptions('overscroll', {
+  //     effect: '',
+  //   });
+  // });
 
   return (
     <>
       {/* <Cursor /> */}
       <ModalMenuProvider>
-        <Scrollbar ref={scrollbarRef} className={'scrollContainer'} continuousScrolling={true} damping={0.2}>
-          <ScrollContext.Provider value={scrollbarRef}>
+        {/* <Scrollbar ref={scrollbarRef} className={'scrollContainer'} continuousScrolling={true} damping={0.2}>
+          <ScrollContext.Provider value={scrollbarRef}> */}
             <Navigation isMobile={false} />
-          </ScrollContext.Provider>
-        </Scrollbar>
+          {/* </ScrollContext.Provider>
+        </Scrollbar> */}
       </ModalMenuProvider>
     </>
   );

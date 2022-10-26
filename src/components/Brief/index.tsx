@@ -40,7 +40,7 @@ import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
 import { isMobile } from 'react-device-detect';
 
-import { ScrollContext } from '../DesktopAppContent';
+// import { ScrollContext } from '../DesktopAppContent';
 
 interface IFormValues {
   name: string;
@@ -111,13 +111,13 @@ const Brief: FC = () => {
     }
   }, [isCleanUpContacts]);
 
-  const scrollbarRef = useContext(ScrollContext);
+  // const scrollbarRef = useContext(ScrollContext);
 
   useEffect(() => {
-    if (isMobile || navigator.userAgent.indexOf('Mac') > -1) {
+    // if (isMobile || navigator.userAgent.indexOf('Mac') > -1) {
       const body = document.getElementsByTagName('body')[0];
       body.scrollTo(0, 0);
-    } else scrollbarRef.current.scrollbar.scrollTo(0, 0);
+    // } else scrollbarRef.current.scrollbar.scrollTo(0, 0);
   }, [isDataSent]);
 
   const setCurrentTags = (item, currentList, setTags) => {
