@@ -47,13 +47,20 @@ const AboutUs = () => {
         </AnimatedBlock>
         <motion.ul className={styles.list}>
           {principlesList.map((item, index) => (
-            <motion.li
+            // <motion.li
+            //   key={`principles-${index}`}
+            //   className={styles.item}
+            //   initial={{ opacity: 0, y: v.y }}
+            //   whileInView={{ opacity: 1, y: 0 }}
+            //   transition={{ duration: v.duration, delay: v.delay }}
+            //   viewport={{ once: true }}
+            // >
+            <AnimatedBlock
+              animation={animationTypes.UP}
               key={`principles-${index}`}
-              className={styles.item}
-              initial={{ opacity: 0, y: v.y }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: v.duration, delay: v.delay }}
-              viewport={{ once: true }}
+              options={{
+                className: `${styles.item}`,
+              }}
             >
               <span className={`${styles.item_subtitle} interRegular2432`}>
                 {item.subtitle}
@@ -61,7 +68,8 @@ const AboutUs = () => {
               <span className={`${styles.item_description} latoSemibold2214`}>
                 {item.description}
               </span>
-            </motion.li>
+            </AnimatedBlock>
+            // </motion.li>
           ))}
         </motion.ul>
       </div>

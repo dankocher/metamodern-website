@@ -10,6 +10,8 @@ import Description from '../Description';
 
 import { motion } from 'framer-motion';
 import { variables as v } from '../../../../../../constants/animationVariables';
+import { animationTypes } from '../../../../../../constants/animationTypes';
+import AnimatedBlock from '../../../../../../components/AnimatedBlock';
 
 const Section3 = ({ header, description }) => (
   <div className={styles.container}>
@@ -24,12 +26,16 @@ const Section3 = ({ header, description }) => (
           placeholder="none"
           className={styles.secondBackground}
         />
-        <motion.div
+        <AnimatedBlock animation={animationTypes.UP}
+         options={{
+          className: `${styles.animateContainer}`,
+        }}>
+        {/* <motion.div
           className={styles.animateContainer}
           initial={{ opacity: 0, y: v.y }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: v.duration, delay: v.delay }}
-          viewport={{ once: true }}>
+          viewport={{ once: true }}> */}
           <div className={styles.phoneContainer}>
             <div className={styles.firstBackground}>
               <img src={layer1} alt="background1" />
@@ -46,7 +52,8 @@ const Section3 = ({ header, description }) => (
           </div>
 
           <Description header={header} description={description} />
-        </motion.div>
+          </AnimatedBlock>
+        {/* </motion.div> */}
       </div>
     </div>
   </div>

@@ -114,7 +114,7 @@ const Brief: FC = () => {
   const scrollbarRef = useContext(ScrollContext);
 
   useEffect(() => {
-    if (isMobile) {
+    if (isMobile || navigator.userAgent.indexOf('Mac') > -1) {
       const body = document.getElementsByTagName('body')[0];
       body.scrollTo(0, 0);
     } else scrollbarRef.current.scrollbar.scrollTo(0, 0);

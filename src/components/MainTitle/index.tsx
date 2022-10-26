@@ -54,6 +54,7 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
           options={{ className: styles.circle }}
           transition={{ duration: v.duration + 0.15, delay: v.delay * 3 }}
         > </AnimatedBlock>
+
         <AnimatedBlock
           animation={animationTypes.DEFAULT}
           options={{

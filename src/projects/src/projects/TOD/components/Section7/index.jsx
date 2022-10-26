@@ -9,12 +9,12 @@ import todPhone7_2 from '../../../../assets/images/todPhone7_2.png';
 import { motion } from 'framer-motion';
 import { variables as v } from '../../../../../../constants/animationVariables';
 
-const Section7 = ({ header, description, link }) => (<motion.div
-
+const Section7 = ({ header, description, link }) => (<div>
+  {/* <motion.div
   initial={{ opacity: 0, y: v.y }}
   whileInView={{ opacity: 1, y: 0 }}
   transition={{ duration: v.duration, delay: v.delay }}
-  viewport={{ once: true }}>
+  viewport={{ once: true }}> */}
   <div className={styles.container}>
     <div className={styles.contentBlock}>
       <div className={styles.phoneImg}>
@@ -51,7 +51,9 @@ const Section7 = ({ header, description, link }) => (<motion.div
       </div>
     </div>
 
-  </div ></motion.div>
+  </div >
+</div>
+  // </motion.div>
 );
 
 export default Section7;

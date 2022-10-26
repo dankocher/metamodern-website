@@ -20,11 +20,12 @@ const Section4 = ({ header, description }) => (
         placeholder="none"
       />
     </div>
-    <motion.div
+    {/* <motion.div
       initial={{ opacity: 0, y: v.y }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: v.duration, delay: v.delay }}
-      viewport={{ once: true }}>
+      viewport={{ once: true }}> */}
+    <div>
       <div className={styles.page}>
         <div className={styles.content}>
           <div className={styles.phoneContainer}>
@@ -41,7 +42,8 @@ const Section4 = ({ header, description }) => (
           <Description header={header} description={description} />
         </div>
       </div>
-    </motion.div>
+    </div>
+    {/* </motion.div> */}
   </div>
 );
 

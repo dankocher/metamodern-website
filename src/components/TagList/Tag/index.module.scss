@@ -7,24 +7,25 @@
     autoResize(11px, 19px, $landscape384, $landscape800);
   border-radius: autoResize(15.374px, 24px, $landscape384, $landscape800);
   @media (max-width: $landscape800) {
-    outline: none !important;
+    // box-shadow: 0 0 0 1px red;
+    box-shadow: none !important;
   }
   color: $mainBlack;
-  outline: 1px solid rgba(36, 36, 36, 0.5);
+  box-shadow: 0 0 0 1px rgba(36, 36, 36, 0.5);
   border: 1px solid rgba(36, 36, 36, 1);
   background-color: transparent;
 
   transition: $transitionEase;
 
   &:hover:not(.selected) {
-    outline-color: $yellow50;
+    box-shadow: 0 0 0 1px $yellow50;
     border-color: $yellow50;
     background-color: $yellow50;
   }
 
   @media (hover: none) {
     &:hover:not(.selected) {
-      outline-color: inherit;
+      box-shadow: none;
       border-color: inherit;
       background-color: inherit;
     }
@@ -34,5 +35,6 @@
 .selected {
   border-color: $yellow100;
   background-color: $yellow100;
-  outline: 1px solid rgba(252, 224, 78, 1);
+  box-shadow: 0 0 0 1px rgba(252, 224, 78, 1);
+ 
 }

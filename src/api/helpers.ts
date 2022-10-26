@@ -40,10 +40,7 @@ const startScalingHandler = (event) => {
   };
   if ((event.code === 'ControlLeft' || event.ctrlKey) && !document.querySelector('#ctrlScreen')) {
     addCtrlScreen();
-    setTimeout(() => {
-      let div = document.querySelector('#ctrlScreen');
-      document.body.removeChild(div);
-    }, 1000);
+    
   }
 };
 
@@ -99,11 +96,11 @@ export const init = (selectors, isMobile) => {
       element.value + 'px'
     );
   });
-
+  document.addEventListener("touchend", endScalingHandler, false);
   window.addEventListener('keydown', startScalingHandler);
   window.addEventListener('keyup', endScalingHandler);
-  document.addEventListener('wheel', startScalingHandler, { capture: false });
-  // document.addEventListener('wheel', endScalingHandler, { capture: true });
+  document.addEventListener('wheel', startScalingHandler);
+  document.addEventListener('wheel', endScalingHandler, { capture: true });
 
   return () => {
     window.removeEventListener('keydown', startScalingHandler);

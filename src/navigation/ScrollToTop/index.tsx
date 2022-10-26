@@ -22,7 +22,7 @@ const ScrollToTop = ({ children, isMobile }) => {
     });
     let y = null;
     setTimeout(() => {
-      if (isMobile) {
+      if (isMobile || navigator.userAgent.indexOf('Mac') > -1) {
         y = window.pageYOffset;
         if (offset && patches.some((p) => location.pathname === p)) {
           window.scrollTo({ top: offset.y, left: 0 });
@@ -48,8 +48,6 @@ const ScrollToTop = ({ children, isMobile }) => {
         }
     }, 200);
   }, [location.pathname]);
-
-  console.log(pageOffsets);
 
   return <>{children}</>;
 };

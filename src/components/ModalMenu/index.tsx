@@ -53,15 +53,17 @@ const ModalMenu = () => {
       selectors.isIOS && !selectors.isYandex
         ? document.documentElement.clientHeight + 'px'
         : window.innerHeight + 'px';
-
+        // --header-index
     if (isVisible) {
       document.documentElement.style.setProperty('--modal-height', modalHeight);
       document.documentElement.style.setProperty('--body-height', '100vh');
+      document.documentElement.style.setProperty('--header-index', 'auto');
     } else {
       document.documentElement.style.setProperty(
         '--body-height',
         'fit-content'
       );
+      document.documentElement.style.setProperty('--header-index', '10');
     }
 
     scrollToTop(isVisible);

@@ -15,6 +15,7 @@ import StaticImage from '../../../../components/StaticImage';
 import { motion } from 'framer-motion';
 import { animationTypes } from '../../../../../../constants/animationTypes';
 import { variables as v } from '../../../../../../constants/animationVariables';
+import AnimatedBlock from '../../../../../../components/AnimatedBlock';
 
 
 const Section2 = ({ header, description }) => (
@@ -26,11 +27,12 @@ const Section2 = ({ header, description }) => (
     <div className={styles.rightBackground}>
       <img src={rightLayer} alt="background2" />
     </div>
-    <motion.div
+    {/* <motion.div
       initial={{ opacity: 0, y: v.y }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: v.duration, delay: v.delay }}
-      viewport={{ once: true }}>
+      viewport={{ once: true }}> */}
+    <AnimatedBlock animation={animationTypes.UP}>
       <div className={styles.page}>
         <div className={styles.content}>
           <div className={styles.phoneContainer}>
@@ -59,7 +61,8 @@ const Section2 = ({ header, description }) => (
           <Description header={header} description={description} />
         </div>
       </div>
-    </motion.div>
+    </AnimatedBlock>
+    {/* </motion.div> */}
   </div>
 );
 
