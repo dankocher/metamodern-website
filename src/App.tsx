@@ -15,13 +15,21 @@ function App() {
   const { isMobile } = selectors;
 
   useEffect(() => {
-    init(selectors, isMobile);
+    window.addEventListener('resize', ()=>{
+      console.log(window.innerWidth)
+    })
+    console.log(window.innerWidth)
+    init(selectors, isMobile ||navigator.userAgent.indexOf('Mac') > -1);
   }, []);
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <CleanUpContactsProvider>
-        {isMobile ? <MobileAppContent /> : <DesktopAppContent />}
+        {isMobile || navigator.userAgent.indexOf('Mac') > -1? (
+          <MobileAppContent />
+        ) : (
+          <DesktopAppContent />
+        )}
       </CleanUpContactsProvider>
     </BrowserRouter>
   );

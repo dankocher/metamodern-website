@@ -1,4 +1,7 @@
 @import '../../styles/foundations.scss';
+:root{
+  --header-index: 0,
+}
 
 .container {
   position: absolute;
@@ -7,8 +10,9 @@
   right: 0;
   z-index: $index10;
   color: $mainBlack;
+
   @media (max-width: $landscape800) {
-    z-index: auto;
+    z-index: var(--header-index);
   }
   .animatedBlock {
     width: 100%;

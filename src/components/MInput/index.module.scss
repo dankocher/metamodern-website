@@ -39,9 +39,8 @@
   }
 
   div {
-    margin-top: 12px;
+    margin-top: 8px;
     border-bottom: 2px solid $secondBlack;
-    transition: margin-top 0.5s ease 0.15s;
   }
 
   input {
@@ -63,12 +62,6 @@
       -webkit-appearance: none;
       transform: translateX(-17%) translateY(calc(-110%)) scale(0.66);
       -webkit-transform: translateX(-17%) translateY(calc(-110%)) scale(0.66);
-    }
-
-    &:valid ~ div,
-    &:focus ~ div {
-      margin-top: 8px !important;
-      transition: margin-top 0.5s ease 0.15s;
     }
   }
 

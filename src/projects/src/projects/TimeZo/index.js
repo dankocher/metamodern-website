@@ -24,14 +24,16 @@ const TimeZo = () => (
     {sections.map((section) => (
       <Section key={section.id} {...section} />
     ))}
-    <motion.div
+    {/* <motion.div
       initial={{ opacity: 0, y: v.y }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: v.duration, delay: 2 * v.delay }}
       viewport={{ once: true }}
-    >
+    > */}
+    <div>
       <SectionLast {...mainData} />
-    </motion.div>
+    </div>
+    {/* </motion.div> */}
   </div>
 );
 

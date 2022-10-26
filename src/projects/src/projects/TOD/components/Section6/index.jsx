@@ -18,28 +18,30 @@ const Section6 = ({ header, description }) => (
     <div className={styles.secondBackground}>
       <img src={layer2} alt="background2" />
     </div>
-    <motion.div
+    {/* <motion.div
       initial={{ opacity: 0, y: v.y }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: v.duration, delay: v.delay }}
-      viewport={{ once: true }}>
-    <div className={styles.page}>
-      <div className={styles.content}>
-        <div className={styles.phoneContainer}>
-          <StaticImage
-            src={todPhone6}
-            alt="phone"
-            quality={95}
-            formats={['AUTO', 'PNG', 'AVIF']}
-            placeholder="none"
-            className={styles.phone}
-          />
-        </div>
+      viewport={{ once: true }}> */}
+    <div>
+      <div className={styles.page}>
+        <div className={styles.content}>
+          <div className={styles.phoneContainer}>
+            <StaticImage
+              src={todPhone6}
+              alt="phone"
+              quality={95}
+              formats={['AUTO', 'PNG', 'AVIF']}
+              placeholder="none"
+              className={styles.phone}
+            />
+          </div>
 
-        <Description header={header} description={description} />
+          <Description header={header} description={description} />
+        </div>
       </div>
     </div>
-    </motion.div>
+    {/* </motion.div> */}
   </div>
 );
 

@@ -1,0 +1,122 @@
+@import './typography.scss';
+:root {
+  --body-height: 0;
+  --background-height: 0;
+  --background-position: 0;
+}
+
+$selectionColor: #fce04e;
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*::selection {
+  background: $selectionColor;
+}
+
+html,
+body {
+  height: var(--body-height);
+
+  position: relative;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+  // cursor: none !important;
+}
+
+html {
+  ::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+  &::before {
+    content: '';
+
+    position: var(--background-position);
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: var(--background-height);
+    background-color: #fff;
+    background-image: url(../assets/images/noise.gif);
+    background-blend-mode: hard-light;
+    opacity: 0.04;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  // scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeSpeed;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  min-height: 100vh;
+}
+
+img {
+  user-select: none;
+}
+
+a,
+a:hover,
+a:visited {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.noSelect {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  :focus {
+    outline: none !important;
+  }
+}
+input {
+  cursor: pointer;
+  // cursor: none !important;
+}
+
+a {
+  cursor: pointer;
+  // cursor: none !important;
+}
+
+.scrollbar-track {
+  display: none !important;
+}
+
+.stopScroll {
+  transform: translate3d(0, 0, 0) !important;
+}
+
+button{
+  cursor: pointer;
+}

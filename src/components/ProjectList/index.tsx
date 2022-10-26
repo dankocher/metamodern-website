@@ -7,6 +7,8 @@ import Project from './Project';
 import { data } from '../../data/projectData';
 import { motion } from 'framer-motion';
 import { variables as v } from '../../constants/animationVariables';
+import AnimatedBlock from '../AnimatedBlock';
+import { animationTypes } from '../../constants/animationTypes';
 
 const ProjectList = ({
   portfolioRef = null,
@@ -30,13 +32,20 @@ const ProjectList = ({
           index
         ) =>
           (currentFilter === type || currentFilter === ProjectsTypes.ALL) && (
-            <motion.div
-              initial={{ opacity: 0, y: v.y }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: v.duration, delay: v.delay }}
-              viewport={{ once: true }}
+            // <motion.div
+            //   initial={{ opacity: 0, y: v.y }}
+            //   whileInView={{ opacity: 1, y: 0 }}
+            //   transition={{ duration: v.duration, delay: v.delay }}
+            //   viewport={{ once: true }}
+            //   key={`Project-${name}-${index}`}
+            //   className={styles.projectCell}
+            // >
+            <AnimatedBlock
+              animation={animationTypes.UP}
               key={`Project-${name}-${index}`}
-              className={styles.projectCell}
+              options={{
+                className: `${styles.projectCell}`,
+              }}
             >
               <Project
                 link={link}
@@ -48,7 +57,8 @@ const ProjectList = ({
                 gradient={gradient}
                 isDarkContent={isDarkContent}
               />
-            </motion.div>
+            </AnimatedBlock>
+            // </motion.div>
           )
       )}
     </div>
