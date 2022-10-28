@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.2f6c67da.css",
-    "main.js": "/static/js/main.2abcdaf4.js",
+    "main.js": "/static/js/main.48af4e31.js",
     "static/js/787.42db63fd.chunk.js": "/static/js/787.42db63fd.chunk.js",
     "static/media/aboutUs.png": "/static/media/aboutUs.09699d9eafa07bf093e8.png",
     "static/media/TimeZo-mainPhone.png": "/static/media/TimeZo-mainPhone.78fa8e4a12dc04d37324.png",
     "static/media/map.png": "/static/media/map.01cea56cecf885d4b689.png",
     "static/media/todPhone1.png": "/static/media/todPhone1.f598fcaa95e764404806.png",
     "static/media/timeZo@2x.png": "/static/media/timeZo@2x.0213b748812fe5cde08f.png",
+    "static/media/TimeZo-phone-left.png": "/static/media/TimeZo-phone-left.17b0ad0b09e794b0dfb1.png",
+    "static/media/TimeZo-phone-right.png": "/static/media/TimeZo-phone-right.12c33899d36862bfa657.png",
     "static/media/todPhone2.png": "/static/media/todPhone2.17277204381c7a8232b0.png",
     "static/media/todLayer4.png": "/static/media/todLayer4.b7e7fc56b486455fe169.png",
     "static/media/todPhone7_2.png": "/static/media/todPhone7_2.0bfb5c14c31a73662848.png",
@@ -58,11 +60,11 @@
     "static/media/phone.svg": "/static/media/phone.9b7673eff89712662bcbce08a0bc1e72.svg",
     "static/media/cross.svg": "/static/media/cross.fb12580ec64a758ba589c015192bf27d.svg",
     "main.2f6c67da.css.map": "/static/css/main.2f6c67da.css.map",
-    "main.2abcdaf4.js.map": "/static/js/main.2abcdaf4.js.map",
+    "main.48af4e31.js.map": "/static/js/main.48af4e31.js.map",
     "787.42db63fd.chunk.js.map": "/static/js/787.42db63fd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2f6c67da.css",
-    "static/js/main.2abcdaf4.js"
+    "static/js/main.48af4e31.js"
   ]
 }
