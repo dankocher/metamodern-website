@@ -38,9 +38,11 @@ const startScalingHandler = (event) => {
     div.id = 'ctrlScreen';
     document.body.append(div);
   };
-  if ((event.code === 'ControlLeft' || event.ctrlKey) && !document.querySelector('#ctrlScreen')) {
+  if (
+    (event.code === 'ControlLeft' || event.ctrlKey) &&
+    !document.querySelector('#ctrlScreen')
+  ) {
     addCtrlScreen();
-    
   }
 };
 
@@ -51,22 +53,26 @@ const endScalingHandler = (event) => {
   }
 };
 
+const blockSwipeHandler = (e) => {
+  let touches = e.changedTouches;
+  for (var i = 0; i < touches.length; i++) {
+    let touch = touches[i];
+    if (touch.pageX > 20 && touch.pageX < window.innerWidth - 20) return;
+  }
+  e.preventDefault();
+  e.stopPropagation();
+};
+
 export const init = (selectors, isMobile) => {
+  window.history.scrollRestoration = 'manual';
   let bodyHeight = null;
   let textShadow = null;
   let secondBlack = colors.secondBlack;
   let backgroundHeight = '100vh';
   let backgroundPosition = 'fixed';
-  const html = document.querySelector('div');
-  html.addEventListener('touchstart', (e) => {
-    let touches = e.changedTouches;
-    for (var i = 0; i < touches.length; i++) {
-      let touch = touches[i];
-      if (touch.pageX > 20 && touch.pageX < window.innerWidth - 20) return;
-    }
-    e.preventDefault();
-  });
-
+  const div = document.querySelector('div');
+  div.addEventListener('touchstart', blockSwipeHandler, true);
+  
   if (isMobile) {
     if (selectors.isIOS) {
       backgroundHeight = '100%';
@@ -96,7 +102,7 @@ export const init = (selectors, isMobile) => {
       element.value + 'px'
     );
   });
-  document.addEventListener("touchend", endScalingHandler, false);
+  document.addEventListener('touchend', endScalingHandler, false);
   window.addEventListener('keydown', startScalingHandler);
   window.addEventListener('keyup', endScalingHandler);
   document.addEventListener('wheel', startScalingHandler);
