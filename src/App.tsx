@@ -15,10 +15,6 @@ function App() {
   const { isMobile } = selectors;
 
   useEffect(() => {
-    window.addEventListener('resize', ()=>{
-      console.log(window.innerWidth)
-    })
-    console.log(window.innerWidth)
     init(selectors, isMobile ||navigator.userAgent.indexOf('Mac') > -1);
   }, []);
 
