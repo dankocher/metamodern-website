@@ -3,7 +3,7 @@ import styles from './index.module.scss';
 import { FC } from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import { useIsPage } from '../../../hooks/useIsPage';
+import { useIsPage } from '../../../utils/hooks/useIsPage';
 import { useModalMenuContext } from '../../../context/useModalMenuContext';
 
 import { SCREENS } from '../../../navigation/constants';

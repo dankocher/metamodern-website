@@ -1,3 +1,3 @@
-import ToDScreen from '../../projects/src/pages/ToD';
+import ToDScreen from '../../pages/ToD';
 
 export default ToDScreen;

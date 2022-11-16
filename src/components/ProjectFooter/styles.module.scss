@@ -1,0 +1,55 @@
+@import '../../styles/foundations.scss';
+
+.footer {
+  height: $footerHeightLg;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 18px;
+  padding-right: 18px;
+
+  @media (max-width: $footerPoint) {
+    height: $footerHeightMob;
+  }
+}
+
+.info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding-top: 56px;
+  padding-bottom: 28px;
+
+  @media (max-width: $footerPoint) {
+    padding-top: 44px;
+  }
+
+  &__links {
+    @media (max-width: $footerPoint) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    :not(:last-child) {
+      margin-right: 24px;
+
+      @media (max-width: $footerPoint) {
+        margin: 0 0 20px 0;
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &__data {
+    color: $textSecond;
+  }
+}

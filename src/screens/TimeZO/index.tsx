@@ -1,3 +1,3 @@
-import TimeZoScreen from '../../projects/src/pages/TimeZo';
+import TimeZoScreen from '../../pages/TimeZo';
 
 export default TimeZoScreen;

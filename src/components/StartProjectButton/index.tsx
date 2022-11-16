@@ -7,7 +7,7 @@ import { SCREENS } from '../../navigation/constants';
 
 import translation from '../../i18n/en.json';
 import OvalButton from '../OvalButton';
-import { useIsPage } from '../../hooks/useIsPage';
+import { useIsPage } from '../../utils/hooks/useIsPage';
 
 const StartProjectButton = () => {
   const { setIsVisible } = useModalMenuContext();

@@ -1,9 +1,9 @@
 import styles from '../index.module.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useIsPage } from '../../../hooks/useIsPage';
+import { useIsPage } from '../../../utils/hooks/useIsPage';
 import { SCREENS } from '../../../navigation/constants';
 import { colors } from '../../../styles/colors';
-import { Icon } from '../../../projects/src/components/Icon';
+import { Icon } from '../../Icon';
 import { useEffect, useState } from 'react';
 const themes = {
   WHITE: 'white',

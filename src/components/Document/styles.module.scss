@@ -1,19 +1,30 @@
-@import "./constants.scss";
+@import '../../styles/foundations.scss';
+
+@media (max-width: 1000px) {
+  #header {
+    position: absolute !important;
+  }
+}
 
 .container {
   display: flex;
   justify-content: center;
-  padding-top: autoResize(140, 180);
-  background-color: #ffffff;
+  padding-bottom: $footerHeightLg;
+
+  @media (max-width: $footerPoint) {
+    padding-bottom: $footerHeightMob;
+  }
 
   .content {
     width: autoResize(288px, 800px, 320px, $mdDevice);
     flex-direction: column;
     color: $neutral900;
-    
+    padding-top: 88px;
     padding-bottom: 144px;
-
-   
+    padding-top: autoResize(140, 180);
+    @media (max-width: 1000px) {
+      padding-top: 112px;
+    }
   }
 
   .headerBlock {
@@ -88,7 +99,7 @@
         word-break: break-all;
         color: $accent;
 
-        &[href*="mailto:"] {
+        &[href*='mailto:'] {
           word-break: normal;
         }
       }
