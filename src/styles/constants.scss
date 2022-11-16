@@ -19,11 +19,15 @@ $landscape480: 480px;
 $landscape420: 420px;
 $landscape384: 384px;
 $landscape320: 320px;
+$tabletWidth: 900px;
+$phoneWidth: 420px;
+
 
 // Projects
 $maxVisibleWidth: 566.5px;
 
 // Border
+$borderRadius: 4px;
 $defaultBorder: 1.5px;
 
 // Z-INDEX
@@ -35,8 +39,20 @@ $index20: 20;
 $transitionEase: 200ms ease;
 $transition150: 150ms ease;
 
+//Endpoint
+$miniDevice: 768px;
+$mdDevice: 833px;
+$minSize: 920px;
+$lgDevice: 1130px;
+$maxDevice: 1920px;
+$footerPoint: 600px;
+
 //Header
 $logoHeightMax: 52px;
 $logoHeightMin: 36px;
 $headerHeightMax: 92px;
 $headerHeightMin: 64px;
+
+//Footer
+$footerHeightLg: 148px;
+$footerHeightMob: 201px;

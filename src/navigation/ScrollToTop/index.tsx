@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 // import { ScrollContext } from '../../components/DesktopAppContent';
-import { usePrevious } from '../../hooks/usePrevious';
+import { usePrevious } from '../../utils/hooks/usePrevious';
 import useHistory from 'react-router-dom';
 
 const ScrollToTop = ({ children, isMobile }) => {

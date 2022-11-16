@@ -1,3 +1,3 @@
-import TimeZoPrivacyScreen from '../../projects/src/pages/TimeZo/privacy';
+import TimeZoPrivacyScreen from '../../pages/TimeZo/privacy';
 
 export default TimeZoPrivacyScreen;
