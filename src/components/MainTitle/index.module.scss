@@ -12,7 +12,7 @@
   justify-content: center;
 
   @media (max-width: $landscape800) {
-    background-color: $yellow100;
+    background-color: $accentYellow;
   }
 
   .ourAppBtn {
@@ -75,7 +75,7 @@
 
       border-radius: 50%;
 
-      background-color: $yellow100;
+      background-color: $accentYellow;
 
       @media (max-width: $landscape800) {
         display: none;

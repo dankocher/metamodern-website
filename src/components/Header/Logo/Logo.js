@@ -25,7 +25,7 @@ const Logo = ({ location, isSubProject, comparePathes, onClick }) => {
     <div className={styles.logo} onClick={onClick}>
       <Icon
         name="logo"
-        color={theme === themes.WHITE ? colors.white : colors.secondBlack}
+        color={theme === themes.WHITE ? colors.white : colors.mainBlack}
         className={styles.iconMain}
       />
       <Icon

@@ -2,11 +2,10 @@ import styles from './index.module.scss';
 
 import Footer from '../../components/Footer';
 
-const DocumentWrapper = ({ children }) => (
+const DocumentWrapper = ({ children, withFooter = true }) => (
   <div className={styles.container}>
     {children}
-
-    <Footer />
+    {withFooter && <Footer />}
   </div>
 );
 export default DocumentWrapper;

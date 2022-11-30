@@ -1,5 +1,14 @@
 export const colors = {
-  white: '#ffffff',
+  accentYellow: '#FCE04E',
+  white: '#FFFFFF',
+  greyPlate: '#F1F1F1',
+  grey: '#D6D6D6',
+  greySec: '#898989',
+  blackGrey: '#393939',
+  mainBlack: '#11100E',
+  halfYellow: '#FFEC89',
+  red: '#d92d2d',
+  
   accent: "#2D5DD9",
   todTheme: "#3B1B49",
   timeZo: "#ffffff",

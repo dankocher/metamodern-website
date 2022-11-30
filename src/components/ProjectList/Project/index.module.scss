@@ -4,7 +4,7 @@
   width: 100%;
 
   transition: $transitionEase;
-
+  border-radius: $mainRadius;
   @media (min-width: $landscape420) {
     &:hover {
       background-color: rgba(214, 214, 214, 0.25);
@@ -17,7 +17,7 @@
 
   .gradient {
     position: absolute;
-
+    border-radius: $mainRadius;
     right: 0;
     left: 0;
     top: 0;

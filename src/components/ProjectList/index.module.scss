@@ -9,7 +9,7 @@ $padding: 160px;
   flex-wrap: wrap;
 
   margin-top: 36px;
-
+  margin-bottom: autoResize(64px, 176px, $landscape384);
   padding: 0 autoResize(0px, $padding, $landscape1200, $landscapeFHD);
 
   .projectCell {

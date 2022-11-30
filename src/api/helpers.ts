@@ -67,7 +67,7 @@ export const init = (selectors, isMobile) => {
   window.history.scrollRestoration = 'manual';
   let bodyHeight = null;
   let textShadow = null;
-  let secondBlack = colors.secondBlack;
+  let mainBlack = colors.mainBlack;
   let backgroundHeight = '100vh';
   let backgroundPosition = 'fixed';
   const div = document.querySelector('div');
@@ -79,11 +79,11 @@ export const init = (selectors, isMobile) => {
       backgroundPosition = 'absolute';
     }
     bodyHeight = 'fit-content';
-    textShadow = `0 0 0.7px ${secondBlack},`.repeat(4);
+    textShadow = `0 0 0.7px ${mainBlack},`.repeat(4);
     textShadow = textShadow.substring(0, textShadow.length - 1);
   } else {
     bodyHeight = '100%';
-    textShadow = `0 0 0.7px ${secondBlack},`.repeat(2);
+    textShadow = `0 0 0.7px ${mainBlack},`.repeat(2);
     textShadow = textShadow.substring(0, textShadow.length - 1);
   }
   document.documentElement.style.setProperty(

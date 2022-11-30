@@ -115,8 +115,8 @@ const Brief: FC = () => {
 
   useEffect(() => {
     // if (isMobile || navigator.userAgent.indexOf('Mac') > -1) {
-      const body = document.getElementsByTagName('body')[0];
-      body.scrollTo(0, 0);
+    const body = document.getElementsByTagName('body')[0];
+    body.scrollTo(0, 0);
     // } else scrollbarRef.current.scrollbar.scrollTo(0, 0);
   }, [isDataSent]);
 
@@ -286,32 +286,33 @@ const Brief: FC = () => {
             <section className={styles.aboutProject}>
               <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
               <div className={styles.personalInformation}>
-                <Controller
-                  name="name"
-                  control={control}
-                  render={({ field: { onChange, value } }) => (
-                    <MInput
-                      label={translate.yourName}
-                      onChange={onChange}
-                      value={value}
-                      required={true}
-                    />
-                  )}
-                />
-                <Controller
-                  name="email"
-                  control={control}
-                  render={({ field: { onChange, value } }) => (
-                    <MInput
-                      label={translate.email}
-                      onChange={onChange}
-                      value={value}
-                      required={true}
-                      error={errors.email ? errors.email.message : null}
-                    />
-                  )}
-                />
-
+                <section>
+                  <Controller
+                    name="name"
+                    control={control}
+                    render={({ field: { onChange, value } }) => (
+                      <MInput
+                        label={translate.name}
+                        onChange={onChange}
+                        value={value}
+                        required={true}
+                      />
+                    )}
+                  />
+                  <Controller
+                    name="email"
+                    control={control}
+                    render={({ field: { onChange, value } }) => (
+                      <MInput
+                        label={translate.email}
+                        onChange={onChange}
+                        value={value}
+                        required={true}
+                        error={errors.email ? errors.email.message : null}
+                      />
+                    )}
+                  />
+                </section>
                 <Controller
                   name="description"
                   control={control}
@@ -335,7 +336,7 @@ const Brief: FC = () => {
               type="submit"
               className={`latoSemibold2028 ${styles.sendBtn}`}
             >
-              {translate.send}
+              {translate.submit}
             </button>
           </div>
         </form>

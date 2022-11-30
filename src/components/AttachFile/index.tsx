@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 import cross from '../../assets/svg/cross.svg';
 
@@ -9,6 +9,8 @@ const AttachFile: FC<{
   label: string;
   setFile: (data: File) => void;
 }> = ({ attachedFileName = '', label, setFile = () => {} }) => {
+  const inputRef = useRef(null);
+
   const removeFile = () => {
     setFile(null);
   };
@@ -19,19 +21,25 @@ const AttachFile: FC<{
 
   return (
     <div className={styles.container}>
+      <label
+        htmlFor={'fileInput'}
+        className="interMedium1416"
+      >{`+ ${label}`}</label>
+      <input
+        ref={inputRef}
+        id="fileInput"
+        type="file"
+        onChange={setFileHandler}
+      />
+
       {attachedFileName && (
         <div className={styles.fileName}>
-          <span className="interMedium2036">{attachedFileName}</span>
+          <span className="interMedium1416">{attachedFileName}</span>
           <div role="button" className={styles.removeBtn} onClick={removeFile}>
             <img src={cross} />
           </div>
         </div>
       )}
-      <label
-        htmlFor={'fileInput'}
-        className="interMedium2036"
-      >{`+ ${label}`}</label>
-      <input id="fileInput" type="file" onChange={setFileHandler} />
     </div>
   );
 };

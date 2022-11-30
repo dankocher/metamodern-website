@@ -20,6 +20,7 @@ import Header from '../components/Header';
 import { AnimatePresence, motion } from 'framer-motion';
 import ModalMenu from '../components/ModalMenu';
 import { useEffect } from 'react';
+import { colors } from '../styles/colors';
 
 const Navigation = ({ isMobile }) => {
   const CatDribble =
@@ -42,7 +43,7 @@ const Navigation = ({ isMobile }) => {
         <Routes key={location.pathname} location={location}>
           <Route
             path={SCREENS.HOME}
-            element={<PageWrapper children={<Home isMobile={isMobile} />} />}
+            element={<PageWrapper children={<Home isMobile={isMobile} />} backgroundColor={colors.accentYellow}/>}
           />
 
           <Route

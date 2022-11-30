@@ -4,8 +4,8 @@
 }
 
 .wrapper {
-  height: 72px;
-
+  height: 66px;
+  width: 100%;
   position: relative;
 
   display: flex;
@@ -15,7 +15,7 @@
 
   & > span {
     position: absolute;
-    color: $red100;
+    color: $red;
 
     transform: translateY(100%);
     bottom: -8px;
@@ -23,7 +23,7 @@
 }
 
 .error {
-  border-bottom-color: $red100 !important;
+  border-bottom-color: $red !important;
 }
 
 .container {
@@ -35,45 +35,42 @@
 
   input,
   span {
-    color: $secondBlack;
+    color: $mainBlack;
   }
 
   div {
-    margin-top: 8px;
-    border-bottom: 2px solid $secondBlack;
+    border-bottom: 2px solid $grey;
   }
 
   input {
     width: 100%;
-
     background-color: inherit;
-
     outline: none;
+    margin-bottom: 6px;
 
     &:focus ~ div {
-      border-bottom-color: $blue100;
+      border-bottom-color: $mainBlack;
     }
 
     &:valid ~ span,
     &:focus ~ span {
-      text-shadow: var(--textShadow);
       appearance: none;
       -moz-appearance: none;
       -webkit-appearance: none;
-      transform: translateX(-17%) translateY(calc(-110%)) scale(0.66);
-      -webkit-transform: translateX(-17%) translateY(calc(-110%)) scale(0.66);
+      transform:  translateY(-100%) scale(0.78);
+      -webkit-transform:  translateY(-100%) scale(0.78);
     }
   }
 
   span {
     position: absolute;
-
     left: 0;
-    top: 0;
-
+    
+    color: $greySec;
     pointer-events: none;
-
-    transition: transform 0.5s ease 0.15s, text-shadow 0.5s ease 0.15s;
-    -webkit-transform: transform 0.5s ease 0.15s, text-shadow 0.5s ease 0.15s;
+    bottom: 12px;
+    transform-origin: 0% 50%;
+    transition: transform 0.5s ease 0.15s;
+    -webkit-transform: transform 0.5s ease 0.15s;
   }
 }

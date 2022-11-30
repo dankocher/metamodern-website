@@ -1,0 +1,44 @@
+@import '../../../styles/foundations.scss';
+
+.wrapper {
+  width: 100%;
+    height: autoResize(605px, 880px, $landscape1200,  $landscape1920);
+
+  @media (max-width: $landscape800) {
+    height: autoResize(330px, 605px, $landscape384, $landscape800);
+  }
+  .container {
+    width: 100%;
+    left: 0px;
+    position: absolute;
+    // background-color: aqua;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    height: autoResize(605px, 880px, $landscape1200,  $landscape1920);
+
+  @media (max-width: $landscape800) {
+    height: autoResize(330px, 605px, $landscape384, $landscape800);
+  }
+    .ribbon {
+      display: flex;
+      flex-direction: row;
+      width: fit-content;
+      height: 100%;
+      gap: 44px;
+      @media (min-width: $landscape1200) {
+        padding: 0 autoResize(120px, 160px, $landscape1200);
+      }
+      @media (min-width: $landscape800) {
+        padding: 0 autoResize(44px, 120px, $landscape800);
+      }
+      .img {
+        height: 100%;
+        border-radius: 44px;
+      }
+    }
+  }
+}

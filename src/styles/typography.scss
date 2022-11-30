@@ -1,31 +1,30 @@
-@import "foundations.scss";
-
+@import 'foundations.scss';
 
 //Links fonts
 
 .latoSemibold2012 {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: autoResize(12px, 20px, $landscape1200);
   line-height: autoResize(17px, 28px, $landscape1200);
 }
 
 .latoSemibold2028 {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
 }
 
 .latoSemibold2024 {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 24px;
 }
 
 .latoSemibold2230 {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 22px;
   line-height: 30px;
@@ -34,7 +33,7 @@
 }
 
 .latoSemibold2432 {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
@@ -42,19 +41,38 @@
   line-height: autoResize(24px, 32px, $landscape384, $landscape800) !important;
 }
 
+.lato2432 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.lato2836 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(20px, 28px, $landscape384, $landscape800) !important;
+    line-height: autoResize(
+      28px,
+      32px,
+      $landscape384,
+      $landscape800
+    ) !important;
+  }
+}
+
 .latoSemibold2214 {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 22px;
   line-height: 30px;
   @media (max-width: $landscape800) {
     font-weight: 500;
-    font-size: autoResize(
-      14px,
-      22px,
-      $landscape800,
-      $landscape1133
-    ) !important;
+    font-size: autoResize(14px, 22px, $landscape800, $landscape1133) !important;
     line-height: autoResize(
       17px,
       30px,
@@ -64,8 +82,25 @@
   }
 }
 
+.bebasNeue72 {
+  font-family: 'BebasNeue', sans-serif;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 72px;
+
+  @media (max-width: $landscape384) {
+    font-size: autoResize(60px, 72px, $landscape320, $landscape384) !important;
+    line-height: autoResize(
+      60px,
+      72px,
+      $landscape320,
+      $landscape384
+    ) !important;
+  }
+}
+
 .bebasNeue320 {
-  font-family: "BebasNeue", sans-serif;
+  font-family: 'BebasNeue', sans-serif;
   font-weight: 400;
   font-size: 320px;
   line-height: 320px;
@@ -100,7 +135,7 @@
 }
 
 .bebasNeue288 {
-  font-family: "BebasNeue", sans-serif;
+  font-family: 'BebasNeue', sans-serif;
   font-weight: 400;
   font-size: 288px;
   line-height: 288px;
@@ -134,7 +169,7 @@
 }
 
 .bebasNeue132 {
-  font-family: "BebasNeue", sans-serif;
+  font-family: 'BebasNeue', sans-serif;
   font-weight: 400;
   font-size: 132px;
   line-height: 132px;
@@ -150,13 +185,35 @@
   }
 }
 
-.bebasNeue36 {
-  font-family: "BebasNeue", sans-serif;
+.bebasNeue132to56 {
+  font-family: 'BebasNeue', sans-serif;
   font-weight: 400;
   font-size: 132px;
   line-height: 132px;
 
-  @media (max-width: $landscape1200) {
+  @media (max-width: $landscape800) {
+    font-size: autoResize(62px, 132px, $landscape384, $landscape800) !important;
+    line-height: autoResize(
+      62px,
+      132px,
+      $landscape384,
+      $landscape800
+    ) !important;
+  }
+
+  @media (max-width: $landscape384) {
+    font-size: autoResize(56px, 132px, $landscape320) !important;
+    line-height: autoResize(56px, 132px, $landscape320) !important;
+  }
+}
+
+.bebasNeue36 {
+  font-family: 'BebasNeue', sans-serif;
+  font-weight: 400;
+  font-size: 132px;
+  line-height: 132px;
+
+  @media (min-width: $landscape384) and (max-width: $landscape1200) {
     font-size: autoResize(
       36px,
       132px,
@@ -173,7 +230,7 @@
 }
 
 .bebasNeue13260 {
-  font-family: "BebasNeue", sans-serif;
+  font-family: 'BebasNeue', sans-serif;
   font-weight: 400;
   font-size: 132px;
   line-height: 132px;
@@ -183,7 +240,7 @@
 }
 
 .gilroyBlack82 {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-weight: 900;
   font-size: 82px;
   line-height: 103px;
@@ -194,7 +251,7 @@
 //Projects
 
 .interBlack2436 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 900;
   font-size: 36px;
   line-height: 44px;
@@ -239,7 +296,7 @@
 }
 
 .interSemiBold2436 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 36px;
   line-height: 44px;
@@ -283,8 +340,15 @@
   }
 }
 
+.interMedium1416 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
 .interMedium1216 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
@@ -332,7 +396,7 @@
 }
 
 .interMedium2432 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 32px;
   line-height: 40px;
@@ -341,7 +405,7 @@
 }
 
 .interMedium2028 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 28px;
@@ -350,15 +414,17 @@
   line-height: autoResize(18px, 28px, $landscape384, $landscape800) !important;
 }
 
-.interMedium1622 {
+.interRegular1622 {
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 22px;
+  font-size: autoResize(14px, 16px, $landscape384, $landscape800) !important;
+  line-height: autoResize(16px, 22px, $landscape384, $landscape800) !important;
 }
 
 .interMedium2036 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 36px;
@@ -367,15 +433,25 @@
   line-height: autoResize(24px, 36px, $landscape384, $landscape800) !important;
 }
 
+.interRegular2028 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+
+  font-size: autoResize(16px, 20px, $landscape384, $landscape800) !important;
+  line-height: autoResize(22px, 28px, $landscape384, $landscape800) !important;
+}
+
 .interRegular2232 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 32px;
 }
 
 .interRegular2436 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
@@ -384,7 +460,7 @@
 }
 
 .interRegular2024 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 36px;
@@ -393,7 +469,7 @@
 }
 
 .interRegular1216 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
@@ -448,7 +524,7 @@
 }
 
 .interRegular2432 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
   font-size: 32px;
   line-height: 40px;
@@ -459,24 +535,67 @@
   }
 }
 
+.interRegular1824 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  font-size: autoResize(16px, 18px, $landscape384, $landscape800) !important;
+  line-height: autoResize(22px, 24px, $landscape384, $landscape800) !important;
+}
+
+.interRegular2230 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+  font-size: autoResize(16px, 22px, $landscape384, $landscape800) !important;
+  line-height: autoResize(22px, 30px, $landscape384, $landscape800) !important;
+}
+
+.interMedium4048 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(24px, 40px, $landscape384, $landscape800) !important;
+    line-height: autoResize(
+      32px,
+      48px,
+      $landscape384,
+      $landscape800
+    ) !important;
+  }
+}
+
+.interMedium6068 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 68px;
+  font-size: autoResize(36px, 60px, $landscape384, $landscape800) !important;
+  line-height: autoResize(44px, 68px, $landscape384, $landscape800) !important;
+}
 //Footer
 
 .footerMainFont {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
 }
 
 .footerSubtitleFont {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
 }
 
 .pageSubtitleFont {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 64px;
@@ -493,14 +612,14 @@
   }
 }
 
-@import "foundations.scss";
+@import 'foundations.scss';
 
 //Fonts
 
 /* ToD/Subtitle GExBold 16 20 */
 
 .timeZooBigTitle {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -508,7 +627,7 @@
 }
 
 .todSubtitleRegular {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -516,7 +635,7 @@
 }
 
 .todSubtitleBold {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
   font-size: 16px;
@@ -524,7 +643,7 @@
 }
 
 .toDExtraBig {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 900;
   font-size: 64px;
@@ -532,7 +651,7 @@
 }
 
 .todMedium {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
@@ -542,7 +661,7 @@
 //Documents
 
 .docMain {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 44px;
@@ -557,7 +676,7 @@
 }
 
 .docTitle0 {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 34px;
@@ -572,7 +691,7 @@
 }
 
 .docTitle {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
@@ -587,7 +706,7 @@
 }
 
 .docSubtitle {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
@@ -604,7 +723,7 @@
 //TimeZo fonts
 
 .title0 {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-weight: 500;
   font-size: 40px;
   line-height: 48px;
@@ -618,26 +737,26 @@
 }
 
 .title1 {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-size: 24px;
   line-height: 36px;
 }
 
 .title2 {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-weight: 500;
   font-size: 40px;
   line-height: 48px;
 }
 
 .subtitleMain {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-size: 16px;
   line-height: 20px;
 }
 
 .subtitle {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-size: 16px;
   line-height: 20px;
   font-size: autoResize(14px, 16px) !important;
@@ -645,21 +764,21 @@
 }
 
 .subtitle0 {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
 }
 
 .subtitleSmall {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
 }
 
 .bigTitle {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-weight: 700;
   font-size: 48px;
   line-height: 52px;
@@ -674,7 +793,7 @@
 
 //TimeBlock
 .subtitle1 {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 22px;
   line-height: 26px;
   font-size: autoResize(19px, 22px, $minSize) !important;
@@ -687,7 +806,7 @@
 }
 
 .subtitle2 {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 16px;
   line-height: 18px;
   font-size: autoResize(14px, 16px, $minSize) !important;
@@ -700,7 +819,7 @@
 }
 
 .subtitle3 {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-size: 12px;
   line-height: 12px;
   font-size: autoResize(10px, 12px, $minSize) !important;
@@ -713,7 +832,7 @@
 }
 
 .subtitle4 {
-  font-family: "Rubik", sans-serif;
+  font-family: 'Rubik', sans-serif;
   font-weight: 500;
   font-size: 36px;
   line-height: 48px;
@@ -729,22 +848,22 @@
 //Links fonts
 
 .downFont {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-weight: 500;
   font-size: 10px;
   line-height: 12px;
 }
 
 .smallFont {
-  font-family: "Gilroy", sans-serif;
+  font-family: 'Gilroy', sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 15px;
 }
 
 //Main page fonts
-.mainBigTitle  {
-  font-family: "BebasNeue", sans-serif;
+.mainBigTitle {
+  font-family: 'BebasNeue', sans-serif;
   font-weight: 400;
   font-size: 232px;
   line-height: 200px;
@@ -763,21 +882,21 @@
 }
 
 .mainSubtitle {
-  font-family: "BebasNeue", sans-serif;
+  font-family: 'BebasNeue', sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 36px;
 }
 
 .mainSubtitle1 {
-  font-family: "BebasNeue", sans-serif;
+  font-family: 'BebasNeue', sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
 }
 
 .mainSubtitle2 {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 24px;
@@ -791,14 +910,14 @@
 }
 
 .mainSubtitle3 {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;
 }
 
 .fontSoon {
-  font-family: "BebasNeue", sans-serif;
+  font-family: 'BebasNeue', sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;

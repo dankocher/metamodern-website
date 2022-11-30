@@ -14,7 +14,7 @@ const ContactsScreen = () => {
         animation={animationTypes.UP}
         transition={{ duration: v.duration, delay: v.delay }}
       >
-        <Contacts />
+        {/* <Contacts /> */}
       </AnimatedBlock>
     </div>
   );

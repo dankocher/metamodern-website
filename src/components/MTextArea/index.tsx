@@ -68,7 +68,7 @@ const MTextArea: FC<{
       >
         <textarea
           ref={textAreaRef}
-          className={'interRegular2232'}
+          className={'interRegular2028'}
           rows={rowsMins}
           style={{
             overflow: isSizeFixed ? 'overlay' : 'hidden',
@@ -77,7 +77,7 @@ const MTextArea: FC<{
           onChange={onChangeHandler}
           value={value}
         />
-        <span className="interRegular2436">{label}</span>
+        <span className="interRegular2028">{label}</span>
         <div />
       </div>
     </div>
