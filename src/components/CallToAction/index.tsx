@@ -39,6 +39,7 @@ const CallToAction = () => {
         className={styles.startBtn}
         bgColor={colors.white}
         hoverColor={colors.mainBlack}
+        textColor = {colors.mainBlack}
         textHoverColor={colors.white}
         onClick={startButtonHandler}
       >

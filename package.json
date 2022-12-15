@@ -2,7 +2,7 @@
   "name": "metamodern.website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://metamodern.dev/",
+  "homepage": "https://dankocher.github.io/metamodern-website/",
   "dependencies": {
     "@hookform/resolvers": "^2.9.7",
     "@testing-library/jest-dom": "^5.16.4",
@@ -29,6 +29,7 @@
     "react-lottie": "^1.2.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-scroll-paged-view": "^2.2.6",
     "react-smooth-scrollbar": "^8.0.6",
     "sass": "^1.51.0",
     "smooth-scrollbar": "^8.7.5",

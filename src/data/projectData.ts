@@ -10,6 +10,9 @@ import truthOrDare2 from '../assets/images/truthOrDare@2x.png';
 import neverHaveEver from '../assets/images/neverHaveEver.png';
 import neverHaveEver2 from '../assets/images/neverHaveEver@2x.png';
 
+import beRead from '../assets/images/beRead.png';
+import beRead2 from '../assets/images/beRead@2x.png';
+
 import calmCats from '../assets/images/calmCats.png';
 import calmCats2 from '../assets/images/calmCats@2x.png';
 import calmCatsBackground from '../assets/images/calmCatsBackground.png';
@@ -47,7 +50,21 @@ const data: ProjectProps[] = [
     isDarkContent: true,
   },
   {
-    link: '',
+    link: 'https://www.behance.net/gallery/154107741/BeRead-Online-Books-Reading-App-UXUI',
+    type: ProjectsTypes.MOBILE,
+    name: 'BeRead',
+    title: 'online books',
+    description:
+      'BeRead is a unique portable magic. The goal is to make an app that combines the functions of a book reader, a social network and the best assistant in the book world. An app that will replace the entire cycle of finding and buying a book. ',
+    tags: ['Design', 'Mobile'],
+    bgImage: { x1: beRead, x2: beRead2 },
+    gradient: {
+      '--gradient': `#FFFFFF`,
+    },
+    isDarkContent: true,
+  },
+  {
+    link: 'https://www.behance.net/gallery/158350645/Never-Have-I-Ever-Mobile-game-IOS-Android',
     type: ProjectsTypes.MOBILE,
     name: 'Never Have i ever',
     title: 'game for party',

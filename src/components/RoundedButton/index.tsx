@@ -9,11 +9,13 @@ interface IRoundedButton {
   bgColor?: string;
   textClass?: string;
   children: string;
-  textHoverColor?: string; 
-  onClick: Function,
+  textColor?: string;
+  textHoverColor?: string;
+  onClick: Function;
 }
 
 const Container = styled.div`
+    color: ${(props)=>props.textColor};
     background-color: ${(props) => props.bgColor};
     :hover{
         background-color: ${(props) => props.hoverColor};
@@ -27,7 +29,8 @@ const RoundedButton: FC<IRoundedButton> = ({
   hoverColor = colors.halfYellow,
   bgColor = colors.accentYellow,
   textHoverColor = colors.mainBlack,
-  textClass = "lato2836",
+  textColor = colors.white,
+  textClass = 'lato2836',
   onClick,
   children,
 }) => {
@@ -36,8 +39,9 @@ const RoundedButton: FC<IRoundedButton> = ({
       className={`${styles.container} ${className} ${textClass}`}
       bgColor={bgColor}
       hoverColor={hoverColor}
-      textHoverColor = {textHoverColor}
-      onClick = {onClick}
+      textHoverColor={textHoverColor}
+      onClick={onClick}
+      textColor={textColor}
     >
       {children}
     </Container>

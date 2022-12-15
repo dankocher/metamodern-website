@@ -1,17 +1,19 @@
 @import '../../styles/foundations.scss';
-
+@import "../../styles/global.scss";
+:root {
+  --block-height: 0;
+}
 .container {
   width: 100%;
   height: 100%;
 
   .preview {
     width: 100%;
-    height: 100vh;
+    height: var(--block-height);
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom-left-radius: $mainRadius;
-    border-bottom-right-radius: $mainRadius;
+    
     margin-bottom: 148px;
     background-color: $accentYellow;
     @media (min-width: $landscape1200) {
@@ -25,6 +27,7 @@
     }
 
     .about_title {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -33,6 +36,21 @@
         max-width: 968px;
 
         white-space: nowrap;
+        .crown {
+          position: absolute;
+          width: 105px;
+          transform: rotate(17.5deg);
+          
+          @media (max-width: $landscape1920) {
+            width: autoResize(75px, 105px, $landscape1200, $landscape1920);
+          }
+          @media(max-width: $landscape800) {
+            width: autoResize(28px, 75px, $landscape320, $landscape800);
+          }
+       
+          top: -22%;
+          right: 1%;
+        }
         .zigzag_container {
           position: relative;
           width: min-content;
@@ -50,9 +68,10 @@
           text-decoration: underline;
         }
       }
-
-      margin-bottom: autoResize(44px, 88px);
+      
+      // margin-bottom: autoResize(44px, 88px);
     }
+    @include mainBlock;
   }
   .body {
     @media (min-width: $landscape1200) {
@@ -62,7 +81,7 @@
       padding: 0 autoResize(44px, 120px, $landscape800);
     }
 
-    padding: 0 autoResize(36px, 44px, $landscape384);
+    padding: 0 autoResize(16px, 44px, $landscape384);
 
     .text_block {
       display: flex;
@@ -89,7 +108,7 @@
 
     .principlesBlock {
       width: 100%;
-
+      max-width: 1600px;
       display: flex;
       gap: 144px;
       margin: autoResize(80px, 260px, $landscape384) 0;
@@ -123,6 +142,10 @@
           }
           @media (min-width: calc($landscape1200)) {
             height: 100%;
+          }
+
+          @media (max-width: $landscape384) {
+            border-radius: 36px;
           }
         }
       }

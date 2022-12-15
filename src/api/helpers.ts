@@ -28,6 +28,23 @@ export const sendToEmail = async (data, file) => {
     });
 };
 
+export function makeIterator(array) {
+  var nextIndex = 0;
+  var prevIndex = 0;
+  return {
+    next: function () {
+      return nextIndex < array.length
+        ? { value: array[nextIndex++] }
+        : { value: array[(nextIndex = 0)] };
+    },
+    prev: function () {
+      return prevIndex >= 0
+        ? { value: array[nextIndex--] }
+        : { value: array[(nextIndex = array.length - 1)] };
+    },
+  };
+}
+
 const startScalingHandler = (event) => {
   const addCtrlScreen = () => {
     let div = document.createElement('div');
@@ -64,6 +81,11 @@ const blockSwipeHandler = (e) => {
 };
 
 export const init = (selectors, isMobile) => {
+  document.documentElement.style.setProperty(
+    '--block-height',
+    // window.innerHeight + 'px'
+    document.documentElement.clientHeight + 'px'
+  );
   window.history.scrollRestoration = 'manual';
   let bodyHeight = null;
   let textShadow = null;
@@ -72,7 +94,7 @@ export const init = (selectors, isMobile) => {
   let backgroundPosition = 'fixed';
   const div = document.querySelector('div');
   div.addEventListener('touchstart', blockSwipeHandler, true);
-  
+
   if (isMobile) {
     if (selectors.isIOS) {
       backgroundHeight = '100%';

@@ -1,0 +1,34 @@
+@import '../../../styles/foundations.scss';
+
+.container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 1600px;
+  height: autoResize(412px, 560px, $landscape1200, $landscape1920);
+  flex-direction: column;
+  margin-bottom: 320px;
+  @media (max-width: calc($landscape800 - 1px)) {
+    height: fit-content;
+  }
+  @media (max-width: $landscape384) {
+    border-radius: 36px;
+  }
+  // :hover {
+  //   cursor: none;
+  // }
+  .region {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+  }
+ 
+  .cardWrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    
+  }
+}

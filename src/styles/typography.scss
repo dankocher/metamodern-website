@@ -213,18 +213,33 @@
   font-size: 132px;
   line-height: 132px;
 
-  @media (min-width: $landscape384) and (max-width: $landscape1200) {
+  @media (max-width: $landscape1920) {
     font-size: autoResize(
-      36px,
+      95px,
       132px,
-      $landscape320,
+      
       $landscape1200
     ) !important;
     line-height: autoResize(
-      36px,
+      95px,
       132px,
-      $landscape320,
+     
       $landscape1200
+    ) !important;
+  }
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(
+      36px,
+      95px,
+      $landscape320,
+      $landscape800
+    ) !important;
+    line-height: autoResize(
+      36px,
+      95px,
+      $landscape320,
+      $landscape800
     ) !important;
   }
 }
@@ -577,6 +592,51 @@
   line-height: 68px;
   font-size: autoResize(36px, 60px, $landscape384, $landscape800) !important;
   line-height: autoResize(44px, 68px, $landscape384, $landscape800) !important;
+}
+
+.interMedium5268 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 68px;
+  font-size: autoResize(36px, 52px, $landscape1200) !important;
+  line-height: autoResize(48px, 68px, $landscape1200) !important;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(24px, 36px, $landscape384, $landscape800) !important;
+    line-height: autoResize(
+      28px,
+      48px,
+      $landscape384,
+      $landscape800
+    ) !important;
+  }
+}
+.interMedium4056 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 56px;
+  font-size: autoResize(28px, 40px, $landscape1200) !important;
+  line-height: autoResize(40px, 56px, $landscape1200) !important;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(16px, 28px, $landscape384, $landscape800) !important;
+    line-height: autoResize(
+      22px,
+      40px,
+      $landscape384,
+      $landscape800
+    ) !important;
+  }
+}
+.interMedium96128 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 96px;
+  line-height: 128px;
+  font-size: autoResize(72px, 96px, $landscape1200) !important;
+  line-height: autoResize(96px, 128px, $landscape1200) !important;
 }
 //Footer
 

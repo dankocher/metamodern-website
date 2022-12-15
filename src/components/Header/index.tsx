@@ -34,6 +34,7 @@ const Header = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [isSubProject, setIsSubProject] = useState(false);
+  const [isWhiteTheme, setIsWhiteTheme] = useState(false);
 
   const { setIsVisible } = useModalMenuContext();
 
@@ -43,12 +44,16 @@ const Header = () => {
   };
 
   const openModalMenu = () => setIsVisible((isVisible) => !isVisible);
-  
+
   useEffect(() => {
-    
     if (comparePathes(location.pathname, screensSubProject))
       setIsSubProject(true);
-    else setIsSubProject(false);
+    else {
+      setIsSubProject(false);
+      if (comparePathes(location.pathname, [SCREENS.ABOUT_US]))
+        setIsWhiteTheme(true);
+      else setIsWhiteTheme(false);
+    }
   }, [location.pathname]);
 
   return (
@@ -62,6 +67,7 @@ const Header = () => {
           onClick={menuLogoHandler}
           location={location}
           isSubProject={isSubProject}
+          withHover={ !isWhiteTheme}
           comparePathes={comparePathes}
         />
         <AnimatePresence exitBeforeEnter>
@@ -83,7 +89,7 @@ const Header = () => {
                 },
               }}
             >
-              <Menu />
+              <Menu isWhiteTheme={isWhiteTheme}/>
               <div className={styles.middleBtn_wrapper}>
                 <StartProjectButton />
               </div>

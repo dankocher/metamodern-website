@@ -71,6 +71,9 @@ $paddingHorizontal: 64px;
             padding: 20px;
             border-radius: 50%;
             border: 1px solid $blackGrey;
+            &:hover {
+              background-color: $blackGrey;
+            }
             img {
               width: 40px;
               height: 40px;

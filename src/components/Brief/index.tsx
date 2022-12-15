@@ -192,7 +192,7 @@ const Brief: FC = () => {
           <div className={styles.container}>
             <h2 className="bebasNeue132">{translate.fillBrief}</h2>
             <div className={styles.servicesSwitch}>
-              <h5 className="interMedium2432">{translate.whatAppOrServices}</h5>
+              <h5 className="interMedium2432">{translate.whatServices}</h5>
               <div className={styles.switch}>
                 <Tag
                   label={translate.outstaffing}
@@ -318,7 +318,7 @@ const Brief: FC = () => {
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <MTextArea
-                      label={translate.description}
+                      label={translate.description+'*'}
                       onChange={onChange}
                       value={value}
                       rowsMax={12}

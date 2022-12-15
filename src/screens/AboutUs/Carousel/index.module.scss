@@ -23,21 +23,26 @@
   @media (max-width: $landscape800) {
     height: autoResize(330px, 605px, $landscape384, $landscape800);
   }
-    .ribbon {
+    .tape {
+      
       display: flex;
       flex-direction: row;
       width: fit-content;
       height: 100%;
       gap: 44px;
-      @media (min-width: $landscape1200) {
-        padding: 0 autoResize(120px, 160px, $landscape1200);
-      }
       @media (min-width: $landscape800) {
         padding: 0 autoResize(44px, 120px, $landscape800);
       }
+ 
+        padding: 0 autoResize(16px, 44px, $landscape384);
+      
       .img {
         height: 100%;
         border-radius: 44px;
+
+        @media (max-width: $landscape384) {
+          border-radius: 36px;
+        }
       }
     }
   }

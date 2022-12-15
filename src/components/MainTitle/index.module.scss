@@ -1,4 +1,6 @@
 @import '../../styles/foundations.scss';
+@import '../../styles/global.scss';
+
 :root {
   --block-height: 0;
 }
@@ -10,6 +12,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @include mainBlock;
 
   @media (max-width: $landscape800) {
     background-color: $accentYellow;

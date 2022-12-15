@@ -3,6 +3,7 @@
   --body-height: 0;
   --background-height: 0;
   --background-position: 0;
+  --block-height: 0;
 }
 
 $selectionColor: #fce04e;
@@ -118,6 +119,13 @@ a {
   transform: translate3d(0, 0, 0) !important;
 }
 
-button{
+button {
   cursor: pointer;
+}
+
+@mixin mainBlock {
+  height: var(--block-height);
+  border-bottom-left-radius: $mainRadius;
+  border-bottom-right-radius: $mainRadius;
+  transition: border-radius 0.2s;
 }
