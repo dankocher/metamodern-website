@@ -154,7 +154,10 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        gap: autoResize(56px, 124px, $landscape384);
+        gap: 96px;
+        @media(max-width: $landscape800){
+          gap: autoResize(44px, 96px, $landscape384);
+        }
         .principTitle {
           margin-bottom: autoResize(12px, 28px, $landscape384, $landscape800);
         }

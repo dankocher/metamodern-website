@@ -27,7 +27,7 @@ const screensSubProject = [
 ];
 
 const comparePathes = (path, patches) => {
-  return patches.some((pathname) => path === pathname);
+  return patches.some((pathname) => path.includes(pathname));
 };
 
 const Header = () => {
