@@ -20,6 +20,7 @@ const links = [
     { name: 'About Us', path: SCREENS.ABOUT_US },
   ],
   [
+    { name: 'Contact Us', path: SCREENS.CONTACTS},
     { name: 'Join Us', path: SCREENS.JOIN_US },
     { name: 'Privacy Policy', path: SCREENS.META_MODERN_PRIVACY },
   ],
@@ -73,7 +74,7 @@ const Footer = ({ backgroundColor = 'transparent' }) => {
             {links.map((section) => (
               <section>
                 {section.map((item) => (
-                  <NavLink to={item.path}>
+                  <NavLink to={item.path} target="_blank">
                     <span className={'lato2432'}>{item.name}</span>
                   </NavLink>
                 ))}

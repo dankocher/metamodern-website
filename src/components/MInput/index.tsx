@@ -14,7 +14,7 @@ const MInput: FC<IProps> = ({ label, error, ...props }) => {
       <div className={`${styles.container}`}>
         <input ref={ref} className="interRegular2028" {...props} />
         <span className="interRegular2028">{label}</span>
-        <div className={error != null ? styles.error : ''} />
+        <div className={error != null ? `${styles.error} interMedium1622` : ''} />
       </div>
       {error && <span className="interMedium1622">{error}</span>}
     </div>

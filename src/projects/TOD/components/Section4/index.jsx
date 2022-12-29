@@ -32,6 +32,7 @@ const Section4 = ({ header, description }) => (
             <StaticImage
               src={todPhone4}
               alt="phone"
+              height={604}
               quality={95}
               formats={['AUTO', 'PNG', 'AVIF']}
               placeholder="none"

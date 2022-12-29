@@ -81,6 +81,15 @@ const Gallery = ({ isMobile }) => {
     window.onresize = function (event) {
       choiceOfBehavior();
     };
+    // animatedCardComponent.current.addEventListener(
+    //   'transitionend',
+    //   handle,
+    //   false
+    // );
+    // function handle() {
+    //   setAnimation({ dir: dirRef.current, started: false });
+    //   //  alert(123);
+    // }
   }, []);
 
   const choiceOfBehavior = () => {
@@ -202,7 +211,6 @@ const Gallery = ({ isMobile }) => {
             animatedCardComponent.current.style.transition = '0.5s ease 0s';
             animatedCardComponent.current.style.left = '-100vw';
           }, 1);
-
           break;
         case dir.RIGHT:
           animatedCardComponent.current.style.left = '-100vw';
@@ -210,7 +218,6 @@ const Gallery = ({ isMobile }) => {
             animatedCardComponent.current.style.transition = '0.5s ease 0s';
             animatedCardComponent.current.style.left = '0px';
           }, 1);
-
           break;
       }
     else {
@@ -243,6 +250,7 @@ const Gallery = ({ isMobile }) => {
       </div>
 
       <ArrowCursorButton
+        disabled={animationRef.current.started}
         mousePosition={mousePosition}
         cursorButtonRef={cursorButtonRef}
         direction={direction}

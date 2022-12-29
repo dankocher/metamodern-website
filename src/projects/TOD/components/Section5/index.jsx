@@ -32,6 +32,7 @@ const Section5 = ({ header, description }) => (
               src={todPhone5}
               alt="phone"
               quality={95}
+              height={604}
               formats={['AUTO', 'PNG', 'AVIF']}
               placeholder="none"
               className={styles.phone}

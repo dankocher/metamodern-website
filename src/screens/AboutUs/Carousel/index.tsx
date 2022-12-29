@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
-import img1 from '../../../assets/images/office1.png';
-import img2 from '../../../assets/images/office2.png';
+import img1 from '../../../assets/images/office1.webp';
+import img2 from '../../../assets/images/office2.webp';
 import { useEffect, useRef } from 'react';
 
 const images = [img1, img2, img1, img2, img1, img2];

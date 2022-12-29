@@ -26,6 +26,13 @@
     margin: 7% 9.6%;
 
     background: var(--gradient);
+
+    @media (max-width: $landscape800) {
+      border-radius:  autoResize(20px, $mainRadius, $landscape384, $landscape800);
+    }
+    @media (max-width: $landscape384) {
+      border-radius:  autoResize(16px, 20px, $landscape320, $landscape384);
+    }
   }
 
   .content_wrapper {
@@ -42,7 +49,7 @@
       position: relative;
 
       height: 100%;
-      padding: 7.5%;
+      padding: 7.8% 12.5% 0 8.75%;
       @media (min-width: $landscape500) {
         padding-left: 8.5% !important;
       }

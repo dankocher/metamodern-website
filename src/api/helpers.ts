@@ -6,11 +6,11 @@ import { colors } from '../styles/colors';
 import { screenWidths } from '../data/screenWidths';
 const url = 'https://dev.goodstudio.by/sendMessage.php';
 
-export const sendToEmail = async (data, file) => {
+export const sendToEmail = async (data, files) => {
   const formData = new FormData();
   formData.append('brief', data);
-  if (file) {
-    formData.append('file', file);
+  if (files) {
+    formData.append('files', files);
   }
 
   return await axios

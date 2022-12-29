@@ -5,6 +5,9 @@
 
 .wrapper {
   height: 66px;
+  @media (max-width: $landscape800) {
+    height: autoResize(50px, 66px, $landscape384, $landscape800);
+  }
   width: 100%;
   position: relative;
 

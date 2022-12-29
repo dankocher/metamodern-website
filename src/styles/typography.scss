@@ -438,6 +438,13 @@
   line-height: autoResize(16px, 22px, $landscape384, $landscape800) !important;
 }
 
+.interMedium1622 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: autoResize(14px, 16px, $landscape384, $landscape800) !important;
+  line-height: autoResize(16px, 22px, $landscape384, $landscape800) !important;
+}
+
 .interMedium2036 {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
@@ -648,8 +655,8 @@
 }
 
 .footerSubtitleFont {
-  font-family: 'Gilroy', sans-serif;
-  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
   font-size: 16px;
   line-height: 20px;
 }

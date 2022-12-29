@@ -11,7 +11,7 @@ export enum ServicesTypes {
 }
 
 export const servicesTypes = {
-  [ServicesTypes.WEBSITE]: 'Website',
+  [ServicesTypes.WEBSITE]: 'Web dev',
   [ServicesTypes.MOBILE]: 'Mobile dev',
   [ServicesTypes.MVP]: 'MVP dev',
   [ServicesTypes.DESIGN]: 'Design',

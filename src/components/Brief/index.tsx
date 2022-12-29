@@ -67,7 +67,7 @@ const Brief: FC = () => {
 
   const { errors } = formState;
 
-  const [attachedFile, setAttachedFile] = useState<File | null>(null);
+  const [attachedFiles, setAttachedFiles] = useState([]);
   const [isDataSent, setIsDataSent] = useState(false);
 
   const [isOutsourcing, setIsOutsourcing] = useState(false);
@@ -104,7 +104,7 @@ const Brief: FC = () => {
       setValue('name', '', setOption);
       setValue('email', '', setOption);
       setValue('description', '', setOption);
-      onSubmitFile(null);
+      onSubmitFiles(null);
       setIsOutsourcing(false);
 
       setIsCleanUpContacts(false);
@@ -165,20 +165,27 @@ const Brief: FC = () => {
 
     const brief = JSON.stringify({ ...data, services });
 
-    let request = await sendToEmail(brief, attachedFile);
+    let request = await sendToEmail(brief, attachedFiles);
 
     if (request.ok) {
       setIsDataSent(true);
     }
   };
 
-  const onSubmitFile = async (file) => {
-    if (file == null) {
-      setAttachedFile(null);
-    } else {
-      setAttachedFile(file);
+  const onSubmitFiles = async (files) => {
+    if (files.length) {
+      const newFiles = [...attachedFiles, ...Object.values(files)].slice(0, 25);
+      setAttachedFiles([...newFiles]);
     }
   };
+
+  const removeFile = (event, index) => {
+    setAttachedFiles((prevFiles) => prevFiles.filter((f, i) => i !== index));
+  };
+
+useEffect(()=>{
+  console.log(attachedFiles[0] === attachedFiles[1])
+},[attachedFiles.length])
 
   return (
     <AnimatedBlock
@@ -318,7 +325,7 @@ const Brief: FC = () => {
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <MTextArea
-                      label={translate.description+'*'}
+                      label={translate.description + '*'}
                       onChange={onChange}
                       value={value}
                       rowsMax={12}
@@ -327,8 +334,9 @@ const Brief: FC = () => {
                 />
                 <AttachFile
                   label={translate.attachFile}
-                  setFile={onSubmitFile}
-                  attachedFileName={attachedFile?.name}
+                  setFiles={onSubmitFiles}
+                  removeFile={removeFile}
+                  attachedFileNames={attachedFiles.map((f) => f?.name)}
                 />
               </div>
             </section>

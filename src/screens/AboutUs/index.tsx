@@ -9,7 +9,7 @@ import PageContainer from '../../components/PageTemplate/PageContainer';
 
 import aboutUs from './../../assets/images/aboutUs.png';
 import zigzagImage from '../../assets/images/zigzag.png';
-import imgPrincip from '../../assets/images/office3.png';
+import imgPrincip from '../../assets/images/office3.webp';
 import { principlesList, textBlock1, textBlock2 } from './data';
 import translate from '../../i18n/en.json';
 import Carousel from './Carousel';

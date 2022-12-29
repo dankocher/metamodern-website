@@ -1,4 +1,4 @@
-@import 'src/styles/foundations.scss';
+@import '../../../styles/foundations.scss';
 
 .container {
   min-height: 100vh;
@@ -59,7 +59,7 @@
 }
 
 .phoneContainer {
-  height: 55.925925925925926%;
+  height: 56%;
 
   position: relative;
 
@@ -73,8 +73,11 @@
     }
 
     img {
-      height: 100%;
+      // height: 100%;
       width: auto;
+      @media (max-width: $tabletWidth) {
+        height: autoResize(470, 604, 375, $tabletWidth);
+      }
     }
   }
 

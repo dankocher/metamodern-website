@@ -1,7 +1,7 @@
-import img1 from '../../../assets/images/Vlad.jpg';
-import img2 from '../../../assets/images/Vladislave.jpg';
-import img3 from '../../../assets/images/Kristina.jpg';
-import img4 from '../../../assets/images/Vadim.jpg';
+import img1 from '../../../assets/images/Vlad.webp';
+import img2 from '../../../assets/images/Vladislave.webp';
+import img3 from '../../../assets/images/Kristina.webp';
+import img4 from '../../../assets/images/Vadim.webp';
 
 export const workerCards: Array<{
   name: string;
@@ -33,18 +33,18 @@ export const workerCards: Array<{
     position: 'Owner',
     photo: img4,
   },
-  {
-    index: 4,
-    name: 'Arthur',
-    position: 'Co-owner',
-    photo:
-      'https://s3.amazonaws.com/profile_photos/1135280782070157.1201606095988084.IylntHJbdjamdEPE4dSy_huge.jpeg',
-  },
-  {
-    index: 5,
-    name: 'Daniel',
-    position: 'Big Boss - Team Lead',
-    photo:
-      'https://s3.amazonaws.com/profile_photos/1111124617037353.1111124617037361.2TFE3v8WWUqD1QoSdZ5G_huge.jpeg',
-  },
+  // {
+  //   index: 4,
+  //   name: 'Arthur',
+  //   position: 'Co-owner',
+  //   photo:
+  //     'https://s3.amazonaws.com/profile_photos/1135280782070157.1201606095988084.IylntHJbdjamdEPE4dSy_huge.jpeg',
+  // },
+  // {
+  //   index: 5,
+  //   name: 'Daniel',
+  //   position: 'Big Boss - Team Lead',
+  //   photo:
+  //     'https://s3.amazonaws.com/profile_photos/1111124617037353.1111124617037361.2TFE3v8WWUqD1QoSdZ5G_huge.jpeg',
+  // },
 ];
