@@ -152,7 +152,7 @@
       .principles {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         flex-direction: column;
         gap: 96px;
         @media(max-width: $landscape800){
