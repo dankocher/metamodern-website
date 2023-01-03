@@ -28,7 +28,9 @@ const AttachFile: FC<{
     <div className={styles.container}>
       <label
         htmlFor={'fileInput'}
-        className="interMedium1416"
+        className={`interMedium1416 ${
+          attachedFileNames.length >= 25 ? styles.disabled : null
+        }`}
       >{`+ ${label} (${attachedFileNames.length}/25)`}</label>
       <input
         ref={inputRef}
@@ -36,7 +38,7 @@ const AttachFile: FC<{
         type="file"
         onChange={setFileHandler}
         multiple
-        disabled={attachedFileNames.length===25}
+        disabled={attachedFileNames.length>=25}
       />
     
       {attachedFileNames.map((name, index)=>(

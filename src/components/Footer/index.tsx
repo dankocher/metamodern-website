@@ -25,8 +25,8 @@ const links = [
     { name: 'Privacy Policy', path: SCREENS.META_MODERN_PRIVACY },
   ],
   [
-    { name: 'Write to mail', path: 'https://t.me/panchenko_ko' },
-    { name: 'Write to telegram', path: '#' },
+    { name: 'Write to mail', path: 'mailto:support@metamodern.dev' },
+    { name: 'Write to telegram', path: 'https://t.me/panchenko_ko' },
   ],
 ];
 
