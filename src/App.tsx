@@ -16,7 +16,7 @@ function App() {
 
   useEffect(() => {
     init(selectors, isMobile ||navigator.userAgent.indexOf('Mac') > -1);
-  }, []);
+  }, [selectors]);
 
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>

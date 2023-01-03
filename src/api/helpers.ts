@@ -9,9 +9,11 @@ const url = 'https://dev.goodstudio.by/sendMessage.php';
 export const sendToEmail = async (data, files) => {
   const formData = new FormData();
   formData.append('brief', data);
-  if (files) {
-    formData.append('files', files);
-  }
+
+    for (let file of files) {
+      formData.append('files[]', file);
+    }
+  
 
   return await axios
     .post(url, formData, {

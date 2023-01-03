@@ -20,6 +20,7 @@ const Gallery = ({ isMobile }) => {
   const [card, _setCard] = useState(workerCards[0]);
   const [animatedCard, _setAnimatedCard] = useState(workerCards[0]);
   const [direction, _setDirection] = useState(dir.RIGHT);
+  const [disabledBtn, _setDisabledBtn] = useState(false);
   const [animation, _setAnimation] = useState({
     dir: dir.RIGHT,
     started: false,
@@ -28,7 +29,11 @@ const Gallery = ({ isMobile }) => {
   const cardRef = useRef(card);
   const animatedCardRef = useRef(animatedCard);
   const animationRef = useRef(animation);
-
+  const disabledBtnRef = useRef(disabledBtn);
+  const setDisabledBtn = (disabled) => {
+    _setDisabledBtn(disabled);
+    disabledBtnRef.current = disabled;
+  };
   const setAnimation = (animation) => {
     _setAnimation(animation);
     animationRef.current = animation;
@@ -52,27 +57,18 @@ const Gallery = ({ isMobile }) => {
   const regionRef = useRef(null);
   const containerRef = useRef(null);
 
-  const buttonOnClick = () => {
-    if (!animationRef.current.started) {
-      const direction = dirRef.current;
-      let index = 0;
-      switch (direction) {
-        case dir.LEFT:
-          index = cardRef.current.index - 1;
-          if (index < 0) index = workerCards.length - 1;
-          setCard(workerCards[index]);
+  function handle() {
+    setAnimation({ dir: direction, started: false });
+  }
 
-          break;
-        case dir.RIGHT:
-          index = cardRef.current.index + 1;
-          if (index === workerCards.length) index = 0;
-          setAnimatedCard(workerCards[index]);
-          break;
-      }
+  const buttonOnClick = () => {
+    if (!disabledBtnRef.current) {
+      const direction = dirRef.current;
+      
       setAnimation({ dir: direction, started: true });
-      setTimeout(() => {
-        setAnimation({ dir: direction, started: false });
-      }, 500);
+      // setTimeout(() => {
+      //   setAnimation({ dir: direction, started: false });
+      // }, 500);
     }
   };
 
@@ -81,16 +77,22 @@ const Gallery = ({ isMobile }) => {
     window.onresize = function (event) {
       choiceOfBehavior();
     };
-    // animatedCardComponent.current.addEventListener(
-    //   'transitionend',
-    //   handle,
-    //   false
-    // );
-    // function handle() {
-    //   setAnimation({ dir: dirRef.current, started: false });
-    //   //  alert(123);
-    // }
   }, []);
+
+  useEffect(() => {if(animation.started)
+    animatedCardComponent.current.addEventListener(
+      'transitionend',
+      handle,
+      false
+    );
+    return () => {
+      animatedCardComponent.current?.removeEventListener(
+        'transitionend',
+        handle,
+        false
+      );
+    };
+  }, [animation]);
 
   const choiceOfBehavior = () => {
     if (isMobile || window.innerWidth <= 800) {
@@ -203,36 +205,56 @@ const Gallery = ({ isMobile }) => {
   };
 
   useEffect(() => {
-    if (animation.started)
+    if (animation.started) {
+      setDisabledBtn(true);
       switch (animation.dir) {
         case dir.LEFT:
-          animatedCardComponent.current.style.left = '0px';
           setTimeout(() => {
             animatedCardComponent.current.style.transition = '0.5s ease 0s';
             animatedCardComponent.current.style.left = '-100vw';
           }, 1);
           break;
         case dir.RIGHT:
-          animatedCardComponent.current.style.left = '-100vw';
           setTimeout(() => {
             animatedCardComponent.current.style.transition = '0.5s ease 0s';
             animatedCardComponent.current.style.left = '0px';
           }, 1);
+
           break;
       }
-    else {
+    } else setDisabledBtn(false);
+  }, [card, animatedCard]);
+
+  useEffect(() => {
+    if (animation.started) {
+      let index = 0;
+      switch (animation.dir) {
+        case dir.LEFT:
+          animatedCardComponent.current.style.left = '0px';
+          index = cardRef.current.index - 1;
+          if (index < 0) index = workerCards.length - 1;
+          setCard(workerCards[index]);
+
+          break;
+        case dir.RIGHT:
+          animatedCardComponent.current.style.left = '-100vw';
+          index = cardRef.current.index + 1;
+          if (index === workerCards.length) index = 0;
+          setAnimatedCard(workerCards[index]);
+          break;
+      }
+    } else {
       animatedCardComponent.current.style.transition = null;
       animatedCardComponent.current.style.left = null;
       switch (animation.dir) {
         case dir.LEFT:
           setAnimatedCard(card);
-
           break;
         case dir.RIGHT:
           setCard(animatedCard);
-
           break;
       }
+      
     }
   }, [animation]);
 
