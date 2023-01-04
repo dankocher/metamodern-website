@@ -20,13 +20,9 @@ const links = [
     { name: 'About Us', path: SCREENS.ABOUT_US },
   ],
   [
-    { name: 'Contact Us', path: SCREENS.CONTACTS},
+    { name: 'Contact Us', path: SCREENS.CONTACTS },
     { name: 'Join Us', path: SCREENS.JOIN_US },
     { name: 'Privacy Policy', path: SCREENS.META_MODERN_PRIVACY },
-  ],
-  [
-    { name: 'Write to mail', path: 'mailto:support@metamodern.dev' },
-    { name: 'Write to telegram', path: 'https://t.me/panchenko_ko' },
   ],
 ];
 
@@ -60,7 +56,7 @@ const Footer = ({ backgroundColor = 'transparent' }) => {
                 <img src={behance} />
               </a>
 
-              <a href={contacts.dribbble}  target="_blank">
+              <a href={contacts.dribbble} target="_blank">
                 <img src={dribbble} />
               </a>
 
@@ -74,12 +70,21 @@ const Footer = ({ backgroundColor = 'transparent' }) => {
             {links.map((section) => (
               <section>
                 {section.map((item) => (
-                  <NavLink to={item.path} >
+                  <Link to={item.path}>
                     <span className={'lato2432'}>{item.name}</span>
-                  </NavLink>
+                  </Link>
                 ))}
               </section>
             ))}
+            <section>
+              <a href={'mailto:support@metamodern.dev'} target="_blank">
+                <span className={'lato2432'}>Write to mail</span>
+              </a>
+
+              <a href={'https://t.me/panchenko_ko'} target="_blank">
+               <span className={'lato2432'}>Write to telegram</span>
+              </a>
+            </section>
           </div>
         </div>
         <p className={`footerSubtitleFont ${styles.copyright}`}>
