@@ -18,6 +18,7 @@
         display: none;
     }
 
+    overflow-x: hidden ;
     height: autoResize(605px, 880px, $landscape1200,  $landscape1920);
 
   @media (max-width: $landscape800) {
