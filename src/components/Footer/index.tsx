@@ -81,7 +81,7 @@ const Footer = ({ backgroundColor = 'transparent' }) => {
                 <span className={'lato2432'}>Write to mail</span>
               </a>
 
-              <a href={'https://t.me/panchenko_ko'} target="_blank">
+              <a href={'https://t.me/latrov'} target="_blank">
                <span className={'lato2432'}>Write to telegram</span>
               </a>
             </section>

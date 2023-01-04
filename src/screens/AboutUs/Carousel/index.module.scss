@@ -34,7 +34,9 @@
       @media (min-width: $landscape800) {
         padding: 0 autoResize(44px, 120px, $landscape800);
       }
- 
+      @media (max-width: $landscape800) {
+        gap: autoResize(16px, 44px, $landscape384, $landscape800);
+      }
         padding: 0 autoResize(16px, 44px, $landscape384);
       
       .img {
