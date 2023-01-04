@@ -82,8 +82,8 @@ const AboutUs = ({ isMobile }) => {
             <span className={`${styles.principTitle} interMedium6068`}>
               Our Principles
             </span>
-            {principlesList.map((item) => (
-              <div className={styles.princip_text_block}>
+            {principlesList.map((item, index) => (
+              <div className={styles.princip_text_block} key={index}>
                 <span
                   className={`${styles.princip_text_title} interMedium4048`}
                 >

@@ -62,9 +62,11 @@ const Gallery = ({ isMobile }) => {
   }
 
   const buttonOnClick = () => {
+ console.log(disabledBtnRef.current);
     if (!disabledBtnRef.current) {
+      setDisabledBtn(true);
       const direction = dirRef.current;
-      
+
       setAnimation({ dir: direction, started: true });
       // setTimeout(() => {
       //   setAnimation({ dir: direction, started: false });
@@ -79,19 +81,18 @@ const Gallery = ({ isMobile }) => {
     };
   }, []);
 
-  useEffect(() => {if(animation.started)
+  useEffect(() => {
+    animatedCardComponent.current?.removeEventListener(
+      'transitionend',
+      handle,
+      false
+    );
+    if (animation.started)
     animatedCardComponent.current.addEventListener(
       'transitionend',
       handle,
       false
     );
-    return () => {
-      animatedCardComponent.current?.removeEventListener(
-        'transitionend',
-        handle,
-        false
-      );
-    };
   }, [animation]);
 
   const choiceOfBehavior = () => {
@@ -205,20 +206,21 @@ const Gallery = ({ isMobile }) => {
   };
 
   useEffect(() => {
+    console.log("animation.started: "+animation.started);
     if (animation.started) {
-      setDisabledBtn(true);
+      
       switch (animation.dir) {
         case dir.LEFT:
           setTimeout(() => {
             animatedCardComponent.current.style.transition = '0.5s ease 0s';
             animatedCardComponent.current.style.left = '-100vw';
-          }, 1);
+          }, 50);
           break;
         case dir.RIGHT:
           setTimeout(() => {
             animatedCardComponent.current.style.transition = '0.5s ease 0s';
             animatedCardComponent.current.style.left = '0px';
-          }, 1);
+          }, 50);
 
           break;
       }
@@ -254,7 +256,6 @@ const Gallery = ({ isMobile }) => {
           setCard(animatedCard);
           break;
       }
-      
     }
   }, [animation]);
 
