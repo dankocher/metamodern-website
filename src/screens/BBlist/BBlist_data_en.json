@@ -1,0 +1,22 @@
+{
+  "headerBanner": {
+    "linePart1": "Ваш личный менеджер задач",
+    "linePart2": "для работы, учебы и личной жизни",
+    "spotlight": "BB-list",
+    "link": {
+      "googlePlay": "https://play.google.com/store/apps/details?id=dev.metamodern.bblist",
+      "appStore": "https://apps.apple.com/app/id1"
+    }
+  },
+  "tasksBanner": {
+    "title": "Все ваши задачи и записи в одном месте",
+    "tags": [
+      "Привычки",
+      "Мероприятия",
+      "Заметки",
+      "Дни рождения",
+      "Домашние дела",
+      "Рабочие проекты"
+    ]
+  }
+}

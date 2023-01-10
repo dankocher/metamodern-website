@@ -1,20 +1,20 @@
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from "react-router-dom";
 
-import { useModalMenuContext } from '../../context/useModalMenuContext';
+import { useModalMenuContext } from "../../context/useModalMenuContext";
 
-import Menu from '../Menu';
-import IconMenuButton from '../IconMenuButton';
-import StartProjectButton from '../StartProjectButton';
+import Menu from "../Menu";
+import IconMenuButton from "../IconMenuButton";
+import StartProjectButton from "../StartProjectButton";
 
-import { SCREENS } from '../../navigation/constants';
-import Logo from './Logo/Logo';
-import { useEffect, useState } from 'react';
-import AnimatedBlock from '../AnimatedBlock';
-import { animationTypes } from '../../constants/animationTypes';
-import { variables } from '../../constants/animationVariables';
-import { AnimatePresence } from 'framer-motion';
+import { SCREENS } from "../../navigation/constants";
+import Logo from "./Logo/Logo";
+import { useEffect, useState } from "react";
+import AnimatedBlock from "../AnimatedBlock";
+import { animationTypes } from "../../constants/animationTypes";
+import { variables } from "../../constants/animationVariables";
+import { AnimatePresence } from "framer-motion";
 
 const screensSubProject = [
   SCREENS.TOD,
@@ -24,10 +24,11 @@ const screensSubProject = [
   SCREENS.TIME_ZO_PRIVACY,
   SCREENS.TIME_ZO_TERMS,
   SCREENS.META_MODERN_PRIVACY,
+  SCREENS.BB_LIST,
 ];
 
 const comparePathes = (path, patches) => {
-  return patches.some((pathname) => path.includes(pathname));
+  return patches.some((pathname) => path === pathname);
 };
 
 const Header = () => {
@@ -67,7 +68,7 @@ const Header = () => {
           onClick={menuLogoHandler}
           location={location}
           isSubProject={isSubProject}
-          withHover={ !isWhiteTheme}
+          withHover={!isWhiteTheme}
           comparePathes={comparePathes}
         />
         <AnimatePresence exitBeforeEnter>
@@ -89,7 +90,7 @@ const Header = () => {
                 },
               }}
             >
-              <Menu isWhiteTheme={isWhiteTheme}/>
+              <Menu isWhiteTheme={isWhiteTheme} />
               <div className={styles.middleBtn_wrapper}>
                 <StartProjectButton />
               </div>

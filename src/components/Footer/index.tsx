@@ -20,9 +20,13 @@ const links = [
     { name: 'About Us', path: SCREENS.ABOUT_US },
   ],
   [
-    { name: 'Contact Us', path: SCREENS.CONTACTS },
+    { name: 'Contact Us', path: SCREENS.CONTACTS},
     { name: 'Join Us', path: SCREENS.JOIN_US },
     { name: 'Privacy Policy', path: SCREENS.META_MODERN_PRIVACY },
+  ],
+  [
+    { name: 'Write to mail', path: 'https://t.me/panchenko_ko' },
+    { name: 'Write to telegram', path: '#' },
   ],
 ];
 
@@ -52,15 +56,15 @@ const Footer = ({ backgroundColor = 'transparent' }) => {
               {constText.metamodern}
             </div>
             <div className={styles.social}>
-              <a href={contacts.behance} target="_blank">
+              <a href={contacts.behance} rel="noreferrer\" target="_blank\">
                 <img src={behance} />
               </a>
 
-              <a href={contacts.dribbble} target="_blank">
+              <a href={contacts.dribbble} rel="noreferrer\" target="_blank\">
                 <img src={dribbble} />
               </a>
 
-              <a href={contacts.linkedin} target="_blank">
+              <a href={contacts.linkedin} rel="noreferrer\" target="_blank\">
                 <img src={linkedin} />
               </a>
             </div>
@@ -70,21 +74,12 @@ const Footer = ({ backgroundColor = 'transparent' }) => {
             {links.map((section) => (
               <section>
                 {section.map((item) => (
-                  <Link to={item.path}>
+                  <NavLink to={item.path} target="_blank">
                     <span className={'lato2432'}>{item.name}</span>
-                  </Link>
+                  </NavLink>
                 ))}
               </section>
             ))}
-            <section>
-              <a href={'mailto:support@metamodern.dev'} target="_blank">
-                <span className={'lato2432'}>Write to mail</span>
-              </a>
-
-              <a href={'https://t.me/latrov'} target="_blank">
-               <span className={'lato2432'}>Write to telegram</span>
-              </a>
-            </section>
           </div>
         </div>
         <p className={`footerSubtitleFont ${styles.copyright}`}>

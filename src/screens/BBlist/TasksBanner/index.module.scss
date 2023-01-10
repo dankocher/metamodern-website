@@ -1,0 +1,50 @@
+@import "../../../styles/foundations.scss";
+@import "../../../styles/global.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 25vh 72px 25vh 72px;
+
+  .block {
+    // display: flex;
+    // align-items: center;
+    position: relative;
+    max-width: 1776px;
+    height: 720px;
+    background-color: $bbListBlack;
+    border-radius: 44px;
+
+    .title {
+      color: white;
+      padding: 186px 185px 0 185px;
+    }
+
+    .spotlight {
+      max-width: fit-content;
+      display: inline;
+      // hyphens: none;
+      white-space: nowrap;
+      //<nobr> ? //flex-wrap ? //&#8209 // word-wrap :|
+
+      border-radius: 16px;
+      padding: 4px 16px;
+      background-color: $bbListFocus;
+      backdrop-filter: blur(6px);
+      color: white;
+
+      .sk5 {
+        font-size: 100px;
+      }
+    }
+
+    .logo {
+      width: 121px;
+      height: 121px;
+
+      position: absolute;
+      bottom: 64px;
+      right: 56px;
+    }
+  }
+}
