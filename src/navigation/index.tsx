@@ -52,7 +52,7 @@ const Navigation = ({ isMobile }) => {
           />
           <Route
             path={SCREENS.ABOUT_US}
-            element={<PageWrapper children={<AboutUs isMobile={isMobile}/>} />}
+            element={<PageWrapper children={<AboutUs />} />}
           />
 
           <Route

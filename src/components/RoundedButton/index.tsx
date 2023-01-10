@@ -2,6 +2,7 @@ import { FC } from 'react';
 import styles from './index.module.scss';
 import styled from 'styled-components';
 import { colors } from '../../styles/colors';
+import { Ring, Waveform } from '@uiball/loaders'
 
 interface IRoundedButton {
   className?: string;
@@ -12,6 +13,7 @@ interface IRoundedButton {
   textColor?: string;
   textHoverColor?: string;
   onClick: Function;
+  loaded?: boolean;
 }
 
 const Container = styled.div`
@@ -33,6 +35,7 @@ const RoundedButton: FC<IRoundedButton> = ({
   textClass = 'lato2836',
   onClick,
   children,
+  loaded = false,
 }) => {
   return (
     <Container
@@ -43,7 +46,7 @@ const RoundedButton: FC<IRoundedButton> = ({
       onClick={onClick}
       textColor={textColor}
     >
-      {children}
+      {loaded?<Ring size={28} />:children}
     </Container>
   );
 };

@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from 'react';
 import arrowIcon from '../../../assets/images/arrow.png';
 import ArrowCursorButton from './ArrowCursorButton';
 import Card from './Card';
+import { setDesktopCursorBehavior } from './helper';
+import { swipe } from '../../../helper/swipe';
 
 export const dir = {
   LEFT: 'left',
@@ -51,23 +53,21 @@ const Gallery = ({ isMobile }) => {
     _setAnimatedCard(card);
     animatedCardRef.current = card;
   };
-
+  const cardComponent = useRef(null);
   const cursorButtonRef = useRef(null);
   const animatedCardComponent = useRef(null);
   const regionRef = useRef(null);
   const containerRef = useRef(null);
 
   function handle() {
-    setAnimation({ dir: direction, started: false });
+    setAnimation({ dir: dirRef.current, started: false });
+    document.getElementsByTagName('html')[0].style.overflowY = 'auto';
   }
 
   const buttonOnClick = () => {
- console.log(disabledBtnRef.current);
     if (!disabledBtnRef.current) {
       setDisabledBtn(true);
-      const direction = dirRef.current;
-
-      setAnimation({ dir: direction, started: true });
+      setAnimation({ dir: dirRef.current, started: true });
       // setTimeout(() => {
       //   setAnimation({ dir: direction, started: false });
       // }, 500);
@@ -79,6 +79,32 @@ const Gallery = ({ isMobile }) => {
     window.onresize = function (event) {
       choiceOfBehavior();
     };
+    var myBlock = containerRef.current;
+    // элемент
+    if (isMobile) {
+      // вызов функции swipe с предварительными настройками
+      swipe(myBlock, {
+        maxTime: 5000,
+        minTime: 5,
+        maxDist: 150,
+        minDist: 2,
+      });
+      let swipeListener = function (e) {
+        let direction = e.detail.dir;
+        if (
+          (direction === dir.LEFT || direction == dir.RIGHT) &&
+          !disabledBtnRef.current
+        ) {
+          dirRef.current = direction;
+          buttonOnClick();
+        } 
+        // обработка свайпов
+      };
+      myBlock.addEventListener('swipe', swipeListener);
+      return () => {
+        if (isMobile) myBlock.removeEventListener('swipe', swipeListener);
+      };
+    }
   }, []);
 
   useEffect(() => {
@@ -88,18 +114,26 @@ const Gallery = ({ isMobile }) => {
       false
     );
     if (animation.started)
-    animatedCardComponent.current.addEventListener(
-      'transitionend',
-      handle,
-      false
-    );
+      animatedCardComponent.current.addEventListener(
+        'transitionend',
+        handle,
+        false
+      );
   }, [animation]);
 
   const choiceOfBehavior = () => {
     if (isMobile || window.innerWidth <= 800) {
       setMobileCursorBehavior();
     } else {
-      setDesktopCursorBehavior();
+      setDesktopCursorBehavior(
+        cursorButtonRef,
+        containerRef,
+        setDirection,
+        regionRef,
+        () => {
+          buttonOnClick();
+        }
+      );
     }
   };
 
@@ -108,7 +142,10 @@ const Gallery = ({ isMobile }) => {
     cursorButton.style.zIndex = '200';
     containerRef.current.onclick = null;
 
-    cursorButtonRef.current.onclick = buttonOnClick;
+    cursorButtonRef.current.onclick = () => {
+      setDirection(dir.RIGHT);
+      buttonOnClick();
+    };
 
     cursorButton.style.right = '2%';
     cursorButton.style.bottom = '15%';
@@ -117,98 +154,8 @@ const Gallery = ({ isMobile }) => {
     regionRef.current.onmousemove = null;
   };
 
-  const setDesktopCursorBehavior = () => {
-    let cursorButton = cursorButtonRef.current;
-
-    if (!isMobile) {
-      cursorButtonRef.current.style.zIndex = null;
-      cursorButton.style.right = '-3%';
-      cursorButton.style.bottom = '-10%';
-      let interval = null;
-      containerRef.current.onclick = buttonOnClick;
-      const getDirection = (pageX) => {
-        if (
-          pageX - containerRef.current.offsetLeft + 0 >
-          containerRef.current.offsetWidth / 2
-        )
-          setDirection(dir.RIGHT);
-        else setDirection(dir.LEFT);
-        regionRef.current.onmouseout = () => {
-          setDirection(dir.RIGHT);
-          clearInterval(interval);
-          containerRef.current.style.cursor = null;
-          cursorButton.style.transform = null;
-          regionRef.current.onmousemove = null;
-          cursorButton.style.width = null;
-          cursorButton.style.transition = '0.5s ease 0s';
-          cursorButton.style.right = '-3%';
-          cursorButton.style.bottom = '-10%';
-        };
-      };
-      function moveAt(e) {
-        cursorButton.style.transform = 'scale(0.68)';
-        cursorButton.style.right =
-          containerRef.current.offsetWidth -
-          (e.pageX -
-            containerRef.current.offsetLeft +
-            cursorButton.offsetWidth / 2) +
-          'px';
-        cursorButton.style.bottom =
-          containerRef.current.offsetHeight -
-          (e.pageY -
-            containerRef.current.offsetTop +
-            cursorButton.offsetHeight / 2) +
-          'px';
-        getDirection(e.pageX);
-      }
-      regionRef.current.onmouseover = (event) => {
-        cursorButton.style.transition = 'width 0.2s';
-        // cursorButton.style.transform = 'scale(1)';
-
-        let mouseX = event.pageX,
-          mouseY = event.pageY,
-          t = 56,
-          tn = 0;
-        interval = setInterval(() => {
-          let rx =
-            mouseX -
-            cursorButton.offsetLeft -
-            containerRef.current.offsetLeft -
-            cursorButton.offsetWidth / 2;
-          let ry =
-            mouseY -
-            cursorButton.offsetTop -
-            containerRef.current.offsetTop -
-            cursorButton.offsetHeight / 2;
-          let vx0 = rx / t,
-            vy0 = ry / t,
-            Sxn = tn * vx0,
-            Syn = tn * vy0;
-          tn += 2;
-          cursorButton.style.transform = `translate(${Sxn + 'px'}, ${
-            Syn + 'px'
-          }) scale(${1 - (0.32 * Sxn) / rx})`;
-          getDirection(event.pageX);
-          if (!(Sxn != rx && Syn != ry)) {
-            regionRef.current.onmousemove = (e) => {
-              moveAt(e);
-            };
-            containerRef.current.style.cursor = 'none';
-            clearInterval(interval);
-          }
-        }, 8);
-        regionRef.current.onmousemove = (e) => {
-          mouseX = e.pageX;
-          mouseY = e.pageY;
-        };
-      };
-    }
-  };
-
   useEffect(() => {
-    console.log("animation.started: "+animation.started);
     if (animation.started) {
-      
       switch (animation.dir) {
         case dir.LEFT:
           setTimeout(() => {
@@ -224,12 +171,19 @@ const Gallery = ({ isMobile }) => {
 
           break;
       }
-    } else setDisabledBtn(false);
+    } else {
+      setTimeout(() => {
+        animatedCardComponent.current.style.transition = null;
+        animatedCardComponent.current.style.left = null;
+        setDisabledBtn(false);
+      }, 50);
+    }
   }, [card, animatedCard]);
 
   useEffect(() => {
     if (animation.started) {
       let index = 0;
+
       switch (animation.dir) {
         case dir.LEFT:
           animatedCardComponent.current.style.left = '0px';
@@ -246,8 +200,6 @@ const Gallery = ({ isMobile }) => {
           break;
       }
     } else {
-      animatedCardComponent.current.style.transition = null;
-      animatedCardComponent.current.style.left = null;
       switch (animation.dir) {
         case dir.LEFT:
           setAnimatedCard(card);
@@ -260,14 +212,14 @@ const Gallery = ({ isMobile }) => {
   }, [animation]);
 
   return (
-    <motion.div ref={containerRef} className={styles.container}>
+    <div ref={containerRef} className={styles.container}>
       <div className={styles.region} ref={regionRef} />
-      <Card card={card} length={workerCards.length} />
+      <Card card={card} length={workerCards.length} cardRef={cardComponent} />
       <div className={styles.cardWrapper}>
         <Card
           className={styles.animatedCard}
           cardRef={animatedCardComponent}
-          card={animatedCard}
+          card={animatedCardRef.current}
           length={workerCards.length}
         />
       </div>
@@ -279,7 +231,7 @@ const Gallery = ({ isMobile }) => {
         direction={direction}
         isMobile={isMobile}
       />
-    </motion.div>
+    </div>
   );
 };
 

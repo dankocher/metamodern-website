@@ -39,6 +39,7 @@ import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
 import { isMobile } from 'react-device-detect';
+import { Ring, Waveform } from '@uiball/loaders';
 
 // import { ScrollContext } from '../DesktopAppContent';
 
@@ -68,6 +69,7 @@ const Brief: FC = () => {
   const { errors } = formState;
 
   const [attachedFiles, setAttachedFiles] = useState([]);
+  const [pending, setPending] = useState(false);
   const [isDataSent, setIsDataSent] = useState(false);
 
   const [isOutsourcing, setIsOutsourcing] = useState(false);
@@ -164,11 +166,12 @@ const Brief: FC = () => {
     }
 
     const brief = JSON.stringify({ ...data, services });
-
+    setPending(true);
     let request = await sendToEmail(brief, attachedFiles);
 
     if (request.ok) {
       setIsDataSent(true);
+      setPending(false);
     }
   };
 
@@ -183,9 +186,9 @@ const Brief: FC = () => {
     setAttachedFiles((prevFiles) => prevFiles.filter((f, i) => i !== index));
   };
 
-useEffect(()=>{
-  console.log(attachedFiles[0] === attachedFiles[1])
-},[attachedFiles.length])
+  useEffect(() => {
+    console.log(attachedFiles[0] === attachedFiles[1]);
+  }, [attachedFiles.length]);
 
   return (
     <AnimatedBlock
@@ -344,7 +347,7 @@ useEffect(()=>{
               type="submit"
               className={`latoSemibold2028 ${styles.sendBtn}`}
             >
-              {translate.submit}
+              {pending ? <Ring size={28} /> : translate.submit}
             </button>
           </div>
         </form>

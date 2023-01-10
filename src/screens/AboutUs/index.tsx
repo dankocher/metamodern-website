@@ -15,8 +15,9 @@ import translate from '../../i18n/en.json';
 import Carousel from './Carousel';
 import Gallery from './Gallery';
 import { useRef, useEffect } from 'react';
+import { isMobile } from 'react-device-detect';
 
-const AboutUs = ({ isMobile }) => {
+const AboutUs = () => {
   const containerRef = useRef(null);
 
   const setBorderRadius = (scroll) => {

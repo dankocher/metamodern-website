@@ -12,7 +12,7 @@
   &::-webkit-scrollbar {
     display: none;
   }
-
+  scrollbar-width: none;
   @media (max-width: $mdDevice) {
     margin-bottom: 96px;
   }

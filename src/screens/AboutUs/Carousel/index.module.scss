@@ -17,8 +17,7 @@
     &::-webkit-scrollbar {
         display: none;
     }
-
-    overflow-x: hidden ;
+    scrollbar-width: none;
     height: autoResize(605px, 880px, $landscape1200,  $landscape1920);
 
   @media (max-width: $landscape800) {
