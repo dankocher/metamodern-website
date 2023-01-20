@@ -670,8 +670,8 @@
   }
 
   @media (max-width: $landscape800) {
-    font-size: autoResize(22px, 56px, $landscape384, $landscape800);
-    line-height: autoResize(28px, 72px, $landscape384, $landscape800);
+    font-size: autoResize(28px, 56px, $landscape384, $landscape800);
+    line-height: autoResize(36px, 72px, $landscape384, $landscape800);
   }
 }
 
@@ -683,19 +683,19 @@
   line-height: 42px;
   text-align: center;
 
-  @media (max-width: $landscape1920) {
-    font-size: autoResize(72px, 112px, $landscape1200, $landscape1920);
-    line-height: autoResize(88px, 124px, $landscape1200, $landscape1920);
-  }
-
   @media (max-width: $landscape1200) {
-    font-size: autoResize(56px, 72px, $landscape800, $landscape1200);
-    line-height: autoResize(72px, 88px, $landscape800, $landscape1200);
+    font-size: autoResize(24px, 34px, $landscape800, $landscape1200);
+    line-height: autoResize(32px, 42px, $landscape800, $landscape1200);
   }
 
   @media (max-width: $landscape800) {
-    font-size: autoResize(22px, 56px, $landscape384, $landscape800);
-    line-height: autoResize(28px, 72px, $landscape384, $landscape800);
+    font-size: autoResize(18px, 24px, $landscape384, $landscape800);
+    line-height: autoResize(24px, 32px, $landscape384, $landscape800);
+  }
+
+  @media (max-width: $landscape384) {
+    font-size: autoResize(14px, 18px, $landscape320, $landscape384);
+    line-height: autoResize(17px, 24px, $landscape320, $landscape384);
   }
 }
 
