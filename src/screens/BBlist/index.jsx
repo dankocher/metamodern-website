@@ -10,6 +10,7 @@ import { variables as v } from "../../constants/animationVariables";
 
 import HeaderBanner from "./HeaderBanner";
 import TasksBanner from "./TasksBanner";
+import FeaturesBlock from "./FeaturesBlock";
 
 export default () => {
   return (
@@ -22,6 +23,7 @@ export default () => {
       >
         <HeaderBanner {...Data.headerBanner} />
         <TasksBanner {...Data.tasksBanner} />
+        <FeaturesBlock {...Data.featuresBlock} />
       </motion.div>
     </Layout>
   );
