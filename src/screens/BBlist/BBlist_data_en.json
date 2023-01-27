@@ -8,6 +8,37 @@
       "appStore": "https://apps.apple.com/app/id1"
     }
   },
+  "slider": {
+    "title": "Future updates",
+    "subtitle": "Future updates to the world's best app. Coming soon...",
+    "buttons": [
+      {
+        "video": "BB-calendar1.mp4",
+        "icon": "taskList",
+        "text": "Calendar view (May 2023)"
+      },
+      {
+        "video": "BB-calendar2.mp4",
+        "icon": "notification",
+        "text": "Notification (June 2023)"
+      },
+      {
+        "video": "",
+        "icon": "loading",
+        "text": "Habits"
+      },
+      {
+        "video": "",
+        "icon": "earth",
+        "text": "Web version"
+      },
+      {
+        "video": "",
+        "icon": "taskList",
+        "text": "Projects"
+      }
+    ]
+  },
   "tasksBanner": {
     "title": "Все ваши задачи и записи в одном месте",
     "tags": [

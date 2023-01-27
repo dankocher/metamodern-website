@@ -20,6 +20,16 @@ import BBlistLogo from "./svg/bblistlogo.svg";
 import android from "./svg/android.svg";
 import apple from "./svg/apple.svg";
 
+import taskList from "./svg/taskList.svg";
+import notification from "./svg/notification.svg";
+import loading from "./svg/loading.svg";
+import earth from "./svg/earth.svg";
+
+import taskListFilled from "./svg/taskListFilled.svg";
+import notificationFilled from "./svg/notificationFilled.svg";
+import loadingFilled from "./svg/loadingFilled.svg";
+import earthFilled from "./svg/earthFilled.svg";
+
 const icons = {
   logo,
   behance,
@@ -39,6 +49,14 @@ const icons = {
   BBlistLogo,
   android,
   apple,
+  taskList,
+  taskListFilled,
+  notification,
+  notificationFilled,
+  loading,
+  loadingFilled,
+  earth,
+  earthFilled
 };
 
 const StyledSVG = styled(SVG)`
