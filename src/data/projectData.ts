@@ -17,6 +17,10 @@ import calmCats from '../assets/images/calmCats.png';
 import calmCats2 from '../assets/images/calmCats@2x.png';
 import calmCatsBackground from '../assets/images/calmCatsBackground.png';
 
+import medReminder from '../assets/images/medReminder.png';
+import medReminder2 from '../assets/images/medReminder@2x.png';
+import medReminderBackground from '../assets/images/medReminderBackground.png';
+
 import { SCREENS } from '../navigation/constants';
 
 const data: ProjectProps[] = [
@@ -90,6 +94,20 @@ const data: ProjectProps[] = [
       '--gradient': `#E8E8E8 url(${calmCatsBackground})`,
     },
     isDarkContent: true,
+  },
+  {
+    link: `https://www.behance.net/gallery/161506605/Medicine-Reminder-mobile-app-UXUI`,
+    type: ProjectsTypes.MOBILE,
+    name: 'Medicine Reminder',
+    title: '',
+    description:
+      "The app reminds you of your medications and keeps track of your health settings.",
+    tags: ['Design', 'Research', 'Mobile'],
+    bgImage: { x1: medReminder, x2: medReminder2 },
+    gradient: {
+      '--gradient': `#FFFFFF url(${medReminderBackground})`,
+    },
+    isDarkContent: false,
   },
 ];
 
