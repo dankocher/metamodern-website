@@ -1,0 +1,45 @@
+@import "../../../../styles/foundations.scss";
+@import "../../../../styles/global.scss";
+
+@keyframes left {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes right {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes toCenter {
+  100% {
+    top: 50%;
+    left: 50%;
+  }
+}
+
+.container {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 75%;
+  // animation: left 2s linear infinite;
+  .drop {
+    position: absolute;
+    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+    background-color: $accentYellow;
+    transform-origin: 70%;
+   
+  }
+  .drop:nth-child(odd){
+    animation: left 2s linear infinite;
+  }
+  .drop:nth-child(even){
+    animation: right 2s linear infinite;
+  }
+}

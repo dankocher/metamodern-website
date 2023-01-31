@@ -1,0 +1,39 @@
+@import "../../../styles/foundations.scss";
+@import "../../../styles/global.scss";
+
+:root {
+  --block-height: 0;
+}
+.container_wrapper {
+  width: 100%;
+  height: var(--block-height);
+  position: absolute;
+  .container {
+    display: flex;
+
+    align-items: center;
+    width: 100%;
+    height: var(--block-height);
+    .circle {
+      position: absolute;
+      left: 60%;
+      // @media (max-width: $landscape1920) {
+      //   right: autoResize(40px, 200px,$landscape800, $landscape1920) !important;
+      // }
+
+      height: 393px;
+      width: 393px;
+
+      height: autoResize(393px, 667px, $landscape1200) !important;
+      width: autoResize(393px, 667px, $landscape1200) !important;
+
+      border-radius: 50%;
+
+      background-color: $accentYellow;
+
+      // @media (max-width: $landscape800) {
+      //   display: none;
+      // }
+    }
+  }
+}
