@@ -8,6 +8,33 @@
       "appStore": "https://apps.apple.com/app/id1"
     }
   },
+  "slider": {
+    "title": "Future updates",
+    "subtitle": "Future updates to the world's best app. Coming soon...",
+    "buttons": [
+      
+      {
+        "video": "BB-calendar2.mp4",
+        "icon": "notification",
+        "text": "Reminders (2Q 2024)"
+      },
+      {
+        "video": "BB-calendar1.mp4",
+        "icon": "taskList",
+        "text": "Calendar view (4Q 2024) "
+      },
+      {
+        "video": "",
+        "icon": "loading",
+        "text": "Habits"
+      },
+      {
+        "video": "",
+        "icon": "earth",
+        "text": "Web version"
+      }
+    ]
+  },
   "tasksBanner": {
     "titlePart1": "Все ваши задачи и",
     "titlePart2": "записи в одном месте",

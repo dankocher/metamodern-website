@@ -1,0 +1,60 @@
+@import "../../../../../styles/foundations.scss";
+
+$borderRadius: 16px;
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 76px;
+  flex-direction: row;
+  align-items: center;
+  border-radius: $borderRadius;
+  padding: 12px 24px;
+  color: $grey;
+  gap: 24px;
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+  z-index: 2;
+  @media (max-width: $landscape800) {
+    height: autoResize(40, 76, $landscape384, $landscape800);
+    border-radius: autoResize(12, $borderRadius, $landscape384, $landscape800);
+    padding: autoResize(8, 12, $landscape384, $landscape800)
+      autoResize(12, 24, $landscape384, $landscape800);
+    gap: autoResize(12, 24, $landscape384, $landscape800);
+  }
+  .iconWrapper {
+    width: 44px;
+    height: 44px;
+
+    @media (max-width: $landscape800) {
+      width: autoResize(24, 44, $landscape384, $landscape800);
+      height: autoResize(24, 44, $landscape384, $landscape800);
+    }
+    .icon {
+      position: absolute;
+      opacity: 1;
+      @media (max-width: $landscape800) {
+        width: autoResize(24, 44, $landscape384, $landscape800);
+        height: autoResize(24, 44, $landscape384, $landscape800);
+      }
+    }
+  }
+}
+
+.hiddenIcon {
+  opacity: 0 !important;
+}
+
+.hiddenBtn {
+  @media(max-width: 540px){
+    display: none !important;
+  }
+  
+}
+
+.selected {
+  color: $bbListFocus !important;
+  background-color: $bbListSelect;
+  font-weight: 500;
+}

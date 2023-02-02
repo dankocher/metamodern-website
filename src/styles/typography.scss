@@ -633,6 +633,45 @@
   line-height: autoResize(96px, 128px, $landscape1200) !important;
 }
 
+.inter3244{
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 44px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(16px, 32px, $landscape384, $landscape800);
+    line-height: autoResize(22px, 44px, $landscape384, $landscape800);
+  }
+}
+
+.inter2840{
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 40px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(16px, 28px, $landscape384, $landscape800);
+    line-height: autoResize(22px, 40px, $landscape384, $landscape800);
+  }
+}
+
+.inter7296 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 96px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(36px, 72px, $landscape384, $landscape800);
+    line-height: autoResize(48px, 96px, $landscape384, $landscape800);
+  }
+}
+
 .inter5672 {
   font-family: "Inter", sans-serif;
   font-style: normal;

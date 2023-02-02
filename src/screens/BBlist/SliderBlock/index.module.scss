@@ -1,0 +1,108 @@
+@import "../../../styles/foundations.scss";
+
+$sliderRadius: 32px;
+
+.container {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100vw;
+
+  .block {
+    position: relative;
+    display: flex;
+    width: 1400px;
+    flex-direction: row;
+    margin-top: 360px;
+    margin-bottom: 360px;
+    margin-left: 62px;
+    margin-right: 62px;
+    // margin-left: calc(50vw - 700px);
+    // margin-right: calc(50vw - 700px);
+    max-width: 1400px;
+    justify-content: space-between;
+
+    @media (max-width: $landscape1920) {
+      width: autoResize(1076, 1400, $landscape1200, $landscape1920);
+    }
+
+    @media (max-width: calc($landscape1200 - 1px)) {
+      margin-top: autoResize(240, 360, $landscape800, $landscape1200);
+      margin-left: autoResize(130, 195, $landscape800, $landscape1200);
+      margin-right: autoResize(130, 195, $landscape800, $landscape1200);
+      flex-direction: column;
+      align-items: center;
+      width: auto;
+    }
+
+    @media (max-width: calc($landscape800)) {
+      margin-top: autoResize(160, 240, $landscape384, $landscape800);
+      margin-left: autoResize(16, 130, $landscape384, $landscape800);
+      margin-right: autoResize(16, 130, $landscape384, $landscape800);
+    }
+
+    @media (max-width: calc($landscape384)) {
+      margin-top: autoResize(120, 160, $landscape320, $landscape384);
+    }
+
+    .list_wrapper {
+      width: 540px;
+      @media (max-width: $landscape800) {
+        width: autoResize(270, 540, $landscape384, $landscape800);
+      }
+      .title {
+        margin-bottom: 24px;
+        color: $bbListBlack;
+        @media (max-width: $landscape800) {
+          margin-bottom: autoResize(16, 24, $landscape384, $landscape800);
+        }
+      }
+      .subtitle {
+        margin-bottom: 64px;
+        color: $grey;
+        @media (max-width: $landscape1200) {
+          margin-bottom: autoResize(56, 64, $landscape800, $landscape1200);
+        }
+
+        @media (max-width: $landscape800) {
+          margin-bottom: autoResize(32, 56, $landscape384, $landscape800);
+        }
+      }
+    }
+
+    .videoWrapper {
+      display: flex;
+      justify-content: center;
+      width: 712px;
+      height: 720px;
+      border-radius: $sliderRadius;
+      overflow: hidden;
+
+      @media (max-width: $landscape1920) {
+        width: autoResize(440, 712, $landscape1200, $landscape1920);
+      }
+      @media (max-width: calc($landscape1200 - 1px)) {
+        width: 540px;
+      }
+      @media (max-width: $landscape800) {
+        width: autoResize(352, 540, $landscape384, $landscape800);
+      }
+
+      @media (max-width: $landscape384) {
+        width: autoResize(288, 352, $landscape320, $landscape384);
+      }
+      .video {
+        width: 712px;
+        height: 720px;
+      }
+    }
+  }
+}
+
+.video_content,
+.img_content {
+  // background-size: cover;
+  height: 720px;
+  user-select: none;
+}
