@@ -43,3 +43,7 @@
     animation: right 2s linear infinite;
   }
 }
+
+.stopAnimation{
+  animation: none !important;
+}
