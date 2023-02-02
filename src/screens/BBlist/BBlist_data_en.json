@@ -81,5 +81,19 @@
         "description": "Разделяйте ваши задачи на разные списки, чтобы все не было в одной большой куче."
       }
     ]
+  },
+  "phoneBlock": {
+    "blocks": [
+      {
+        "spotlight": "Organize",
+        "title": " tasks \nwith ease",
+        "description": "You can see all your plans on a single screen; set priorities, categories, and add reminders. \n\nWe put all our passion into the app's UX/UI. It is our pride and joy - clean, simple, and intuitive."
+      },
+      {
+        "spotlight": "Multiply",
+        "title": " editing",
+        "description": "Swiping left will allow you to edit several tasks as one. Mark several and move them to another day, change your tasks lists, or cancel a group of tasks in one go."
+      }
+    ]
   }
 }

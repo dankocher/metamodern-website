@@ -744,6 +744,33 @@
   }
 }
 
+.inter2436 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(16px, 24px, $landscape384, $landscape800);
+    line-height: autoResize(22px, 36px, $landscape384, $landscape800);
+  }
+}
+
+.inter6488 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 88px;
+  text-align: center;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(36px, 64px, $landscape384, $landscape800);
+    line-height: autoResize(48px, 88px, $landscape384, $landscape800);
+  }
+}
+
 //Footer
 
 .footerMainFont {
@@ -1027,27 +1054,27 @@
   line-height: 12px;
 }
 
-.downFont_bblist {
-  font-family: "Inter", sans-serif;
-  font-weight: 600;
-  font-size: 24px;
-  line-height: 28px;
-
-  @media (max-width: $landscape800) {
-    font-size: autoResize(14px, 24px, $landscape384, $landscape800);
-    line-height: autoResize(15px, 28px, $landscape384, $landscape800);
-  }
-}
-
 .smallFont_bblist {
   font-family: "Inter", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
   line-height: 22px;
 
   @media (max-width: $landscape800) {
     font-size: autoResize(9px, 16px, $landscape384, $landscape800);
     line-height: autoResize(11px, 22px, $landscape384, $landscape800);
+  }
+}
+
+.downFont_bblist {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(14px, 24px, $landscape384, $landscape800);
+    line-height: autoResize(15px, 28px, $landscape384, $landscape800);
   }
 }
 

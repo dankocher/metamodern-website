@@ -10,6 +10,7 @@ $interscreen2: 1108px;
   align-items: center;
 
   .card_image {
+    width: 200px;
     margin: 0 56px 0 5%;
   }
 
@@ -24,7 +25,51 @@ $interscreen2: 1108px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: 25vh 72px 25vh 72px;
+  // margin: 180px 72px 344px 72px;
+  margin-top: 180px;
+  margin-bottom: 344px;
+  margin-left: 72px;
+  margin-right: 72px;
+
+  @media (max-width: $landscape1920) {
+    margin: 180px autoResize(26px, 72px, $landscape1200, $landscape1920)
+      autoResize(240px, 344px, $landscape1200, $landscape1920)
+      autoResize(26px, 72px, $landscape1200, $landscape1920);
+
+    // margin-bottom: autoResize(240px, 344px, $landscape1200, $landscape1920);
+    // padding-left: autoResize(26px, 72px, $landscape1200, $landscape1920);
+    // padding-right: autoResize(26px, 72px, $landscape1200, $landscape1920);
+  }
+
+  @media (max-width: $landscape1200) {
+    margin-top: autoResize(104px, 180px, $landscape800, $landscape1200);
+  }
+
+  // @media (max-width: $interscreen2) {
+  //   padding-left: 44px;
+  //   padding-right: 44px;
+  // }
+
+  @media (max-width: $landscape800) {
+    margin: 124px autoResize(16px, 44px, $landscape384, $landscape800)
+      autoResize(138px, 240px, $landscape384, $landscape800)
+      autoResize(16px, 44px, $landscape384, $landscape800);
+
+    // margin-top: 124px;
+    // margin-bottom: autoResize(138px, 240px, $landscape384, $landscape800);
+    // padding-left: autoResize(16px, 44px, $landscape384, $landscape800);
+    // padding-right: autoResize(16px, 44px, $landscape384, $landscape800);
+  }
+
+  @media (max-width: $landscape384) {
+    margin: autoResize(84px, 124px, $landscape320, $landscape384) 16px
+      autoResize(122px, 138px, $landscape320, $landscape384) 16px;
+
+    // margin-top: autoResize(84px, 124px, $landscape320, $landscape384);
+    // margin-bottom: autoResize(122px, 138px, $landscape320, $landscape384);
+    // padding-left: 16px;
+    // padding-right: 16px;
+  }
 
   .title {
     padding: 0 0 18px 0;
@@ -35,9 +80,15 @@ $interscreen2: 1108px;
       white-space: nowrap;
 
       border-radius: 16px;
-      padding: 4px 16px;
+      padding: 12px 20px;
       background-color: $bbListFocus;
       color: white;
+
+      @media (max-width: $landscape800) {
+        padding: autoResize(4px, 12px, $landscape384, $landscape800)
+          autoResize(12px, 20px, $landscape384, $landscape800);
+        border-radius: autoResize(12px, 16px, $landscape384, $landscape800);
+      }
     }
   }
 
@@ -96,7 +147,6 @@ $interscreen2: 1108px;
         margin: 0 72px 44px 72px;
 
         @media (max-width: 1108px) {
-          // @media (max-width: $landscape800) {
           margin: 0 146px 44px 146px;
         }
 
@@ -146,7 +196,25 @@ $interscreen2: 1108px;
     #card:nth-child(5) {
       // grid-area: 2 / 4 / 3 / 7;
       grid-area: card5;
+
       @media (min-width: $interscreen2) {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+
+        .card_image {
+          width: 278px;
+          margin: 0 100px 0 5%;
+        }
+
+        .cardtexts {
+          text-align: left;
+          margin: 0 12px 0 100px;
+          width: 420px;
+        }
+      }
+
+      @media (min-width: 1609px) {
         @include wide_map;
       }
     }
