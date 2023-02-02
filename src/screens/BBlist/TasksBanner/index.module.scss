@@ -1,100 +1,99 @@
 @import "../../../styles/foundations.scss";
 @import "../../../styles/global.scss";
 
-.container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
+.container_wrapper {
   max-width: 1776px;
-  // width: 1776px;
-  height: 720px;
-  background-color: #191919;
-  border-radius: $mainRadius;
-  color: $white;
-  // margin-right: 3.7%;
-  // margin-left: 3.7%;
-  // margin-top: 100px;
-  margin-right: 72px;
-  margin-left: 72px;
-
-  @media (max-width: $landscape1920) {
-    margin-right: autoResize(64px, 72px, $landscape1200, $landscape1920);
-    margin-left: autoResize(64px, 72px, $landscape1200, $landscape1920);
-  }
-
-  @media (max-width: $landscape1200) {
-    margin-right: autoResize(44px, 64px, $landscape800, $landscape1200);
-    margin-left: autoResize(44px, 64px, $landscape800, $landscape1200);
-  }
-
-  @media (max-width: $landscape800) {
-    height: autoResize(400px, 720px, $landscape384, $landscape800);
-    margin-right: autoResize(16px, 44px, $landscape384, $landscape800);
-    margin-left: autoResize(16px, 44px, $landscape384, $landscape800);
-  }
-  @media (max-width: $landscape384) {
-    height: autoResize(312px, 400px, $landscape320, $landscape384);
-  }
-
-  .title:last-child {
-    @media (max-width: calc($landscape800 - 1px)) {
-      max-width: 75%;
-    }
-  }
-
-  .title {
-    user-select: none;
-  }
-
-  .box {
-    position: absolute;
+  width: 100%;
+  .container {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: fit-content;
-    max-height: 74px;
-    width: max-content;
-    padding: 16px 28px;
-    border-radius: 16px;
-    cursor: grab;
+    flex-direction: column;
+    height: 720px;
+    background-color: #191919;
+    border-radius: $mainRadius;
+    color: $white;
+    margin-right: 72px;
+    margin-left: 72px;
+
+    @media (max-width: $landscape1920) {
+
+      margin-right: autoResize(64px, 72px, $landscape1200, $landscape1920);
+      margin-left: autoResize(64px, 72px, $landscape1200, $landscape1920);
+    }
+
+    @media (max-width: $landscape1200) {
+      margin-right: autoResize(44px, 64px, $landscape800, $landscape1200);
+      margin-left: autoResize(44px, 64px, $landscape800, $landscape1200);
+    }
+
     @media (max-width: $landscape800) {
-      border-radius: autoResize(8px, 16px, $landscape384, $landscape800);
-      padding: autoResize(6px, 16px, $landscape384, $landscape800)
-        autoResize(12px, 28px, $landscape384, $landscape800);
+      height: autoResize(400px, 720px, $landscape384, $landscape800);
+      margin-right: autoResize(16px, 44px, $landscape384, $landscape800);
+      margin-left: autoResize(16px, 44px, $landscape384, $landscape800);
     }
     @media (max-width: $landscape384) {
-      padding-right: autoResize(10px, 12px, $landscape320);
-      padding-left: autoResize(10px, 12px, $landscape320);
+      height: autoResize(312px, 400px, $landscape320, $landscape384);
     }
-    // background:
-    // linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
-    // linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
-    // linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
-    // background: rgba(255, 139, 19, 0.85);
-    background: rgba(114, 112, 223, 0.85);
-    backdrop-filter: blur(6px);
 
-    user-select: none;
-  }
+    .title:last-child {
+      @media (max-width: calc($landscape800 - 1px)) {
+        max-width: 75%;
+      }
+    }
 
-  .logo {
-    width: 120px;
-    height: 120px;
-    bottom: 56px;
-    right: 56px;
-    @media (max-width: $landscape1200) {
-      width: autoResize(96px, 120px, $landscape800, $landscape1200);
-      bottom: autoResize(28px, 56px, $landscape800, $landscape1200);
-      right: autoResize(28px, 56px, $landscape800, $landscape1200);
+    .title {
+      user-select: none;
     }
-    @media (max-width: calc($landscape800 - 1px)) {
-      display: none;
+
+    .box {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: fit-content;
+      max-height: 74px;
+      width: max-content;
+      padding: 16px 28px;
+      border-radius: 16px;
+      cursor: grab;
+      @media (max-width: $landscape800) {
+        border-radius: autoResize(8px, 16px, $landscape384, $landscape800);
+        padding: autoResize(6px, 16px, $landscape384, $landscape800)
+          autoResize(12px, 28px, $landscape384, $landscape800);
+      }
+      @media (max-width: $landscape384) {
+        padding-right: autoResize(10px, 12px, $landscape320);
+        padding-left: autoResize(10px, 12px, $landscape320);
+      }
+      // background:
+      // linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+      // linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+      // linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
+      // background: rgba(255, 139, 19, 0.85);
+      background: rgba(114, 112, 223, 0.85);
+      backdrop-filter: blur(6px);
+
+      user-select: none;
     }
-    position: absolute;
-    bottom: 56px;
-    right: 56px;
+
+    .logo {
+      width: 120px;
+      height: 120px;
+      bottom: 56px;
+      right: 56px;
+      @media (max-width: $landscape1200) {
+        width: autoResize(96px, 120px, $landscape800, $landscape1200);
+        bottom: autoResize(28px, 56px, $landscape800, $landscape1200);
+        right: autoResize(28px, 56px, $landscape800, $landscape1200);
+      }
+      @media (max-width: calc($landscape800 - 1px)) {
+        display: none;
+      }
+      position: absolute;
+      bottom: 56px;
+      right: 56px;
+    }
   }
 }

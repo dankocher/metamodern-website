@@ -295,6 +295,7 @@ mouseConstraint.current.mouse.element.addEventListener('touchend', (e) => {
     };
   }, []);
   return (
+    <div className={styles.container_wrapper}>
     <div className={styles.container} ref={blockRef}>
       {tags.map((tag, i) => (
         <div className={`${styles.box} inter3442`} id={"box" + i} key={i}>
@@ -304,6 +305,6 @@ mouseConstraint.current.mouse.element.addEventListener('touchend', (e) => {
       <Icon name="BBlistLogo" className={styles.logo} />
         <div className={`${styles.title} inter112124`}>{titlePart1}</div>
       <div className={`${styles.title} inter112124`}>{titlePart2}</div>
-    </div>
+    </div></div>
   );
 };
