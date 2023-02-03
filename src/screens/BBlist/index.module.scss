@@ -3,6 +3,12 @@
 
 // html,
 // body
+
+*::selection {
+  background: #3390ff !important;
+  // background: $bbListFocus !important;
+}
+
 .container {
   background-color: $white;
   position: relative;
