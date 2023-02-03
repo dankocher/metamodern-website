@@ -12,4 +12,5 @@ export interface ProjectProps {
   isDarkContent: boolean;
   gradient: { [key: string]: string };
   link: SCREENS | string;
+  isBgImgWrapper?: boolean;
 }

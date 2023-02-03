@@ -105,9 +105,10 @@ const data: ProjectProps[] = [
     tags: ['Design', 'Research', 'Mobile'],
     bgImage: { x1: medReminder, x2: medReminder2 },
     gradient: {
-      '--gradient': `#FFFFFF url(${medReminderBackground})`,
+      '--gradient': `radial-gradient(55.08% 48.35% at 64.53% 73.41%, rgba(118, 68, 158, 1) 27.08%, rgba(23, 25, 31, 1) 100%)`,
     },
     isDarkContent: false,
+    isBgImgWrapper: true,
   },
 ];
 

@@ -1,11 +1,11 @@
-import styles from './index.module.scss';
-import { FC } from 'react';
+import styles from "./index.module.scss";
+import { FC } from "react";
 
-import Image from '../../Image';
-import { ProjectProps } from './project.interface';
-import { useNavigate } from 'react-router-dom';
+import Image from "../../Image";
+import { ProjectProps } from "./project.interface";
+import { useNavigate } from "react-router-dom";
 
-import { SCREENS } from '../../../navigation/constants';
+import { SCREENS } from "../../../navigation/constants";
 
 const Project: FC<ProjectProps> = ({
   link,
@@ -16,16 +16,17 @@ const Project: FC<ProjectProps> = ({
   bgImage,
   gradient,
   isDarkContent,
+  isBgImgWrapper,
   ...props
 }) => {
-  const colors = { dark: '#242424', light: '#FFFFFF' };
+  const colors = { dark: "#242424", light: "#FFFFFF" };
   const navigate = useNavigate();
 
   const navigateTo = () => {
-    if (Object.values(SCREENS).includes(link as SCREENS) || link === '') {
+    if (Object.values(SCREENS).includes(link as SCREENS) || link === "") {
       navigate(link);
     } else {
-      window.open(link, '_blank', 'noopener,noreferrer');
+      window.open(link, "_blank", "noopener,noreferrer");
     }
   };
 
@@ -37,9 +38,23 @@ const Project: FC<ProjectProps> = ({
     >
       <div className={styles.aspectRation} />
       <div className={styles.gradient} style={gradient} />
-
-      <Image src={bgImage.x1} images={bgImage} alt={`${name} background`} />
-
+      {isBgImgWrapper ? (
+        <div className={styles.gradient} style={{ overflow: "hidden" }}>
+          <Image
+            src={bgImage.x1}
+            images={bgImage}
+            alt={`${name} background`}
+            className={styles.img}
+          />
+        </div>
+      ) : (
+        <Image
+          src={bgImage.x1}
+          images={bgImage}
+          alt={`${name} background`}
+          className={styles.img}
+        />
+      )}
       <div className={styles.content_wrapper}>
         <div
           style={{
@@ -55,8 +70,9 @@ const Project: FC<ProjectProps> = ({
             {tags.map((tag, index) => (
               <div
                 key={`${tag}-${index}`}
-                className={isDarkContent ? styles.darkBorder : styles.whiteBorder}
-                
+                className={
+                  isDarkContent ? styles.darkBorder : styles.whiteBorder
+                }
               >
                 <span className="interMedium1216">{tag}</span>
               </div>

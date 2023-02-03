@@ -11,11 +11,16 @@
     }
   }
 
+  .img{
+    position: absolute;
+  }
+
   .aspectRation {
     padding-top: 117.5%;
   }
 
   .gradient {
+    overflow: hidden;
     position: absolute;
     border-radius: $mainRadius;
     right: 0;
@@ -23,7 +28,7 @@
     top: 0;
     bottom: 0;
 
-    margin: 7% 9.6%;
+    margin: 7.5% 10%;
 
     background: var(--gradient);
 
@@ -43,7 +48,7 @@
     top: 0;
     bottom: 0;
 
-    padding: 7% 9.6%;
+    padding: 7.5% 10%;
 
     .content {
       position: relative;
