@@ -1,20 +1,17 @@
 {
   "files": {
-<<<<<<< HEAD
-    "main.css": "/static/css/main.b750d2a0.css",
-    "main.js": "/static/js/main.a03a841b.js",
-=======
-    "main.css": "/static/css/main.c19c8dbf.css",
-    "main.js": "/static/js/main.cd211107.js",
->>>>>>> ernest
+    "main.css": "/static/css/main.5391157c.css",
+    "main.js": "/static/js/main.15e60c1d.js",
     "static/js/787.42db63fd.chunk.js": "/static/js/787.42db63fd.chunk.js",
     "static/media/office3.webp": "/static/media/office3.0ec0fd49f79d38d40c32.webp",
     "static/media/noise2.png": "/static/media/noise2.e96fbe5abe1421f4e174.png",
+    "static/media/medReminder@2x.png": "/static/media/medReminder@2x.e60b0fbe46a04de32e04.png",
     "static/media/office1.webp": "/static/media/office1.8261aac689341be3232c.webp",
     "static/media/TimeZo-mainPhone.png": "/static/media/TimeZo-mainPhone.78fa8e4a12dc04d37324.png",
     "static/media/office2.webp": "/static/media/office2.16d5b83bd672373cc8a6.webp",
     "static/media/map.png": "/static/media/map.01cea56cecf885d4b689.png",
     "static/media/todPhone1.png": "/static/media/todPhone1.f598fcaa95e764404806.png",
+    "static/media/medReminder.png": "/static/media/medReminder.03a6eb446221e2d74b93.png",
     "static/media/beRead@2x.png": "/static/media/beRead@2x.a65b8b7dc82cabfacf02.png",
     "static/media/beRead.png": "/static/media/beRead.6b893029b96bbe689a8b.png",
     "static/media/timeZo@2x.png": "/static/media/timeZo@2x.0213b748812fe5cde08f.png",
@@ -77,43 +74,33 @@
     "static/media/app-store.svg": "/static/media/app-store.7f243b0d0699a2e13e3ae7eeb6689b99.svg",
     "static/media/sharing.svg": "/static/media/sharing.9aff444da2eca462ac2a6adcdbbad910.svg",
     "static/media/instagram.svg": "/static/media/instagram.738eb7470e229a586df57e10ad0f6365.svg",
-    "static/media/notification.svg": "/static/media/notification.1f099b2cb0d976d02bd158f81f16b35c.svg",
-    "static/media/taskList.svg": "/static/media/taskList.e1723e410c600f2fb8ff605dd0120c1b.svg",
-    "static/media/earth.svg": "/static/media/earth.fe0f1fdb2892e8cf3457288081a50fa0.svg",
-    "static/media/earthFilled.svg": "/static/media/earthFilled.debcc03c27608a32f08a81f3118e9094.svg",
-    "static/media/taskListFilled.svg": "/static/media/taskListFilled.9ed3f43642054b084d3b1d147677cb92.svg",
+    "static/media/notification.svg": "/static/media/notification.6bd8dedc43460d09ada2e83a3496dcd5.svg",
+    "static/media/taskList.svg": "/static/media/taskList.bb4c5c67635b57868d573fd440a62737.svg",
+    "static/media/earth.svg": "/static/media/earth.02272259be975ebfff456742050297cf.svg",
+    "static/media/earthFilled.svg": "/static/media/earthFilled.c3dd4632b48215364d24126492f0f8e9.svg",
+    "static/media/taskListFilled.svg": "/static/media/taskListFilled.99bde43e4ce52faa9199bb0ae53bd6d4.svg",
     "static/media/dribbble.svg": "/static/media/dribbble.f76dc0438807f6ceb45a7c4642773880.svg",
     "static/media/behance.svg": "/static/media/behance.1ac390183836337e342ea0d1f3bc6621.svg",
     "static/media/apple.svg": "/static/media/apple.1eba79c69725099c00feb9776177f499.svg",
-    "static/media/loading.svg": "/static/media/loading.f8fdc3f49e220df73bb51dac802aeac9.svg",
     "static/media/simple-design.svg": "/static/media/simple-design.4ecab38435c1ddcf1819ebde39b3001d.svg",
+    "static/media/loading.svg": "/static/media/loading.3ad1f52f31d011358631991ff5b764a3.svg",
     "static/media/quick-editing.svg": "/static/media/quick-editing.89a0a74ebaae83cf16f1b086d730034b.svg",
     "static/media/touch.svg": "/static/media/touch.98765eb93e750450af2245146a52d414.svg",
-    "static/media/loadingFilled.svg": "/static/media/loadingFilled.2ed63257ba234e05709366d26af079ae.svg",
+    "static/media/loadingFilled.svg": "/static/media/loadingFilled.eaf4da22a08d77d270fd0a0a1c984320.svg",
     "static/media/logo.svg": "/static/media/logo.7bd74232bb2effdec4ab3d0db8bc21db.svg",
     "static/media/google-play.svg": "/static/media/google-play.557ea1ad0181ce83abdf69a52cd4e5f0.svg",
     "static/media/linkedin.svg": "/static/media/linkedin.df487fff8726397440a3e09f04bcb2c0.svg",
-    "static/media/notificationFilled.svg": "/static/media/notificationFilled.8ff01b03900fddec0af7b01cfa29a03e.svg",
+    "static/media/notificationFilled.svg": "/static/media/notificationFilled.947497ea403f7343159efc33db8120c2.svg",
     "static/media/calendar.svg": "/static/media/calendar.a96a98f9b345a80b0946c0f9208e968e.svg",
     "static/media/location.svg": "/static/media/location.8705eacbf3ae2e02b1fa0fc972415b41.svg",
     "static/media/phone.svg": "/static/media/phone.9b7673eff89712662bcbce08a0bc1e72.svg",
     "static/media/cross.svg": "/static/media/cross.fb12580ec64a758ba589c015192bf27d.svg",
-<<<<<<< HEAD
-    "main.b750d2a0.css.map": "/static/css/main.b750d2a0.css.map",
-    "main.a03a841b.js.map": "/static/js/main.a03a841b.js.map",
+    "main.5391157c.css.map": "/static/css/main.5391157c.css.map",
+    "main.15e60c1d.js.map": "/static/js/main.15e60c1d.js.map",
     "787.42db63fd.chunk.js.map": "/static/js/787.42db63fd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b750d2a0.css",
-    "static/js/main.a03a841b.js"
-=======
-    "main.c19c8dbf.css.map": "/static/css/main.c19c8dbf.css.map",
-    "main.cd211107.js.map": "/static/js/main.cd211107.js.map",
-    "787.42db63fd.chunk.js.map": "/static/js/787.42db63fd.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.c19c8dbf.css",
-    "static/js/main.cd211107.js"
->>>>>>> ernest
+    "static/css/main.5391157c.css",
+    "static/js/main.15e60c1d.js"
   ]
 }
