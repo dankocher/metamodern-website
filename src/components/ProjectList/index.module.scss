@@ -3,13 +3,13 @@
 $padding: 160px;
 
 .container {
-  width: 100vw;
+  width: 100%;
 
   display: flex;
   flex-wrap: wrap;
 
   margin-top: 36px;
-
+  margin-bottom: autoResize(64px, 176px, $landscape384);
   padding: 0 autoResize(0px, $padding, $landscape1200, $landscapeFHD);
 
   .projectCell {

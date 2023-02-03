@@ -4,11 +4,15 @@
   width: 100%;
 
   transition: $transitionEase;
-
+  border-radius: $mainRadius;
   @media (min-width: $landscape420) {
     &:hover {
       background-color: rgba(214, 214, 214, 0.25);
     }
+  }
+
+  .img{
+    position: absolute;
   }
 
   .aspectRation {
@@ -16,16 +20,24 @@
   }
 
   .gradient {
+    overflow: hidden;
     position: absolute;
-
+    border-radius: $mainRadius;
     right: 0;
     left: 0;
     top: 0;
     bottom: 0;
 
-    margin: 7% 9.6%;
+    margin: 7.5% 10%;
 
     background: var(--gradient);
+
+    @media (max-width: $landscape800) {
+      border-radius:  autoResize(20px, $mainRadius, $landscape384, $landscape800);
+    }
+    @media (max-width: $landscape384) {
+      border-radius:  autoResize(16px, 20px, $landscape320, $landscape384);
+    }
   }
 
   .content_wrapper {
@@ -36,13 +48,13 @@
     top: 0;
     bottom: 0;
 
-    padding: 7% 9.6%;
+    padding: 7.5% 10%;
 
     .content {
       position: relative;
 
       height: 100%;
-      padding: 7.5%;
+      padding: 7.8% 12.5% 0 8.75%;
       @media (min-width: $landscape500) {
         padding-left: 8.5% !important;
       }

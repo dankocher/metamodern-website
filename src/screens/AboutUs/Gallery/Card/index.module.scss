@@ -1,0 +1,111 @@
+@import '../../../../styles/foundations.scss';
+
+.cardContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: autoResize(412px, 560px, $landscape1200, $landscape1920);
+  overflow: hidden;
+  background-color: $greyPlate;
+  border-radius: 44px;
+  @media (max-width: calc($landscape800 - 1px)) {
+    height: fit-content;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: autoResize(24px, 84px, $landscape320)
+      autoResize(24px, 96px, $landscape320);
+  }
+  @media (max-width: $landscape384) {
+    border-radius: 36px;
+  }
+
+  .logo {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    padding-top: 64px;
+    padding-left: autoResize(44px, 72px, $landscape1200);
+    @media (min-width: $landscape800) {
+      display: block;
+    }
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: autoResize(40px, 64px, $landscape384)
+      autoResize(44px, 72px, $landscape384);
+    padding-right: 0px;
+    @media (max-width: calc($landscape800 - 1px)) {
+      padding: 0;
+      margin-top: autoResize(20px, 24px, $landscape320);
+      flex: 0;
+    }
+    .workerInfo {
+      display: flex;
+      flex-direction: column;
+
+      .name {
+      }
+      .position {
+      }
+    }
+
+    .numbering {
+      padding-right: 30px;
+      @media (max-width: $landscape1200) {
+        display: none;
+      }
+    }
+  }
+
+  .photo {
+    // padding: 46px;
+    align-self: center;
+    overflow: hidden;
+    align-self: start;
+    margin: 0;
+    width: 100%;
+    @media (max-width: calc($landscape800 - 1px)) {
+      height: autoResize(288px, 645px, $landscape384, $landscape800);
+      width: 100%;
+    }
+
+    @media (max-width: $landscape384) {
+      height: autoResize(240px, 288px, $landscape320, $landscape384);
+      width: 100%;
+    }
+    
+    @media (min-width: $landscape800) {
+      height: autoResize(240px, 468px, $landscape800);
+      width: autoResize(240px, 468px, $landscape800);
+      margin: autoResize(24px, 36px, $landscape800)
+        autoResize(24px, 32px, $landscape800);
+    }
+    @media (min-width: $landscape1200) {
+      margin: autoResize(36px, 46px, $landscape1200)
+        autoResize(32px, 46px, $landscape1200);
+    }
+    @media (max-width: $landscape384) {
+      border-radius: 36px;
+    }
+    border-radius: 44px;
+    img {
+      width: 100%;
+      @media (min-width: $landscape800) {
+       
+        width: 100%;
+        height: auto;
+      }
+    
+    }
+  }
+}

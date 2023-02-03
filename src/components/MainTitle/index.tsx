@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
 
 import Lottie from 'react-lottie';
 
@@ -16,6 +16,7 @@ import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
 
 const MainTitle = ({ portfolioRef, isMobile }) => {
+  const containerRef = useRef(null);
   const [isHovering, setIsHovering] = useState(false);
   // const scrollbarRef = useContext(ScrollContext);
 
@@ -38,16 +39,29 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
     // } else scrollbarRef.current.scrollbar.scrollIntoView(portfolioRef?.current);
   };
 
+  const setBorderRadius = (scroll) => {
+    if(containerRef.current)
+    if (!scroll) {
+      containerRef.current.style.borderBottomLeftRadius = '0px';
+      containerRef.current.style.borderBottomRightRadius = '0px';
+    } else {
+      containerRef.current.style.borderBottomLeftRadius = null;
+      containerRef.current.style.borderBottomRightRadius = null;
+    }
+  };
+
+  const scrollListener = (e)=>{
+    setBorderRadius(document.documentElement.scrollTop);
+  }
+
   useEffect(() => {
-    document.documentElement.style.setProperty(
-      '--block-height',
-      // window.innerHeight + 'px'
-      document.documentElement.clientHeight + 'px'
-    );
+    setBorderRadius(document.documentElement.scrollTop);
+    document.addEventListener("scroll", scrollListener)
+    // return document.removeEventListener('scroll', scrollListener);
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={containerRef}>
       <div className={styles.content} translate="no">
         <AnimatedBlock
           animation={animationTypes.TOLEFT}

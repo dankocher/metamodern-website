@@ -1,37 +1,52 @@
 import styles from './index.module.scss';
 
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 import cross from '../../assets/svg/cross.svg';
 
 const AttachFile: FC<{
-  attachedFileName?: string;
+  attachedFileNames?: string[];
   label: string;
-  setFile: (data: File) => void;
-}> = ({ attachedFileName = '', label, setFile = () => {} }) => {
-  const removeFile = () => {
-    setFile(null);
-  };
+  setFiles: (data: File[]) => void;
+  removeFile:(event: {}, index: number) => void;
+}> = ({ attachedFileNames = [], label, setFiles = () => {}, removeFile = () => { }}) => {
+  const inputRef = useRef(null);
 
   const setFileHandler = (event) => {
-    setFile(event.target.files[0]);
+    setFiles(event.target.files);
   };
+
+  const cutName = (name) => {
+    const length = name.length;
+    if(name.length>30){
+      return name.substring(0, 12) +'...'+name.substring(length-13, name.length-1)
+    }
+    else return name;
+  }
 
   return (
     <div className={styles.container}>
-      {attachedFileName && (
+      <label
+        htmlFor={'fileInput'}
+        className="interMedium1416"
+      >{`+ ${label} (${attachedFileNames.length}/25)`}</label>
+      <input
+        ref={inputRef}
+        id="fileInput"
+        type="file"
+        onChange={setFileHandler}
+        multiple
+        disabled={attachedFileNames.length===25}
+      />
+    
+      {attachedFileNames.map((name, index)=>(
         <div className={styles.fileName}>
-          <span className="interMedium2036">{attachedFileName}</span>
-          <div role="button" className={styles.removeBtn} onClick={removeFile}>
+          <span className="interMedium1416">{cutName(name)}</span>
+          <div role="button" className={styles.removeBtn} onClick={(e)=>removeFile(e, index)}>
             <img src={cross} />
           </div>
         </div>
-      )}
-      <label
-        htmlFor={'fileInput'}
-        className="interMedium2036"
-      >{`+ ${label}`}</label>
-      <input id="fileInput" type="file" onChange={setFileHandler} />
+      ))}
     </div>
   );
 };

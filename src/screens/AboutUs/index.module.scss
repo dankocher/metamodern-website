@@ -1,107 +1,172 @@
-@import '../../styles/foundations.scss';
+@import "../../styles/foundations.scss";
+@import "../../styles/global.scss";
+:root {
+  --block-height: 0;
+}
+.container {
+  width: 100%;
+  height: 100%;
 
-.about_title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  &_string {
+  .preview {
+    width: 100%;
+    height: var(--block-height);
     display: flex;
-    max-width: 968px;
+    align-items: center;
+    justify-content: center;
 
-    white-space: nowrap;
-    .zigzag_container {
+    margin-bottom: 148px;
+    background-color: $accentYellow;
+    @media (min-width: $landscape1200) {
+      margin-bottom: autoResize(136px, 148px, $landscape1200);
+    }
+    @media (min-width: $landscape800) {
+      margin-bottom: autoResize(80px, 136px, $landscape800);
+    }
+    @media (max-width: $landscape800) {
+      margin-bottom: autoResize(68px, 80px, $landscape384);
+    }
+
+    .about_title {
       position: relative;
-      width: min-content;
       display: flex;
       flex-direction: column;
       align-items: center;
+      &_string {
+        display: flex;
+        max-width: 968px;
 
-      .zigzag {
-        position: absolute;
-        bottom: -10%;
-        width: 100%;
+        white-space: nowrap;
+        .crown {
+          position: absolute;
+          width: 105px;
+          transform: rotate(17.5deg);
+
+          @media (max-width: $landscape1920) {
+            width: autoResize(75px, 105px, $landscape1200, $landscape1920);
+          }
+          @media (max-width: $landscape800) {
+            width: autoResize(28px, 75px, $landscape320, $landscape800);
+          }
+
+          top: -22%;
+          right: 1%;
+        }
+        .zigzag_container {
+          position: relative;
+          width: min-content;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .zigzag {
+            position: absolute;
+            bottom: -10%;
+            width: 100%;
+          }
+        }
+        .underline {
+          text-decoration: underline;
+        }
       }
-    }
-    .underline {
-      text-decoration: underline;
-    }
-  }
 
-  margin-bottom: autoResize(44px, 88px);
-}
-.containerImg {
-  width: 100%;
-  // max-width: 1600px;
-  display: inline-block;
-  margin-bottom: 88px;
-  overflow: hidden;
-  background: #ffffff;
-  max-height: 836px;
-
-  @media (max-width: 1200px) {
-    margin-bottom: autoResize(64px, 88px, $landscape800, $landscape1200);
+      // margin-bottom: autoResize(44px, 88px);
+    }
+    @include mainBlock;
   }
-  @media (max-width: 800px) {
-    margin-bottom: autoResize(48px, 64px, $landscape384, $landscape800);
-  }
+  .body {
+    @media (min-width: $landscape1200) {
+      padding: 0 autoResize(120px, 160px, $landscape1200);
+    }
+    @media (min-width: $landscape800) {
+      padding: 0 autoResize(44px, 120px, $landscape800);
+    }
 
-  .aboutUsImg {
-    width: 100%;
-    border: none;
-    @media (min-width: 1200px) {
-      margin-top: -7%;
-    }
-  }
-}
+    padding: 0 autoResize(16px, 44px, $landscape384);
 
-.content {
-  width: 100%;
-  max-width: 1204px;
-  @media (min-width: 1200px) {
-    align-self: flex-start;
-  }
-
-  .list {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 100px;
-    :not(:last-child) {
-      border-bottom: solid 2px $gray100;
-    }
-    :last-child {
-      padding-bottom: 0px !important;
-    }
-    :first-child {
-      padding-top: 0px !important;
-    }
-    margin-top: 100px;
-    @media (max-width: 1200px) {
-      margin-top: autoResize(56px, 100px, $landscape800, $landscape1200);
-    }
-    @media (max-width: 800px) {
-      margin-top: autoResize(44Zpx, 56px, $landscape384, $landscape800);
-    }
-    .item {
+    .text_block {
       display: flex;
-      width: 100%;
-      padding-top: 32px;
-      padding-bottom: 32px;
-      justify-content: space-between;
-      @media (max-width: 800px) {
-        flex-direction: column;
-      }
-      @media (min-width: 800px) {
-        padding-top: 56px;
-        padding-bottom: 56px;
+      flex-direction: column;
+      max-width: 905px;
+      gap: 56px;
+      margin-bottom: 120px;
+      @media (max-width: $landscape800) {
+        margin-bottom: autoResize(36px, 120px, $landscape320, $landscape800);
       }
 
-      &_subtitle {
-        min-width: 350px;
-        border: none;
+      @media (max-width: $landscape800) {
+        gap: autoResize(32, 56, $landscape384, $landscape800);
+      }
+
+      &_title {
+        color: $mainBlack;
       }
 
       &_description {
-        max-width: 724px;
+        color: $greySec;
+      }
+    }
+
+    .principlesBlock {
+      width: 100%;
+      max-width: 1600px;
+      display: flex;
+      gap: 144px;
+      margin: autoResize(80px, 260px, $landscape384) 0;
+
+      @media (min-width: calc($landscape1200 + 1px)) {
+        max-height: 960px;
+      }
+      @media (max-width: $landscape800) {
+        gap: autoResize(80px, 144px, $landscape384);
+      }
+      @media (max-width: $landscape1200) {
+        flex-direction: column-reverse;
+      }
+      .containerImg {
+        width: 100%;
+        height: 960px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border-radius: $mainRadius;
+        @media (max-width: calc($landscape1200 )) {
+          height: fit-content;
+        }
+
+        .principImg {
+          background-size: cover;
+
+          @media (max-width: calc($landscape1200)) {
+            width: 100%;
+          }
+          @media (min-width: calc($landscape1200)) {
+            height: 100%;
+          }
+
+          @media (max-width: $landscape384) {
+            border-radius: 36px;
+          }
+        }
+      }
+      .principles {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: autoResize(56px, 124px, $landscape384);
+        .principTitle {
+          margin-bottom: autoResize(12px, 28px, $landscape384, $landscape800);
+        }
+        .princip_text_block {
+          display: flex;
+          flex-direction: column;
+          .princip_text_title {
+          }
+          .princip_text_description {
+            color: $greySec;
+          }
+        }
       }
     }
   }

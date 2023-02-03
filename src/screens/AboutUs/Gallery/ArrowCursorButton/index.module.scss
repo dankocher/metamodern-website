@@ -1,0 +1,41 @@
+@import '../../../../styles/foundations.scss';
+
+.container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: $accentYellow;
+  border-radius: 50%;
+  // bottom: -10%;
+  // right: -3%;
+  width: 172px;
+  height: 172px;
+  @media (max-width: $landscape1200) {
+    width: autoResize(140px, 172px, $landscape800, $landscape1200);
+    height:autoResize(140px, 172px, $landscape800, $landscape1200);
+  }
+  @media (max-width: $landscape800) {
+    bottom: 15%;
+    right: 2%;
+    width: autoResize(100px, 140px, $landscape384, $landscape800);
+    height:autoResize(100px, 140px, $landscape384, $landscape800);
+  }
+  @media (max-width: $landscape384) {
+    bottom: 20%;
+    width: autoResize(88px, 100px, $landscape320, $landscape384);
+    height:autoResize(88px, 100px, $landscape320, $landscape384);
+  }
+  // z-index: 200;
+  // :hover{
+  //   cursor: none;
+  // }
+ 
+  img {
+    width: 58%;
+    height: 58%;
+   
+    transition: transform 0.2s ease 0s;
+  }
+}

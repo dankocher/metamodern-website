@@ -12,7 +12,13 @@ const themes = {
 
 const screensWithBlackTheme = [SCREENS.TOD];
 
-const Logo = ({ location, isSubProject, comparePathes, onClick }) => {
+const Logo = ({
+  location,
+  isSubProject,
+  comparePathes,
+  onClick,
+  withHover,
+}) => {
   const [theme, setTheme] = useState(themes.WHITE);
 
   useEffect(() => {
@@ -25,14 +31,16 @@ const Logo = ({ location, isSubProject, comparePathes, onClick }) => {
     <div className={styles.logo} onClick={onClick}>
       <Icon
         name="logo"
-        color={theme === themes.WHITE ? colors.white : colors.secondBlack}
-        className={styles.iconMain}
+        color={theme === themes.WHITE ? colors.white : colors.mainBlack}
+        className={withHover ? styles.iconMain : styles.blackIcon}
       />
-      <Icon
-        name="logo"
-        className={styles.iconGradient}
-        color={isSubProject ? null : colors.yellow100}
-      />
+      {withHover && (
+        <Icon
+          name="logo"
+          className={styles.iconGradient}
+          color={isSubProject ? null : colors.yellow100}
+        />
+      )}
     </div>
   );
 };

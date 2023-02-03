@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: center;
 
-  @media (min-width: $mdDevice + 1) {
+  @media (min-width: calc($mdDevice + 1px)) {
     min-height: 100vh;
   }
 

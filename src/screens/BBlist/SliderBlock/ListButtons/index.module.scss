@@ -1,0 +1,17 @@
+@import "../../../../styles/foundations.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 100;
+  @media (max-width: $landscape1200) {
+    margin-bottom: autoResize(56, 64, 540, $landscape1200);
+  }
+  @media (max-width: 540px) {
+    left: 50%;
+    margin-bottom: 0px;
+    position: absolute;
+    transform: translateY(20px) translateX(-50%)
+  }
+}

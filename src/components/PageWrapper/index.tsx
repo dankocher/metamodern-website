@@ -4,7 +4,10 @@ import styles from './index.module.scss';
 import { motion } from 'framer-motion';
 import { useModalMenuContext } from '../../context/useModalMenuContext';
 
-const PageWrapper: FC<{ children: React.ReactNode }> = ({ children }) => {
+const PageWrapper: FC<{
+  children: React.ReactNode;
+  backgroundColor?: string;
+}> = ({ children, backgroundColor }) => {
   const { isVisible } = useModalMenuContext();
   const [duration, setDuration] = useState(0.2);
   const wrapperRef = useRef(null);
@@ -37,8 +40,9 @@ const PageWrapper: FC<{ children: React.ReactNode }> = ({ children }) => {
         ref={wrapperRef}
       >
         {children}
+        <Footer backgroundColor={backgroundColor} />
       </motion.div>
-      <Footer />
+      
     </>
   );
 };

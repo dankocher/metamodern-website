@@ -1,9 +1,11 @@
 @import '../../styles/foundations.scss';
+@import '../../styles/global.scss';
+
 :root {
   --block-height: 0;
 }
 .container {
-  width: 100vw;
+  width: 100%;
   height: var(--block-height);
   position: relative;
   display: flex;
@@ -11,8 +13,10 @@
   align-items: center;
   justify-content: center;
 
+  @include mainBlock;
+
   @media (max-width: $landscape800) {
-    background-color: $yellow100;
+    background-color: $accentYellow;
   }
 
   .ourAppBtn {
@@ -75,7 +79,7 @@
 
       border-radius: 50%;
 
-      background-color: $yellow100;
+      background-color: $accentYellow;
 
       @media (max-width: $landscape800) {
         display: none;

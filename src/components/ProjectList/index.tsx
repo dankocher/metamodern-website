@@ -28,6 +28,7 @@ const ProjectList = ({
             bgImage,
             gradient,
             isDarkContent,
+            isBgImgWrapper,
           },
           index
         ) =>
@@ -56,6 +57,7 @@ const ProjectList = ({
                 bgImage={bgImage}
                 gradient={gradient}
                 isDarkContent={isDarkContent}
+                isBgImgWrapper={isBgImgWrapper}
               />
             </AnimatedBlock>
             // </motion.div>

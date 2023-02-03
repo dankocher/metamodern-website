@@ -1,5 +1,5 @@
-@import "../../../../styles/foundations.scss";
-@import "../../styles/generalStyles.scss";
+@import '../../../../styles/foundations.scss';
+@import '../../styles/generalStyles.scss';
 
 .firstBackground,
 .secondBackground,
@@ -58,7 +58,7 @@
   img {
     width: auto;
 
-    margin: auto;
+    margin: 0;
   }
 }
 
@@ -77,6 +77,8 @@
 }
 
 .rightBackground {
+  display: flex;
+  justify-content: center;
   right: 0;
 
   height: 90%;

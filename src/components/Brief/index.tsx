@@ -39,6 +39,7 @@ import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
 import { isMobile } from 'react-device-detect';
+import { Ring, Waveform } from '@uiball/loaders';
 
 // import { ScrollContext } from '../DesktopAppContent';
 
@@ -67,7 +68,8 @@ const Brief: FC = () => {
 
   const { errors } = formState;
 
-  const [attachedFile, setAttachedFile] = useState<File | null>(null);
+  const [attachedFiles, setAttachedFiles] = useState([]);
+  const [pending, setPending] = useState(false);
   const [isDataSent, setIsDataSent] = useState(false);
 
   const [isOutsourcing, setIsOutsourcing] = useState(false);
@@ -104,7 +106,7 @@ const Brief: FC = () => {
       setValue('name', '', setOption);
       setValue('email', '', setOption);
       setValue('description', '', setOption);
-      onSubmitFile(null);
+      onSubmitFiles(null);
       setIsOutsourcing(false);
 
       setIsCleanUpContacts(false);
@@ -115,8 +117,8 @@ const Brief: FC = () => {
 
   useEffect(() => {
     // if (isMobile || navigator.userAgent.indexOf('Mac') > -1) {
-      const body = document.getElementsByTagName('body')[0];
-      body.scrollTo(0, 0);
+    const body = document.getElementsByTagName('body')[0];
+    body.scrollTo(0, 0);
     // } else scrollbarRef.current.scrollbar.scrollTo(0, 0);
   }, [isDataSent]);
 
@@ -164,21 +166,29 @@ const Brief: FC = () => {
     }
 
     const brief = JSON.stringify({ ...data, services });
-
-    let request = await sendToEmail(brief, attachedFile);
+    setPending(true);
+    let request = await sendToEmail(brief, attachedFiles);
 
     if (request.ok) {
       setIsDataSent(true);
+      setPending(false);
     }
   };
 
-  const onSubmitFile = async (file) => {
-    if (file == null) {
-      setAttachedFile(null);
-    } else {
-      setAttachedFile(file);
+  const onSubmitFiles = async (files) => {
+    if (files.length) {
+      const newFiles = [...attachedFiles, ...Object.values(files)].slice(0, 25);
+      setAttachedFiles([...newFiles]);
     }
   };
+
+  const removeFile = (event, index) => {
+    setAttachedFiles((prevFiles) => prevFiles.filter((f, i) => i !== index));
+  };
+
+  useEffect(() => {
+    console.log(attachedFiles[0] === attachedFiles[1]);
+  }, [attachedFiles.length]);
 
   return (
     <AnimatedBlock
@@ -192,7 +202,7 @@ const Brief: FC = () => {
           <div className={styles.container}>
             <h2 className="bebasNeue132">{translate.fillBrief}</h2>
             <div className={styles.servicesSwitch}>
-              <h5 className="interMedium2432">{translate.whatAppOrServices}</h5>
+              <h5 className="interMedium2432">{translate.whatServices}</h5>
               <div className={styles.switch}>
                 <Tag
                   label={translate.outstaffing}
@@ -286,38 +296,39 @@ const Brief: FC = () => {
             <section className={styles.aboutProject}>
               <h5 className="interMedium2432">{translate.writeAboutProject}</h5>
               <div className={styles.personalInformation}>
-                <Controller
-                  name="name"
-                  control={control}
-                  render={({ field: { onChange, value } }) => (
-                    <MInput
-                      label={translate.yourName}
-                      onChange={onChange}
-                      value={value}
-                      required={true}
-                    />
-                  )}
-                />
-                <Controller
-                  name="email"
-                  control={control}
-                  render={({ field: { onChange, value } }) => (
-                    <MInput
-                      label={translate.email}
-                      onChange={onChange}
-                      value={value}
-                      required={true}
-                      error={errors.email ? errors.email.message : null}
-                    />
-                  )}
-                />
-
+                <section>
+                  <Controller
+                    name="name"
+                    control={control}
+                    render={({ field: { onChange, value } }) => (
+                      <MInput
+                        label={translate.name}
+                        onChange={onChange}
+                        value={value}
+                        required={true}
+                      />
+                    )}
+                  />
+                  <Controller
+                    name="email"
+                    control={control}
+                    render={({ field: { onChange, value } }) => (
+                      <MInput
+                        label={translate.email}
+                        onChange={onChange}
+                        value={value}
+                        required={true}
+                        error={errors.email ? errors.email.message : null}
+                      />
+                    )}
+                  />
+                </section>
                 <Controller
                   name="description"
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <MTextArea
-                      label={translate.description}
+                      label={translate.description + '*'}
                       onChange={onChange}
                       value={value}
                       rowsMax={12}
@@ -326,8 +337,9 @@ const Brief: FC = () => {
                 />
                 <AttachFile
                   label={translate.attachFile}
-                  setFile={onSubmitFile}
-                  attachedFileName={attachedFile?.name}
+                  setFiles={onSubmitFiles}
+                  removeFile={removeFile}
+                  attachedFileNames={attachedFiles.map((f) => f?.name)}
                 />
               </div>
             </section>
@@ -335,7 +347,7 @@ const Brief: FC = () => {
               type="submit"
               className={`latoSemibold2028 ${styles.sendBtn}`}
             >
-              {translate.send}
+              {pending ? <Ring size={28} /> : translate.submit}
             </button>
           </div>
         </form>

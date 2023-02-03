@@ -5,8 +5,13 @@ import { FC, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { SCREENS } from '../../../navigation/constants';
 import StaggerText from '../../StaggerText';
+import { colors } from '../../../styles/colors';
 
-const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
+const Item: FC<{ link: SCREENS; title: string; isWhiteTheme: Boolean }> = ({
+  link,
+  title,
+  isWhiteTheme,
+}) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -16,10 +21,13 @@ const Item: FC<{ link: SCREENS; title: string }> = ({ link, title }) => {
 
   const isCurrentPage = location.pathname === link;
   const [isHover, setIsHover] = useState(false);
+  const bgColor =
+    isCurrentPage && (isWhiteTheme ? colors.white : colors.accentYellow);
 
   return (
     <div
-      className={`${styles.container} ${isCurrentPage && styles.selected}`}
+      style={{ backgroundColor: bgColor }}
+      className={`${styles.container}`}
       onClick={navigateTo}
       onMouseEnter={() => setIsHover(!isHover)}
       onMouseLeave={() => setIsHover(!isHover)}

@@ -3,24 +3,19 @@
 .button {
   position: relative;
 
-  padding: autoResize(7px, 11px, $landscape384, $landscape800)
-    autoResize(11px, 19px, $landscape384, $landscape800);
+  padding: autoResize(8px, 12px, $landscape384, $landscape800)
+    autoResize(12px, 20px, $landscape384, $landscape800);
   border-radius: autoResize(15.374px, 24px, $landscape384, $landscape800);
   @media (max-width: $landscape800) {
-    // box-shadow: 0 0 0 1px red;
     box-shadow: none !important;
   }
   color: $mainBlack;
-  box-shadow: 0 0 0 1px rgba(36, 36, 36, 0.5);
-  border: 1px solid rgba(36, 36, 36, 1);
-  background-color: transparent;
+  background-color: $greyPlate;
 
   transition: $transitionEase;
 
   &:hover:not(.selected) {
-    box-shadow: 0 0 0 1px $yellow50;
-    border-color: $yellow50;
-    background-color: $yellow50;
+    background-color: $halfYellow;
   }
 
   @media (hover: none) {
@@ -33,8 +28,5 @@
 }
 
 .selected {
-  border-color: $yellow100;
-  background-color: $yellow100;
-  box-shadow: 0 0 0 1px rgba(252, 224, 78, 1);
- 
+  background-color: $accentYellow;
 }

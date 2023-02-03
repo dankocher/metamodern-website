@@ -1,6 +1,5 @@
 @import "foundations.scss";
 
-
 //Links fonts
 
 .latoSemibold2012 {
@@ -42,6 +41,30 @@
   line-height: autoResize(24px, 32px, $landscape384, $landscape800) !important;
 }
 
+.lato2432 {
+  font-family: "Lato", sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.lato2836 {
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(20px, 28px, $landscape384, $landscape800) !important;
+    line-height: autoResize(
+      28px,
+      32px,
+      $landscape384,
+      $landscape800
+    ) !important;
+  }
+}
+
 .latoSemibold2214 {
   font-family: "Lato", sans-serif;
   font-weight: 600;
@@ -49,17 +72,29 @@
   line-height: 30px;
   @media (max-width: $landscape800) {
     font-weight: 500;
-    font-size: autoResize(
-      14px,
-      22px,
-      $landscape800,
-      $landscape1133
-    ) !important;
+    font-size: autoResize(14px, 22px, $landscape800, $landscape1133) !important;
     line-height: autoResize(
       17px,
       30px,
       $landscape800,
       $landscape1133
+    ) !important;
+  }
+}
+
+.bebasNeue72 {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 400;
+  font-size: 72px;
+  line-height: 72px;
+
+  @media (max-width: $landscape384) {
+    font-size: autoResize(60px, 72px, $landscape320, $landscape384) !important;
+    line-height: autoResize(
+      60px,
+      72px,
+      $landscape320,
+      $landscape384
     ) !important;
   }
 }
@@ -150,24 +185,46 @@
   }
 }
 
+.bebasNeue132to56 {
+  font-family: "BebasNeue", sans-serif;
+  font-weight: 400;
+  font-size: 132px;
+  line-height: 132px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(62px, 132px, $landscape384, $landscape800) !important;
+    line-height: autoResize(
+      62px,
+      132px,
+      $landscape384,
+      $landscape800
+    ) !important;
+  }
+
+  @media (max-width: $landscape384) {
+    font-size: autoResize(56px, 132px, $landscape320) !important;
+    line-height: autoResize(56px, 132px, $landscape320) !important;
+  }
+}
+
 .bebasNeue36 {
   font-family: "BebasNeue", sans-serif;
   font-weight: 400;
   font-size: 132px;
   line-height: 132px;
 
-  @media (max-width: $landscape1200) {
-    font-size: autoResize(
-      36px,
-      132px,
-      $landscape320,
-      $landscape1200
-    ) !important;
+  @media (max-width: $landscape1920) {
+    font-size: autoResize(95px, 132px, $landscape1200) !important;
+    line-height: autoResize(95px, 132px, $landscape1200) !important;
+  }
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(36px, 95px, $landscape320, $landscape800) !important;
     line-height: autoResize(
       36px,
-      132px,
+      95px,
       $landscape320,
-      $landscape1200
+      $landscape800
     ) !important;
   }
 }
@@ -283,6 +340,13 @@
   }
 }
 
+.interMedium1416 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
 .interMedium1216 {
   font-family: "Inter", sans-serif;
   font-weight: 500;
@@ -350,11 +414,20 @@
   line-height: autoResize(18px, 28px, $landscape384, $landscape800) !important;
 }
 
-.interMedium1622 {
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
+.interRegular1622 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
   font-size: 16px;
   line-height: 22px;
+  font-size: autoResize(14px, 16px, $landscape384, $landscape800) !important;
+  line-height: autoResize(16px, 22px, $landscape384, $landscape800) !important;
+}
+
+.interMedium1622 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: autoResize(14px, 16px, $landscape384, $landscape800) !important;
+  line-height: autoResize(16px, 22px, $landscape384, $landscape800) !important;
 }
 
 .interMedium2036 {
@@ -365,6 +438,16 @@
 
   font-size: autoResize(18px, 20px, $landscape384, $landscape800) !important;
   line-height: autoResize(24px, 36px, $landscape384, $landscape800) !important;
+}
+
+.interRegular2028 {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+
+  font-size: autoResize(16px, 20px, $landscape384, $landscape800) !important;
+  line-height: autoResize(22px, 28px, $landscape384, $landscape800) !important;
 }
 
 .interRegular2232 {
@@ -459,6 +542,274 @@
   }
 }
 
+.interRegular1824 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  font-size: autoResize(16px, 18px, $landscape384, $landscape800) !important;
+  line-height: autoResize(22px, 24px, $landscape384, $landscape800) !important;
+}
+
+.interRegular2230 {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 30px;
+  font-size: autoResize(16px, 22px, $landscape384, $landscape800) !important;
+  line-height: autoResize(22px, 30px, $landscape384, $landscape800) !important;
+}
+
+.interMedium4048 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(24px, 40px, $landscape384, $landscape800) !important;
+    line-height: autoResize(
+      32px,
+      48px,
+      $landscape384,
+      $landscape800
+    ) !important;
+  }
+}
+
+.interMedium6068 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 60px;
+  line-height: 68px;
+  font-size: autoResize(36px, 60px, $landscape384, $landscape800) !important;
+  line-height: autoResize(44px, 68px, $landscape384, $landscape800) !important;
+}
+
+.interMedium5268 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 68px;
+  font-size: autoResize(36px, 52px, $landscape1200) !important;
+  line-height: autoResize(48px, 68px, $landscape1200) !important;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(24px, 36px, $landscape384, $landscape800) !important;
+    line-height: autoResize(
+      28px,
+      48px,
+      $landscape384,
+      $landscape800
+    ) !important;
+  }
+}
+
+.interMedium4056 {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 56px;
+  font-size: autoResize(28px, 40px, $landscape1200) !important;
+  line-height: autoResize(40px, 56px, $landscape1200) !important;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(16px, 28px, $landscape384, $landscape800) !important;
+    line-height: autoResize(
+      22px,
+      40px,
+      $landscape384,
+      $landscape800
+    ) !important;
+  }
+}
+
+.interMedium96128 {
+  font-family: "Inter", sans-serif;
+  font-weight: 900;
+  font-size: 96px;
+  line-height: 128px;
+  font-size: autoResize(72px, 96px, $landscape1200) !important;
+  line-height: autoResize(96px, 128px, $landscape1200) !important;
+}
+
+.inter3244 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 44px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(16px, 32px, $landscape384, $landscape800);
+    line-height: autoResize(22px, 44px, $landscape384, $landscape800);
+  }
+}
+
+.inter2840 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 40px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(16px, 28px, $landscape384, $landscape800);
+    line-height: autoResize(22px, 40px, $landscape384, $landscape800);
+  }
+}
+
+.inter7296 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 96px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(36px, 72px, $landscape384, $landscape800);
+    line-height: autoResize(48px, 96px, $landscape384, $landscape800);
+  }
+}
+
+.inter5672 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 56px;
+  line-height: 72px;
+
+  @media (max-width: $landscape1920) {
+    font-size: autoResize(44px, 56px, $landscape1200, $landscape1920);
+    line-height: autoResize(56px, 72px, $landscape1200, $landscape1920);
+  }
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(24px, 44px, $landscape384, $landscape800);
+    line-height: autoResize(32px, 56px, $landscape384, $landscape800);
+  }
+}
+
+.inter112124 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 112px;
+  line-height: 124px;
+  text-align: center;
+
+  @media (max-width: $landscape1920) {
+    font-size: autoResize(72px, 112px, $landscape1200, $landscape1920);
+    line-height: autoResize(88px, 124px, $landscape1200, $landscape1920);
+  }
+
+  @media (max-width: $landscape1200) {
+    font-size: autoResize(56px, 72px, $landscape800, $landscape1200);
+    line-height: autoResize(72px, 88px, $landscape800, $landscape1200);
+  }
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(28px, 56px, $landscape384, $landscape800);
+    line-height: autoResize(36px, 72px, $landscape384, $landscape800);
+  }
+}
+
+.inter3442 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 42px;
+  text-align: center;
+
+  @media (max-width: $landscape1200) {
+    font-size: autoResize(24px, 34px, $landscape800, $landscape1200);
+    line-height: autoResize(32px, 42px, $landscape800, $landscape1200);
+  }
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(18px, 24px, $landscape384, $landscape800);
+    line-height: autoResize(24px, 32px, $landscape384, $landscape800);
+  }
+
+  @media (max-width: $landscape384) {
+    font-size: autoResize(14px, 18px, $landscape320, $landscape384);
+    line-height: autoResize(17px, 24px, $landscape320, $landscape384);
+  }
+}
+
+.inter6476 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 76px;
+  text-align: center;
+
+  @media (max-width: $landscape1200) {
+    font-size: autoResize(44px, 64px, $landscape800, $landscape1200);
+    line-height: autoResize(56px, 76px, $landscape800, $landscape1200);
+  }
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(24px, 44px, $landscape384, $landscape800);
+    line-height: autoResize(32px, 56px, $landscape384, $landscape800);
+  }
+}
+
+.inter4052 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 52px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(24px, 40px, $landscape384, $landscape800);
+    line-height: autoResize(32px, 52px, $landscape384, $landscape800);
+  }
+}
+
+.inter2028 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 28px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(16px, 20px, $landscape384, $landscape800);
+    line-height: autoResize(22px, 28px, $landscape384, $landscape800);
+  }
+}
+
+.inter2436 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 36px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(16px, 24px, $landscape384, $landscape800);
+    line-height: autoResize(22px, 36px, $landscape384, $landscape800);
+  }
+}
+
+.inter6488 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 64px;
+  line-height: 88px;
+  text-align: center;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(36px, 64px, $landscape384, $landscape800);
+    line-height: autoResize(48px, 88px, $landscape384, $landscape800);
+  }
+}
+
 //Footer
 
 .footerMainFont {
@@ -469,8 +820,8 @@
 }
 
 .footerSubtitleFont {
-  font-family: "Gilroy", sans-serif;
-  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
   font-size: 16px;
   line-height: 20px;
 }
@@ -730,20 +1081,44 @@
 
 .downFont {
   font-family: "Gilroy", sans-serif;
-  font-weight: 500;
-  font-size: 10px;
-  line-height: 12px;
-}
-
-.smallFont {
-  font-family: "Gilroy", sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 15px;
 }
 
+.smallFont {
+  font-family: "Gilroy", sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+}
+
+.smallFont_bblist {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(9px, 16px, $landscape384, $landscape800);
+    line-height: autoResize(11px, 22px, $landscape384, $landscape800);
+  }
+}
+
+.downFont_bblist {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+
+  @media (max-width: $landscape800) {
+    font-size: autoResize(14px, 24px, $landscape384, $landscape800);
+    line-height: autoResize(15px, 28px, $landscape384, $landscape800);
+  }
+}
+
 //Main page fonts
-.mainBigTitle  {
+.mainBigTitle {
   font-family: "BebasNeue", sans-serif;
   font-weight: 400;
   font-size: 232px;

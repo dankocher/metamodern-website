@@ -81,47 +81,46 @@
 
     .personalInformation {
       display: flex;
+      max-width: 778px;
       flex-direction: column;
-      gap: 44px;
+      gap: 28px;
 
-      @media(max-width: $landscape384){
-        gap: 32px;
+      section {
+        display: flex;
+
+        gap: 72px;
+        flex-direction: row;
+
+        @media (max-width: $landscape800) {
+          gap: 28px;
+          flex-direction: column;
+        }
       }
     }
   }
 
   .sendBtn {
-    width: 270px;
+    width: 268px;
     height: 56px;
 
-    margin-bottom: 64px;
+    margin-bottom: 104px;
 
-    outline: 1px solid rgba(36, 36, 36, 0.5);
-    border: 1px solid rgba(36, 36, 36, 1);
+   
     border-radius: 24px;
 
     color: $mainBlack;
 
-    background-color: transparent;
+    background-color: $accentYellow;
 
     transition: $transitionEase;
-    
+
     @media (max-width: $landscape800) {
       outline: none !important;
     }
 
-    &:hover {
-      border: 0;
-      outline-color: $yellow50;
-      background-color: $yellow50;
-    }
-
     @media (max-width: $landscape420) {
       width: 100%;
-
-      border: 0;
-      outline: 1px solid rgba(252, 224, 78, 1);
-      background-color: $yellow100;
+      background-color: $accentYellow;
     }
   }
 }

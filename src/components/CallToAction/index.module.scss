@@ -1,0 +1,52 @@
+@import '../../styles/foundations.scss';
+:root {
+  --block-height: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  scroll-snap-align: center;
+  // scroll-snap-align: center;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  background-color: $accentYellow;
+  border-top-left-radius: $mainRadius;
+  border-top-right-radius: $mainRadius;
+  padding-top: 52px;
+  
+  @media (max-width: calc($landscape384 + 1px)) {
+    gap: 161px;
+  }
+
+  .title {
+    position: relative;
+    text-align: center;
+  
+    .crown {
+      position: absolute;
+      width: 105px;
+      transform: rotate(-17.5deg);
+      @media(max-width: $landscape800) {
+        width: autoResize(44px, 105px, $landscape320, $landscape800);
+      }
+      top: -21%;
+      left: -5.5%;
+    }
+  }
+
+  .startBtn {
+    padding: 20px 44px;
+    @media (max-width: $landscape800) {
+      padding: 14px 48px;
+    }
+  }
+}

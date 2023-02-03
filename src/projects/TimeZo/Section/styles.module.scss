@@ -16,7 +16,7 @@
     justify-content: center;
   }
 
-  @media (min-width: $mdDevice + 1) {
+  @media (min-width: calc($mdDevice + 1px)) {
     &:nth-of-type(4) .phone__block {
       flex-direction: row-reverse;
     }
@@ -40,7 +40,7 @@
   align-items: center;
   justify-content: space-between;
 
-  @media (min-width: $mdDevice + 1) {
+  @media (min-width: calc($mdDevice + 1px)) {
     width: 766px;
   }
 
@@ -61,10 +61,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: $textSecond;
+      color: $greySec;
 
       :not(:last-child) {
-        color: $main;
+        color: $mainBlack;
         margin-bottom: 8px;
       }
     }
@@ -96,13 +96,13 @@
       }
     }
 
-    @media (min-width: $mdDevice + 1) {
+    @media (min-width: calc($mdDevice + 1px)) {
       .circle {
         width: 116.1%;
         height: 57.28%;
         position: absolute;
         border-radius: 50%;
-        background-color: $yellow;
+        background-color: $accentYellow;
       }
 
       .circleOne {

@@ -3,17 +3,7 @@
 .container {
   width: 100vw;
 
-  background: radial-gradient(
-      75.21% 266.51% at 87.5% 50%,
-      rgba(239, 81, 81, 0.25) 0%,
-      rgba(239, 81, 81, 0.025) 100%
-    ),
-    radial-gradient(
-      74.63% 264.43% at 12.77% 50%,
-      rgba(152, 81, 239, 0.25) 0%,
-      rgba(152, 81, 239, 0.05) 100%
-    ),
-    #0d0829;
+  background: linear-gradient(90deg, #2D1753 0%, #371A4F 36.46%, #411A3E 74.48%, #3F1A3A 100%);
 
   > div:not(:last-child, :first-child) {
     @media (max-width: $tabletWidth) {

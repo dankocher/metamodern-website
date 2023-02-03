@@ -2,109 +2,130 @@
 
 // Footer
 $footerPoint: 980px;
-
-$backgroundColor: $secondBlack;
 $iconColor: $white;
 $linkTextColor: $white;
 $textColor: #8e98a2;
 
 $paddingHorizontal: 64px;
-
-.container {
+.wrapper {
   width: 100%;
-
   position: relative;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  margin-top: auto;
-
-  background-color: $backgroundColor;
-
-  .logo {
-    position: absolute;
-    left: $paddingHorizontal;
-
-    & svg > * {
-      fill: $iconColor;
-    }
-
-    @media (max-width: $footerPoint) {
-      display: none;
-    }
-  }
-
-  @media (max-width: $footerPoint) {
-    flex-direction: column-reverse;
-
-    padding-top: 40px;
-  }
-}
-
-.info {
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  padding-top: 56px;
-
-  padding-bottom: 28px;
-
-  text-align: center;
-
-  @media (max-width: $footerPoint) {
-    margin-top: 40px;
-    padding-top: 0;
-  }
-
-  p {
-    color: $textColor;
-  }
-
-  &__links {
+  .container {
+    width: 100%;
+    position: relative;
+    flex-direction:column;
+    align-items: center;
     display: flex;
 
-    gap: 24px;
+    margin-top: auto;
+    border-top-left-radius: $mainRadius;
+    border-top-right-radius: $mainRadius;
+    background-color: $mainBlack;
+    padding-top: 68px;
+    padding-bottom: 32px;
+    padding-left: 42px;
+    padding-right: 42px;
 
-    margin-bottom: 24px;
-
-    color: $linkTextColor;
-
-    @media (max-width: $footerPoint) {
+    @media (max-width: calc($landscape1200 - 1px)) {
+      padding-left: autoResize(28px, 42px, $landscape320, $landscape384);
+      padding-right: autoResize(28px, 42px, $landscape320, $landscape384);
+      align-items: center;
       flex-direction: column;
     }
 
-    a {
-      color: inherit;
+    .insideContainer {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding-left: 0px;
+      padding-right: 0px;
+      @media (min-width: $landscape1200 ) {
+      padding-left: autoResize(22px, 114px, $landscape1200);
+      padding-right: autoResize(38px, 158px, $landscape1200);
+      }
+      @media (max-width: calc($landscape1200 - 1px)) {
+        align-items: center;
+        flex-direction: column;
+      }
+      .title_block {
+        display: flex;
+        flex-direction: column;
+        gap: 102px;
+        margin-top: 14px;
+        @media (max-width: calc($landscape1200 - 1px)) {
+          gap: autoResize(32px, 102px, $landscape384, $landscape800);
+          align-items: center;
+        }
+        .title {
+          color: $white;
+        }
+        .social {
+          right: $paddingHorizontal;
+
+          display: flex;
+          gap: 12px;
+          a {
+            display: flex;
+            padding: 20px;
+            border-radius: 50%;
+            border: 1px solid $blackGrey;
+            &:hover {
+              background-color: $blackGrey;
+            }
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+          @media (max-width: $footerPoint) {
+            position: initial;
+          }
+        }
+      }
+
+      .links {
+        display: flex;
+        flex-direction: row;
+        gap: autoResize(72px, 124px, $landscape1200);
+        flex-wrap: wrap;
+        @media (max-width: calc($landscape1200 - 1px)) {
+          margin-top: 77px;
+        }
+        @media (max-width: calc($landscape800 - 1px)) {
+          // flex-direction: column;
+          // align-self: flex-start;
+          // justify-content: center;
+        }
+
+        @media (max-width: 676px) {
+          padding-left: autoResize(1px, 700px, $landscape384);
+        }
+
+        section {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          span {
+            color: $white;
+            &:hover {
+              color: $greySec;
+            }
+          }
+        }
+      }
     }
   }
 }
-
-.social {
-  position: absolute;
-  right: $paddingHorizontal;
-
-  display: flex;
-  gap: 20px;
-
-  @media (max-width: $footerPoint) {
-    position: initial;
+.copyright{
+  @media (max-width: calc($landscape1200 - 1px)) {
+    margin-top: 130px;
   }
-}
 
-.noSelect {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-
-  :focus {
-    outline: none !important;
-  }
+  
+  margin-top: 116px;
+  color: $textColor;
 }

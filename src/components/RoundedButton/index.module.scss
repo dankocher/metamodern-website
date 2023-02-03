@@ -1,0 +1,9 @@
+@import '../../styles/foundations.scss';
+
+.container {
+  position: relative;
+  display: flex;
+  border: none;
+  border-radius: $mainRadius;
+  cursor: pointer;
+}

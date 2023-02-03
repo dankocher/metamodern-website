@@ -21,10 +21,21 @@ const ScrollToTop = ({ children, isMobile }) => {
       return off.key === prevKey;
     });
     let y = null;
+    y = window.pageYOffset;
+    if (!prevOffset)
+    setPageOffsets((prev) => [...prev, { key: prevKey, y: y }]);
+  else {
+    setPageOffsets((prev) => {
+      prev[indexOffset] = { key: prevKey, y: y };
+      return prev;
+    });
+  }
     setTimeout(() => {
       // if (isMobile || navigator.userAgent.indexOf('Mac') > -1) {
-        y = window.pageYOffset;
+        
+        console.log(window.scrollY);
         if (offset && patches.some((p) => location.pathname === p)) {
+          
           window.scrollTo({ top: offset.y, left: 0 });
         } else {
           window.scrollTo({ top: 0, left: 0 });
@@ -37,15 +48,6 @@ const ScrollToTop = ({ children, isMobile }) => {
       //     scrollbarRef.current.scrollbar.scrollTo(0, 0);
       //   }
       // }
-
-        if (!prevOffset)
-          setPageOffsets((prev) => [...prev, { key: prevKey, y: y }]);
-        else {
-          setPageOffsets((prev) => {
-            prev[indexOffset] = { key: prevKey, y: y };
-            return prev;
-          });
-        }
     }, 200);
   }, [location.pathname]);
 

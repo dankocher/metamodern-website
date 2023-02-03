@@ -18,7 +18,7 @@
   .content {
     width: autoResize(288px, 800px, 320px, $mdDevice);
     flex-direction: column;
-    color: $neutral900;
+    color: $mainBlack;
     padding-top: 88px;
     padding-bottom: 144px;
     padding-top: autoResize(140, 180);
@@ -29,7 +29,7 @@
 
   .headerBlock {
     padding-bottom: 28px;
-    border-bottom: 1px solid $neutral300;
+    border-bottom: 1px solid $grey;
     margin-bottom: 40px;
     padding-bottom: autoResize(24px, 28px) !important;
 
@@ -48,7 +48,7 @@
     }
 
     p {
-      color: $neutral700;
+      color: $blackGrey;
     }
   }
 
@@ -97,7 +97,7 @@
 
       a {
         word-break: break-all;
-        color: $accent;
+        color: $mainBlack;
 
         &[href*='mailto:'] {
           word-break: normal;
