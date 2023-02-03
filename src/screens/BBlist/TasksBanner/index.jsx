@@ -79,6 +79,8 @@ let tags1 = JSON.parse(JSON.stringify(tags))
     if(window.innerWidth<500){
       tags1[2].top = -1000;
       tags1[2].left = -1000;
+      tags1[6].top = -1000;
+      tags1[6].left = -1000;
       tags1[5].top = 0.6;
       tags1[5].left = 0.5;
       tags1[4].top = 0.85;

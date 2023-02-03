@@ -17,6 +17,9 @@ import calmCats from '../assets/images/calmCats.png';
 import calmCats2 from '../assets/images/calmCats@2x.png';
 import calmCatsBackground from '../assets/images/calmCatsBackground.png';
 
+import bbList from '../assets/images/BB-list.png';
+import bbList2 from '../assets/images/BB-list@2x.png';
+
 import { SCREENS } from '../navigation/constants';
 
 const data: ProjectProps[] = [
@@ -88,6 +91,20 @@ const data: ProjectProps[] = [
     bgImage: { x1: calmCats, x2: calmCats2 },
     gradient: {
       '--gradient': `#E8E8E8 url(${calmCatsBackground})`,
+    },
+    isDarkContent: true,
+  },
+  {
+    link: SCREENS.BB_LIST,
+    type: ProjectsTypes.MOBILE,
+    name: 'BB-list',
+    title: 'task manager',
+    description:
+      "Your personal task manager BB-list for work, school, and personal life. All your tasks and records in one place.",
+    tags: ['Design', 'Research', 'Mobile', 'Landing'],
+    bgImage: { x1: bbList, x2: bbList2 },
+    gradient: {
+      '--gradient': `#fff`,
     },
     isDarkContent: true,
   },
