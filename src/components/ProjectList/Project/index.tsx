@@ -64,7 +64,7 @@ const Project: FC<ProjectProps> = ({
         >
           <div className={styles.content__title}>
             <h6 className="interBlack2436">{name}</h6>
-            <h6 className="interSemiBold2436">&nbsp;{`- ${title}`}</h6>
+            <h6 className="interSemiBold2436">&nbsp;{`${title}`}</h6>
           </div>
           <div className={styles.content__tags}>
             {tags.map((tag, index) => (

@@ -28,7 +28,7 @@ const data: ProjectProps[] = [
     link: SCREENS.TOD,
     type: ProjectsTypes.MOBILE,
     name: 'Truth or Dare',
-    title: 'application of the imitation game',
+    title: '- application of the imitation game',
     description:
       'Truth or Dare removes your responsibility and has a universal approach to any kind of fun.',
     tags: ['Design', 'Mobile', 'Landing'],
@@ -43,7 +43,7 @@ const data: ProjectProps[] = [
     link: SCREENS.TIME_ZO,
     type: ProjectsTypes.MOBILE,
     name: 'TimeZo',
-    title: 'world time zone app',
+    title: '- world time zone app',
     description:
       'TimeZo is the most convenient and fastest way to keep your head clean.',
     tags: ['Design', 'Mobile', 'Landing'],
@@ -57,7 +57,7 @@ const data: ProjectProps[] = [
     link: 'https://www.behance.net/gallery/154107741/BeRead-Online-Books-Reading-App-UXUI',
     type: ProjectsTypes.MOBILE,
     name: 'BeRead',
-    title: 'online books',
+    title: '- online books',
     description:
       'BeRead is a unique portable magic. The goal is to make an app that combines the functions of a book reader, a social network and the best assistant in the book world. An app that will replace the entire cycle of finding and buying a book. ',
     tags: ['Design', 'Mobile'],
@@ -71,7 +71,7 @@ const data: ProjectProps[] = [
     link: 'https://www.behance.net/gallery/158350645/Never-Have-I-Ever-Mobile-game-IOS-Android',
     type: ProjectsTypes.MOBILE,
     name: 'Never Have i ever',
-    title: 'game for party',
+    title: '- game for party',
     description:
       'Never have I ever... Stop racking your brain to complete this statement. Just download our game. It will make even the most boring evening unforgettable.',
     tags: ['Design', 'Mobile', 'Landing'],
@@ -85,7 +85,7 @@ const data: ProjectProps[] = [
     link: `https://dribbble.com/shots/15948449-Relaxiki-Meditation-app`,
     type: ProjectsTypes.MOBILE,
     name: 'CalmCats',
-    title: 'meditation app',
+    title: '- meditation app',
     description:
       "CalmCats is an app for meditation and breathing practices. It is a scientifically proven fact that such practices improve the quality of life. And who else improves quality of life? That's right - cute cats. Combining one with the other, we got this great app for breathing practices.",
     tags: ['Design', 'Mobile'],
