@@ -4,9 +4,11 @@
 // html,
 // body
 
-*::selection() {
-  background: null !important;
+*::selection {
+  background: rgba(0, 115, 255, 0.85) !important;
+  // background: rgb(51, 126, 255) !important;
   // background: $bbListFocus !important;
+  //Highlight
 }
 
 .container {

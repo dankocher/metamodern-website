@@ -16,10 +16,16 @@ const Button = ({ text, icon, index, isSelected, setSelectedBtnIndex }) => {
   return (
     <div className={btnClass} onClick={buttonOnClick}>
       <div className={styles.iconWrapper}>
-          <Icon  name={icon + "Filled"} className={`${styles.icon} ${!isSelected && styles.hiddenIcon}`} />
-          <Icon  name={icon } className={`${styles.icon} ${isSelected && styles.hiddenIcon}`} />
+        <Icon
+          name={icon + "Filled"}
+          className={`${styles.icon} ${!isSelected && styles.hiddenIcon}`}
+        />
+        <Icon
+          name={icon}
+          className={`${styles.icon} ${isSelected && styles.hiddenIcon}`}
+        />
       </div>
-      <div className={`${styles.text} inter3244`}>{text}</div>
+      <div className={`inter3244`}>{text}</div>
     </div>
   );
 };

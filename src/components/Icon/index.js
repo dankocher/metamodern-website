@@ -16,7 +16,6 @@ import touch from "./svg/touch.svg";
 import location from "./svg/location.svg";
 import TimeZoLogo from "./svg/TimeZo-logo.svg";
 import todLogo from "./svg/tod.svg";
-import BBlistLogo from "./svg/bblistlogo.svg";
 import android from "./svg/android.svg";
 import apple from "./svg/apple.svg";
 
@@ -46,7 +45,6 @@ const icons = {
   location,
   TimeZoLogo,
   todLogo,
-  BBlistLogo,
   android,
   apple,
   taskList,
@@ -56,7 +54,7 @@ const icons = {
   loading,
   loadingFilled,
   earth,
-  earthFilled
+  earthFilled,
 };
 
 const StyledSVG = styled(SVG)`

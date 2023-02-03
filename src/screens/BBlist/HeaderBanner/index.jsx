@@ -1,6 +1,8 @@
 import styles from "./index.module.scss";
 import LinkButtons from "../../../components/LinkButtons";
-import { Icon } from "../../../components/Icon";
+// import { Icon } from "../../../components/Icon";
+import logoImg from "../images/bblistlogo.png";
+
 // import React, { useRef } from "react";
 
 export default ({ linePart1, linePart2, spotlight, link }) => {
@@ -28,7 +30,8 @@ export default ({ linePart1, linePart2, spotlight, link }) => {
         </div>
 
         <div>
-          <Icon name="BBlistLogo" className={styles.logo} />
+          <img src={logoImg} className={styles.logo} />
+          {/* <Icon name="BBlistLogo" className={styles.logo} /> */}
         </div>
       </div>
     </div>
