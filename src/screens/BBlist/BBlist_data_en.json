@@ -10,7 +10,7 @@
   },
   "slider": {
     "title": "Future updates",
-    "subtitle": "Future updates to the world's best app. Coming soon...",
+    "subtitle": "Future updates our task manager. Coming soon...",
     "buttons": [
       {
         "video": "BB-calendar2.mp4",
@@ -78,7 +78,7 @@
         "angle": -0.139,
         "top": 0.2,
         "left": 0.733,
-        "text": "tasks"
+        "text": "Tasks"
       }
     ]
   },

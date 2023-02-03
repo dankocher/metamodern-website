@@ -4,8 +4,8 @@
 // html,
 // body
 
-*::selection {
-  background: #3390ff !important;
+*::selection() {
+  background: null !important;
   // background: $bbListFocus !important;
 }
 

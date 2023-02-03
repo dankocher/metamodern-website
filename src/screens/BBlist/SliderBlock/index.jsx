@@ -53,9 +53,9 @@ const SliderBlock = ({ title, subtitle, buttons }) => {
               onSlideChange={onSlideChange}
               onSwiper={(swiper) => (swiperRef.current = swiper)}
             >
-              {buttons.map((button) => {
+              {buttons.map((button, i) => {
                 return (
-                  <SwiperSlide>
+                  <SwiperSlide key={i+" "}>
                     {!button.video ? (
                       <img src={soonImg} className={styles.img_content} />
                     ) : (
