@@ -1,39 +1,40 @@
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
-import PageWrapper from '../components/PageWrapper';
-import ScrollToTop from './ScrollToTop';
-import Redirect from './Redirect';
+import PageWrapper from "../components/PageWrapper";
+import ScrollToTop from "./ScrollToTop";
+import Redirect from "./Redirect";
 
-import { SCREENS } from './constants';
+import { SCREENS } from "./constants";
 
-import AboutUs from '../screens/AboutUs';
-import ContactsScreen from '../screens/Contacts';
-import Home from '../screens/Home';
-import PortfolioScreen from '../screens/Portfolio';
-import PrivacyMetaModern from '../screens/PrivacyMetaModern';
-import ToDScreen from '../screens/TOD';
-import ToDPrivacyScreen from '../screens/ToDPrivacy';
-import ToDTermsScreen from '../screens/ToDTerms';
-import TimeZoScreen from '../screens/TimeZO';
-import TimeZoPrivacyScreen from '../screens/TimeZOPrivacy';
-import Header from '../components/Header';
-import { AnimatePresence, motion } from 'framer-motion';
-import ModalMenu from '../components/ModalMenu';
-import { useEffect } from 'react';
-import { colors } from '../styles/colors';
+import AboutUs from "../screens/AboutUs";
+import BBlist from "../screens/BBlist";
+import ContactsScreen from "../screens/Contacts";
+import Home from "../screens/Home";
+import PortfolioScreen from "../screens/Portfolio";
+import PrivacyMetaModern from "../screens/PrivacyMetaModern";
+import ToDScreen from "../screens/TOD";
+import ToDPrivacyScreen from "../screens/ToDPrivacy";
+import ToDTermsScreen from "../screens/ToDTerms";
+import TimeZoScreen from "../screens/TimeZO";
+import TimeZoPrivacyScreen from "../screens/TimeZOPrivacy";
+import Header from "../components/Header";
+import { AnimatePresence, motion } from "framer-motion";
+import ModalMenu from "../components/ModalMenu";
+import { useEffect } from "react";
+import { colors } from "../styles/colors";
 
 const Navigation = ({ isMobile }) => {
   const CatDribble =
-    'https://dribbble.com/shots/15948449-Relaxiki-Meditation-app';
+    "https://dribbble.com/shots/15948449-Relaxiki-Meditation-app";
   const location = useLocation();
   const duration = 0.2;
 
-  useEffect(()=>{
-    if ('scrollRestoration' in window.history && isMobile) {
+  useEffect(() => {
+    if ("scrollRestoration" in window.history && isMobile) {
       // Back off, browser, I got this...
-      window.history.scrollRestoration = 'manual';
-  }
-  },[])
+      window.history.scrollRestoration = "manual";
+    }
+  }, []);
 
   return (
     <ScrollToTop isMobile={isMobile}>
@@ -43,7 +44,12 @@ const Navigation = ({ isMobile }) => {
         <Routes key={location.pathname} location={location}>
           <Route
             path={SCREENS.HOME}
-            element={<PageWrapper children={<Home isMobile={isMobile} />} backgroundColor={colors.accentYellow}/>}
+            element={
+              <PageWrapper
+                children={<Home isMobile={isMobile} />}
+                backgroundColor={colors.accentYellow}
+              />
+            }
           />
 
           <Route
@@ -52,7 +58,9 @@ const Navigation = ({ isMobile }) => {
           />
           <Route
             path={SCREENS.ABOUT_US}
+
             element={<PageWrapper children={<AboutUs />} />}
+
           />
 
           <Route
@@ -69,7 +77,10 @@ const Navigation = ({ isMobile }) => {
             element={
               <motion.div
                 exit={{ opacity: 0 }}
-                transition={{ duration: duration, transition:{ duration: duration }  }}
+                transition={{
+                  duration: duration,
+                  transition: { duration: duration },
+                }}
               >
                 <ToDScreen />
               </motion.div>
@@ -82,7 +93,7 @@ const Navigation = ({ isMobile }) => {
             path={SCREENS.TIME_ZO}
             element={
               <motion.div
-                exit={{ opacity: 0, transition:{ duration: duration } }}
+                exit={{ opacity: 0, transition: { duration: duration } }}
                 transition={{ duration: duration }}
               >
                 <TimeZoScreen />
@@ -97,6 +108,8 @@ const Navigation = ({ isMobile }) => {
             path={SCREENS.CALM_CATS}
             element={<Redirect url={CatDribble} />}
           />
+
+          <Route path={SCREENS.BB_LIST} element={<BBlist />} />
 
           <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
         </Routes>

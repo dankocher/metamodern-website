@@ -83,8 +83,8 @@ const AboutUs = () => {
             <span className={`${styles.principTitle} interMedium6068`}>
               Our Principles
             </span>
-            {principlesList.map((item, index) => (
-              <div className={styles.princip_text_block} key={index}>
+            {principlesList.map((item) => (
+              <div className={styles.princip_text_block}>
                 <span
                   className={`${styles.princip_text_title} interMedium4048`}
                 >

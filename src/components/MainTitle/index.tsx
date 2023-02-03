@@ -40,6 +40,7 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
   };
 
   const setBorderRadius = (scroll) => {
+    if(containerRef.current)
     if (!scroll) {
       containerRef.current.style.borderBottomLeftRadius = '0px';
       containerRef.current.style.borderBottomRightRadius = '0px';

@@ -1,0 +1,18 @@
+@import "../../../../styles/foundations.scss";
+
+.container {
+  position: absolute;
+  display: none;
+  gap: 12px;
+  z-index: 2;
+  bottom: 38px;
+  @media (max-width: 540px) {
+    display: flex;
+  }
+
+  .dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+}

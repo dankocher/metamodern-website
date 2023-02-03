@@ -1,0 +1,131 @@
+{
+  "headerBanner": {
+    "linePart1": "Your personal task manager",
+    "linePart2": "for work, school, and personal life",
+    "spotlight": "BB-list",
+    "link": {
+      "googlePlay": "https://play.google.com/store/apps/dev?id=8599386952861463297",
+      "appStore": "https://apps.apple.com/us/developer/metamodern-dev-llc/id1591624350"
+    }
+  },
+  "slider": {
+    "title": "Future updates",
+    "subtitle": "Future updates our task manager. Coming soon...",
+    "buttons": [
+      {
+        "video": "BB-calendar2.mp4",
+        "icon": "notification",
+        "text": "Reminders (2Q 2024)"
+      },
+      {
+        "video": "BB-calendar1.mp4",
+        "icon": "taskList",
+        "text": "Calendar view (4Q 2024) "
+      },
+      {
+        "video": "",
+        "icon": "loading",
+        "text": "Habits"
+      },
+      {
+        "video": "",
+        "icon": "earth",
+        "text": "Web version"
+      }
+    ]
+  },
+  "tasksBanner": {
+    "titlePart1": "All your tasks and",
+    "titlePart2": "records in one place",
+    "tags": [
+      {
+        "angle": -0.16,
+        "top": 0.124,
+        "left": 0.132,
+        "text": "Habits"
+      },
+      {
+        "angle": 0.09,
+        "top": 0.116,
+        "left": 0.513,
+        "text": "Events"
+      },
+      {
+        "angle": -0.105,
+        "top": 0.383,
+        "left": 0.4,
+        "text": "Notes"
+      },
+      {
+        "angle": 0.175,
+        "top": 0.702,
+        "left": 0.106,
+        "text": "Birthdays"
+      },
+      {
+        "angle": -0.122,
+        "top": 0.708,
+        "left": 0.42,
+        "text": "Household tasks"
+      },
+      {
+        "angle": -0.3,
+        "top": 0.522,
+        "left": 0.722,
+        "text": "Working Projects"
+      },
+      {
+        "angle": -0.139,
+        "top": 0.2,
+        "left": 0.733,
+        "text": "Tasks"
+      }
+    ]
+  },
+
+  "featuresBlock": {
+    "spotlight": "Why",
+    "title": "do I need this app?",
+    "blocks": [
+      {
+        "image": "../images/featuresBlock1.svg",
+        "title": "Tasks",
+        "description": "You can set an unlimited number of tasks for any day of the week."
+      },
+      {
+        "image": "../images/featuresBlock2.svg",
+        "title": "Reminders",
+        "description": "The app will remind you when you need to go to the doctor or pay taxes."
+      },
+      {
+        "image": "../images/featuresBlock3.svg",
+        "title": "Plan without stress",
+        "description": "The app will help you get your affairs in order effortlessly."
+      },
+      {
+        "image": "../images/featuresBlock4.svg",
+        "title": "Productivity",
+        "description": "Your productivity will increase every day like never before. And pent-up tasks and dreams will be fulfilled!"
+      },
+      {
+        "image": "../images/featuresBlock5.svg",
+        "title": "Lists",
+        "description": "Distribute your tasks into lists, don't lump everything into one pile."
+      }
+    ]
+  },
+  "phoneBlock": {
+    "blocks": [
+      {
+        "spotlight": "Organize",
+        "title": " tasks \nwith ease",
+        "description": "The Home screen provides quick access to all your tasks. The closest tasks are located at the top. You can easily move any task to another day."
+      },
+      {
+        "spotlight": "Creating",
+        "title": " a task",
+        "description": "Clicking on the plus sign will open a task creation window. Fill in the information you need (title, description, subtasks, date) and send it in. Everything is very simple!"
+      }
+    ]
+  }
+}

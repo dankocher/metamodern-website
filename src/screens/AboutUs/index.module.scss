@@ -1,4 +1,4 @@
-@import '../../styles/foundations.scss';
+@import "../../styles/foundations.scss";
 @import "../../styles/global.scss";
 :root {
   --block-height: 0;
@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
     margin-bottom: 148px;
     background-color: $accentYellow;
     @media (min-width: $landscape1200) {
@@ -40,14 +40,14 @@
           position: absolute;
           width: 105px;
           transform: rotate(17.5deg);
-          
+
           @media (max-width: $landscape1920) {
             width: autoResize(75px, 105px, $landscape1200, $landscape1920);
           }
-          @media(max-width: $landscape800) {
+          @media (max-width: $landscape800) {
             width: autoResize(28px, 75px, $landscape320, $landscape800);
           }
-       
+
           top: -22%;
           right: 1%;
         }
@@ -68,7 +68,7 @@
           text-decoration: underline;
         }
       }
-      
+
       // margin-bottom: autoResize(44px, 88px);
     }
     @include mainBlock;
@@ -152,12 +152,9 @@
       .principles {
         width: 100%;
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         flex-direction: column;
-        gap: 96px;
-        @media(max-width: $landscape800){
-          gap: autoResize(44px, 96px, $landscape384);
-        }
+        gap: autoResize(56px, 124px, $landscape384);
         .principTitle {
           margin-bottom: autoResize(12px, 28px, $landscape384, $landscape800);
         }

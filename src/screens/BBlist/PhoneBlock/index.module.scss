@@ -1,0 +1,151 @@
+@import "../../../styles/foundations.scss";
+@import "../../../styles/global.scss";
+
+$imagemarign: 200px;
+$mobileflexlc: 1000px;
+
+@mixin mobile_flex {
+  flex-flow: column-reverse;
+  margin-left: 0px;
+  margin-right: 0px;
+
+  .image {
+    margin-bottom: 124px;
+  }
+
+  .texts {
+    text-align: center;
+    .title {
+      .spotlight {
+        text-align: center;
+      }
+    }
+    .description {
+      text-align: left;
+    }
+  }
+}
+
+@mixin image_margin_bottom {
+  margin-bottom: autoResize(64px, 124px, $landscape384, $landscape800);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  .block {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $mobileflexlc) {
+      @include mobile_flex;
+    }
+
+    .image {
+      align-self: center;
+      margin-left: $imagemarign;
+      width: 346px;
+
+      // flex: 1; // !!!!!
+
+      @media (max-width: $landscape1200) {
+        margin-left: autoResize(
+          0px,
+          $imagemarign,
+          $mobileflexlc,
+          $landscape1200
+        );
+      }
+
+      @media (max-width: $landscape800) {
+        width: autoResize(228px, 346px, $landscape384, $landscape800);
+        @include image_margin_bottom;
+      }
+    }
+
+    .texts {
+      text-align: 0;
+      white-space: pre-line;
+
+      .title {
+        max-width: fit-content;
+        display: inline;
+
+        .spotlight {
+          max-width: fit-content;
+          white-space: nowrap;
+          display: inline;
+
+          border-radius: 16px;
+          padding: 12px 20px;
+          background-color: $bbListFocus;
+          color: white;
+
+          @media (max-width: $landscape800) {
+            border-radius: autoResize(8px, 16px, $landscape384, $landscape800);
+            padding: autoResize(4px, 12px, $landscape384, $landscape800)
+              autoResize(8px, 20px, $landscape384, $landscape800);
+          }
+        }
+      }
+
+      .description {
+        width: 526px;
+        margin-top: 36px;
+
+        border-radius: 16px;
+        color: #9c9c9c;
+
+        @media (max-width: $landscape800) {
+          width: autoResize(300px, 526px, $landscape384, $landscape800);
+        }
+
+        @media (max-width: $landscape384) {
+          width: autoResize(272px, 300px, $landscape320, $landscape384);
+        }
+      }
+    }
+  }
+
+  .block:last-child {
+    margin-top: 360px;
+    flex-direction: row-reverse;
+
+    @media (max-width: $landscape1920) {
+      margin-top: autoResize(240px, 360px, $landscape1200, $landscape1920);
+    }
+
+    @media (max-width: $mobileflexlc) {
+      margin-top: 240px;
+      @include mobile_flex;
+    }
+
+    @media (max-width: $landscape800) {
+      margin-top: autoResize(172px, 240px, $landscape384, $landscape800);
+    }
+
+    @media (max-width: $landscape384) {
+      margin-top: autoResize(136px, 172px, $landscape320, $landscape384);
+    }
+
+    .image {
+      margin-left: 0px;
+      margin-right: $imagemarign;
+
+      @media (max-width: $landscape1200) {
+        margin-right: autoResize(
+          0px,
+          $imagemarign,
+          $mobileflexlc,
+          $landscape1200
+        );
+      }
+
+      @media (max-width: $landscape800) {
+        @include image_margin_bottom;
+      }
+    }
+  }
+}

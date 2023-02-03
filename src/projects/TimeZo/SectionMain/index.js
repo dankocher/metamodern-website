@@ -1,10 +1,10 @@
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
-import StaticImage from '../../../components/StaticImage';
-import LinkButtons from '../../../components/LinkButtons';
-import { Icon } from '../../../components/Icon';
+import StaticImage from "../../../components/StaticImage";
+import LinkButtons from "../../../components/LinkButtons";
+import { Icon } from "../../../components/Icon";
 
-import timeZo_mainPhone from '../../../assets/images/TimeZo-mainPhone.png';
+import timeZo_mainPhone from "../../../assets/images/TimeZo-mainPhone.png";
 
 const SectionMain = ({ name, descriptionMain, link }) => {
   return (
@@ -30,7 +30,7 @@ const SectionMain = ({ name, descriptionMain, link }) => {
               alt="phone"
               height={626}
               quality={95}
-              formats={['AUTO', 'WEBP', 'AVIF']}
+              formats={["AUTO", "WEBP", "AVIF"]}
               placeholder="none"
             />
           </div>

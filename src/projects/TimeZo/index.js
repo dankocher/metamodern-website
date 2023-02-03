@@ -1,12 +1,12 @@
-import SectionMain from './SectionMain';
-import Map from './Map';
-import Section from './Section';
-import SectionLast from './SectionLast';
+import SectionMain from "./SectionMain";
+import Map from "./Map";
+import Section from "./Section";
+import SectionLast from "./SectionLast";
 
-import Data from './TimeZo-data.json';
-import { motion } from 'framer-motion';
-import { variables as v } from '../../constants/animationVariables';
-import { colors } from '../../styles/colors';
+import Data from "./TimeZo-data.json";
+import { motion } from "framer-motion";
+import { variables as v } from "../../constants/animationVariables";
+import { colors } from "../../styles/colors";
 
 const { mainData, sections } = Data;
 
