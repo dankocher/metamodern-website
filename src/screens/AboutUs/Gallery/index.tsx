@@ -60,7 +60,7 @@ const Gallery = ({ isMobile }) => {
   const containerRef = useRef(null);
 
   function handle() {
-    setAnimation({ dir: dirRef.current, started: false });
+    setAnimation({ dir: animationRef.current.dir, started: false });
     document.getElementsByTagName('html')[0].style.overflowY = 'auto';
   }
 
@@ -68,9 +68,7 @@ const Gallery = ({ isMobile }) => {
     if (!disabledBtnRef.current) {
       setDisabledBtn(true);
       setAnimation({ dir: dirRef.current, started: true });
-      // setTimeout(() => {
-      //   setAnimation({ dir: direction, started: false });
-      // }, 500);
+      
     }
   };
 
@@ -180,7 +178,7 @@ const Gallery = ({ isMobile }) => {
     }
   }, [card, animatedCard]);
 
-  useEffect(() => {
+  useEffect(() => {  
     if (animation.started) {
       let index = 0;
 

@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 24px;
   z-index: 100;
+  
   @media (max-width: $landscape1200) {
     margin-bottom: autoResize(56, 64, 540, $landscape1200);
   }
