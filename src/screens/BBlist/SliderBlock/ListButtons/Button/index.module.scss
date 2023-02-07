@@ -16,6 +16,7 @@ $borderRadius: 16px;
   cursor: pointer;
   white-space: nowrap;
   z-index: 2;
+  transition: all 200ms;
   @media (max-width: $landscape800) {
     height: autoResize(40, 76, $landscape384, $landscape800);
     border-radius: autoResize(12, $borderRadius, $landscape384, $landscape800);

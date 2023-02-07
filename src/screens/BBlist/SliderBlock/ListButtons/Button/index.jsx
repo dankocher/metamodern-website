@@ -17,10 +17,12 @@ const Button = ({ text, icon, index, isSelected, setSelectedBtnIndex }) => {
     <div className={btnClass} onClick={buttonOnClick}>
       <div className={styles.iconWrapper}>
         <Icon
+        size={44}
           name={icon + "Filled"}
           className={`${styles.icon} ${!isSelected && styles.hiddenIcon}`}
         />
         <Icon
+        size={44}
           name={icon}
           className={`${styles.icon} ${isSelected && styles.hiddenIcon}`}
         />
