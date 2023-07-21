@@ -1,22 +1,22 @@
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
-import { FC, useContext, useEffect, useState } from 'react';
+import { FC, useContext, useEffect, useState } from "react";
 
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useForm } from "react-hook-form";
 
-import { useIsCleanUpContactsContext } from '../../context/useIsCleanUpContacts';
+import { useIsCleanUpContactsContext } from "../../context/useIsCleanUpContacts";
 
-import { yupResolver } from '@hookform/resolvers/yup/dist/yup';
-import * as Yup from 'yup';
+import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
+import * as Yup from "yup";
 
-import TagList from '../TagList';
-import MInput from '../MInput';
-import MTextArea from '../MTextArea';
-import AttachFile from '../AttachFile';
-import SuccessMessage from '../SuccessMessage';
-import Tag from '../TagList/Tag';
+import TagList from "../TagList";
+import MInput from "../MInput";
+import MTextArea from "../MTextArea";
+import AttachFile from "../AttachFile";
+import SuccessMessage from "../SuccessMessage";
+import Tag from "../TagList/Tag";
 
-import translate from '../../i18n/en.json';
+import translate from "../../i18n/en.json";
 import {
   ServicesTypes,
   servicesTypes,
@@ -32,14 +32,14 @@ import {
   testingTypes,
   AdditionalServicesTypes,
   additionalServicesTypes,
-} from '../../constants/servicesTypes';
+} from "../../constants/servicesTypes";
 
-import { sendToEmail } from '../../api/helpers';
-import AnimatedBlock from '../AnimatedBlock';
-import { animationTypes } from '../../constants/animationTypes';
-import { variables as v } from '../../constants/animationVariables';
-import { isMobile } from 'react-device-detect';
-import { Ring, Waveform } from '@uiball/loaders';
+import { sendToEmail } from "../../api/helpers";
+import AnimatedBlock from "../AnimatedBlock";
+import { animationTypes } from "../../constants/animationTypes";
+import { variables as v } from "../../constants/animationVariables";
+import { isMobile } from "react-device-detect";
+import { Ring, Waveform } from "@uiball/loaders";
 
 // import { ScrollContext } from '../DesktopAppContent';
 
@@ -52,13 +52,13 @@ interface IFormValues {
 const Brief: FC = () => {
   const { control, formState, setValue, handleSubmit } = useForm<IFormValues>({
     defaultValues: {
-      name: '',
-      email: '',
-      description: '',
+      name: "",
+      email: "",
+      description: "",
     },
     resolver: yupResolver(
       Yup.object({
-        email: Yup.string().email('E-mail entered incorrectly'),
+        email: Yup.string().email("E-mail entered incorrectly"),
       })
     ),
   });
@@ -72,7 +72,7 @@ const Brief: FC = () => {
   const [pending, setPending] = useState(false);
   const [isDataSent, setIsDataSent] = useState(false);
 
-  const [isOutsourcing, setIsOutsourcing] = useState(false);
+  const [isOutsourcing, setIsOutsourcing] = useState(true);
 
   const [currentServices, setCurrentServices] = useState<ServicesTypes[]>([]);
   const [currentIndustry, setCurrentIndustry] = useState<IndustryTypes[]>([]);
@@ -103,12 +103,11 @@ const Brief: FC = () => {
   useEffect(() => {
     if (isCleanUpContacts) {
       cleanUpTags();
-      setValue('name', '', setOption);
-      setValue('email', '', setOption);
-      setValue('description', '', setOption);
+      setValue("name", "", setOption);
+      setValue("email", "", setOption);
+      setValue("description", "", setOption);
       onSubmitFiles(null);
-      setIsOutsourcing(false);
-
+      setIsOutsourcing(true);
       setIsCleanUpContacts(false);
     }
   }, [isCleanUpContacts]);
@@ -117,7 +116,7 @@ const Brief: FC = () => {
 
   useEffect(() => {
     // if (isMobile || navigator.userAgent.indexOf('Mac') > -1) {
-    const body = document.getElementsByTagName('body')[0];
+    const body = document.getElementsByTagName("body")[0];
     body.scrollTo(0, 0);
     // } else scrollbarRef.current.scrollbar.scrollTo(0, 0);
   }, [isDataSent]);
@@ -138,30 +137,30 @@ const Brief: FC = () => {
   const getParsedTagList = (currentList, list) => {
     return currentList.length === 0
       ? undefined
-      : currentList.map((key) => list[key]).join(', ');
+      : currentList.map((key) => list[key]).join(", ");
   };
 
   const onSubmit = async (data) => {
-    let services = '';
+    let services = "";
 
     if (isOutsourcing) {
       services = `${translate.outsourcing}\n${translate.whatAppOrServices}: ${
-        getParsedTagList(currentServices, servicesTypes) || '-'
+        getParsedTagList(currentServices, servicesTypes) || "-"
       }\n${translate.selectIndustry} ${
-        getParsedTagList(currentIndustry, industryTypes) || '-'
+        getParsedTagList(currentIndustry, industryTypes) || "-"
       }`;
     } else {
       services = `${translate.outstaffing}\n${translate.frontEnd}: ${
-        getParsedTagList(currentFrontEnd, frontEndTypes) || '-'
+        getParsedTagList(currentFrontEnd, frontEndTypes) || "-"
       }\n${translate.backEnd}: ${
-        getParsedTagList(currentBackEnd, backEndTypes) || '-'
+        getParsedTagList(currentBackEnd, backEndTypes) || "-"
       }\n${translate.mobile}: ${
-        getParsedTagList(currentMobile, mobileTypes) || '-'
+        getParsedTagList(currentMobile, mobileTypes) || "-"
       }\n${translate.qATesting}: ${
-        getParsedTagList(currentTesting, testingTypes) || '-'
+        getParsedTagList(currentTesting, testingTypes) || "-"
       }\n${translate.additionalServices}: ${
         getParsedTagList(currentAdditionalServices, additionalServicesTypes) ||
-        '-'
+        "-"
       }`;
     }
 
@@ -205,14 +204,14 @@ const Brief: FC = () => {
               <h5 className="interMedium2432">{translate.whatServices}</h5>
               <div className={styles.switch}>
                 <Tag
-                  label={translate.outstaffing}
-                  selected={!isOutsourcing}
-                  onClick={() => setIsOutsourcing(false)}
-                />
-                <Tag
                   label={translate.outsourcing}
                   selected={isOutsourcing}
                   onClick={() => setIsOutsourcing(true)}
+                />
+                <Tag
+                  label={translate.outstaffing}
+                  selected={!isOutsourcing}
+                  onClick={() => setIsOutsourcing(false)}
                 />
               </div>
             </div>
@@ -328,7 +327,7 @@ const Brief: FC = () => {
                   control={control}
                   render={({ field: { onChange, value } }) => (
                     <MTextArea
-                      label={translate.description + '*'}
+                      label={translate.description + "*"}
                       onChange={onChange}
                       value={value}
                       rowsMax={12}

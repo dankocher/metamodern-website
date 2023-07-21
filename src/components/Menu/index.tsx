@@ -1,16 +1,21 @@
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
-import { SCREENS } from '../../navigation/constants';
-import Item from './Item';
+import { SCREENS } from "../../navigation/constants";
+import Item from "./Item";
 
-import translation from '../../i18n/en.json';
+import translation from "../../i18n/en.json";
 
 const Menu = ({ isWhiteTheme }) => {
   return (
     <ul className={`latoSemibold2024  ${styles.menu}`} translate="no">
-      <Item
+      {/* <Item
         link={SCREENS.SERVICES}
         title={translation.services}
+        isWhiteTheme={isWhiteTheme}
+      /> */}
+      <Item
+        link={SCREENS.HOME}
+        title={translation.home}
         isWhiteTheme={isWhiteTheme}
       />
       <Item

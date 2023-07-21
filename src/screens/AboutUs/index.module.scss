@@ -150,11 +150,16 @@
         }
       }
       .principles {
+        padding: 38px 0 38px 0;
         width: 100%;
         display: flex;
         justify-content: space-between;
         flex-direction: column;
-        gap: autoResize(56px, 124px, $landscape384);
+
+        @media (max-width: $landscape1200) {
+          gap: autoResize(56px, 96px, $landscape384);
+        }
+
         .principTitle {
           margin-bottom: autoResize(12px, 28px, $landscape384, $landscape800);
         }
