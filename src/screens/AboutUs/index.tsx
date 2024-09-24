@@ -1,15 +1,11 @@
 import styles from './index.module.scss';
+
 import crownImage from '../../assets/images/crown.png';
-import { variables as v } from '../../constants/animationVariables';
 import AnimatedBlock from '../../components/AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
-import { motion } from 'framer-motion';
 
-import PageContainer from '../../components/PageTemplate/PageContainer';
-
-import aboutUs from './../../assets/images/aboutUs.png';
 import zigzagImage from '../../assets/images/zigzag.png';
-import imgPrincip from '../../assets/images/office3.webp';
+import officeRectangle from '../../assets/images/officeRectangle.webp';
 import { principlesList, textBlock1, textBlock2 } from './data';
 import translate from '../../i18n/en.json';
 import Carousel from './Carousel';
@@ -30,7 +26,7 @@ const AboutUs = () => {
     }
   };
 
-  const scrollListener = (e)=>{
+  const scrollListener = (_) => {
     setBorderRadius(document.documentElement.scrollTop);
   }
 
@@ -51,14 +47,14 @@ const AboutUs = () => {
       >
         <div className={styles.about_title}>
           <span className={styles.about_title_string}>
-          <img src={crownImage} className={styles.crown} />
+          <img src={crownImage} className={styles.crown} alt={'crownImage'}/>
             {translate.weSolveProblems}
           </span>
           <span className={styles.about_title_string}>
             <span>{translate.with}&nbsp;</span>
             <span className={styles.zigzag_container}>
               {translate.design}
-              <img className={styles.zigzag} src={zigzagImage} />
+              <img className={styles.zigzag} src={zigzagImage} alt={'zigzagImage'}/>
             </span>
             <span>&nbsp;{translate.and}&nbsp;</span>
             <span className={styles.underline}>{translate.logic}</span>
@@ -74,10 +70,10 @@ const AboutUs = () => {
             {textBlock1.description}
           </span>
         </div>
-        <Carousel />
+        <Carousel/>
         <div className={styles.principlesBlock}>
           <span className={styles.containerImg}>
-            <img src={imgPrincip} className={styles.principImg} />
+            <img src={officeRectangle} className={styles.officeRectangle} alt={'officeRectangle'}/>
           </span>
           <section className={styles.principles}>
             <span className={`${styles.principTitle} interMedium6068`}>
@@ -107,7 +103,7 @@ const AboutUs = () => {
             {textBlock2.description}
           </span>
         </div>
-        <Gallery isMobile={isMobile} />
+        <Gallery isMobile={isMobile}/>
       </div>
     </div>
   );

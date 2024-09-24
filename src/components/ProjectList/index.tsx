@@ -1,13 +1,9 @@
 import styles from './index.module.scss';
 
-import { ProjectsTypes } from '../../constants/projectTypes';
-
 import Project from './Project';
-
-import { data } from '../../data/projectData';
-import { motion } from 'framer-motion';
-import { variables as v } from '../../constants/animationVariables';
 import AnimatedBlock from '../AnimatedBlock';
+import { ProjectsTypes } from '../../constants/projectTypes';
+import { data } from '../../data/projectData';
 import { animationTypes } from '../../constants/animationTypes';
 
 const ProjectList = ({
