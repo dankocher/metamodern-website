@@ -77,7 +77,7 @@ const Footer = ({ backgroundColor = 'transparent' }) => {
               </section>
             ))}
             <section>
-              <a href={'mailto:support@metamodern.dev'} target="_blank">
+              <a href={'mailto:metamodern.dev@gmail.com'} target="_blank">
                 <span className={'lato2432'}>Write to mail</span>
               </a>
 

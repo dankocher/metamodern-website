@@ -22,10 +22,7 @@ const LinkButtons = ({
   smallFontClass = "smallFont",
   downFontClass = "downFont",
 }) => {
-  //
-  // document.documentElement.style.setProperty("--icoSize", icoSize + "px");
-
-  const linkStore = [
+   const linkStore = [
     {
       title: "Google Play",
       href: link.googlePlay,

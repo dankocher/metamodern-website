@@ -17,6 +17,7 @@ import ToDPrivacyScreen from "../screens/ToDPrivacy";
 import ToDTermsScreen from "../screens/ToDTerms";
 import TimeZoScreen from "../screens/TimeZO";
 import TimeZoPrivacyScreen from "../screens/TimeZOPrivacy";
+import TimeZoTermsScreen from "../screens/TimeZoTerms";
 import Header from "../components/Header";
 import { AnimatePresence, motion } from "framer-motion";
 import ModalMenu from "../components/ModalMenu";
@@ -38,7 +39,7 @@ const Navigation = ({ isMobile }) => {
 
   return (
     <ScrollToTop isMobile={isMobile}>
-      <Header />
+      <Header/>
 
       <AnimatePresence exitBeforeEnter>
         <Routes key={location.pathname} location={location}>
@@ -46,7 +47,7 @@ const Navigation = ({ isMobile }) => {
             path={SCREENS.HOME}
             element={
               <PageWrapper
-                children={<Home isMobile={isMobile} />}
+                children={<Home isMobile={isMobile}/>}
                 backgroundColor={colors.accentYellow}
               />
             }
@@ -54,67 +55,71 @@ const Navigation = ({ isMobile }) => {
 
           <Route
             path={SCREENS.PORTFOLIO}
-            element={<PageWrapper children={<PortfolioScreen />} />}
+            element={<PageWrapper children={<PortfolioScreen/>}/>}
           />
           <Route
             path={SCREENS.ABOUT_US}
 
-            element={<PageWrapper children={<AboutUs />} />}
+            element={<PageWrapper children={<AboutUs/>}/>}
 
           />
 
           <Route
             path={SCREENS.CONTACTS}
-            element={<PageWrapper children={<ContactsScreen />} />}
+            element={<PageWrapper children={<ContactsScreen/>}/>}
           />
           <Route
             path={SCREENS.META_MODERN_PRIVACY}
-            element={<PrivacyMetaModern />}
+            element={<PrivacyMetaModern/>}
           />
 
           <Route
             path={SCREENS.TOD}
             element={
               <motion.div
-                exit={{ opacity: 0 }}
+                exit={{opacity: 0}}
                 transition={{
                   duration: duration,
-                  transition: { duration: duration },
+                  transition: {duration: duration},
                 }}
               >
-                <ToDScreen />
+                <ToDScreen/>
               </motion.div>
             }
           />
-          <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen />} />
-          <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen />} />
+          <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen/>}/>
+          <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen/>}/>
 
           <Route
             path={SCREENS.TIME_ZO}
             element={
               <motion.div
-                exit={{ opacity: 0, transition: { duration: duration } }}
-                transition={{ duration: duration }}
+                exit={{opacity: 0, transition: {duration: duration}}}
+                transition={{duration: duration}}
               >
-                <TimeZoScreen />
+                <TimeZoScreen/>
               </motion.div>
             }
           />
           <Route
             path={SCREENS.TIME_ZO_PRIVACY}
-            element={<TimeZoPrivacyScreen />}
+            element={<TimeZoPrivacyScreen/>}
+          />
+          <Route
+            path={SCREENS.TIME_ZO_TERMS}
+            element={<TimeZoTermsScreen/>}
           />
           <Route
             path={SCREENS.CALM_CATS}
-            element={<Redirect url={CatDribble} />}
+            element={<Redirect url={CatDribble}/>}
           />
 
-          <Route path={SCREENS.BB_LIST} element={<BBlist />} />
+          <Route path={SCREENS.BB_LIST} element={<BBlist/>}/>
 
-          <Route path="*" element={<Navigate to={SCREENS.HOME} replace />} />
+          <Route path="*" element={<Navigate to={SCREENS.HOME} replace/>}/>
         </Routes>
       </AnimatePresence>
-      <ModalMenu />
+      <ModalMenu/>
     </ScrollToTop>
   );
 };
