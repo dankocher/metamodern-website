@@ -13,6 +13,28 @@ const Link = styled.a`
   }
 `;
 
+function _generateLinks(data){
+  const result = [];
+
+  if (data.googlePlay) {
+    result.push({
+      title: "Google Play",
+      href: data.googlePlay,
+      icon: "googlePlay"
+    });
+  }
+
+  if (data.appStore) {
+    result.push({
+      title: "App Store",
+      href: data.appStore,
+      icon: "appStore"
+    });
+  }
+
+  return result;
+}
+
 const LinkButtons = ({
   link,
   theme,
@@ -22,18 +44,7 @@ const LinkButtons = ({
   smallFontClass = "smallFont",
   downFontClass = "downFont",
 }) => {
-   const linkStore = [
-    {
-      title: "Google Play",
-      href: link.googlePlay,
-      icon: "googlePlay",
-    },
-    {
-      title: "App Store",
-      href: link.appStore,
-      icon: "appStore",
-    },
-  ];
+  const linkStore = _generateLinks(link);
 
   return (
     <div className={`${styles.storeLink}`}>
