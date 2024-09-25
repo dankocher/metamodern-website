@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.e75f0388.css",
-    "main.js": "/static/js/main.9d37acc2.js",
-    "static/js/787.42db63fd.chunk.js": "/static/js/787.42db63fd.chunk.js",
+    "main.css": "/static/css/main.daf3271f.css",
+    "main.js": "/static/js/main.8228ddb5.js",
+    "static/js/453.a58b244b.chunk.js": "/static/js/453.a58b244b.chunk.js",
     "static/media/noise2.png": "/static/media/noise2.e96fbe5abe1421f4e174.png",
     "static/media/medReminder@2x.png": "/static/media/medReminder@2x.e60b0fbe46a04de32e04.png",
     "static/media/TimeZo-mainPhone.png": "/static/media/TimeZo-mainPhone.78fa8e4a12dc04d37324.png",
@@ -98,12 +98,12 @@
     "static/media/location.svg": "/static/media/location.8705eacbf3ae2e02b1fa0fc972415b41.svg",
     "static/media/phone.svg": "/static/media/phone.9b7673eff89712662bcbce08a0bc1e72.svg",
     "static/media/cross.svg": "/static/media/cross.fb12580ec64a758ba589c015192bf27d.svg",
-    "main.e75f0388.css.map": "/static/css/main.e75f0388.css.map",
-    "main.9d37acc2.js.map": "/static/js/main.9d37acc2.js.map",
-    "787.42db63fd.chunk.js.map": "/static/js/787.42db63fd.chunk.js.map"
+    "main.daf3271f.css.map": "/static/css/main.daf3271f.css.map",
+    "main.8228ddb5.js.map": "/static/js/main.8228ddb5.js.map",
+    "453.a58b244b.chunk.js.map": "/static/js/453.a58b244b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e75f0388.css",
-    "static/js/main.9d37acc2.js"
+    "static/css/main.daf3271f.css",
+    "static/js/main.8228ddb5.js"
   ]
 }

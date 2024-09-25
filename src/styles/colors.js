@@ -23,7 +23,6 @@ export const colors = {
   textBody: "#6B6B6B",
   yellow: "#ECCA19",
   textBlack: "#323232",
-  grey: "#9C9C9C",
   mainPage: "#f5f5f5",
   neutral300: "#dbdbdb",
   neutral900: "#212121",
