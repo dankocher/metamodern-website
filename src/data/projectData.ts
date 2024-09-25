@@ -73,7 +73,7 @@ const data: ProjectProps[] = [
   },
   
   {
-    link: "https://www.behance.net/gallery/158350645/Never-Have-I-Ever-Mobile-game-IOS-Android",
+    link: "https://apps.apple.com/us/app/did-you-ever-group-game/id1631145256",
     type: ProjectsTypes.MOBILE,
     name: "Never Have i ever",
     title: "- game for party",

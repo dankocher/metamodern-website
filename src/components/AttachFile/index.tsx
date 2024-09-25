@@ -8,8 +8,12 @@ const AttachFile: FC<{
   attachedFileNames?: string[];
   label: string;
   setFiles: (data: File[]) => void;
-  removeFile:(event: {}, index: number) => void;
-}> = ({ attachedFileNames = [], label, setFiles = () => {}, removeFile = () => { }}) => {
+  removeFile: (event: {}, index: number) => void;
+}> = ({
+        attachedFileNames = [], label, setFiles = () => {
+  }, removeFile = () => {
+  }
+      }) => {
   const inputRef = useRef(null);
 
   const setFileHandler = (event) => {
@@ -18,10 +22,9 @@ const AttachFile: FC<{
 
   const cutName = (name) => {
     const length = name.length;
-    if(name.length>30){
-      return name.substring(0, 12) +'...'+name.substring(length-13, name.length-1)
-    }
-    else return name;
+    if (name.length > 30) {
+      return name.substring(0, 12) + '...' + name.substring(length - 13, name.length - 1)
+    } else return name;
   }
 
   return (
@@ -36,14 +39,14 @@ const AttachFile: FC<{
         type="file"
         onChange={setFileHandler}
         multiple
-        disabled={attachedFileNames.length===25}
+        disabled={attachedFileNames.length === 25}
       />
-    
-      {attachedFileNames.map((name, index)=>(
+
+      {attachedFileNames.map((name, index) => (
         <div className={styles.fileName}>
           <span className="interMedium1416">{cutName(name)}</span>
-          <div role="button" className={styles.removeBtn} onClick={(e)=>removeFile(e, index)}>
-            <img src={cross} />
+          <div role="button" className={styles.removeBtn} onClick={(e) => removeFile(e, index)}>
+            <img src={cross} alt={'cross'}/>
           </div>
         </div>
       ))}

@@ -4,14 +4,13 @@ import axios from 'axios';
 import MobileAppContent from './components/MobileAppContent';
 import DesktopAppContent from './components/DesktopAppContent';
 import { CleanUpContactsProvider } from './context/useIsCleanUpContacts';
-import { useEffect, useState } from 'react';
-import { colors } from './styles/colors';
+import { useEffect } from 'react';
 import { init } from './api/helpers';
 
 axios.defaults.baseURL = process.env.PUBLIC_URL;
 
 function App() {
-  const [selectors, data] = useDeviceSelectors(window.navigator.userAgent);
+  const [selectors] = useDeviceSelectors(window.navigator.userAgent);
   const { isMobile } = selectors;
 
   useEffect(() => {

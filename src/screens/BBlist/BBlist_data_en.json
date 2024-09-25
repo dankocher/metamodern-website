@@ -3,10 +3,7 @@
     "linePart1": "Your personal task manager",
     "linePart2": "for work, school, and personal life",
     "spotlight": "BB-list",
-    "link": {
-      "googlePlay": "https://play.google.com/store/apps/dev?id=8599386952861463297",
-      "appStore": "https://apps.apple.com/us/developer/metamodern-dev-llc/id1591624350"
-    }
+    "link": {}
   },
   "slider": {
     "title": "Future updates",
@@ -82,7 +79,6 @@
       }
     ]
   },
-
   "featuresBlock": {
     "spotlight": "Why",
     "title": "do I need this app?",

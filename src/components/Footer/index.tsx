@@ -1,9 +1,8 @@
 import styles from './styles.module.scss';
 
 import { SCREENS } from '../../navigation/constants';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { mainLogo } from '../../assets/svg/logo';
 import behance from '../../assets/svg/behance.svg';
 import dribbble from '../../assets/svg/dribbble.svg';
 import linkedin from '../../assets/svg/linkedin.svg';
@@ -52,16 +51,16 @@ const Footer = ({ backgroundColor = 'transparent' }) => {
               {constText.metamodern}
             </div>
             <div className={styles.social}>
-              <a href={contacts.behance} target="_blank">
-                <img src={behance} />
+              <a href={contacts.behance} target="_blank" rel="noreferrer">
+                <img src={behance} alt={'behance'}/>
               </a>
 
-              <a href={contacts.dribbble} target="_blank">
-                <img src={dribbble} />
+              <a href={contacts.dribbble} target="_blank" rel="noreferrer">
+                <img src={dribbble} alt={'dribbble'}/>
               </a>
 
-              <a href={contacts.linkedin} target="_blank">
-                <img src={linkedin} />
+              <a href={contacts.linkedin} target="_blank" rel="noreferrer">
+                <img src={linkedin} alt={'linkedin'}/>
               </a>
             </div>
           </div>
@@ -77,12 +76,12 @@ const Footer = ({ backgroundColor = 'transparent' }) => {
               </section>
             ))}
             <section>
-              <a href={'mailto:support@metamodern.dev'} target="_blank">
+              <a href={'mailto:metamodern.dev@gmail.com'} target="_blank" rel="noreferrer">
                 <span className={'lato2432'}>Write to mail</span>
               </a>
 
-              <a href={'https://t.me/latrov'} target="_blank">
-               <span className={'lato2432'}>Write to telegram</span>
+              <a href={'https://t.me/latrov'} target="_blank" rel="noreferrer">
+                <span className={'lato2432'}>Write to telegram</span>
               </a>
             </section>
           </div>
