@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 import styles from './styles.module.scss';
 import { colors } from '../../styles/colors';
 
-import { Layout } from '../../components/layout';
+import { Layout } from '../layout';
 import moment from 'moment';
 import AnimatedBlock from '../../components/AnimatedBlock';
 import { variables } from '../../constants/animationVariables';
@@ -53,7 +53,7 @@ export const Document = ({ title, description, date }) => {
                 }
                 if (keyName.includes('text')) {
                   return (
-                    <div className={`${styles.text} docSubtitle`}>
+                    <div key={keyName} className={`${styles.text} docSubtitle`}>
                       {Object.keys(description[keyName]).map((key) => {
                         if (key.includes('sections')) {
                           return (

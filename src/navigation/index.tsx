@@ -77,10 +77,10 @@ const Navigation = ({ isMobile }) => {
             path={SCREENS.TOD}
             element={
               <motion.div
-                exit={{opacity: 0}}
+                exit={{ opacity: 0 }}
                 transition={{
                   duration: duration,
-                  transition: {duration: duration},
+                  transition: { duration: duration },
                 }}
               >
                 <ToDScreen/>
@@ -94,8 +94,8 @@ const Navigation = ({ isMobile }) => {
             path={SCREENS.TIME_ZO}
             element={
               <motion.div
-                exit={{opacity: 0, transition: {duration: duration}}}
-                transition={{duration: duration}}
+                exit={{ opacity: 0, transition: { duration: duration } }}
+                transition={{ duration: duration }}
               >
                 <TimeZoScreen/>
               </motion.div>

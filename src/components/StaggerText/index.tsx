@@ -4,6 +4,7 @@ import { Expo, gsap } from 'gsap/all';
 
 import { FC, useEffect, useRef } from 'react';
 import { usePrevious } from '../../utils/hooks/usePrevious';
+
 const StaggerText: FC<{
   text: string;
   disabled?: boolean;

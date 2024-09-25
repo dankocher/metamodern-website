@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Lottie from 'react-lottie';
 
@@ -32,25 +32,25 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
 
   const ourAppBtnOnClick = () => {
     // if (isMobile) {
-      portfolioRef?.current?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+    portfolioRef?.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
     // } else scrollbarRef.current.scrollbar.scrollIntoView(portfolioRef?.current);
   };
 
   const setBorderRadius = (scroll) => {
-    if(containerRef.current)
-    if (!scroll) {
-      containerRef.current.style.borderBottomLeftRadius = '0px';
-      containerRef.current.style.borderBottomRightRadius = '0px';
-    } else {
-      containerRef.current.style.borderBottomLeftRadius = null;
-      containerRef.current.style.borderBottomRightRadius = null;
-    }
+    if (containerRef.current)
+      if (!scroll) {
+        containerRef.current.style.borderBottomLeftRadius = '0px';
+        containerRef.current.style.borderBottomRightRadius = '0px';
+      } else {
+        containerRef.current.style.borderBottomLeftRadius = null;
+        containerRef.current.style.borderBottomRightRadius = null;
+      }
   };
 
-  const scrollListener = (e)=>{
+  const scrollListener = (e) => {
     setBorderRadius(document.documentElement.scrollTop);
   }
 
@@ -86,7 +86,7 @@ const MainTitle = ({ portfolioRef, isMobile }) => {
             transition={{ duration: v.duration + 0.15, delay: v.delay * 3 }}
           >
             {translate.develop}
-            <img className="noSelect" src={underline} />
+            <img className="noSelect" src={underline}/>
           </AnimatedBlock>
         </div>
         <AnimatedBlock

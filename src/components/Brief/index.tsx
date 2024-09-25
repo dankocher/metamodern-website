@@ -1,6 +1,6 @@
 import styles from './index.module.scss';
 
-import { FC, useContext, useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { Controller, useForm } from 'react-hook-form';
 
@@ -38,10 +38,7 @@ import { sendToEmail } from '../../api/helpers';
 import AnimatedBlock from '../AnimatedBlock';
 import { animationTypes } from '../../constants/animationTypes';
 import { variables as v } from '../../constants/animationVariables';
-import { isMobile } from 'react-device-detect';
-import { Ring, Waveform } from '@uiball/loaders';
-
-// import { ScrollContext } from '../DesktopAppContent';
+import { Ring } from '@uiball/loaders';
 
 interface IFormValues {
   name: string;
@@ -80,9 +77,7 @@ const Brief: FC = () => {
   const [currentBackEnd, setCurrentBackEnd] = useState<BackEndTypes[]>([]);
   const [currentMobile, setCurrentMobile] = useState<MobileTypes[]>([]);
   const [currentTesting, setCurrentTesting] = useState<TestingTypes[]>([]);
-  const [currentAdditionalServices, setCurrentAdditionalServices] = useState<
-    AdditionalServicesTypes[]
-  >([]);
+  const [currentAdditionalServices, setCurrentAdditionalServices] = useState<AdditionalServicesTypes[]>([]);
 
   const cleanUpTags = () => {
     setCurrentServices([]);
@@ -142,7 +137,7 @@ const Brief: FC = () => {
   };
 
   const onSubmit = async (data) => {
-    let services = '';
+    let services: string;
 
     if (isOutsourcing) {
       services = `${translate.outsourcing}\n${translate.whatAppOrServices}: ${
@@ -196,7 +191,7 @@ const Brief: FC = () => {
       transition={{ duration: v.duration, delay: v.delay }}
     >
       {isDataSent ? (
-        <SuccessMessage />
+        <SuccessMessage/>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.container}>
@@ -347,7 +342,7 @@ const Brief: FC = () => {
               type="submit"
               className={`latoSemibold2028 ${styles.sendBtn}`}
             >
-              {pending ? <Ring size={28} /> : translate.submit}
+              {pending ? <Ring size={28}/> : translate.submit}
             </button>
           </div>
         </form>
