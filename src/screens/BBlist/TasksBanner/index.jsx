@@ -12,6 +12,7 @@ import {
   Constraint,
   MouseConstraint,
 } from "matter-js";
+import getWallsData from "./wallsData";
 
 const landscape800 = 800;
 const landscape384 = 384;
@@ -31,16 +32,20 @@ export default ({ titlePart1, titlePart2, tags }) => {
       bodies.current[index + 4] = null;
     }
   };
-  const getBorderRadius = () =>{
-    const windowW = windowWidth.current, minRadius = 8, coef = 52;
-    if(windowW>landscape800) return minRadius*2;
-    else if(windowW < landscape384) return minRadius;
-    else return minRadius*2-(landscape800 - windowW)/coef; 
-  }
+  const getBorderRadius = () => {
+    const windowW = windowWidth.current,
+      minRadius = 8,
+      coef = 52;
+    if (windowW > landscape800) return minRadius * 2;
+    else if (windowW < landscape384) return minRadius;
+    else return minRadius * 2 - (landscape800 - windowW) / coef;
+  };
   function resizeThrottler() {
     // ignore resize events as long as an actualResizeHandler execution is in the queue
-    if (!resizeTimeout.current && !(windowWidth.current === window.innerWidth)) {
-      
+    if (
+      !resizeTimeout.current &&
+      !(windowWidth.current === window.innerWidth)
+    ) {
       resizeTimeout.current = setTimeout(function () {
         windowWidth.current = window.innerWidth;
         resizeTimeout.current = null;
@@ -50,7 +55,11 @@ export default ({ titlePart1, titlePart2, tags }) => {
       }, 100);
     }
   }
-  
+  const getWalls = (containerW, containerH, offsetX, offsetY) => {
+    return getWallsData(containerW, containerH, offsetX, offsetY).map((data) =>
+      Bodies.rectangle(data.x, data.y, data.w, data.h, data.opts)
+    );
+  };
   const getRandomSign = () => (Math.random() < 0.5 ? -1 : 1);
   const initWorld = () => {
     Composite.clear(engine.current.world);
@@ -59,24 +68,16 @@ export default ({ titlePart1, titlePart2, tags }) => {
     bodies.current = [];
     const borderRadius = getBorderRadius();
     let bodiesDom = document.querySelectorAll(`.${styles.box}`);
-    let container = blockRef.current;
-    let containerW = container.offsetWidth,
-      containerH = container.offsetHeight,
-      wallWidth = 100,
-      wallOffset = 50,
-      constantLength = 10, 
-      coef = 1/400;
-let tags1 = JSON.parse(JSON.stringify(tags))
-    let wallopts = {
-      isStatic: true,
-      restitution: 0.8,
-      friction: 1,
-    };
-    let wallAngleOpts = {
-      isStatic: true,
-      angle: 0.7854
-    };
-    if(window.innerWidth<500){
+    let container = blockRef.current,
+      constantLength = 10,
+      coef = 1 / 400;
+    let tags1 = JSON.parse(JSON.stringify(tags));
+    let bodyRect = document.body.getBoundingClientRect();
+    let contRect = container.getBoundingClientRect();
+    let walls = getWalls(container.offsetWidth, container.offsetHeight, 0,0),
+      pageWalls = getWalls(bodyRect.width, document.body.scrollHeight+contRect.y, contRect.x, contRect.y-50);
+      
+    if (window.innerWidth < 500) {
       tags1[2].top = -1000;
       tags1[2].left = -1000;
       tags1[6].top = -1000;
@@ -85,46 +86,63 @@ let tags1 = JSON.parse(JSON.stringify(tags))
       tags1[5].left = 0.5;
       tags1[4].top = 0.85;
       tags1[4].left = 0.35;
-      coef = 1/1000;
+      coef = 1 / 1000;
       constantLength = 5;
-    }else
-    if(window.innerWidth<800){
+    } else if (window.innerWidth < 800) {
       constantLength = 5;
-      coef = 1/600;
+      coef = 1 / 600;
       tags1[5].left = 0.55;
       tags1[5].top = 0.6;
       tags1[4].top = 0.85;
-    }else
-    if(window.innerWidth<1500){
+    } else if (window.innerWidth < 1500) {
       tags1[5].left = 0.63;
       tags1[4].top = 0.8;
     }
-    
+
     mouseConstraint.current = MouseConstraint.create(engine.current, {
       element: blockRef.current,
     });
-    mouseConstraint.current.mouse.element.removeEventListener("mousewheel", mouseConstraint.current.mouse.mousewheel);
-    mouseConstraint.current.mouse.element.removeEventListener("DOMMouseScroll", mouseConstraint.current.mouse.mousewheel);
-    mouseConstraint.current.mouse.element.removeEventListener('touchstart', mouseConstraint.current.mouse.mousedown);
-    mouseConstraint.current.mouse.element.removeEventListener('touchmove', mouseConstraint.current.mouse.mousemove);
-    mouseConstraint.current.mouse.element.removeEventListener('touchend', mouseConstraint.current.mouse.mouseup);
+    mouseConstraint.current.mouse.element.removeEventListener(
+      "mousewheel",
+      mouseConstraint.current.mouse.mousewheel
+    );
+    mouseConstraint.current.mouse.element.removeEventListener(
+      "DOMMouseScroll",
+      mouseConstraint.current.mouse.mousewheel
+    );
+    mouseConstraint.current.mouse.element.removeEventListener(
+      "touchstart",
+      mouseConstraint.current.mouse.mousedown
+    );
+    mouseConstraint.current.mouse.element.removeEventListener(
+      "touchmove",
+      mouseConstraint.current.mouse.mousemove
+    );
+    mouseConstraint.current.mouse.element.removeEventListener(
+      "touchend",
+      mouseConstraint.current.mouse.mouseup
+    );
 
-    mouseConstraint.current.mouse.element.addEventListener('touchstart', mouseConstraint.current.mouse.mousedown, { passive: true });
-    mouseConstraint.current.mouse.element.addEventListener('touchmove', (e) => {
-  if (mouseConstraint.current.body) {
-    mouseConstraint.current.mouse.mousemove(e);
-  }
-});
-mouseConstraint.current.mouse.element.addEventListener('touchend', (e) => {
-  if (mouseConstraint.current.body) {
-    mouseConstraint.current.mouse.mouseup(e);
-  }
-});
+    mouseConstraint.current.mouse.element.addEventListener(
+      "touchstart",
+      mouseConstraint.current.mouse.mousedown,
+      { passive: true }
+    );
+    mouseConstraint.current.mouse.element.addEventListener("touchmove", (e) => {
+      if (mouseConstraint.current.body) {
+        mouseConstraint.current.mouse.mousemove(e);
+      }
+    });
+    mouseConstraint.current.mouse.element.addEventListener("touchend", (e) => {
+      if (mouseConstraint.current.body) {
+        mouseConstraint.current.mouse.mouseup(e);
+      }
+    });
     bodiesDom.forEach((body, i) => {
       let box = body,
         posX = container.offsetWidth * tags1[i].left + box.offsetWidth / 2,
         posY = container.offsetHeight * tags1[i].top + box.offsetHeight / 2;
-        
+
       boxes.current.push({
         w: box.offsetWidth,
         h: box.offsetHeight,
@@ -148,8 +166,6 @@ mouseConstraint.current.mouse.element.addEventListener('touchend', (e) => {
           }rad);`;
         },
       });
-
-      
 
       Body.applyForce(
         boxes.current[i].body,
@@ -199,65 +215,8 @@ mouseConstraint.current.mouse.element.addEventListener('touchend', (e) => {
     Composite.add(engine.current.world, [
       ...bodies.current,
       mouseConstraint.current,
-      Bodies.rectangle(
-        containerW / 2,
-        containerH + wallOffset,
-        containerW + wallWidth * 2,
-        wallWidth,
-        wallopts
-      ),
-      // walls
-      Bodies.rectangle(
-        containerW / 2,
-        -wallOffset,
-        containerW + wallWidth * 2,
-        wallWidth,
-        wallopts
-      ), // top
-      Bodies.rectangle(
-        containerW + wallOffset,
-        containerH / 2,
-        wallWidth,
-        containerH,
-        wallopts
-      ), // right
-      Bodies.rectangle(
-        -wallOffset,
-        containerH / 2,
-        wallWidth,
-        containerH,
-        wallopts
-      ),
-      //00000000000000000
-      Bodies.rectangle(
-        0,
-        0,
-        wallWidth/2,
-        wallWidth * 2,
-        wallAngleOpts
-      ),
-      // walls
-      Bodies.rectangle(
-        containerW,
-        0,
-        wallWidth/2,
-        wallWidth * 2,
-        {...wallAngleOpts, angle: -wallAngleOpts.angle}
-      ), // top
-      Bodies.rectangle(
-        containerW,
-        containerH,
-        wallWidth/2,
-        wallWidth * 2,
-        wallAngleOpts
-      ), // right
-      Bodies.rectangle(
-        0,
-        containerH,
-        wallWidth/2,
-        wallWidth * 2,
-        {...wallAngleOpts, angle: -wallAngleOpts.angle}
-      ),
+      ...walls,
+      ...pageWalls
     ]);
     engine.current.gravity.y = 0;
 
@@ -265,7 +224,6 @@ mouseConstraint.current.mouse.element.addEventListener('touchend', (e) => {
       let index = bodies.current.indexOf(event.body);
       removeConstranits(index);
     });
-    
   };
   function rerender() {
     boxes.current.forEach((box) => {
@@ -285,11 +243,11 @@ mouseConstraint.current.mouse.element.addEventListener('touchend', (e) => {
       }
     Engine.update(engine.current);
     requestAnimationFrame(rerender);
-  };
+  }
   useEffect(() => {
     initWorld();
-    let id = requestAnimationFrame(rerender)
-    
+    let id = requestAnimationFrame(rerender);
+
     window.addEventListener("resize", resizeThrottler);
     return () => {
       cancelAnimationFrame(id);
@@ -298,15 +256,16 @@ mouseConstraint.current.mouse.element.addEventListener('touchend', (e) => {
   }, []);
   return (
     <div className={styles.container_wrapper}>
-    <div className={styles.container} ref={blockRef}>
-      {tags.map((tag, i) => (
-        <div className={`${styles.box} inter3442`} id={"box" + i} key={i}>
-          {tag.text}
-        </div>
-      ))}
-      <Icon name="BBlistLogo" className={styles.logo} />
+      <div className={styles.container} ref={blockRef}>
+        {tags.map((tag, i) => (
+          <div className={`${styles.box} inter3442`} id={"box" + i} key={i}>
+            {tag.text}
+          </div>
+        ))}
+        <Icon name="BBlistLogo" className={styles.logo} />
         <div className={`${styles.title} inter112124`}>{titlePart1}</div>
-      <div className={`${styles.title} inter112124`}>{titlePart2}</div>
-    </div></div>
+        <div className={`${styles.title} inter112124`}>{titlePart2}</div>
+      </div>
+    </div>
   );
 };

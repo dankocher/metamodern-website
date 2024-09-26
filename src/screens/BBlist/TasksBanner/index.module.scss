@@ -60,6 +60,7 @@
       width: max-content;
       padding: 16px 28px;
       border-radius: 16px;
+      z-index: 100;
       cursor: grab;
       @media (max-width: $landscape800) {
         border-radius: autoResize(8px, 16px, $landscape384, $landscape800);

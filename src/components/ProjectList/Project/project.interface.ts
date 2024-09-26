@@ -8,9 +8,9 @@ export interface ProjectProps {
   title: string;
   description: string;
   tags: string[];
-  bgImage: ImageSizes;
+  bgImages: ImageSizes[];
   isDarkContent: boolean;
   gradient: { [key: string]: string };
   link: SCREENS | string;
-  isBgImgWrapper?: boolean;
+  
 }

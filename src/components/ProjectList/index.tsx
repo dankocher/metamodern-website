@@ -25,10 +25,9 @@ const ProjectList = ({
             title,
             description,
             tags,
-            bgImage,
+            bgImages,
             gradient,
             isDarkContent,
-            isBgImgWrapper,
           },
           index
         ) =>
@@ -54,10 +53,10 @@ const ProjectList = ({
                 title={title}
                 description={description}
                 tags={tags}
-                bgImage={bgImage}
+                bgImages={bgImages}
                 gradient={gradient}
                 isDarkContent={isDarkContent}
-                isBgImgWrapper={isBgImgWrapper}
+                
               />
             </AnimatedBlock>
             // </motion.div>
