@@ -1,8 +1,8 @@
 {
   "name": "metamodern.website",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
-  "homepage": "https://metamodern.dev",
+  "homepage": "https://metamodern.dev/",
   "dependencies": {
     "@hookform/resolvers": "^2.9.7",
     "@testing-library/jest-dom": "^5.16.4",
