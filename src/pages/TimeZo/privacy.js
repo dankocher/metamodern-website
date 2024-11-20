@@ -5,7 +5,7 @@ import info from "../../data/information-data.json"
 const Privacy = () => {
   const { description, dateUpdate } = info.time_zo.privacy
 
-  return <Document title="TimeZo. Privacy policy" date={dateUpdate} description={description} />
+  return <Document title="World Clock. Privacy policy" date={dateUpdate} description={description} />
 }
 
 export default Privacy

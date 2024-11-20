@@ -1,4 +1,4 @@
-import { ImageSizes } from '../../Image/image.interface';
+import { ImageProps } from '../../Image/image.interface';
 import { ProjectsTypes } from '../../../constants/projectTypes';
 import { SCREENS } from '../../../navigation/constants';
 
@@ -8,7 +8,7 @@ export interface ProjectProps {
   title: string;
   description: string;
   tags: string[];
-  bgImage: ImageSizes;
+  bgImage: ImageProps;
   isDarkContent: boolean;
   gradient: { [key: string]: string };
   link: SCREENS | string;

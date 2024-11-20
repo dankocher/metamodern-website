@@ -1,8 +1,8 @@
 import styles from './styles.module.scss';
 
 import LinkButtons from '../../../components/LinkButtons';
-import { Icon } from '../../../components/Icon';
 import StaticImage from '../../../components/StaticImage';
+import Image from "../../../components/Image";
 
 import timeZo_phone_right from '../../../assets/images/TimeZo-phone-right.png';
 import timeZo_phone_left from '../../../assets/images/TimeZo-phone-left.png';
@@ -23,13 +23,13 @@ const SectionLast = ({ nameShort, descriptionLast, link }) => (
 
       <div className={styles.info}>
         <div className={styles.logo}>
-          <Icon name="TimeZoLogo" size={80} />
+          <Image name={'timezoLogo'} alt={'TimeZo-logo'} size={80}/>
         </div>
         <p className={`${styles.title} title2`}>{nameShort}</p>
         <p className={`${styles.description} subtitleSmall`}>
           {descriptionLast}
         </p>
-        <LinkButtons link={link} theme="dark" />
+        <LinkButtons link={link} theme="dark"/>
       </div>
 
       <div className={styles.phoneImg}>

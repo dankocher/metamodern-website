@@ -1,4 +1,4 @@
-export interface ImageSizes {
-  x1: string;
-  x2: string;
+export interface ImageProps {
+  name: string;
+  alt?: string;
 }

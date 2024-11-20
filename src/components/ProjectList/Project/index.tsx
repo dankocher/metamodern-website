@@ -36,22 +36,20 @@ const Project: FC<ProjectProps> = ({
       className={`${styles.container} noSelect`}
       onClick={navigateTo}
     >
-      <div className={styles.aspectRation} />
-      <div className={styles.gradient} style={gradient} />
+      <div className={styles.aspectRation}/>
+      <div className={styles.gradient} style={gradient}/>
       {isBgImgWrapper ? (
         <div className={styles.gradient} style={{ overflow: "hidden" }}>
           <Image
-            src={bgImage.x1}
-            images={bgImage}
-            alt={`${name} background`}
+            name={bgImage.name}
+            alt={bgImage.alt}
             className={styles.img}
           />
         </div>
       ) : (
         <Image
-          src={bgImage.x1}
-          images={bgImage}
-          alt={`${name} background`}
+          name={bgImage.name}
+          alt={bgImage.alt}
           className={styles.img}
         />
       )}

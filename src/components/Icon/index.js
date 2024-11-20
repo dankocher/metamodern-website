@@ -14,7 +14,6 @@ import sharing from "./svg/sharing.svg";
 import simpleDesign from "./svg/simple-design.svg";
 import touch from "./svg/touch.svg";
 import location from "./svg/location.svg";
-import TimeZoLogo from "./svg/TimeZo-logo.svg";
 import todLogo from "./svg/tod.svg";
 import android from "./svg/android.svg";
 import apple from "./svg/apple.svg";
@@ -43,7 +42,6 @@ const icons = {
   simpleDesign,
   touch,
   location,
-  TimeZoLogo,
   todLogo,
   android,
   apple,

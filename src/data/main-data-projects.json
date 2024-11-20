@@ -24,8 +24,8 @@
     },
     "timeZo": {
       "logoIcon": "TimeZoLogo",
-      "name": "TimeZo",
-      "description": "TimeZo is the most convenient and fastest way to keep your head clean.",
+      "name": "World Clock",
+      "description": "World Clock is the most convenient and fastest way to keep your head clean.",
       "url": "/TimeZo",
       "links": {},
       "background": "#FDE5BD",

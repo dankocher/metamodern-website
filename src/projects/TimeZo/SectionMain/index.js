@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 
 import StaticImage from "../../../components/StaticImage";
 import LinkButtons from "../../../components/LinkButtons";
-import { Icon } from "../../../components/Icon";
+import Image from "../../../components/Image";
 
 import timeZo_mainPhone from "../../../assets/images/TimeZo-mainPhone.png";
 
@@ -10,18 +10,18 @@ const SectionMain = ({ name, descriptionMain, link }) => {
   return (
     <div className={styles.container}>
       <div className={styles.centerBlock}>
-        <div className={styles.headerBlock} />
+        <div className={styles.headerBlock}/>
 
         <div className={styles.block}>
           <div className={styles.content}>
             <div className={styles.logo}>
-              <Icon name="TimeZoLogo" size={96} />
+              <Image name={'timezoLogo'} alt={'TimeZo-logo'} size={96}/>
             </div>
             <p className={`${styles.title} bigTitle`}>{name}</p>
             <p className={`${styles.description} subtitleMain`}>
               {descriptionMain}
             </p>
-            <LinkButtons link={link} theme="dark" />
+            <LinkButtons link={link} theme="dark"/>
           </div>
 
           <div className={styles.phoneBlock}>
@@ -36,7 +36,7 @@ const SectionMain = ({ name, descriptionMain, link }) => {
           </div>
         </div>
 
-        <div className={styles.headerBlockMin} />
+        <div className={styles.headerBlockMin}/>
       </div>
     </div>
   );

@@ -53,25 +53,10 @@ const Navigation = ({ isMobile }) => {
             }
           />
 
-          <Route
-            path={SCREENS.PORTFOLIO}
-            element={<PageWrapper children={<PortfolioScreen/>}/>}
-          />
-          <Route
-            path={SCREENS.ABOUT_US}
-
-            element={<PageWrapper children={<AboutUs/>}/>}
-
-          />
-
-          <Route
-            path={SCREENS.CONTACTS}
-            element={<PageWrapper children={<ContactsScreen/>}/>}
-          />
-          <Route
-            path={SCREENS.META_MODERN_PRIVACY}
-            element={<PrivacyMetaModern/>}
-          />
+          <Route path={SCREENS.PORTFOLIO} element={<PageWrapper children={<PortfolioScreen/>}/>}/>
+          <Route path={SCREENS.ABOUT_US} element={<PageWrapper children={<AboutUs/>}/>}/>
+          <Route path={SCREENS.CONTACTS} element={<PageWrapper children={<ContactsScreen/>}/>}/>
+          <Route path={SCREENS.META_MODERN_PRIVACY} element={<PrivacyMetaModern/>}/>
 
           <Route
             path={SCREENS.TOD}
@@ -101,18 +86,12 @@ const Navigation = ({ isMobile }) => {
               </motion.div>
             }
           />
-          <Route
-            path={SCREENS.TIME_ZO_PRIVACY}
-            element={<TimeZoPrivacyScreen/>}
-          />
-          <Route
-            path={SCREENS.TIME_ZO_TERMS}
-            element={<TimeZoTermsScreen/>}
-          />
-          <Route
-            path={SCREENS.CALM_CATS}
-            element={<Redirect url={CatDribble}/>}
-          />
+          <Route path={SCREENS.TIME_ZO_PRIVACY} element={<TimeZoPrivacyScreen/>}/>
+          <Route path={SCREENS.WORLD_CLOCK_PRIVACY} element={<TimeZoPrivacyScreen/>}/>
+          <Route path={SCREENS.TIME_ZO_TERMS} element={<TimeZoTermsScreen/>}/>
+          <Route path={SCREENS.WORLD_CLOCK_TERMS} element={<TimeZoTermsScreen/>}/>
+
+          <Route path={SCREENS.CALM_CATS} element={<Redirect url={CatDribble}/>}/>
 
           <Route path={SCREENS.BB_LIST} element={<BBlist/>}/>
 
