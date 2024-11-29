@@ -23,6 +23,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import ModalMenu from "../components/ModalMenu";
 import { useEffect } from "react";
 import { colors } from "../styles/colors";
+import PrivacyNeverEver from "../screens/PrivacyNeverEver";
+import TermsNeverEver from "../screens/TermsNeverEver";
 
 const Navigation = ({ isMobile }) => {
   const CatDribble =
@@ -94,6 +96,9 @@ const Navigation = ({ isMobile }) => {
           <Route path={SCREENS.CALM_CATS} element={<Redirect url={CatDribble}/>}/>
 
           <Route path={SCREENS.BB_LIST} element={<BBlist/>}/>
+
+          <Route path={SCREENS.NeverEver_PRIVACY} element={<PrivacyNeverEver />}/>
+          <Route path={SCREENS.NeverEver_TERMS} element={<TermsNeverEver />}/>
 
           <Route path="*" element={<Navigate to={SCREENS.HOME} replace/>}/>
         </Routes>

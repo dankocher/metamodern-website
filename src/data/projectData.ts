@@ -54,10 +54,10 @@ const data: ProjectProps[] = [
   {
     link: "https://apps.apple.com/us/app/did-you-ever-group-game/id1631145256",
     type: ProjectsTypes.MOBILE,
-    name: "Never Have i ever",
+    name: "Did You Ever",
     title: "- game for party",
     description:
-      "Never have I ever... Stop racking your brain to complete this statement. Just download our game. It will make even the most boring evening unforgettable.",
+      "Did You Ever... Stop racking your brain to complete this statement. Just download our game. It will make even the most boring evening unforgettable.",
     tags: ["Design", "Mobile", "Landing"],
     bgImage: { name: 'neverHaveEver' },
     gradient: {
