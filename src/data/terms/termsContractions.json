@@ -1,0 +1,47 @@
+{
+  "dateUpdate": "2025-01-15",
+  "title": "Terms of Use",
+  "description": {
+    "title1": "Terms & Conditions",
+    "text1": {
+      "sections": [
+        "By downloading or using the app, these terms will automatically apply to you – therefore, you should make sure to read them carefully before using the app. You’re not allowed to copy or modify the app, any part of the app, or our trademarks in any way. You’re also not allowed to attempt to extract the source code of the app, nor should you try to translate the app into other languages or make derivative versions. The app itself, and all trademarks, copyright, database rights, and other intellectual property rights related to it, still belong to MetaModern&nbsp;LLC.",
+        "MetaModern LLC is committed to ensuring that the app is as useful and efficient as possible. For that reason, we reserve the right to make changes to the app or to charge for its services at any time and for any reason. We will never charge you for the app or its services without making it very clear to you exactly what you’re paying for.",
+        "The Contraction Timer & Pregnancy app stores and processes personal data that you have provided to us to provide our Service. It’s your responsibility to keep your phone and access to the app secure. Therefore, we recommend that you do not jailbreak or root your phone, which is the process of removing software restrictions and limitations imposed by the official operating system of your device. Doing so could make your phone vulnerable to malware/viruses/malicious programs, compromise your phone’s security features, and it could mean that the Contraction Timer & Pregnancy app won’t work properly or at all.",
+        "The app does use third-party services that declare their own Terms and Conditions."
+      ],
+      "list": {
+        "title": "Links to the Terms and Conditions of third-party service providers used by the app:",
+        "items": [
+          "<a href=\"https://policies.google.com/terms\" rel=\"noreferrer\" target=\"_blank\">Google Play Services</a>",
+          "<a href=\"https://developers.google.com/admob/terms\" rel=\"noreferrer\" target=\"_blank\">AdMob</a>",
+          "<a href=\"https://www.google.com/analytics/terms/\" rel=\"noreferrer\" target=\"_blank\">Google Analytics for Firebase</a>",
+          "<a href=\"https://firebase.google.com/terms/crashlytics\" rel=\"noreferrer\" target=\"_blank\">Firebase Crashlytics</a>"
+        ]
+      }
+    },
+    "text2": {
+      "sections": [
+        "You should be aware that there are certain things that MetaModern LLC will not take responsibility for. Certain functions of the app will require the app to have an active internet connection. The connection can be Wi-Fi or provided by your mobile network provider, but MetaModern LLC cannot take responsibility for the app not working at full functionality if you don’t have access to Wi-Fi and you don’t have any of your data allowance left.",
+        "If you’re using the app outside of an area with Wi-Fi, you should remember that the terms of the agreement with your mobile network provider will still apply. As a result, you may be charged by your mobile provider for the cost of data for the duration of the connection while accessing the app, or other third-party charges. In using the app, you’re accepting responsibility for any such charges, including roaming data charges if you use the app outside of your home territory (i.e., region or country) without turning off data roaming. If you are not the bill payer for the device on which you’re using the app, please be aware that we assume you have received permission from the bill payer for using the app.",
+        "Similarly, MetaModern LLC cannot always take responsibility for the way you use the app. For example, you need to make sure that your device stays charged – if it runs out of battery and you can’t turn it on to avail of the Service, MetaModern LLC cannot accept responsibility.",
+        "Regarding the responsibility of MetaModern LLC for your use of the app, it is important to bear in mind that although we endeavor to ensure that it is updated and correct at all times, we rely on third parties to provide information to us so that we can make it available to you. MetaModern LLC accepts no liability for any loss, direct or indirect, you experience as a result of relying wholly on the functionality of the app.",
+        "At some point, we may wish to update the app. The app is currently available on Android & iOS – the requirements for both systems (and for any additional systems we may decide to extend the availability of the app to) may change, and you’ll need to download the updates if you want to keep using the app. MetaModern LLC does not promise that it will always update the app so that it is relevant to you and/or works with the Android & iOS version that you have installed on your device. However, you agree to always accept updates to the application when offered to you.",
+        "We may also wish to stop providing the app, and may terminate its use at any time without giving notice of termination to you. Unless we tell you otherwise, upon any termination, (a) the rights and licenses granted to you in these terms will end; (b) you must stop using the app, and (if needed) delete it from your device."
+      ]
+    },
+    "title3": "Changes to This Terms and Conditions",
+    "text3": {
+      "sections": [
+        "We may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Terms and Conditions on this page.",
+        "These terms and conditions are effective as of 2025-01-15."
+      ]
+    },
+    "title4": "Contact Us",
+    "text4": {
+      "sections": [
+        "If you have any questions or suggestions about our Terms and Conditions, do not hesitate to contact us at <a href=\"mailto:metamodern.dev@gmail.com\">metamodern.dev@gmail.com</a>"
+      ]
+    }
+  }
+}

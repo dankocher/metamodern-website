@@ -25,6 +25,8 @@ import { useEffect } from "react";
 import { colors } from "../styles/colors";
 import PrivacyNeverEver from "../screens/PrivacyNeverEver";
 import TermsNeverEver from "../screens/TermsNeverEver";
+import PrivacyContractions from "../screens/PrivacyContractions";
+import TermsContractions from "../screens/TermsContractions";
 
 const Navigation = ({ isMobile }) => {
   const CatDribble =
@@ -76,6 +78,10 @@ const Navigation = ({ isMobile }) => {
           />
           <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen/>}/>
           <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen/>}/>
+
+          {/*   Contractions   */}
+          <Route path={SCREENS.CONTRACTIONS_PRIVACY} element={<PrivacyContractions/>}/>
+          <Route path={SCREENS.CONTRACTIONS_TERMS} element={<TermsContractions/>}/>
 
           <Route
             path={SCREENS.TIME_ZO}
