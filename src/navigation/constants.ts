@@ -21,6 +21,7 @@ export enum SCREENS {
   CALM_CATS_PRIVACY = "/CalmCats/privacy",
   CALM_CATS_TERMS = "/CalmCats/terms",
   BB_LIST = "/BB-list",
+  CONTRACTIONS = "/Contractions",
   CONTRACTIONS_PRIVACY = "/Contractions/privacy",
   CONTRACTIONS_TERMS = "/Contractions/terms",
 }

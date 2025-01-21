@@ -1,0 +1,44 @@
+@import '../../styles/foundations.scss';
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  display: grid;
+  place-items: center;
+  padding-left: 16px;
+  padding-right: 16px;
+
+  @media (orientation: landscape) {
+    min-height: autoResize(450px, 700px, $phoneWidth) !important;
+  }
+}
+
+.content {
+  height: fit-content;
+  display: grid;
+  place-items: center;
+
+  &__logo {
+    height: 264px;
+    width: 264px;
+    height: autoResize(140px, 264px, $phoneWidth) !important;
+    width: autoResize(140px, 264px, $phoneWidth) !important;
+
+    margin-bottom: 44px;
+    margin-bottom: autoResize(24px, 44px, $phoneWidth) !important;
+  }
+
+  h1 {
+    margin-bottom: 16px;
+    margin-bottom: autoResize(8px, 16px, $phoneWidth) !important;
+    text-align: center;
+  }
+
+  &__description {
+    max-width: 702px;
+    margin-bottom: 80px;
+    margin-bottom: autoResize(40px, 80px, $phoneWidth) !important;
+    text-align: center;
+  }
+}

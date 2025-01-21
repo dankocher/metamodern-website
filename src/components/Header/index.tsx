@@ -25,6 +25,7 @@ const screensSubProject = [
   SCREENS.TIME_ZO_TERMS,
   SCREENS.META_MODERN_PRIVACY,
   SCREENS.BB_LIST,
+  SCREENS.CONTRACTIONS,
 ];
 
 const comparePathes = (path, patches) => {
@@ -90,12 +91,12 @@ const Header = () => {
                 },
               }}
             >
-              <Menu isWhiteTheme={isWhiteTheme} />
+              <Menu isWhiteTheme={isWhiteTheme}/>
               <div className={styles.middleBtn_wrapper}>
-                <StartProjectButton />
+                <StartProjectButton/>
               </div>
 
-              <IconMenuButton onClick={openModalMenu} />
+              <IconMenuButton onClick={openModalMenu}/>
             </AnimatedBlock>
           )}
         </AnimatePresence>

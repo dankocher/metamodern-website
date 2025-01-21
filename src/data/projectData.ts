@@ -2,6 +2,7 @@ import { ProjectProps } from "../components/ProjectList/Project/project.interfac
 import { ProjectsTypes } from "../constants/projectTypes";
 
 import calmCatsBackground from "../assets/images/calmCatsBackground.png";
+import contractionsBackground from "../assets/images/contractionsBackground.png";
 
 import { SCREENS } from "../navigation/constants";
 
@@ -50,7 +51,6 @@ const data: ProjectProps[] = [
     },
     isDarkContent: true,
   },
-
   {
     link: "https://apps.apple.com/us/app/did-you-ever-group-game/id1631145256",
     type: ProjectsTypes.MOBILE,
@@ -105,6 +105,19 @@ const data: ProjectProps[] = [
     bgImage: { name: 'calmCats' },
     gradient: {
       "--gradient": `#E8E8E8 url(${calmCatsBackground})`,
+    },
+    isDarkContent: true,
+  },
+  {
+    link: SCREENS.CONTRACTIONS,
+    type: ProjectsTypes.MOBILE,
+    name: "Contraction Counter & Tracker",
+    title: "",
+    description: "The Contraction Counter is your reliable assistant while waiting for a miracle!",
+    tags: ["Design", "Mobile"],
+    bgImage: { name: 'contractions' },
+    gradient: {
+      "--gradient": `#F0F0FF url(${contractionsBackground})`,
     },
     isDarkContent: true,
   },

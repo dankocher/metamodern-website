@@ -340,6 +340,15 @@
   }
 }
 
+.interBold96104 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 96px;
+  line-height: 104px;
+  font-size: autoResize(44px, 96px, $phoneWidth) !important;
+  line-height: autoResize(56px, 104px, $phoneWidth) !important;
+}
+
 .interMedium1416 {
   font-family: "Inter", sans-serif;
   font-weight: 500;

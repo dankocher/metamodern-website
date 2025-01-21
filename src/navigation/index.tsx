@@ -7,7 +7,7 @@ import Redirect from "./Redirect";
 import { SCREENS } from "./constants";
 
 import AboutUs from "../screens/AboutUs";
-import BBlist from "../screens/BBlist";
+import BBList from "../screens/BBlist";
 import ContactsScreen from "../screens/Contacts";
 import Home from "../screens/Home";
 import PortfolioScreen from "../screens/Portfolio";
@@ -27,6 +27,7 @@ import PrivacyNeverEver from "../screens/PrivacyNeverEver";
 import TermsNeverEver from "../screens/TermsNeverEver";
 import PrivacyContractions from "../screens/PrivacyContractions";
 import TermsContractions from "../screens/TermsContractions";
+import Contractions from "../screens/Contractions";
 
 const Navigation = ({ isMobile }) => {
   const CatDribble =
@@ -80,6 +81,7 @@ const Navigation = ({ isMobile }) => {
           <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen/>}/>
 
           {/*   Contractions   */}
+          <Route path={SCREENS.CONTRACTIONS} element={<Contractions/>}/>
           <Route path={SCREENS.CONTRACTIONS_PRIVACY} element={<PrivacyContractions/>}/>
           <Route path={SCREENS.CONTRACTIONS_TERMS} element={<TermsContractions/>}/>
 
@@ -101,10 +103,10 @@ const Navigation = ({ isMobile }) => {
 
           <Route path={SCREENS.CALM_CATS} element={<Redirect url={CatDribble}/>}/>
 
-          <Route path={SCREENS.BB_LIST} element={<BBlist/>}/>
+          <Route path={SCREENS.BB_LIST} element={<BBList/>}/>
 
-          <Route path={SCREENS.NeverEver_PRIVACY} element={<PrivacyNeverEver />}/>
-          <Route path={SCREENS.NeverEver_TERMS} element={<TermsNeverEver />}/>
+          <Route path={SCREENS.NeverEver_PRIVACY} element={<PrivacyNeverEver/>}/>
+          <Route path={SCREENS.NeverEver_TERMS} element={<TermsNeverEver/>}/>
 
           <Route path="*" element={<Navigate to={SCREENS.HOME} replace/>}/>
         </Routes>
