@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.584d6af7.css",
-    "main.js": "/static/js/main.1506fe1e.js",
+    "main.css": "/static/css/main.79241920.css",
+    "main.js": "/static/js/main.3a6eb47e.js",
     "static/js/453.a58b244b.chunk.js": "/static/js/453.a58b244b.chunk.js",
     "static/media/aboutUs@2x.png": "/static/media/aboutUs@2x.1ec3d3427df6a60f3f36.png",
     "static/media/aboutUs@3x.png": "/static/media/aboutUs@3x.f6a39e16135a28aea211.png",
@@ -48,19 +48,23 @@
     "static/media/calmCats@2x.png": "/static/media/calmCats@2x.950ccc902033420f7ce3.png",
     "static/media/timeZo.png": "/static/media/timeZo.b87e7d6e8f6f98d0e106.png",
     "static/media/featuresBlock5.png": "/static/media/featuresBlock5.a90b265e448cccd5932d.png",
+    "static/media/contractions@3x.png": "/static/media/contractions@3x.e252b4fd770af17532a6.png",
     "static/media/todPhone4.png": "/static/media/todPhone4.b17737db8d139cb02f9d.png",
     "static/media/todLayer3_2.png": "/static/media/todLayer3_2.de696c1b72b9686cf31b.png",
     "static/media/todPhone6.png": "/static/media/todPhone6.4403ddb317b75abdcb42.png",
     "static/media/Vlad.webp": "/static/media/Vlad.b72f230fe6931bc04840.webp",
     "static/media/BB-list.png": "/static/media/BB-list.fa8d8e8b01e007753504.png",
     "static/media/featuresBlock1@2x.png": "/static/media/featuresBlock1@2x.c1b4e1c76aa770edbde7.png",
+    "static/media/contractionsLogo@3x.png": "/static/media/contractionsLogo@3x.bba986ec2a2a512fedea.png",
     "static/media/todPhone5.png": "/static/media/todPhone5.90f11556ea97c6838faa.png",
     "static/media/truthOrDare@2x.png": "/static/media/truthOrDare@2x.f315fb966f1cf1caace9.png",
     "static/media/neverHaveEver@2x.png": "/static/media/neverHaveEver@2x.2e0ca4631b83c3a53589.png",
     "static/media/featuresBlock4@2x.png": "/static/media/featuresBlock4@2x.0e586777785f05b01aa7.png",
+    "static/media/contractions@2x.png": "/static/media/contractions@2x.e81d532fac52ed108820.png",
     "static/media/featuresBlock2@2x.png": "/static/media/featuresBlock2@2x.3749e98750df6f387b10.png",
     "static/media/timezoLogo@3x.png": "/static/media/timezoLogo@3x.7536a31cc5ee40c3d84c.png",
     "static/media/calmCats.png": "/static/media/calmCats.e3d8f1f7209762b3137f.png",
+    "static/media/contractionsLogo@2x.png": "/static/media/contractionsLogo@2x.1fa7fe0c84dd57090862.png",
     "static/media/featuresBlock3@2x.png": "/static/media/featuresBlock3@2x.437ec1459522015a88fe.png",
     "static/media/featuresBlock1.png": "/static/media/featuresBlock1.ffd700021744ac267ff7.png",
     "static/media/featuresBlock4.png": "/static/media/featuresBlock4.ce623d613f18a89a33be.png",
@@ -68,9 +72,12 @@
     "static/media/truthOrDare.png": "/static/media/truthOrDare.c2928eac73ab4fb304c6.png",
     "static/media/featuresBlock3.png": "/static/media/featuresBlock3.4d741ac7c9e576355189.png",
     "static/media/neverHaveEver.png": "/static/media/neverHaveEver.9cc64744421fdd304c4f.png",
+    "static/media/contractions.png": "/static/media/contractions.7fee1cdbc969c44a802b.png",
+    "static/media/contractionsLogo.png": "/static/media/contractionsLogo.e36c264ac8132860b5c1.png",
     "static/media/timezoLogo@2x.png": "/static/media/timezoLogo@2x.f49b4fa9b293a29511b3.png",
     "static/media/todLayer2_5.png": "/static/media/todLayer2_5.1b0441db871ee2ac5b76.png",
     "static/media/calmCatsBackground.png": "/static/media/calmCatsBackground.490be5822b181e00b18f.png",
+    "static/media/contractionsBackground.png": "/static/media/contractionsBackground.17395ee1b5b27cc7e5dc.png",
     "static/media/todLayer2_4.png": "/static/media/todLayer2_4.94749dc7cb733a9ed37a.png",
     "static/media/todLayer2_1.png": "/static/media/todLayer2_1.1be007268686fde1bff6.png",
     "static/media/todLayer2_3.png": "/static/media/todLayer2_3.684274846827c6669973.png",
@@ -104,12 +111,12 @@
     "static/media/location.svg": "/static/media/location.8705eacbf3ae2e02b1fa0fc972415b41.svg",
     "static/media/phone.svg": "/static/media/phone.9b7673eff89712662bcbce08a0bc1e72.svg",
     "static/media/cross.svg": "/static/media/cross.fb12580ec64a758ba589c015192bf27d.svg",
-    "main.584d6af7.css.map": "/static/css/main.584d6af7.css.map",
-    "main.1506fe1e.js.map": "/static/js/main.1506fe1e.js.map",
+    "main.79241920.css.map": "/static/css/main.79241920.css.map",
+    "main.3a6eb47e.js.map": "/static/js/main.3a6eb47e.js.map",
     "453.a58b244b.chunk.js.map": "/static/js/453.a58b244b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.584d6af7.css",
-    "static/js/main.1506fe1e.js"
+    "static/css/main.79241920.css",
+    "static/js/main.3a6eb47e.js"
   ]
 }
