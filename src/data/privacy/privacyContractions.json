@@ -1,5 +1,5 @@
 {
-  "dateUpdate": "2025-01-15",
+  "dateUpdate": "2025-03-13",
   "title": "Privacy Policy",
   "description": {
     "text1": {
@@ -20,7 +20,9 @@
         "title": "Link to the privacy policies of third-party service providers used by the app:",
         "items": [
           "<a href='https://policies.google.com/privacy' rel='noreferrer' target='_blank'>Google Play Services</a>",
-          "<a href='https://firebase.google.com/policies/analytics' rel='noreferrer' target='_blank'>Google Analytics for Firebase</a>"
+          "<a href='https://policies.google.com/privacy' rel=\"noreferrer\" target=\"_blank\">AdMob</a>",
+          "<a href='https://firebase.google.com/policies/analytics' rel='noreferrer' target='_blank'>Google Analytics for Firebase</a>",
+          "<a href='https://policies.google.com/privacy' rel=\"noreferrer\" target=\"_blank\">Firebase Crashlytics</a>"
         ]
       }
     },
@@ -74,7 +76,7 @@
     "text9": {
       "sections": [
         "We may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page.",
-        "This policy is effective as of 2025-01-15."
+        "This policy is effective as of 2025-03-13."
       ]
     },
     "title10": "Contact Us",

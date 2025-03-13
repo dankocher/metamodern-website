@@ -103,7 +103,7 @@ const Navigation = ({ isMobile }) => {
 
           <Route path={SCREENS.CALM_CATS} element={<Redirect url={CatDribble}/>}/>
 
-          <Route path={SCREENS.BB_LIST} element={<BBList/>}/>
+          {/*<Route path={SCREENS.BB_LIST} element={<BBList/>}/>*/}
 
           <Route path={SCREENS.NeverEver_PRIVACY} element={<PrivacyNeverEver/>}/>
           <Route path={SCREENS.NeverEver_TERMS} element={<TermsNeverEver/>}/>

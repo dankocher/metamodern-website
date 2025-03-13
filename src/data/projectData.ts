@@ -37,20 +37,20 @@ const data: ProjectProps[] = [
     },
     isDarkContent: true,
   },
-  {
-    link: SCREENS.BB_LIST,
-    type: ProjectsTypes.MOBILE,
-    name: "BB-list",
-    title: "- task manager",
-    description:
-      "Your personal task manager BB-list for work, school, and personal life. All your tasks and records in one place.",
-    tags: ["Design", "Research", "Mobile", "Landing"],
-    bgImage: { name: 'BB-list' },
-    gradient: {
-      "--gradient": `#EFF3FF`,
-    },
-    isDarkContent: true,
-  },
+  // {
+  //   link: SCREENS.BB_LIST,
+  //   type: ProjectsTypes.MOBILE,
+  //   name: "BB-list",
+  //   title: "- task manager",
+  //   description:
+  //     "Your personal task manager BB-list for work, school, and personal life. All your tasks and records in one place.",
+  //   tags: ["Design", "Research", "Mobile", "Landing"],
+  //   bgImage: { name: 'BB-list' },
+  //   gradient: {
+  //     "--gradient": `#EFF3FF`,
+  //   },
+  //   isDarkContent: true,
+  // },
   {
     link: "https://apps.apple.com/us/app/did-you-ever-group-game/id1631145256",
     type: ProjectsTypes.MOBILE,
