@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.d58b4729.css",
-    "main.js": "/static/js/main.44ff58a6.js",
+    "main.css": "/static/css/main.ab507b96.css",
+    "main.js": "/static/js/main.79d5109d.js",
     "static/js/453.a58b244b.chunk.js": "/static/js/453.a58b244b.chunk.js",
     "static/media/aboutUs@2x.png": "/static/media/aboutUs@2x.1ec3d3427df6a60f3f36.png",
     "static/media/aboutUs@3x.png": "/static/media/aboutUs@3x.f6a39e16135a28aea211.png",
@@ -10,9 +10,12 @@
     "static/media/aboutUs.png": "/static/media/aboutUs.09699d9eafa07bf093e8.png",
     "static/media/soon@2x.png": "/static/media/soon@2x.d7cea2f5a6b5d12322b0.png",
     "static/media/TimeZo-mainPhone.png": "/static/media/TimeZo-mainPhone.78fa8e4a12dc04d37324.png",
+    "static/media/weatherBackground.png": "/static/media/weatherBackground.e10e7ba6e70668afc1f9.png",
     "static/media/medReminderBackground.png": "/static/media/medReminderBackground.101e7842a05728601735.png",
+    "static/media/weatherLogo@3x.png": "/static/media/weatherLogo@3x.0b5533fab4e0748bc89a.png",
     "static/media/map.png": "/static/media/map.01cea56cecf885d4b689.png",
     "static/media/todPhone1.png": "/static/media/todPhone1.f598fcaa95e764404806.png",
+    "static/media/weather@3x.png": "/static/media/weather@3x.323252da86d3f9cd8fdb.png",
     "static/media/medReminder.png": "/static/media/medReminder.03a6eb446221e2d74b93.png",
     "static/media/officeRectangle.webp": "/static/media/officeRectangle.ec293b3efb00699ab361.webp",
     "static/media/beRead@2x.png": "/static/media/beRead@2x.a65b8b7dc82cabfacf02.png",
@@ -28,7 +31,9 @@
     "static/media/TimeZo-phone-right.png": "/static/media/TimeZo-phone-right.12c33899d36862bfa657.png",
     "static/media/todPhone2.png": "/static/media/todPhone2.17277204381c7a8232b0.png",
     "static/media/soon.png": "/static/media/soon.28d5b6c654c0e078a421.png",
+    "static/media/weatherLogo@2x.png": "/static/media/weatherLogo@2x.fbe21be8a4d12a9d76d0.png",
     "static/media/todLayer4.png": "/static/media/todLayer4.b7e7fc56b486455fe169.png",
+    "static/media/weather@2x.png": "/static/media/weather@2x.bf6523de53b1f5a05fdb.png",
     "static/media/todPhone7_2.png": "/static/media/todPhone7_2.0bfb5c14c31a73662848.png",
     "static/media/BB-list@2x.png": "/static/media/BB-list@2x.1ad1b1f516b9549b67f0.png",
     "static/media/phoneBlock1@2x.png": "/static/media/phoneBlock1@2x.867ca8361936a39e476e.png",
@@ -57,6 +62,7 @@
     "static/media/featuresBlock1@2x.png": "/static/media/featuresBlock1@2x.c1b4e1c76aa770edbde7.png",
     "static/media/contractionsLogo@3x.png": "/static/media/contractionsLogo@3x.bba986ec2a2a512fedea.png",
     "static/media/todPhone5.png": "/static/media/todPhone5.90f11556ea97c6838faa.png",
+    "static/media/weather.png": "/static/media/weather.6fdad2892b165a0d4b12.png",
     "static/media/truthOrDare@2x.png": "/static/media/truthOrDare@2x.f315fb966f1cf1caace9.png",
     "static/media/neverHaveEver@2x.png": "/static/media/neverHaveEver@2x.2e0ca4631b83c3a53589.png",
     "static/media/featuresBlock4@2x.png": "/static/media/featuresBlock4@2x.0e586777785f05b01aa7.png",
@@ -67,6 +73,7 @@
     "static/media/contractionsLogo@2x.png": "/static/media/contractionsLogo@2x.1fa7fe0c84dd57090862.png",
     "static/media/featuresBlock3@2x.png": "/static/media/featuresBlock3@2x.437ec1459522015a88fe.png",
     "static/media/featuresBlock1.png": "/static/media/featuresBlock1.ffd700021744ac267ff7.png",
+    "static/media/weatherLogo.png": "/static/media/weatherLogo.6af4ad3ab751f79181a3.png",
     "static/media/featuresBlock4.png": "/static/media/featuresBlock4.ce623d613f18a89a33be.png",
     "static/media/featuresBlock2.png": "/static/media/featuresBlock2.34af5e413e42217fa112.png",
     "static/media/truthOrDare.png": "/static/media/truthOrDare.c2928eac73ab4fb304c6.png",
@@ -111,12 +118,12 @@
     "static/media/location.svg": "/static/media/location.8705eacbf3ae2e02b1fa0fc972415b41.svg",
     "static/media/phone.svg": "/static/media/phone.9b7673eff89712662bcbce08a0bc1e72.svg",
     "static/media/cross.svg": "/static/media/cross.fb12580ec64a758ba589c015192bf27d.svg",
-    "main.d58b4729.css.map": "/static/css/main.d58b4729.css.map",
-    "main.44ff58a6.js.map": "/static/js/main.44ff58a6.js.map",
+    "main.ab507b96.css.map": "/static/css/main.ab507b96.css.map",
+    "main.79d5109d.js.map": "/static/js/main.79d5109d.js.map",
     "453.a58b244b.chunk.js.map": "/static/js/453.a58b244b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d58b4729.css",
-    "static/js/main.44ff58a6.js"
+    "static/css/main.ab507b96.css",
+    "static/js/main.79d5109d.js"
   ]
 }
