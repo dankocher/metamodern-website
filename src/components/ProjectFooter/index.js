@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 import { colors } from '../../styles/colors';
 
-import Data from '../../data/main-data-projects.json';
 import { SCREENS } from '../../navigation/constants';
+import { contacts } from "../../data/contacts";
 
 const ProjectFooter = ({ theme }) => {
   const year = new Date().getFullYear();
@@ -18,10 +18,10 @@ const ProjectFooter = ({ theme }) => {
       <div className={styles.info} style={{ color: color }}>
         <div className={`${styles.info__links} subtitle0`}>
           <Link to={SCREENS.META_MODERN_PRIVACY}>{privacyPolicy}</Link>
-          <a href={`mailto:${Data.link.mail}`}>{Data.link.mail}</a>
+          <a href={`mailto:${contacts.mail}`}>{contacts.mail}</a>
         </div>
         <p className={`${styles.info__data} subtitle`}>
-          {year} © {Data.title}
+          {year} © MetaModern
         </p>
       </div>
     </footer>

@@ -5,18 +5,16 @@ import { Icon } from "../Icon";
 import { colors } from "../../styles/colors";
 
 const Link = styled.a`
-  background-color: ${({ theme }) =>
-    theme === "dark" ? colors.main : colors.white};
-
+  background-color: ${({ theme }) => theme === "dark" ? colors.main : colors.white};
   .${styles.text} {
     color: ${({ theme }) => (theme === "dark" ? colors.white : colors.main)};
   }
 `;
 
-function _generateLinks(data){
+function _generateLinks(data) {
   const result = [];
 
-  if (data.googlePlay) {
+  if (data.googlePlay != null) {
     result.push({
       title: "Google Play",
       href: data.googlePlay,
@@ -24,7 +22,7 @@ function _generateLinks(data){
     });
   }
 
-  if (data.appStore) {
+  if (data.appStore != null) {
     result.push({
       title: "App Store",
       href: data.appStore,
@@ -57,7 +55,6 @@ const LinkButtons = ({
           target={href ? "_blank" : null}
           rel={href ? "noreferrer" : null}
         >
-          {/* <div className={styles.icon}> */}
           <Icon
             name={icon}
             size={iconSize}

@@ -7,11 +7,11 @@ import { Layout } from "../../components/layout";
 import Image from "../../components/Image";
 import LinkButtons from "../../components/LinkButtons";
 
-const Contractions = () => {
-  const title = "Contraction Timer"
-  const iconName = "contractionsLogo"
-  const description = "The Contraction Timer is your reliable assistant while waiting for a miracle!"
-  const links = { "googlePlay": "https://play.google.com/store/apps/details?id=dev.paperapps.contractions" }
+const Weather = () => {
+  const title = "Weather V"
+  const iconName = "weatherLogo"
+  const description = "When the sky changes, our numbers do too–fast, clear, and reliably correct."
+  const links = { "googlePlay": "https://play.google.com/store/apps/details?id=app.weather.forecast.widget" }
 
   return (
     <Layout theme="dark">
@@ -42,4 +42,4 @@ const Contractions = () => {
   );
 };
 
-export default Contractions;
+export default Weather;

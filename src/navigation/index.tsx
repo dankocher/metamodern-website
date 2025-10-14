@@ -7,7 +7,6 @@ import Redirect from "./Redirect";
 import { SCREENS } from "./constants";
 
 import AboutUs from "../screens/AboutUs";
-import BBList from "../screens/BBlist";
 import ContactsScreen from "../screens/Contacts";
 import Home from "../screens/Home";
 import PortfolioScreen from "../screens/Portfolio";
@@ -15,9 +14,7 @@ import PrivacyMetaModern from "../screens/PrivacyMetaModern";
 import ToDScreen from "../screens/TOD";
 import ToDPrivacyScreen from "../screens/ToDPrivacy";
 import ToDTermsScreen from "../screens/ToDTerms";
-import TimeZoScreen from "../screens/TimeZO";
-import TimeZoPrivacyScreen from "../screens/TimeZOPrivacy";
-import TimeZoTermsScreen from "../screens/TimeZoTerms";
+import TimeZoScreen from "../screens/TimeZo";
 import Header from "../components/Header";
 import { AnimatePresence, motion } from "framer-motion";
 import ModalMenu from "../components/ModalMenu";
@@ -28,10 +25,15 @@ import TermsNeverEver from "../screens/TermsNeverEver";
 import PrivacyContractions from "../screens/PrivacyContractions";
 import TermsContractions from "../screens/TermsContractions";
 import Contractions from "../screens/Contractions";
+import Weather from "../screens/Weather";
+import PrivacyWeather from "../screens/PrivacyWeather";
+import TermsWeather from "../screens/TermsWeather";
+import WorldClockRedirect from "../pages/TimeZo/redirect";
+import TermsWorldClock from "../screens/TermsWorldClock";
+import PrivacyWorldClock from "../screens/PrivacyWorldClock";
 
 const Navigation = ({ isMobile }) => {
-  const CatDribble =
-    "https://dribbble.com/shots/15948449-Relaxiki-Meditation-app";
+  const CatDribble = "https://dribbble.com/shots/15948449-Relaxiki-Meditation-app";
   const location = useLocation();
   const duration = 0.2;
 
@@ -85,6 +87,12 @@ const Navigation = ({ isMobile }) => {
           <Route path={SCREENS.CONTRACTIONS_PRIVACY} element={<PrivacyContractions/>}/>
           <Route path={SCREENS.CONTRACTIONS_TERMS} element={<TermsContractions/>}/>
 
+          {/*   Weather App   */}
+          <Route path={SCREENS.WEATHER} element={<Weather/>}/>
+          <Route path={SCREENS.WEATHER_PRIVACY} element={<PrivacyWeather/>}/>
+          <Route path={SCREENS.WEATHER_TERMS} element={<TermsWeather/>}/>
+
+          {/*   TimeZo   */}
           <Route
             path={SCREENS.TIME_ZO}
             element={
@@ -96,10 +104,11 @@ const Navigation = ({ isMobile }) => {
               </motion.div>
             }
           />
-          <Route path={SCREENS.TIME_ZO_PRIVACY} element={<TimeZoPrivacyScreen/>}/>
-          <Route path={SCREENS.WORLD_CLOCK_PRIVACY} element={<TimeZoPrivacyScreen/>}/>
-          <Route path={SCREENS.TIME_ZO_TERMS} element={<TimeZoTermsScreen/>}/>
-          <Route path={SCREENS.WORLD_CLOCK_TERMS} element={<TimeZoTermsScreen/>}/>
+          <Route path={SCREENS.TIME_ZO_PRIVACY} element={<PrivacyWorldClock/>}/>
+          <Route path={SCREENS.WORLD_CLOCK_PRIVACY} element={<PrivacyWorldClock/>}/>
+          <Route path={SCREENS.TIME_ZO_TERMS} element={<TermsWorldClock/>}/>
+          <Route path={SCREENS.WORLD_CLOCK_TERMS} element={<TermsWorldClock/>}/>
+          <Route path={SCREENS.WORLD_CLOCK_REDIRECT} element={<WorldClockRedirect/>}/>
 
           <Route path={SCREENS.CALM_CATS} element={<Redirect url={CatDribble}/>}/>
 

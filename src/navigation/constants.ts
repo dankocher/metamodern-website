@@ -14,6 +14,7 @@ export enum SCREENS {
   WORLD_CLOCK_PRIVACY = "/WorldClock/privacy",
   TIME_ZO_TERMS = "/TimeZo/terms",
   WORLD_CLOCK_TERMS = "/WorldClock/terms",
+  WORLD_CLOCK_REDIRECT = "/WorldClock/game",
   NeverHaveEver = "/NeverHaveEver",
   NeverEver_PRIVACY = "/NeverEver/privacy",
   NeverEver_TERMS = "/NeverEver/terms",
@@ -24,4 +25,7 @@ export enum SCREENS {
   CONTRACTIONS = "/Contractions",
   CONTRACTIONS_PRIVACY = "/Contractions/privacy",
   CONTRACTIONS_TERMS = "/Contractions/terms",
+  WEATHER = "/Weather",
+  WEATHER_PRIVACY = "/Weather/privacy",
+  WEATHER_TERMS = "/Weather/terms"
 }

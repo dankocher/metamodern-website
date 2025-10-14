@@ -1,17 +1,17 @@
 {
-  "title": "Terms of Use — Contraction Timer",
+  "title": "Terms of Use — World Clock",
   "dateUpdate": "2025-10-14",
   "description": {
     "text1": {
       "sections": [
-        "Welcome to Contraction Timer! These Terms of Use (\"Terms\") govern your use of the Contraction Timer mobile application (the \"App\") provided by Metamodern Dev, LLC (\"we,\" \"us,\" or \"our\").",
-        "By downloading, accessing, or using the App, you agree to be bound by these Terms. Your use of the App is also governed by our <a href=\"https://metamodern.dev/Contractions/privacy\">Privacy Policy</a>, which we encourage you to review. If you do not agree to these Terms, do not use the App."
+        "Welcome to World Clock! These Terms of Use (\"Terms\") govern your use of the World Clock mobile application (the \"App\") provided by Metamodern Dev, LLC (\"we,\" \"us,\" or \"our\").",
+        "By downloading, accessing, or using the App, you agree to be bound by these Terms. Your use of the App is also governed by our <a href=\"https://metamodern.dev/WorldClock/privacy\">Privacy Policy</a>, which we encourage you to review. If you do not agree to these Terms, do not use the App."
       ]
     },
     "title1": "1. Privacy Policy",
     "text2": {
       "sections": [
-        "Your privacy is important to us. Please review our <a href=\"https://metamodern.dev/Contractions/privacy\">Privacy Policy</a> to understand how we collect, use, and share your information. By using the App, you agree to the terms of the <a href=\"https://metamodern.dev/Contractions/privacy\">Privacy Policy</a>."
+        "Your privacy is important to us. Please review our <a href=\"https://metamodern.dev/WorldClock/privacy\">Privacy Policy</a> to understand how we collect, use, and share your information. By using the App, you agree to the terms of the <a href=\"https://metamodern.dev/WorldClock/privacy\">Privacy Policy</a>."
       ]
     },
     "title3": "2. License to Use the App",
@@ -48,7 +48,7 @@
     "title7": "6. Third-Party Services",
     "text7": {
       "sections": [
-        "The App may utilize third-party services to provide certain functionality, such as displaying advertisements (e.g., Google AdMob). Your interaction with these features is subject to the terms and policies of the respective third-party providers. We are not responsible for the content of third-party advertisements or the practices of these providers."
+        "The App relies on third-party services, such as the OpenWeather API, to provide weather data. Your use of these features is subject to the terms and policies of those third-party providers. We do not guarantee the accuracy, availability, or reliability of data provided by third parties."
       ]
     },
     "title8": "7. Disclaimer of Warranties",

@@ -1,10 +1,10 @@
 {
-  "title": "Privacy Policy — Contraction Timer",
+  "title": "Privacy Policy — Weather V",
   "dateUpdate": "2025-10-14",
   "description": {
     "text1": {
       "sections": [
-        "This Privacy Policy explains how Contraction Timer processes personal data on Android and iOS, what categories are collected, for which purposes and legal bases, with whom data is shared, how long it is retained, and how to exercise privacy rights under GDPR, CCPA/CPRA, VCDPA, and LGPD."
+        "This Privacy Policy explains how Weather V processes personal data on Android and iOS, what categories are collected, for which purposes and legal bases, with whom data is shared, how long it is retained, and how to exercise privacy rights under GDPR, CCPA/CPRA, VCDPA, and LGPD."
       ]
     },
     "title": "Who we are",
@@ -16,7 +16,7 @@
     "title2": "Scope",
     "text2": {
       "sections": [
-        "This Policy applies to the Contraction Timer mobile application by Metamodern Dev, LLC, covering all its versions regardless of the name under which it is distributed in app stores. It governs personal data processed through the app, related support communications, and the integrated Google services/SDKs used for functionality, diagnostics, consent, fraud prevention, analytics, and advertising where applicable.",
+        "This Policy applies to the Weather V mobile application by Metamodern Dev, LLC, covering all its versions regardless of the name under which it is distributed in app stores. It governs personal data processed through the app, related support communications, and the integrated Google services/SDKs used for functionality, diagnostics, consent, fraud prevention, analytics, and advertising where applicable.",
         "We do not operate our own application servers for this product, and data visible to us is hosted within Google’s developer platforms or the device OS according to their terms."
       ]
     },
@@ -44,7 +44,8 @@
           "Google LLC — Firebase Crashlytics: crash diagnostics and stability data surfaced in developer consoles.<br/>– <a href=\"https://firebase.google.com/terms/crashlytics\">Firebase Crashlytics & Firebase App Distribution Terms of Service</a>",
           "Google LLC — Google Play services (including Integrity/App Set ID): security, integrity checks, and limited identifiers to protect users and the service.<br/>– <a href=\"https://policies.google.com/privacy\">Google Privacy Policy</a><br/>– <a href=\"https://play.google.com/about/play-terms/index.html\">Google Play Terms of Service</a>",
           "Google LLC — Google UMP (Consent): consent collection for EEA/UK and other regions where required by law or platform rules.<br/>– <a href=\"https://www.google.com/about/company/user-consent-policy/\">Google's EU User Consent Policy<a/>",
-          "Google LLC — Google Play Console/Android Vitals: aggregated stability/quality metrics available to developers via dashboards.<br/>– <a href=\"https://play.google.com/about/developer-distribution-agreement.html\">Google Play Developer Distribution Agreement<a/>"
+          "Google LLC — Google Play Console/Android Vitals: aggregated stability/quality metrics available to developers via dashboards.<br/>– <a href=\"https://play.google.com/about/developer-distribution-agreement.html\">Google Play Developer Distribution Agreement<a/>",
+          "OpenWeather Ltd — OpenWeather API: weather data retrieval to support app functionality; requests are issued from the device to the weather service.<br/>– <a href=\"https://openweather.co.uk/privacy-policy\">OpenWeather Privacy Policy<a/>"
         ]
       },
       "sections": [
@@ -163,7 +164,7 @@
     "title19": "Change log",
     "text19": {
       "sections": [
-        "2025‑10‑14: Initial consolidated edition mapping to Play Data safety categories (Device IDs, App interactions, Crash logs), explicit Google services disclosure (AdMob, Firebase Analytics, Crashlytics, Play services/Integrity, UMP, Play Console), provider‑window retention (generally 90 days), GPC support, and jurisdictional rights/opt‑out sections."
+        "2025‑10‑14: Initial consolidated edition mapping to Play Data safety categories (Device IDs, App interactions, Crash logs, Calendar events), explicit Google services disclosure (AdMob, Firebase Analytics, Crashlytics, Play services/Integrity, UMP, Play Console), OpenWeather API, provider‑window retention (generally 90 days), GPC support, and jurisdictional rights/opt‑out sections."
       ]
     },
     "title20": "Contact",
