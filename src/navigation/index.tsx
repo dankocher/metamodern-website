@@ -11,10 +11,6 @@ import ContactsScreen from "../screens/Contacts";
 import Home from "../screens/Home";
 import PortfolioScreen from "../screens/Portfolio";
 import PrivacyMetaModern from "../screens/PrivacyMetaModern";
-import ToDScreen from "../screens/TOD";
-import ToDPrivacyScreen from "../screens/ToDPrivacy";
-import ToDTermsScreen from "../screens/ToDTerms";
-import TimeZoScreen from "../screens/TimeZo";
 import Header from "../components/Header";
 import { AnimatePresence, motion } from "framer-motion";
 import ModalMenu from "../components/ModalMenu";
@@ -28,9 +24,13 @@ import Contractions from "../screens/Contractions";
 import Weather from "../screens/Weather";
 import PrivacyWeather from "../screens/PrivacyWeather";
 import TermsWeather from "../screens/TermsWeather";
-import WorldClockRedirect from "../pages/TimeZo/redirect";
+import WorldClockRedirect from "../screens/TimeZo/redirect";
+import TimeZoPage from "../screens/TimeZo";
 import TermsWorldClock from "../screens/TermsWorldClock";
 import PrivacyWorldClock from "../screens/PrivacyWorldClock";
+import PrivacyTOD from "../screens/ToDPrivacy";
+import TermsTOD from "../screens/ToDTerms";
+import TodPage from "../screens/TOD";
 
 const Navigation = ({ isMobile }) => {
   const CatDribble = "https://dribbble.com/shots/15948449-Relaxiki-Meditation-app";
@@ -75,12 +75,12 @@ const Navigation = ({ isMobile }) => {
                   transition: { duration: duration },
                 }}
               >
-                <ToDScreen/>
+                <TodPage/>
               </motion.div>
             }
           />
-          <Route path={SCREENS.TOD_PRIVACY} element={<ToDPrivacyScreen/>}/>
-          <Route path={SCREENS.TOD_TERMS} element={<ToDTermsScreen/>}/>
+          <Route path={SCREENS.TOD_PRIVACY} element={<PrivacyTOD/>}/>
+          <Route path={SCREENS.TOD_TERMS} element={<TermsTOD/>}/>
 
           {/*   Contractions   */}
           <Route path={SCREENS.CONTRACTIONS} element={<Contractions/>}/>
@@ -100,7 +100,7 @@ const Navigation = ({ isMobile }) => {
                 exit={{ opacity: 0, transition: { duration: duration } }}
                 transition={{ duration: duration }}
               >
-                <TimeZoScreen/>
+                <TimeZoPage/>
               </motion.div>
             }
           />

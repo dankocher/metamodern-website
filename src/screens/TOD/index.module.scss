@@ -1,0 +1,84 @@
+@import "src/styles/foundations";
+
+.container {
+  width: 100vw;
+
+  background: linear-gradient(90deg, #2D1753 0%, #371A4F 36.46%, #411A3E 74.48%, #3F1A3A 100%);
+
+  > div:not(:last-child, :first-child) {
+    @media (max-width: $tabletWidth) {
+      // margin-bottom: autoResize(78, 150, 375, $tabletWidth);
+      margin-bottom: 120px;
+    }
+  }
+
+  // & > :first-child {
+  //   padding-bottom: 150px;
+  // }
+
+  // & > :last-child {
+  //   padding-top: 150px;
+  // }
+}
+
+// .lightTopOne,
+// .lightTopTwo,
+// .lightBottomOne,
+// .lightBottomTwo {
+//   height: 1162px;
+//   width: 1101px;
+
+//   position: absolute;
+
+//   @media (max-width: $tabletWidth) {
+//     display: none;
+//   }
+// }
+
+// .lightTopOne {
+//   right: 45%;
+//   top: 0;
+
+//   background: radial-gradient(
+//     50% 50% at 50% 50%,
+//     #814ae8 0%,
+//     rgba(129, 74, 232, 0.24) 100%
+//   );
+//   filter: blur(512px);
+// }
+
+// .lightTopTwo {
+//   left: 45%;
+//   top: 0;
+
+//   background: radial-gradient(
+//     50% 50% at 50% 50%,
+//     #e83f61 0%,
+//     rgba(232, 63, 97, 0.24) 100%
+//   );
+//   filter: blur(512px);
+// }
+
+// .lightBottomOne {
+//   left: 45%;
+//   bottom: 0;
+
+//   background: radial-gradient(
+//     50% 50% at 50% 50%,
+//     #9150ee 0%,
+//     rgba(145, 80, 238, 0.24) 100%
+//   );
+//   filter: blur(512px);
+// }
+
+// .lightBottomTwo {
+//   right: 45%;
+//   bottom: 0;
+
+//   background: linear-gradient(
+//     153.82deg,
+//     rgba(232, 226, 97, 0.75) 1.15%,
+//     rgba(232, 158, 74, 0.75) 98.9%
+//   );
+//   filter: blur(512px);
+// }

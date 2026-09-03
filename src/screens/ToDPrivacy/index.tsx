@@ -1,3 +1,11 @@
-import ToDPrivacyScreen from '../../pages/ToD/privacy';
+import { Document } from "../../components/Document"
 
-export default ToDPrivacyScreen;
+import info from "../../data/information-data.json"
+
+const PrivacyTOD = () => {
+  const { description, dateUpdate } = info.tod.privacy
+
+  return <Document title="Truth or Dare. Privacy policy" date={dateUpdate} description={description}/>
+}
+
+export default PrivacyTOD
