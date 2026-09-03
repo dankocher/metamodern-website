@@ -1,17 +1,15 @@
 import DocumentWrapper from "../../components/DocumentWrapper";
 import { Document } from "../../components/Document";
 
-import info from "../../data/information-data.json";
+import privacy from "../../data/privacy/privacyMetaModern.json";
 
 const PrivacyPartyGames = () => {
-  const { description, dateUpdate } = info.main.privacy;
-
-  const privacyPolicy = "MetaModern LLC. Privacy policy";
+  const { title, description, dateUpdate } = privacy;
 
   return (
     <DocumentWrapper>
       <Document
-        title={privacyPolicy}
+        title={title}
         date={dateUpdate}
         description={description}
       />
