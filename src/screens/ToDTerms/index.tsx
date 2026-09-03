@@ -1,11 +1,11 @@
 import { Document } from "../../components/Document"
 
-import info from "../../data/information-data.json"
+import terms from "../../data/terms/termsTOD.json"
 
 const TermsTOD = () => {
-  const { description, dateUpdate } = info.tod.terms
+  const { title, description, dateUpdate } = terms
 
-  return <Document title="Truth or Dare. Terms of Use" date={dateUpdate} description={description} />
+  return <Document title={title} date={dateUpdate} description={description}/>
 }
 
 export default TermsTOD

@@ -1,12 +1,11 @@
 import { Document } from "../../components/Document";
 
-import info from "../../data/information-data.json"
-import React from "react";
+import privacy from "../../data/privacy/privacyNeverEver.json"
 
 const PrivacyNeverEver = () => {
-  const { description, dateUpdate } = info.never_ever.privacy
+  const { title, description, dateUpdate } = privacy
 
-  return <Document title="Did You Ever. Privacy policy" date={dateUpdate} description={description}/>
+  return <Document title={title} date={dateUpdate} description={description}/>
 };
 
 export default PrivacyNeverEver;

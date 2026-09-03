@@ -1,11 +1,15 @@
 import { Document } from "../../components/Document"
 
-import info from "../../data/information-data.json"
+import privacy from "../../data/privacy/privacyTOD.json"
 
 const PrivacyTOD = () => {
-  const { description, dateUpdate } = info.tod.privacy
+  const { title, dateUpdate, description } = privacy
 
-  return <Document title="Truth or Dare. Privacy policy" date={dateUpdate} description={description}/>
+  return <Document
+    title={title}
+    date={dateUpdate}
+    description={description}
+  />
 }
 
 export default PrivacyTOD

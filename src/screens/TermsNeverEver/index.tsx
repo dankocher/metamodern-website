@@ -1,12 +1,11 @@
 import { Document } from "../../components/Document";
 
-import info from "../../data/information-data.json"
-import React from "react";
+import terms from "../../data/terms/termsNeverEver.json"
 
 const TermsNeverEver = () => {
-  const { description, dateUpdate } = info.never_ever.terms
+  const { title, description, dateUpdate } = terms
 
-  return <Document title="Did You Ever. Terms of Use" date={dateUpdate} description={description}/>
+  return <Document title={title} date={dateUpdate} description={description}/>
 };
 
 export default TermsNeverEver;
