@@ -115,6 +115,17 @@ const data: ProjectProps[] = [
     isBgImgWrapper: true,
     isDarkContent: true,
   },
+  {
+    link: SCREENS.NAMES,
+    type: ProjectsTypes.MOBILE,
+    name: "Baby Name",
+    description: "",
+    tags: ["Design", "Mobile"],
+    bgImage: { name: 'weather' },
+    gradient: { "--gradient": `#F0F0FF url(${weatherBackground})` },
+    isBgImgWrapper: true,
+    isDarkContent: true,
+  },
 ];
 
 export { data };

@@ -26,8 +26,7 @@
         "items": [
           "Device or other IDs: device and advertising identifiers (e.g., AAID or App Set ID) used for analytics, app integrity, attribution, and AdMob ad delivery where applicable, consistent with Play Data safety taxonomy.",
           "App interactions: limited in‑app event telemetry supporting functionality quality, measurement, and product improvement in accordance with platform rules.",
-          "Crash logs: diagnostics directly related to crashes for reliability and troubleshooting in line with platform disclosure guidance.",
-          "Calendar events: permission is used solely to let the individual create calendar entries from the app; processing is on‑device and not transmitted to our servers."
+          "Crash logs: diagnostics directly related to crashes for reliability and troubleshooting in line with platform disclosure guidance."
         ]
       },
       "sections": [

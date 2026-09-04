@@ -31,6 +31,8 @@ import PrivacyWorldClock from "../screens/PrivacyWorldClock";
 import PrivacyTOD from "../screens/ToDPrivacy";
 import TermsTOD from "../screens/ToDTerms";
 import TodPage from "../screens/TOD";
+import PrivacyNames from "../screens/PrivacyNames";
+import Names from "../screens/Names";
 
 const Navigation = ({ isMobile }) => {
   const CatDribble = "https://dribbble.com/shots/15948449-Relaxiki-Meditation-app";
@@ -91,6 +93,10 @@ const Navigation = ({ isMobile }) => {
           <Route path={SCREENS.WEATHER} element={<Weather/>}/>
           <Route path={SCREENS.WEATHER_PRIVACY} element={<PrivacyWeather/>}/>
           <Route path={SCREENS.WEATHER_TERMS} element={<TermsWeather/>}/>
+
+          {/*   Names App   */}
+          <Route path={SCREENS.NAMES} element={<Names/>}/>
+          <Route path={SCREENS.NAMES_PRIVACY} element={<PrivacyNames/>}/>
 
           {/*   TimeZo   */}
           <Route

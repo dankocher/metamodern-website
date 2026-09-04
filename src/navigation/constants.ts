@@ -27,5 +27,7 @@ export enum SCREENS {
   CONTRACTIONS_TERMS = "/Contractions/terms",
   WEATHER = "/Weather",
   WEATHER_PRIVACY = "/Weather/privacy",
-  WEATHER_TERMS = "/Weather/terms"
+  WEATHER_TERMS = "/Weather/terms",
+  NAMES = "/BBName",
+  NAMES_PRIVACY = "/BBName/privacy"
 }
