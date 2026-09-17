@@ -29,5 +29,6 @@ export enum SCREENS {
   WEATHER_PRIVACY = "/Weather/privacy",
   WEATHER_TERMS = "/Weather/terms",
   NAMES = "/BBName",
-  NAMES_PRIVACY = "/BBName/privacy"
+  NAMES_PRIVACY = "/BBName/privacy",
+  NAMES_TERMS = "/BBName/terms"
 }

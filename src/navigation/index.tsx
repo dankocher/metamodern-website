@@ -10,28 +10,17 @@ import AboutUs from "../screens/AboutUs";
 import ContactsScreen from "../screens/Contacts";
 import Home from "../screens/Home";
 import PortfolioScreen from "../screens/Portfolio";
-import PrivacyMetaModern from "../screens/PrivacyMetaModern";
+import LegalDocumentScreen from "../screens/LegalDocument";
 import Header from "../components/Header";
 import { AnimatePresence, motion } from "framer-motion";
 import ModalMenu from "../components/ModalMenu";
 import { useEffect } from "react";
 import { colors } from "../styles/colors";
-import PrivacyNeverEver from "../screens/PrivacyNeverEver";
-import TermsNeverEver from "../screens/TermsNeverEver";
-import PrivacyContractions from "../screens/PrivacyContractions";
-import TermsContractions from "../screens/TermsContractions";
 import Contractions from "../screens/Contractions";
 import Weather from "../screens/Weather";
-import PrivacyWeather from "../screens/PrivacyWeather";
-import TermsWeather from "../screens/TermsWeather";
 import WorldClockRedirect from "../screens/TimeZo/redirect";
 import TimeZoPage from "../screens/TimeZo";
-import TermsWorldClock from "../screens/TermsWorldClock";
-import PrivacyWorldClock from "../screens/PrivacyWorldClock";
-import PrivacyTOD from "../screens/ToDPrivacy";
-import TermsTOD from "../screens/ToDTerms";
 import TodPage from "../screens/TOD";
-import PrivacyNames from "../screens/PrivacyNames";
 import Names from "../screens/Names";
 
 const Navigation = ({ isMobile }) => {
@@ -65,7 +54,10 @@ const Navigation = ({ isMobile }) => {
           <Route path={SCREENS.PORTFOLIO} element={<PageWrapper children={<PortfolioScreen/>}/>}/>
           <Route path={SCREENS.ABOUT_US} element={<PageWrapper children={<AboutUs/>}/>}/>
           <Route path={SCREENS.CONTACTS} element={<PageWrapper children={<ContactsScreen/>}/>}/>
-          <Route path={SCREENS.META_MODERN_PRIVACY} element={<PrivacyMetaModern/>}/>
+          <Route
+            path={SCREENS.META_MODERN_PRIVACY}
+            element={<LegalDocumentScreen documentId="metaModernPrivacy"/>}
+          />
 
           <Route
             path={SCREENS.TOD}
@@ -81,22 +73,47 @@ const Navigation = ({ isMobile }) => {
               </motion.div>
             }
           />
-          <Route path={SCREENS.TOD_PRIVACY} element={<PrivacyTOD/>}/>
-          <Route path={SCREENS.TOD_TERMS} element={<TermsTOD/>}/>
+          <Route
+            path={SCREENS.TOD_PRIVACY}
+            element={<LegalDocumentScreen documentId="truthOrDarePrivacy"/>}
+          />
+          <Route
+            path={SCREENS.TOD_TERMS}
+            element={<LegalDocumentScreen documentId="truthOrDareTerms"/>}
+          />
 
           {/*   Contractions   */}
           <Route path={SCREENS.CONTRACTIONS} element={<Contractions/>}/>
-          <Route path={SCREENS.CONTRACTIONS_PRIVACY} element={<PrivacyContractions/>}/>
-          <Route path={SCREENS.CONTRACTIONS_TERMS} element={<TermsContractions/>}/>
+          <Route
+            path={SCREENS.CONTRACTIONS_PRIVACY}
+            element={<LegalDocumentScreen documentId="contractionTimerPrivacy"/>}
+          />
+          <Route
+            path={SCREENS.CONTRACTIONS_TERMS}
+            element={<LegalDocumentScreen documentId="contractionTimerTerms"/>}
+          />
 
           {/*   Weather App   */}
           <Route path={SCREENS.WEATHER} element={<Weather/>}/>
-          <Route path={SCREENS.WEATHER_PRIVACY} element={<PrivacyWeather/>}/>
-          <Route path={SCREENS.WEATHER_TERMS} element={<TermsWeather/>}/>
+          <Route
+            path={SCREENS.WEATHER_PRIVACY}
+            element={<LegalDocumentScreen documentId="weatherPrivacy"/>}
+          />
+          <Route
+            path={SCREENS.WEATHER_TERMS}
+            element={<LegalDocumentScreen documentId="weatherTerms"/>}
+          />
 
           {/*   Names App   */}
           <Route path={SCREENS.NAMES} element={<Names/>}/>
-          <Route path={SCREENS.NAMES_PRIVACY} element={<PrivacyNames/>}/>
+          <Route
+            path={SCREENS.NAMES_PRIVACY}
+            element={<LegalDocumentScreen documentId="bbNamePrivacy"/>}
+          />
+          <Route
+            path={SCREENS.NAMES_TERMS}
+            element={<LegalDocumentScreen documentId="bbNameTerms"/>}
+          />
 
           {/*   TimeZo   */}
           <Route
@@ -110,18 +127,36 @@ const Navigation = ({ isMobile }) => {
               </motion.div>
             }
           />
-          <Route path={SCREENS.TIME_ZO_PRIVACY} element={<PrivacyWorldClock/>}/>
-          <Route path={SCREENS.WORLD_CLOCK_PRIVACY} element={<PrivacyWorldClock/>}/>
-          <Route path={SCREENS.TIME_ZO_TERMS} element={<TermsWorldClock/>}/>
-          <Route path={SCREENS.WORLD_CLOCK_TERMS} element={<TermsWorldClock/>}/>
+          <Route
+            path={SCREENS.TIME_ZO_PRIVACY}
+            element={<LegalDocumentScreen documentId="worldClockPrivacy"/>}
+          />
+          <Route
+            path={SCREENS.WORLD_CLOCK_PRIVACY}
+            element={<LegalDocumentScreen documentId="worldClockPrivacy"/>}
+          />
+          <Route
+            path={SCREENS.TIME_ZO_TERMS}
+            element={<LegalDocumentScreen documentId="worldClockTerms"/>}
+          />
+          <Route
+            path={SCREENS.WORLD_CLOCK_TERMS}
+            element={<LegalDocumentScreen documentId="worldClockTerms"/>}
+          />
           <Route path={SCREENS.WORLD_CLOCK_REDIRECT} element={<WorldClockRedirect/>}/>
 
           <Route path={SCREENS.CALM_CATS} element={<Redirect url={CatDribble}/>}/>
 
           {/*<Route path={SCREENS.BB_LIST} element={<BBList/>}/>*/}
 
-          <Route path={SCREENS.NeverEver_PRIVACY} element={<PrivacyNeverEver/>}/>
-          <Route path={SCREENS.NeverEver_TERMS} element={<TermsNeverEver/>}/>
+          <Route
+            path={SCREENS.NeverEver_PRIVACY}
+            element={<LegalDocumentScreen documentId="didYouEverPrivacy"/>}
+          />
+          <Route
+            path={SCREENS.NeverEver_TERMS}
+            element={<LegalDocumentScreen documentId="didYouEverTerms"/>}
+          />
 
           <Route path="*" element={<Navigate to={SCREENS.HOME} replace/>}/>
         </Routes>

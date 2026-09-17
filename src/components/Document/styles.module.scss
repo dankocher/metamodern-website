@@ -19,103 +19,211 @@
     width: autoResize(288px, 800px, 320px, $mdDevice);
     flex-direction: column;
     color: $mainBlack;
-    padding-top: 88px;
-    padding-bottom: 144px;
     padding-top: autoResize(140, 180);
+    padding-bottom: 144px;
+
     @media (max-width: 1000px) {
       padding-top: 112px;
     }
   }
+}
 
-  .headerBlock {
-    padding-bottom: 28px;
-    border-bottom: 1px solid $grey;
-    margin-bottom: 40px;
-    padding-bottom: autoResize(24px, 28px) !important;
+.headerBlock {
+  padding-bottom: autoResize(24px, 28px) !important;
+  border-bottom: 1px solid $grey;
+  margin-bottom: 40px;
+
+  @media (max-width: $mdDevice) {
+    padding-bottom: 24px;
+  }
+
+  h1 {
+    text-transform: capitalize;
+    margin-bottom: autoResize(8px, 12px) !important;
 
     @media (max-width: $mdDevice) {
-      padding-bottom: 24px;
-    }
-
-    h2 {
-      text-transform: capitalize;
-      margin-bottom: 12px;
-      margin-bottom: autoResize(8px, 12px) !important;
-
-      @media (max-width: $mdDevice) {
-        margin-bottom: 8px;
-      }
-    }
-
-    p {
-      color: $blackGrey;
+      margin-bottom: 8px;
     }
   }
 
-  .description {
-    .heading {
-      text-transform: capitalize;
-      margin-bottom: 32px;
-      margin-bottom: autoResize(24px, 32px) !important;
+  p {
+    color: $blackGrey;
+  }
+}
 
-      @media (max-width: $mdDevice) {
-        margin-bottom: 24px;
-      }
+.description {
+  overflow-wrap: anywhere;
+
+  .heading {
+    text-transform: capitalize;
+    margin-top: 60px;
+    margin-bottom: autoResize(24px, 32px) !important;
+
+    @media (max-width: $mdDevice) {
+      margin-top: 48px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .title {
+    text-transform: capitalize;
+    margin-top: 60px;
+    margin-bottom: autoResize(16px, 20px) !important;
+
+    @media (max-width: $mdDevice) {
+      margin-top: 48px;
+      margin-bottom: 16px;
+    }
+  }
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  .heading + .title {
+    margin-top: 0;
+  }
+
+  p,
+  ul,
+  ol,
+  blockquote,
+  pre,
+  .tableWrapper {
+    margin-bottom: autoResize(22px, 26px) !important;
+
+    @media (max-width: $mdDevice) {
+      margin-bottom: 22px;
+    }
+  }
+
+  ul,
+  ol {
+    padding: 0;
+  }
+
+  li {
+    margin-left: 32px;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+
+  ul > li {
+    list-style-type: disc;
+  }
+
+  ol > li {
+    list-style-type: decimal;
+  }
+
+  li > p {
+    margin-bottom: 12px !important;
+  }
+
+  a {
+    color: $accent;
+    word-break: break-word;
+
+    &[href^='mailto:'] {
+      word-break: normal;
     }
 
-    .title {
-      text-transform: capitalize;
-      margin-bottom: 20px;
-      margin-bottom: autoResize(16px, 20px) !important;
-
-      @media (max-width: $mdDevice) {
-        margin-bottom: 16px;
-      }
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 3px;
     }
+  }
 
-    .text {
-      margin-bottom: 60px;
+  strong {
+    font-weight: 700;
+  }
 
-      p,
-      ul:not(:last-child) {
-        margin-bottom: 26px;
-        margin-bottom: autoResize(22px, 26px) !important;
+  blockquote {
+    padding-left: 20px;
+    border-left: 3px solid $grey;
+    color: $blackGrey;
+  }
 
-        @media (max-width: $mdDevice) {
-          margin-bottom: 22px;
-        }
-      }
+  code {
+    font-family: monospace;
+    font-size: 0.9em;
+  }
 
-      p.headingList {
-        margin-bottom: 20px;
-        margin-bottom: autoResize(16px, 20px) !important;
+  pre {
+    padding: 16px;
+    overflow-x: auto;
+    border: 1px solid $grey;
 
-        @media (max-width: $mdDevice) {
-          margin-bottom: 16px;
-        }
-      }
-
-      a {
-        word-break: break-all;
-        color: $accent;
-
-        &[href*='mailto:'] {
-          word-break: normal;
-        }
-      }
-
-      li {
-        margin-left: 32px;
-        list-style-type: disc;
-
-        &:not(:last-child) {
-          margin-bottom: 12px;
-        }
-      }
+    code {
+      white-space: pre;
     }
+  }
 
-    :last-child {
-      margin-bottom: 0;
-    }
+  hr {
+    margin: 40px 0;
+    border: 0;
+    border-top: 1px solid $grey;
+  }
+
+  .tableWrapper {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+  }
+
+  th,
+  td {
+    padding: 12px;
+    border: 1px solid $grey;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    font-weight: 700;
+  }
+
+  > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+.status {
+  min-height: 240px;
+
+  h1 {
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: $blackGrey;
+  }
+}
+
+.retryButton {
+  margin-top: 28px;
+  padding: 12px 20px;
+  border: 1px solid $mainBlack;
+  border-radius: 999px;
+  background: transparent;
+  color: $mainBlack;
+  cursor: pointer;
+  font: inherit;
+
+  &:hover {
+    background: $mainBlack;
+    color: white;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $accent;
+    outline-offset: 3px;
   }
 }
