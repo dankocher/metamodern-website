@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 
 import PageContainer from "../../components/PageTemplate/PageContainer";
 
-import aboutUs from "./../../assets/images/aboutUs.png";
 import zigzagImage from "../../assets/images/zigzag.png";
 import imgPrincip from "../../assets/images/officeRectangle.webp";
 import { principlesList, textBlock1, textBlock2 } from "./data";

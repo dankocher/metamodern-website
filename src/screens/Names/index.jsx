@@ -10,7 +10,7 @@ import LinkButtons from "../../components/LinkButtons";
 const Names = () => {
   const title = "Baby Names"
   const iconName = "namesLogo"
-  const description = ""
+  const description = "Somewhere in here is your future baby’s name. Shall we start looking."
   const links = { "googlePlay": "https://play.google.com/store/apps/details?id=app.find.baby.names.meaning" }
 
   return (

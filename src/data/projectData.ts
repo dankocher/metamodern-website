@@ -1,9 +1,10 @@
 import { ProjectProps } from "../components/ProjectList/Project/project.interface";
 import { ProjectsTypes } from "../constants/projectTypes";
 
-import calmCatsBackground from "../assets/images/calmCatsBackground.png";
-import contractionsBackground from "../assets/images/contractionsBackground.png";
-import weatherBackground from "../assets/images/weatherBackground.png";
+import calmCatsBackground from "../assets/images/calmCatsBackground.webp";
+import contractionsBackground from "../assets/images/contractionsBackground.webp";
+import weatherBackground from "../assets/images/weatherBackground.webp";
+import namesBackground from "../assets/images/namesBackground.webp";
 
 import { SCREENS } from "../navigation/constants";
 
@@ -118,11 +119,11 @@ const data: ProjectProps[] = [
   {
     link: SCREENS.NAMES,
     type: ProjectsTypes.MOBILE,
-    name: "Baby Name",
-    description: "",
+    name: "Baby Names",
+    description: "Somewhere in here is your future baby’s name. Shall we start looking.",
     tags: ["Design", "Mobile"],
-    bgImage: { name: 'weather' },
-    gradient: { "--gradient": `#F0F0FF url(${weatherBackground})` },
+    bgImage: { name: 'babyNames' },
+    gradient: { "--gradient": `#F0F0FF url(${namesBackground})` },
     isBgImgWrapper: true,
     isDarkContent: true,
   },
